@@ -15,6 +15,7 @@ import pulp
 
 
 DATA_DEFAULT = Path(__file__).resolve().parent.parent / "Data" / "players-se-k01012026.csv"
+EXPECTED_GAMES_PATH = Path(__file__).resolve().parent.parent / "Data" / "expected_player_games.csv"
 
 BUDGET = 70_000_000
 POSITION_QUOTA = {
@@ -42,6 +43,24 @@ def load_players(path: Path) -> pd.DataFrame:
     if missing:
         raise ValueError(f"Positionen fehlen im Datensatz: {missing}")
     return df
+
+
+def attach_expected_games(
+    players: pd.DataFrame, path: Path = EXPECTED_GAMES_PATH,
+) -> pd.DataFrame:
+    """Mergt die Spalte ``Erwartete Spiele`` aus dem Sim+Lineup-Output an.
+
+    Erzeugt sie via ``expected_player_games`` falls die CSV fehlt.
+    """
+    if not path.exists():
+        # Lazy import — vermeidet, dass der Default-Workflow von
+        # `expected_player_games` (und damit dem Simulator) abhängt.
+        from expected_player_games import build_expected_player_games, write_csv
+        write_csv(build_expected_player_games())
+    eg = pd.read_csv(path, sep=";")[["ID", "Erwartete Spiele"]]
+    out = players.merge(eg, on="ID", how="left")
+    out["Erwartete Spiele"] = out["Erwartete Spiele"].fillna(0.0)
+    return out
 
 
 def optimize(
@@ -95,6 +114,8 @@ def optimize(
 def format_result(result: Result, objective_col: str) -> str:
     lines = []
     cols = ["Position", "Angezeigter Name", "Verein", "Marktwert", "Punkte", "Notendurchschnitt"]
+    if objective_col not in cols:
+        cols.append(objective_col)
     for pos in ["GOALKEEPER", "DEFENDER", "MIDFIELDER", "FORWARD"]:
         block = result.picks[result.picks["Position"] == pos][cols]
         lines.append(f"\n=== {pos} ({len(block)}) ===")
@@ -112,7 +133,7 @@ def main() -> None:
     parser.add_argument(
         "--objective",
         default="Punkte",
-        choices=["Punkte", "Notendurchschnitt"],
+        choices=["Punkte", "Notendurchschnitt", "Erwartete Spiele"],
         help="Zu optimierende Spalte",
     )
     parser.add_argument(
@@ -129,6 +150,8 @@ def main() -> None:
     args = parser.parse_args()
 
     players = load_players(args.data)
+    if args.objective == "Erwartete Spiele":
+        players = attach_expected_games(players)
     result = optimize(
         players,
         objective_col=args.objective,

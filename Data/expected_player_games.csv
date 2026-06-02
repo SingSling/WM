@@ -1,0 +1,1328 @@
+ID;Vorname;Nachname;Angezeigter Name;Verein;Position;Marktwert;Probability;exp_games;Erwartete Spiele
+pl-k00030256;Cristiano Ronaldo;Dos Santos Aveiro;Cristiano Ronaldo;Portugal;FORWARD;8000000;0.8;5.275;4.22
+pl-k00030669;Manuel;Neuer;Manuel Neuer;Deutschland;GOALKEEPER;8000000;0.2;5.107;1.021
+pl-k00033709;Lionel;Messi;Lionel Messi;Argentinien;FORWARD;8000000;1.0;6.094;6.094
+pl-k00033742;Craig;Gordon;Craig Gordon;Schottland;GOALKEEPER;4000000;0.5;4.145;2.073
+pl-k00039245;Oliver;Baumann;Oliver Baumann;Deutschland;GOALKEEPER;4000000;0.4;5.107;2.043
+pl-k00039689;Luka;Modric;Luka Modric;Kroatien;MIDFIELDER;6000000;1.0;4.972;4.972
+pl-k00039824;Guillermo;Ochoa;Guillermo Ochoa;Mexiko;GOALKEEPER;1000000;0.5;4.867;2.434
+pl-k00044089;Axel;Witsel;Axel Witsel;Belgien;MIDFIELDER;4000000;0.5;4.887;2.444
+pl-k00044560;Edin;Dzeko;Edin Dzeko;Bosnien-Herzegowina;FORWARD;4000000;1.0;3.748;3.748
+pl-k00045914;James;Rodriguez;James;Kolumbien;MIDFIELDER;4000000;1.0;5.185;5.185
+pl-k00046237;Mert;Günok;Mert Günok;Türkei;GOALKEEPER;1000000;0.0;4.927;0.0
+pl-k00046495;Fernando;Muslera;Fernando Muslera;Uruguay;GOALKEEPER;4000000;1.0;4.658;4.658
+pl-k00046508;Tommy;Smith;Tommy Smith;Neuseeland;DEFENDER;1000000;0.0;3.461;0.0
+pl-k00047058;Marko;Arnautovic;Marko Arnautovic;Österreich;FORWARD;4000000;1.0;4.093;4.093
+pl-k00050622;Jordan;Henderson;Jordan Henderson;England;MIDFIELDER;4000000;0.0;5.644;0.0
+pl-k00054652;Pascal;Groß;Pascal Groß;Deutschland;MIDFIELDER;4000000;0.2;5.107;1.021
+pl-k00055188;Gael;Kakuta;Gael Kakuta;DR Kongo;MIDFIELDER;1000000;0.0;3.381;0.0
+pl-k00056751;Chris;Wood;Chris Wood;Neuseeland;FORWARD;4000000;0.5;3.461;1.73
+pl-k00056979;Nicolas;Otamendi;Nicolas Otamendi;Argentinien;DEFENDER;4000000;0.6;6.094;3.656
+pl-k00057241;Rani;Khedira;Rani Khedira;Tunesien;MIDFIELDER;4000000;0.5;3.427;1.714
+pl-k00057343;Granit;Xhaka;Granit Xhaka;Schweiz;MIDFIELDER;6000000;0.5;5.153;2.576
+pl-k00057598;David;Alaba;David Alaba;Österreich;DEFENDER;6000000;0.0;4.093;0.0
+pl-k00057919;Kristoffer;Nordfeldt;Kristoffer Nordfeldt;Schweden;GOALKEEPER;4000000;1.0;3.784;3.784
+pl-k00059041;Andrej;Kramaric;Andrej Kramaric;Kroatien;FORWARD;6000000;1.0;4.972;4.972
+pl-k00059307;Ivan;Perisic;Ivan Perisic;Kroatien;FORWARD;6000000;1.0;4.972;4.972
+pl-k00059384;Romelu;Lukaku;Romelu Lukaku;Belgien;FORWARD;6000000;0.5;4.887;2.444
+pl-k00059448;Seung-Gyu;Kim;Seung-Gyu Kim;Südkorea;GOALKEEPER;2000000;0.667;4.339;2.894
+pl-k00059508;Thibaut;Courtois;Thibaut Courtois;Belgien;GOALKEEPER;8000000;0.75;4.887;3.666
+pl-k00059516;Kevin;De Bruyne;Kevin De Bruyne;Belgien;MIDFIELDER;6000000;1.0;4.887;4.887
+pl-k00059524;Kaan;Ayhan;Kaan Ayhan;Türkei;MIDFIELDER;2000000;0.0;4.927;0.0
+pl-k00060044;Ricardo;Rodriguez;Ricardo Rodriguez;Schweiz;DEFENDER;4000000;0.5;5.153;2.576
+pl-k00062748;Idrissa;Gueye;Idrissa Gueye;Senegal;MIDFIELDER;2000000;0.75;4.562;3.421
+pl-k00063656;Heung-Min;Son;Heung-Min Son;Südkorea;FORWARD;6000000;1.0;4.339;4.339
+pl-k00063799;Michael;Gregoritsch;Michael Gregoritsch;Österreich;FORWARD;4000000;0.0;4.093;0.0
+pl-k00063855;Kosta;Barbarouses;Kosta Barbarouses;Neuseeland;FORWARD;1000000;0.0;3.461;0.0
+pl-k00063869;Yuto;Nagatomo;Yuto Nagatomo;Japan;DEFENDER;1000000;0.0;4.859;0.0
+pl-k00063918;Neymar;da Silva Santos Junior;Neymar;Brasilien;FORWARD;6000000;0.2;5.371;1.074
+pl-k00064027;Grant;Hanley;Grant Hanley;Schottland;DEFENDER;2000000;0.5;4.145;2.073
+pl-k00064038;Hakan;Calhanoglu;Hakan Calhanoglu;Türkei;MIDFIELDER;6000000;1.0;4.927;4.927
+pl-k00065748;Ianique;dos Santos Tavares;Stopira;Kap Verde;DEFENDER;2000000;0.0;3.269;0.0
+pl-k00065996;Jordan;Ayew;Jordan Ayew;Ghana;FORWARD;4000000;1.0;3.134;3.134
+pl-k00066526;Antonio;Rüdiger;Antonio Rüdiger;Deutschland;DEFENDER;4000000;0.4;5.107;2.043
+pl-k00066754;Leon;Goretzka;Leon Goretzka;Deutschland;MIDFIELDER;6000000;0.8;5.107;4.085
+pl-k00067156;Tim;Ream;Tim Ream;USA;DEFENDER;2000000;0.6;3.756;2.254
+pl-k00067266;Mateo;Kovacic;Mateo Kovacic;Kroatien;MIDFIELDER;4000000;0.5;4.972;2.486
+pl-k00067749;Lucas;Digne;Lucas Digne;Frankreich;DEFENDER;4000000;0.6;6.138;3.683
+pl-k00068111;Mathew;Leckie;Mathew Leckie;Australien;MIDFIELDER;1000000;0.0;4.094;0.0
+pl-k00068757;David;Ospina;David Ospina;Kolumbien;GOALKEEPER;1000000;0.0;5.185;0.0
+pl-k00069274;Roberto;Fernandez;Roberto Fernandez;Paraguay;GOALKEEPER;2000000;0.5;4.432;2.216
+pl-k00069568;Cedric;Bakambu;Cedric Bakambu;DR Kongo;FORWARD;4000000;1.0;3.381;3.381
+pl-k00069797;Dan;Burn;Dan Burn;England;DEFENDER;4000000;0.0;5.644;0.0
+pl-k00070267;Alex Sandro;Lobo Silva;Alex Sandro;Brasilien;DEFENDER;4000000;0.4;5.371;2.148
+pl-k00070270;Danilo Luiz;da Silva;Danilo;Brasilien;DEFENDER;4000000;0.0;5.371;0.0
+pl-k00070281;Vladimir;Darida;Vladimir Darida;Tschechien;MIDFIELDER;1000000;1.0;4.208;4.208
+pl-k00070495;Thomas;Meunier;Thomas Meunier;Belgien;DEFENDER;2000000;0.75;4.887;3.666
+pl-k00070592;Jonathan;Tah;Jonathan Tah;Deutschland;DEFENDER;8000000;0.6;5.107;3.064
+pl-k00070605;Harry;Kane;Harry Kane;England;FORWARD;10000000;0.8;5.644;4.515
+pl-k00070654;Carlos Henrique;Casemiro;Casemiro;Brasilien;MIDFIELDER;6000000;1.0;5.371;5.371
+pl-k00070756;Sead;Kolasinac;Sead Kolasinac;Bosnien-Herzegowina;DEFENDER;4000000;1.0;3.748;3.748
+pl-k00070960;Jürgen;Locadia;Jürgen Locadia;Curacao;FORWARD;1000000;0.0;3.118;0.0
+pl-k00071150;Joshua;Kimmich;Joshua Kimmich;Deutschland;DEFENDER;8000000;1.0;5.107;5.107
+pl-k00071862;Santiago;Arias;Santiago Arias;Kolumbien;DEFENDER;2000000;0.0;5.185;0.0
+pl-k00071888;Memphis;Depay;Memphis Depay;Niederlande;FORWARD;4000000;0.75;5.244;3.933
+pl-k00072478;Mark;Flekken;Mark Flekken;Niederlande;GOALKEEPER;2000000;0.25;5.244;1.311
+pl-k00072654;Mike;Maignan;Mike Maignan;Frankreich;GOALKEEPER;8000000;0.8;6.138;4.91
+pl-k00072663;Seko;Fofana;Seko Fofana;Elfenbeinküste;MIDFIELDER;2000000;0.0;3.871;0.0
+pl-k00072712;Riechedly;Bazoer;Riechedly Bazoer;Curacao;DEFENDER;1000000;0.0;3.118;0.0
+pl-k00072716;Nathan;Aké;Nathan Aké;Niederlande;DEFENDER;4000000;1.0;5.244;5.244
+pl-k00072755;Alexander;Nübel;Alexander Nübel;Deutschland;GOALKEEPER;2000000;0.2;5.107;1.021
+pl-k00073097;Milos;Degenek;Milos Degenek;Australien;DEFENDER;1000000;0.667;4.094;2.73
+pl-k00073206;Marcel;Sabitzer;Marcel Sabitzer;Österreich;MIDFIELDER;4000000;1.0;4.093;4.093
+pl-k00073311;Alessandro;Schöpf;Alessandro Schöpf;Österreich;MIDFIELDER;1000000;0.0;4.093;0.0
+pl-k00073393;Abdul Rahman;Baba;Abdul Rahman Baba;Ghana;DEFENDER;2000000;0.0;3.134;0.0
+pl-k00073842;Roberto Carlos;Lopes;Pico;Kap Verde;DEFENDER;2000000;0.5;3.269;1.634
+pl-k00073943;Raul;Jimenez;Raul Jimenez;Mexiko;FORWARD;4000000;1.0;4.867;4.867
+pl-k00074093;Mohamed;Salah;Mohamed Salah;Ägypten;MIDFIELDER;8000000;1.0;3.946;3.946
+pl-k00074274;Sadio;Mané;Sadio Mané;Senegal;FORWARD;6000000;1.0;4.562;4.562
+pl-k00074305;Tim;Payne;Tim Payne;Neuseeland;DEFENDER;2000000;0.0;3.461;0.0
+pl-k00074369;Yassine;Bounou;Bono;Marokko;GOALKEEPER;4000000;1.0;4.428;4.428
+pl-k00074841;Juan Fernando;Quintero;Juan Fernando Quintero;Kolumbien;MIDFIELDER;1000000;0.0;5.185;0.0
+pl-k00074928;Jordan;Pickford;Jordan Pickford;England;GOALKEEPER;6000000;1.0;5.644;5.644
+pl-k00074936;Marcos;Aoas Correa;Marquinhos;Brasilien;DEFENDER;8000000;1.0;5.371;5.371
+pl-k00074991;Emiliano;Martinez;Emiliano Martinez;Argentinien;GOALKEEPER;8000000;0.8;6.094;4.875
+pl-k00075008;Marten;de Roon;Marten de Roon;Niederlande;MIDFIELDER;4000000;0.0;5.244;0.0
+pl-k00075023;Joao Pedro;Cavaco Cancelo;Joao Cancelo;Portugal;DEFENDER;6000000;1.0;5.275;5.275
+pl-k00075027;Yvon;Mvogo;Yvon Mvogo;Schweiz;GOALKEEPER;2000000;0.5;5.153;2.576
+pl-k00075068;Lucas Michel;Mendes;Lucas Mendes;Katar;DEFENDER;1000000;0.5;3.208;1.604
+pl-k00075076;Kalidou;Koulibaly;Kalidou Koulibaly;Senegal;DEFENDER;4000000;0.75;4.562;3.421
+pl-k00075102;Ryan Isaac;Mendes da Graca;Ryan Mendes;Kap Verde;FORWARD;1000000;0.0;3.269;0.0
+pl-k00075261;Haris;Tabakovic;Haris Tabakovic;Bosnien-Herzegowina;FORWARD;4000000;0.0;3.748;0.0
+pl-k00075379;Silvan;Widmer;Silvan Widmer;Schweiz;DEFENDER;2000000;0.5;5.153;2.576
+pl-k00075584;Adrien;Rabiot;Adrien Rabiot;Frankreich;MIDFIELDER;6000000;0.2;6.138;1.228
+pl-k00075612;Dzenis;Burnic;Dzenis Burnic;Bosnien-Herzegowina;MIDFIELDER;2000000;0.0;3.748;0.0
+pl-k00075628;Salih;Özcan;Salih Özcan;Türkei;MIDFIELDER;2000000;0.0;4.927;0.0
+pl-k00075738;Aziz;Behich;Aziz Behich;Australien;DEFENDER;1000000;0.333;4.094;1.363
+pl-k00075849;Aymeric;Laporte;Aymeric Laporte;Spanien;DEFENDER;4000000;1.0;6.495;6.495
+pl-k00075878;Mathew;Ryan;Mathew Ryan;Australien;GOALKEEPER;4000000;0.333;4.094;1.363
+pl-k00075957;Ramy;Rabia;Ramy Rabia;Ägypten;DEFENDER;2000000;0.5;3.946;1.973
+pl-k00075963;Mahmoud Ibrahim;Hassan;Trezeguet;Ägypten;MIDFIELDER;4000000;1.0;3.946;3.946
+pl-k00075982;Joshua;Brenet;Joshua Brenet;Curacao;DEFENDER;1000000;0.5;3.118;1.559
+pl-k00076167;Chancel;Mbemba;Chancel Mbemba;DR Kongo;DEFENDER;2000000;1.0;3.381;3.381
+pl-k00076249;Josimar;Dias;Vozinha;Kap Verde;GOALKEEPER;2000000;0.5;3.269;1.634
+pl-k00076421;Phillipp;Mwene;Phillipp Mwene;Österreich;DEFENDER;4000000;1.0;4.093;4.093
+pl-k00076459;John;Stones;John Stones;England;DEFENDER;6000000;0.4;5.644;2.257
+pl-k00076681;Thomas;Teye Partey;Thomas;Ghana;MIDFIELDER;4000000;1.0;3.134;3.134
+pl-k00077108;Fabio Henrique;Tavares;Fabinho;Brasilien;MIDFIELDER;2000000;0.0;5.371;0.0
+pl-k00077358;Örjan;Nyland;Örjan Nyland;Norwegen;GOALKEEPER;4000000;1.0;4.791;4.791
+pl-k00077564;Guillermo;Varela;Guillermo Varela;Uruguay;DEFENDER;4000000;0.5;4.658;2.329
+pl-k00077709;Fredrik;Aursnes;Fredrik Aursnes;Norwegen;MIDFIELDER;4000000;0.0;4.791;0.0
+pl-k00078155;Leandro;Bacuna;Leandro Bacuna;Curacao;MIDFIELDER;2000000;1.0;3.118;3.118
+pl-k00078170;Eloy;Room;Eloy Room;Curacao;GOALKEEPER;2000000;1.0;3.118;3.118
+pl-k00078181;Brice;Samba;Brice Samba;Frankreich;GOALKEEPER;4000000;0.2;6.138;1.228
+pl-k00078230;Virgil;van Dijk;Virgil van Dijk;Niederlande;DEFENDER;6000000;1.0;5.244;5.244
+pl-k00078543;Jonathan;Osorio;Jonathan Osorio;Kanada;MIDFIELDER;2000000;0.5;4.635;2.318
+pl-k00078573;Johan;Mojica;Johan Mojica;Kolumbien;DEFENDER;2000000;1.0;5.185;5.185
+pl-k00078750;Bruno Miguel;Borges Fernandes;Bruno Fernandes;Portugal;MIDFIELDER;8000000;0.6;5.275;3.165
+pl-k00079032;Mitchell;Duke;Mitchell Duke;Australien;FORWARD;2000000;0.333;4.094;1.363
+pl-k00079078;Nikola;Vasilj;Nikola Vasilj;Bosnien-Herzegowina;GOALKEEPER;4000000;1.0;3.748;3.748
+pl-k00079176;Atakan;Karazor;Atakan Karazor;Türkei;MIDFIELDER;2000000;0.0;4.927;0.0
+pl-k00079478;José Maria;Gimenez;José Maria Gimenez;Uruguay;DEFENDER;4000000;0.5;4.658;2.329
+pl-k00079504;Florian;Grillitsch;Florian Grillitsch;Österreich;MIDFIELDER;2000000;0.0;4.093;0.0
+pl-k00079536;Ajdin;Hrustic;Ajdin Hrustic;Australien;MIDFIELDER;2000000;0.0;4.094;0.0
+pl-k00079543;Leroy;Sané;Leroy Sané;Deutschland;MIDFIELDER;4000000;0.4;5.107;2.043
+pl-k00080083;Nadiem;Amiri;Nadiem Amiri;Deutschland;MIDFIELDER;4000000;0.0;5.107;0.0
+pl-k00080174;Waldemar;Anton;Waldemar Anton;Deutschland;DEFENDER;4000000;0.0;5.107;0.0
+pl-k00080229;Antonio;Sanabria;Antonio Sanabria;Paraguay;FORWARD;2000000;1.0;4.432;4.432
+pl-k00080522;Gustavo;Gomez;Gustavo Gomez;Paraguay;DEFENDER;2000000;0.0;4.432;0.0
+pl-k00080587;Dennis;Eckert Ayensa;Dennis Eckert Ayensa;Iran;FORWARD;2000000;0.0;4.307;0.0
+pl-k00080630;Douglas dos Santos;Justino de Melo;Douglas Santos;Brasilien;DEFENDER;2000000;0.2;5.371;1.074
+pl-k00080786;Youri;Tielemans;Youri Tielemans;Belgien;MIDFIELDER;6000000;1.0;4.887;4.887
+pl-k00081053;Vladimir;Coufal;Vladimir Coufal;Tschechien;DEFENDER;6000000;1.0;4.208;4.208
+pl-k00081250;Brandon;Mechele;Brandon Mechele;Belgien;DEFENDER;2000000;0.0;4.887;0.0
+pl-k00081292;Jhon;Cordoba;Jhon Cordoba;Kolumbien;FORWARD;4000000;0.0;5.185;0.0
+pl-k00081362;Mario;Pasalic;Mario Pasalic;Kroatien;MIDFIELDER;4000000;0.5;4.972;2.486
+pl-k00081442;Mory;Diaw;Mory Diaw;Senegal;GOALKEEPER;1000000;0.25;4.562;1.14
+pl-k00081465;Alejandro;Grimaldo;Alejandro Grimaldo;Spanien;DEFENDER;6000000;0.2;6.495;1.299
+pl-k00081503;Theo;Bongonda;Theo Bongonda;DR Kongo;MIDFIELDER;2000000;0.0;3.381;0.0
+pl-k00081538;Jean Michael;Seri;Jean Michael Seri;Elfenbeinküste;MIDFIELDER;2000000;0.0;3.871;0.0
+pl-k00081694;Marin;Pongracic;Marin Pongracic;Kroatien;DEFENDER;2000000;0.0;4.972;0.0
+pl-k00081971;Jackson;Irvine;Jackson Irvine;Australien;MIDFIELDER;4000000;1.0;4.094;4.094
+pl-k00082152;Lucas;Hernandez;Lucas Hernandez;Frankreich;DEFENDER;4000000;0.2;6.138;1.228
+pl-k00082469;Timothy;Castagne;Timothy Castagne;Belgien;DEFENDER;4000000;0.5;4.887;2.444
+pl-k00082709;Garry;Mendes Rodrigues;Garry Rodrigues;Kap Verde;FORWARD;2000000;0.5;3.269;1.634
+pl-k00082878;Andrew;Robertson;Andrew Robertson;Schottland;DEFENDER;4000000;1.0;4.145;4.145
+pl-k00082905;Enner;Valencia;Enner Valencia;Ecuador;FORWARD;4000000;0.5;5.127;2.563
+pl-k00082915;Breel;Embolo;Breel Embolo;Schweiz;FORWARD;4000000;1.0;5.153;5.153
+pl-k00082944;Camilo;Vargas;Camilo Vargas;Kolumbien;GOALKEEPER;4000000;0.5;5.185;2.593
+pl-k00083013;Leandro;Paredes;Leandro Paredes;Argentinien;MIDFIELDER;4000000;0.2;6.094;1.219
+pl-k00083165;Alexander;Sörloth;Alexander Sörloth;Norwegen;FORWARD;6000000;1.0;4.791;4.791
+pl-k00083239;Ehsan;Haji Safi;Ehsan Haji Safi;Iran;DEFENDER;1000000;0.0;4.307;0.0
+pl-k00083248;Alireza;Jahanbakhsh;Alireza Jahanbakhsh;Iran;MIDFIELDER;2000000;0.0;4.307;0.0
+pl-k00083526;Aissa;Mandi;Aissa Mandi;Algerien;DEFENDER;2000000;1.0;3.712;3.712
+pl-k00083529;Riyad;Mahrez;Riyad Mahrez;Algerien;FORWARD;4000000;1.0;3.712;3.712
+pl-k00083544;Alireza;Beiranvand;Alireza Beiranvand;Iran;GOALKEEPER;2000000;1.0;4.307;4.307
+pl-k00083613;Martin;Ödegaard;Martin Ödegaard;Norwegen;MIDFIELDER;8000000;1.0;4.791;4.791
+pl-k00083712;Cyle;Larin;Cyle Larin;Kanada;FORWARD;4000000;0.25;4.635;1.159
+pl-k00083739;Themba;Zwane;Themba Zwane;Südafrika;FORWARD;1000000;0.0;3.312;0.0
+pl-k00083783;Junior;Alonso;Junior Alonso;Paraguay;DEFENDER;2000000;0.5;4.432;2.216
+pl-k00083984;Carl;Starfelt;Carl Starfelt;Schweden;DEFENDER;2000000;0.5;3.784;1.892
+pl-k00083987;Jesper;Karlström;Jesper Karlström;Schweden;MIDFIELDER;4000000;1.0;3.784;3.784
+pl-k00084324;Remo;Freuler;Remo Freuler;Schweiz;MIDFIELDER;4000000;1.0;5.153;5.153
+pl-k00084365;Nico;Elvedi;Nico Elvedi;Schweiz;DEFENDER;4000000;1.0;5.153;5.153
+pl-k00084527;Rodrigo;Aguirre;Rodrigo Aguirre;Uruguay;FORWARD;1000000;0.5;4.658;2.329
+pl-k00084530;Derek;Cornelius;Derek Cornelius;Kanada;DEFENDER;4000000;0.5;4.635;2.318
+pl-k00084740;Ryan;Thomas;Ryan Thomas;Neuseeland;MIDFIELDER;2000000;0.0;3.461;0.0
+pl-k00084940;Philipp;Lienhart;Philipp Lienhart;Österreich;DEFENDER;4000000;0.5;4.093;2.046
+pl-k00084943;Konrad;Laimer;Konrad Laimer;Österreich;MIDFIELDER;6000000;1.0;4.093;4.093
+pl-k00085071;Alexander;Schlager;Alexander Schlager;Österreich;GOALKEEPER;2000000;1.0;4.093;4.093
+pl-k00085122;Ante;Budimir;Ante Budimir;Kroatien;FORWARD;4000000;1.0;4.972;4.972
+pl-k00085245;Bernardo Mota;Veiga de Carvalho e Silva;Bernardo Silva;Portugal;MIDFIELDER;6000000;0.2;5.275;1.055
+pl-k00085275;Geronimo;Rulli;Geronimo Rulli;Argentinien;GOALKEEPER;4000000;0.0;6.094;0.0
+pl-k00085276;Rodrigo;de Paul;Rodrigo de Paul;Argentinien;MIDFIELDER;6000000;0.8;6.094;4.875
+pl-k00085349;Ruben Diogo;da Silva Neves;Ruben Neves;Portugal;MIDFIELDER;4000000;0.2;5.275;1.055
+pl-k00085376;Arthur;Masuaku;Arthur Masuaku;DR Kongo;DEFENDER;2000000;1.0;3.381;3.381
+pl-k00085378;Jindrich;Stanek;Jindrich Stanek;Tschechien;GOALKEEPER;1000000;0.0;4.208;0.0
+pl-k00085465;Nikola;Vlasic;Nikola Vlasic;Kroatien;MIDFIELDER;2000000;0.0;4.972;0.0
+pl-k00085665;Ederson;Santana de Moraes;Ederson;Brasilien;GOALKEEPER;4000000;0.0;5.371;0.0
+pl-k00085696;Hans;Vanaken;Hans Vanaken;Belgien;MIDFIELDER;2000000;0.0;4.887;0.0
+pl-k00085778;Patrik;Schick;Patrik Schick;Tschechien;FORWARD;6000000;1.0;4.208;4.208
+pl-k00085906;Scott;McKenna;Scott McKenna;Schottland;DEFENDER;4000000;1.0;4.145;4.145
+pl-k00085917;Lawrence;Shankland;Lawrence Shankland;Schottland;FORWARD;2000000;0.0;4.145;0.0
+pl-k00086035;Goncalo;Guedes;Goncalo Guedes;Portugal;FORWARD;4000000;0.0;5.275;0.0
+pl-k00086109;Duje;Caleta-Car;Duje Caleta-Car;Kroatien;DEFENDER;4000000;1.0;4.972;4.972
+pl-k00086141;Kai;Havertz;Kai Havertz;Deutschland;FORWARD;8000000;1.0;5.107;5.107
+pl-k00086183;Tomas;Holes;Tomas Holes;Tschechien;DEFENDER;2000000;0.0;4.208;0.0
+pl-k00086391;Marcos;Llorente;Marcos Llorente;Spanien;DEFENDER;6000000;0.4;6.495;2.598
+pl-k00086584;Inaki;Williams;Inaki Williams;Ghana;FORWARD;6000000;0.5;3.134;1.567
+pl-k00086910;Borja;Iglesias;Borja Iglesias;Spanien;FORWARD;4000000;0.0;6.495;0.0
+pl-k00087248;Sergio;Rochet;Sergio Rochet;Uruguay;GOALKEEPER;2000000;0.0;4.658;0.0
+pl-k00087254;Martin;Erlic;Martin Erlic;Kroatien;DEFENDER;1000000;0.0;4.972;0.0
+pl-k00087278;Morten;Thorsby;Morten Thorsby;Norwegen;MIDFIELDER;2000000;0.0;4.791;0.0
+pl-k00087371;Osman;Hadzikic;Osman Hadzikic;Bosnien-Herzegowina;GOALKEEPER;1000000;0.0;3.748;0.0
+pl-k00087507;Steven;Moreira;Steven Moreira;Kap Verde;DEFENDER;1000000;0.0;3.269;0.0
+pl-k00087512;Johny;Placide;Johny Placide;Haiti;GOALKEEPER;2000000;0.5;3.217;1.609
+pl-k00087534;N’Golo;Kanté;N’Golo Kanté;Frankreich;MIDFIELDER;4000000;0.4;6.138;2.455
+pl-k00087576;Alexander;Djiku;Alexander Djiku;Ghana;DEFENDER;2000000;1.0;3.134;3.134
+pl-k00087622;Ugurcan;Cakir;Ugurcan Cakir;Türkei;GOALKEEPER;4000000;0.5;4.927;2.463
+pl-k00087673;Gregor;Kobel;Gregor Kobel;Schweiz;GOALKEEPER;6000000;0.5;5.153;2.576
+pl-k00087704;Kevin;Danso;Kevin Danso;Österreich;DEFENDER;4000000;1.0;4.093;4.093
+pl-k00087705;Ermedin;Demirovic;Ermedin Demirovic;Bosnien-Herzegowina;FORWARD;6000000;1.0;3.748;3.748
+pl-k00087735;Irfan Can;Kahveci;Irfan Can Kahveci;Türkei;FORWARD;2000000;0.0;4.927;0.0
+pl-k00087750;David;Raum;David Raum;Deutschland;DEFENDER;6000000;0.6;5.107;3.064
+pl-k00087823;Jae-Sung;Lee;Jae-Sung Lee;Südkorea;MIDFIELDER;4000000;0.333;4.339;1.445
+pl-k00087867;Franck;Kessié;Franck Kessié;Elfenbeinküste;MIDFIELDER;4000000;1.0;3.871;3.871
+pl-k00087885;Deniz;Undav;Deniz Undav;Deutschland;FORWARD;6000000;0.0;5.107;0.0
+pl-k00087974;Michal;Sadilek;Michal Sadilek;Tschechien;MIDFIELDER;4000000;0.0;4.208;0.0
+pl-k00088045;Marc;Cucurella;Marc Cucurella;Spanien;DEFENDER;6000000;0.6;6.495;3.897
+pl-k00088049;Daniel;Olmo Carvajal;Dani Olmo;Spanien;FORWARD;8000000;0.6;6.495;3.897
+pl-k00088147;Luca;Zidane;Luca Zidane;Algerien;GOALKEEPER;4000000;1.0;3.712;3.712
+pl-k00088151;Dayot;Upamecano;Dayot Upamecano;Frankreich;DEFENDER;8000000;0.8;6.138;4.91
+pl-k00088249;Kenji;Gorré;Kenji Gorré;Curacao;FORWARD;1000000;1.0;3.118;3.118
+pl-k00088739;Giorgian;de Arrascaeta;Giorgian de Arrascaeta;Uruguay;MIDFIELDER;4000000;1.0;4.658;4.658
+pl-k00088771;Christian;Pulisic;Christian Pulisic;USA;MIDFIELDER;6000000;1.0;3.756;3.756
+pl-k00088866;Fabian;Balbuena;Fabian Balbuena;Paraguay;DEFENDER;1000000;0.0;4.432;0.0
+pl-k00088946;Gervane;Kastaneer;Gervane Kastaneer;Curacao;FORWARD;1000000;1.0;3.118;3.118
+pl-k00088970;Lawrence;Ati Zigi;Lawrence Ati Zigi;Ghana;GOALKEEPER;2000000;0.0;3.134;0.0
+pl-k00089012;Wout;Weghorst;Wout Weghorst;Niederlande;FORWARD;4000000;0.0;5.244;0.0
+pl-k00089060;Shogo;Taniguchi;Shogo Taniguchi;Japan;DEFENDER;1000000;1.0;4.859;4.859
+pl-k00089096;José Pedro;Malheiro de Sa;José Sa;Portugal;GOALKEEPER;2000000;0.4;5.275;2.11
+pl-k00089148;Victor;Lindelöf;Victor Lindelöf;Schweden;DEFENDER;4000000;1.0;3.784;3.784
+pl-k00089308;Djibril;Sow;Djibril Sow;Schweiz;MIDFIELDER;2000000;0.0;5.153;0.0
+pl-k00089313;Unai;Simon Mendibil;Unai Simon;Spanien;GOALKEEPER;6000000;1.0;6.495;6.495
+pl-k00089321;Rodrigo;Hernandez Cascante;Rodri;Spanien;MIDFIELDER;8000000;0.8;6.495;5.196
+pl-k00089322;Mikel;Merino;Mikel Merino;Spanien;MIDFIELDER;4000000;0.2;6.495;1.299
+pl-k00089356;Manuel;Akanji;Manuel Akanji;Schweiz;DEFENDER;6000000;1.0;5.153;5.153
+pl-k00089361;Denis;Zakaria;Denis Zakaria;Schweiz;MIDFIELDER;4000000;0.5;5.153;2.576
+pl-k00089434;Xaver;Schlager;Xaver Schlager;Österreich;MIDFIELDER;4000000;1.0;4.093;4.093
+pl-k00089444;Marcus;Thuram;Marcus Thuram;Frankreich;FORWARD;6000000;0.4;6.138;2.455
+pl-k00089452;Laros Michael;d'Encarnacao Duarte;Laros Duarte;Kap Verde;MIDFIELDER;1000000;0.5;3.269;1.634
+pl-k00089457;Frenkie;de Jong;Frenkie de Jong;Niederlande;MIDFIELDER;6000000;0.75;5.244;3.933
+pl-k00089649;Ramy;Bensebaini;Ramy Bensebaini;Algerien;DEFENDER;4000000;1.0;3.712;3.712
+pl-k00089655;Ellyes;Skhiri;Ellyes Skhiri;Tunesien;MIDFIELDER;4000000;1.0;3.427;3.427
+pl-k00089781;Carlens;Arcus;Carlens Arcus;Haiti;DEFENDER;1000000;1.0;3.217;3.217
+pl-k00090003;Juninho;Bacuna;Juninho Bacuna;Curacao;MIDFIELDER;1000000;1.0;3.118;3.118
+pl-k00090018;Sofyan;Amrabat;Sofyan Amrabat;Marokko;MIDFIELDER;4000000;0.5;4.428;2.214
+pl-k00090022;Brandley;Kuwas;Brandley Kuwas;Curacao;FORWARD;1000000;0.0;3.118;0.0
+pl-k00090036;Ivan;Toney;Ivan Toney;England;FORWARD;4000000;0.0;5.644;0.0
+pl-k00090042;Marco;Friedl;Marco Friedl;Österreich;DEFENDER;4000000;0.5;4.093;2.046
+pl-k00090213;Stefan;Posch;Stefan Posch;Österreich;DEFENDER;4000000;0.0;4.093;0.0
+pl-k00090353;Abdülkerim;Bardakci;Abdülkerim Bardakci;Türkei;DEFENDER;4000000;1.0;4.927;4.927
+pl-k00090404;Nelson;Cabral Semedo;Nelson Semedo;Portugal;DEFENDER;2000000;0.0;5.275;0.0
+pl-k00090515;Fabian;Ruiz Pena;Fabian;Spanien;MIDFIELDER;6000000;0.4;6.495;2.598
+pl-k00090525;Jefferson;Lerma;Jefferson Lerma;Kolumbien;MIDFIELDER;4000000;1.0;5.185;5.185
+pl-k00090574;Dominik;Livakovic;Dominik Livakovic;Kroatien;GOALKEEPER;6000000;1.0;4.972;4.972
+pl-k00090698;Awer;Mabil;Awer Mabil;Australien;FORWARD;1000000;0.0;4.094;0.0
+pl-k00090788;Wataru;Endo;Wataru Endo;Japan;MIDFIELDER;4000000;0.0;4.859;0.0
+pl-k00090828;Kieran;Tierney;Kieran Tierney;Schottland;DEFENDER;4000000;0.0;4.145;0.0
+pl-k00090830;Jamiro Gregory;Monteiro Alvarenga;Jamiro Monteiro;Kap Verde;MIDFIELDER;1000000;0.0;3.269;0.0
+pl-k00090873;Caglar;Söyüncü;Caglar Söyüncü;Türkei;DEFENDER;2000000;0.0;4.927;0.0
+pl-k00090950;Kye;Rowles;Kye Rowles;Australien;DEFENDER;1000000;0.333;4.094;1.363
+pl-k00090958;Alisson;Ramses Becker;Alisson;Brasilien;GOALKEEPER;8000000;0.8;5.371;4.297
+pl-k00090996;Exequiel;Palacios;Exequiel Palacios;Argentinien;MIDFIELDER;4000000;0.0;6.094;0.0
+pl-k00091000;German;Berterame;German Berterame;Mexiko;FORWARD;2000000;0.0;4.867;0.0
+pl-k00091055;Mikel;Oyarzabal;Mikel Oyarzabal;Spanien;FORWARD;8000000;0.6;6.495;3.897
+pl-k00091083;Nikola;Moro;Nikola Moro;Kroatien;MIDFIELDER;2000000;0.0;4.972;0.0
+pl-k00091090;Kenny;McLean;Kenny McLean;Schottland;MIDFIELDER;2000000;0.0;4.145;0.0
+pl-k00091110;Axel;Tuanzebe;Axel Tuanzebe;DR Kongo;DEFENDER;2000000;1.0;3.381;3.381
+pl-k00091130;Patrick;Pentz;Patrick Pentz;Österreich;GOALKEEPER;2000000;0.0;4.093;0.0
+pl-k00091136;Dodi;Lukebakio;Dodi Lukebakio;Belgien;FORWARD;4000000;0.25;4.887;1.222
+pl-k00091137;Ousmane;Dembelé;Ousmane Dembelé;Frankreich;FORWARD;10000000;0.6;6.138;3.683
+pl-k00091194;Nihad;Mujakic;Nihad Mujakic;Bosnien-Herzegowina;DEFENDER;1000000;0.0;3.748;0.0
+pl-k00091289;Marcus;Rashford;Marcus Rashford;England;FORWARD;6000000;0.4;5.644;2.257
+pl-k00091305;Issa;Diop;Issa Diop;Marokko;DEFENDER;4000000;0.5;4.428;2.214
+pl-k00091368;Alban;Lafont;Alban Lafont;Elfenbeinküste;GOALKEEPER;2000000;0.0;3.871;0.0
+pl-k00091403;Hee-Chan;Hwang;Hee-Chan Hwang;Südkorea;MIDFIELDER;4000000;0.667;4.339;2.894
+pl-k00091409;Kylian;Mbappé;Kylian Mbappé;Frankreich;FORWARD;10000000;0.8;6.138;4.91
+pl-k00091463;Ryan;Christie;Ryan Christie;Schottland;MIDFIELDER;4000000;1.0;4.145;4.145
+pl-k00091537;Jules;Koundé;Jules Koundé;Frankreich;DEFENDER;6000000;0.6;6.138;3.683
+pl-k00091555;Eray;Cömert;Eray Cömert;Schweiz;DEFENDER;2000000;0.0;5.153;0.0
+pl-k00091959;Amir;Hadziahmetovic;Amir Hadziahmetovic;Bosnien-Herzegowina;MIDFIELDER;2000000;0.0;3.748;0.0
+pl-k00092246;Theo;Hernandez;Theo;Frankreich;DEFENDER;6000000;0.2;6.138;1.228
+pl-k00092347;Maxime;Crepeau;Maxime Crepeau;Kanada;GOALKEEPER;4000000;0.0;4.635;0.0
+pl-k00092690;Cedric;Itten;Cedric Itten;Schweiz;FORWARD;2000000;0.0;5.153;0.0
+pl-k00093122;Ruben Santos Gato Alves;Dias;Ruben Dias;Portugal;DEFENDER;8000000;0.8;5.275;4.22
+pl-k00093334;Joris;Kayembe;Joris Kayembe;DR Kongo;DEFENDER;1000000;0.0;3.381;0.0
+pl-k00093378;Edilson Alberto;Monteiro Sanches Borges;Diney;Kap Verde;DEFENDER;1000000;0.5;3.269;1.634
+pl-k00093439;Rui Tiago;Dantas da Silva;Rui Silva;Portugal;GOALKEEPER;2000000;0.0;5.275;0.0
+pl-k00093477;John;McGinn;John McGinn;Schottland;MIDFIELDER;4000000;1.0;4.145;4.145
+pl-k00093739;Haji;Wright;Haji Wright;USA;FORWARD;2000000;0.0;3.756;0.0
+pl-k00093752;Denzel;Dumfries;Denzel Dumfries;Niederlande;DEFENDER;6000000;1.0;5.244;5.244
+pl-k00093879;Charles;Pickel;Charles Pickel;DR Kongo;MIDFIELDER;1000000;0.0;3.381;0.0
+pl-k00093952;Marcio Salomao;Brazao Rosa;Marcio Rosa;Kap Verde;GOALKEEPER;2000000;0.0;3.269;0.0
+pl-k00094296;Brahim;Diaz;Brahim Diaz;Marokko;FORWARD;6000000;0.75;4.428;3.321
+pl-k00094309;John;Yeboah;John Yeboah;Ecuador;FORWARD;4000000;0.0;5.127;0.0
+pl-k00094312;Eric;Davis;Eric Davis;Panama;DEFENDER;1000000;0.5;3.91;1.955
+pl-k00094313;Roderick;Miller;Roderick Miller;Panama;DEFENDER;1000000;0.0;3.91;0.0
+pl-k00094314;Fidel;Escobar;Fidel Escobar;Panama;DEFENDER;1000000;0.0;3.91;0.0
+pl-k00094316;Alberto;Quintero;Alberto Quintero;Panama;MIDFIELDER;1000000;0.5;3.91;1.955
+pl-k00094317;Anibal;Godoy;Anibal Godoy;Panama;MIDFIELDER;2000000;0.5;3.91;1.955
+pl-k00094325;Ismael;Diaz;Ismael Diaz;Panama;FORWARD;1000000;0.5;3.91;1.955
+pl-k00094331;Miguel;Almiron;Miguel Almiron;Paraguay;MIDFIELDER;4000000;1.0;4.432;4.432
+pl-k00094503;Duckens;Nazon;Duckens Nazon;Haiti;FORWARD;1000000;0.5;3.217;1.609
+pl-k00094622;Yerry Fernando;Mina Gonzalez;Yerry Mina;Kolumbien;DEFENDER;2000000;0.0;5.185;0.0
+pl-k00094626;Jason;Geria;Jason Geria;Australien;DEFENDER;1000000;0.0;4.094;0.0
+pl-k00094807;Alexander;Isak;Alexander Isak;Schweden;FORWARD;8000000;0.5;3.784;1.892
+pl-k00094866;Raphael;Dias Belloli;Raphinha;Brasilien;FORWARD;10000000;0.6;5.371;3.223
+pl-k00094959;Romano;Schmid;Romano Schmid;Österreich;MIDFIELDER;4000000;0.5;4.093;2.046
+pl-k00095021;Diogo;Meireles Costa;Diogo Costa;Portugal;GOALKEEPER;8000000;0.4;5.275;2.11
+pl-k00095023;José Diogo;Dalot Teixeira;Diogo Dalot;Portugal;DEFENDER;4000000;0.2;5.275;1.055
+pl-k00095030;Christian;Fassnacht;Christian Fassnacht;Schweiz;MIDFIELDER;1000000;0.0;5.153;0.0
+pl-k00095063;Kristijan;Jakic;Kristijan Jakic;Kroatien;MIDFIELDER;2000000;0.0;4.972;0.0
+pl-k00095107;Ivan;Sunjic;Ivan Sunjic;Bosnien-Herzegowina;MIDFIELDER;2000000;1.0;3.748;3.748
+pl-k00095175;Ismail;Jakobs;Ismail Jakobs;Senegal;DEFENDER;2000000;0.25;4.562;1.14
+pl-k00095198;Anthony;Ralston;Anthony Ralston;Schottland;DEFENDER;2000000;0.0;4.145;0.0
+pl-k00095199;Kristoffer;Ajer;Kristoffer Ajer;Norwegen;DEFENDER;4000000;1.0;4.791;4.791
+pl-k00095254;Ibrahim;Sangaré;Ibrahim Sangaré;Elfenbeinküste;MIDFIELDER;4000000;1.0;3.871;3.871
+pl-k00095392;Yoane;Wissa;Yoane Wissa;DR Kongo;FORWARD;6000000;1.0;3.381;3.381
+pl-k00095393;Nicolas;Pepé;Nicolas Pepé;Elfenbeinküste;FORWARD;2000000;0.0;3.871;0.0
+pl-k00095547;Gustaf;Nilsson;Gustaf Nilsson;Schweden;FORWARD;2000000;0.0;3.784;0.0
+pl-k00095604;Fahad;Talib;Fahad Talib;Irak;GOALKEEPER;1000000;0.0;3.197;0.0
+pl-k00095650;Martin;Boyle;Martin Boyle;Australien;MIDFIELDER;1000000;0.333;4.094;1.363
+pl-k00095657;Giovani;Lo Celso;Giovani Lo Celso;Argentinien;MIDFIELDER;4000000;0.2;6.094;1.219
+pl-k00095671;Cesar;Montes;Cesar Montes;Mexiko;DEFENDER;4000000;1.0;4.867;4.867
+pl-k00095732;Deiver;Machado;Deiver Machado;Kolumbien;DEFENDER;1000000;0.0;5.185;0.0
+pl-k00095741;Ken;Sema;Ken Sema;Schweden;MIDFIELDER;1000000;0.0;3.784;0.0
+pl-k00095804;Stjepan;Radeljic;Stjepan Radeljic;Bosnien-Herzegowina;DEFENDER;2000000;0.0;3.748;0.0
+pl-k00095836;Baghdad;Bounedjah;Baghdad Bounedjah;Algerien;FORWARD;1000000;0.0;3.712;0.0
+pl-k00095892;Aubrey;Modiba;Aubrey Modiba;Südafrika;DEFENDER;2000000;0.5;3.312;1.656
+pl-k00095993;Muhammed;Sengezer;Muhammed Sengezer;Türkei;GOALKEEPER;1000000;0.0;4.927;0.0
+pl-k00096140;Nico;Schlotterbeck;Nico Schlotterbeck;Deutschland;DEFENDER;8000000;1.0;5.107;5.107
+pl-k00096154;Weverton;Pereira da Silva;Weverton;Brasilien;GOALKEEPER;2000000;0.0;5.371;0.0
+pl-k00096210;Eric;Smith;Eric Smith;Schweden;DEFENDER;2000000;0.0;3.784;0.0
+pl-k00096455;Saeid;Ezatolahi;Saeid Ezatolahi;Iran;MIDFIELDER;2000000;1.0;4.307;4.307
+pl-k00096489;Ferdi;Kadioglu;Ferdi Kadioglu;Türkei;DEFENDER;4000000;0.5;4.927;2.463
+pl-k00096513;Guus;Til;Guus Til;Niederlande;MIDFIELDER;4000000;0.0;5.244;0.0
+pl-k00096516;Sherel;Floranus;Sherel Floranus;Curacao;DEFENDER;1000000;1.0;3.118;3.118
+pl-k00096664;Edmilson Junior Paulo;da Silva;Edmilson Junior;Katar;FORWARD;2000000;0.5;3.208;1.604
+pl-k00096665;Angus;Gunn;Angus Gunn;Schottland;GOALKEEPER;2000000;0.5;4.145;2.073
+pl-k00096715;Davinson;Sanchez;Davinson Sanchez;Kolumbien;DEFENDER;4000000;1.0;5.185;5.185
+pl-k00096721;Anthony;Mandrea;Anthony Mandrea;Algerien;GOALKEEPER;1000000;0.0;3.712;0.0
+pl-k00096723;Ismaila;Sarr;Ismaila Sarr;Senegal;FORWARD;4000000;0.25;4.562;1.14
+pl-k00096767;Tomas;Soucek;Tomas Soucek;Tschechien;MIDFIELDER;6000000;1.0;4.208;4.208
+pl-k00096835;Leandro;Trossard;Leandro Trossard;Belgien;FORWARD;4000000;0.5;4.887;2.444
+pl-k00096877;Aiden;O'Neill;Aiden O'Neill;Australien;MIDFIELDER;2000000;0.333;4.094;1.363
+pl-k00096971;Akram;Afif;Akram Afif;Katar;FORWARD;4000000;0.5;3.208;1.604
+pl-k00097030;Ghislain;Konan;Ghislain Konan;Elfenbeinküste;DEFENDER;2000000;1.0;3.871;3.871
+pl-k00097143;Weston;McKennie;Weston McKennie;USA;MIDFIELDER;4000000;0.8;3.756;3.005
+pl-k00097277;Orbelin;Pineda;Orbelin Pineda;Mexiko;MIDFIELDER;2000000;0.5;4.867;2.434
+pl-k00097322;Michel;Aebischer;Michel Aebischer;Schweiz;MIDFIELDER;1000000;0.5;5.153;2.576
+pl-k00097376;Alexis;Guendouz;Alexis Guendouz;Algerien;GOALKEEPER;1000000;0.0;3.712;0.0
+pl-k00097512;Jean-Philippe;Mateta;Jean-Philippe Mateta;Frankreich;FORWARD;6000000;0.0;6.138;0.0
+pl-k00097518;Houssem;Aouar;Houssem Aouar;Algerien;MIDFIELDER;2000000;0.5;3.712;1.856
+pl-k00097593;Deroy;d'Encarnacao Duarte;Deroy Duarte;Kap Verde;MIDFIELDER;1000000;0.0;3.269;0.0
+pl-k00097599;John;Souttar;John Souttar;Schottland;DEFENDER;2000000;0.5;4.145;2.073
+pl-k00097772;Jesus;Gallardo;Jesus Gallardo;Mexiko;DEFENDER;2000000;0.75;4.867;3.65
+pl-k00097808;Christopher;Operi;Christopher Operi;Elfenbeinküste;DEFENDER;999000000;0.0;3.871;0.0
+pl-k00097868;Merih;Demiral;Merih Demiral;Türkei;DEFENDER;2000000;0.5;4.927;2.463
+pl-k00098067;Edson;Alvarez;Edson Alvarez;Mexiko;MIDFIELDER;4000000;0.25;4.867;1.217
+pl-k00098095;Justin;Kluivert;Justin Kluivert;Niederlande;MIDFIELDER;4000000;0.0;5.244;0.0
+pl-k00098133;Aaron;Wan-Bissaka;Aaron Wan-Bissaka;DR Kongo;DEFENDER;4000000;1.0;3.381;3.381
+pl-k00098162;Declan;Rice;Declan Rice;England;MIDFIELDER;8000000;0.6;5.644;3.386
+pl-k00098210;Karim;Hafez;Karim Hafez;Ägypten;DEFENDER;2000000;0.0;3.946;0.0
+pl-k00098226;Munir Mohand;Mohamedi El Kajoui;Munir;Marokko;GOALKEEPER;2000000;0.0;4.428;0.0
+pl-k00098238;Meschack;Elia;Meschack Elia;DR Kongo;MIDFIELDER;2000000;1.0;3.381;3.381
+pl-k00098347;Saman;Ghoddos;Saman Ghoddos;Iran;MIDFIELDER;2000000;1.0;4.307;4.307
+pl-k00098354;Ismael;Bennacer;Ismael Bennacer;Algerien;MIDFIELDER;4000000;0.5;3.712;1.856
+pl-k00098506;Andres;Cubas;Andres Cubas;Paraguay;MIDFIELDER;4000000;0.5;4.432;2.216
+pl-k00098535;Ahmed;Sayed;Zizo;Ägypten;MIDFIELDER;2000000;0.5;3.946;1.973
+pl-k00098554;Achraf;Hakimi;Achraf Hakimi;Marokko;DEFENDER;8000000;1.0;4.428;4.428
+pl-k00098565;Aaron;Tshibola;Aaron Tshibola;DR Kongo;MIDFIELDER;1000000;0.0;3.381;0.0
+pl-k00098653;Hannes;Delcroix;Hannes Delcroix;Haiti;DEFENDER;2000000;0.5;3.217;1.609
+pl-k00098656;Sander;Berge;Sander Berge;Norwegen;MIDFIELDER;4000000;1.0;4.791;4.791
+pl-k00098820;Gabriel;dos Santos Magalhaes;Gabriel;Brasilien;DEFENDER;6000000;0.2;5.371;1.074
+pl-k00098854;Pervis;Estupinan;Pervis Estupinan;Ecuador;DEFENDER;6000000;1.0;5.127;5.127
+pl-k00098905;Miro;Muheim;Miro Muheim;Schweiz;DEFENDER;2000000;0.0;5.153;0.0
+pl-k00099269;Auston;Trusty;Auston Trusty;USA;DEFENDER;2000000;0.4;3.756;1.502
+pl-k00099308;Miles;Robinson;Miles Robinson;USA;DEFENDER;2000000;0.0;3.756;0.0
+pl-k00099343;Michael Amir;Murillo;Michael Amir Murillo;Panama;DEFENDER;4000000;1.0;3.91;3.91
+pl-k00099347;Tyler;Adams;Tyler Adams;USA;MIDFIELDER;4000000;0.8;3.756;3.005
+pl-k00099350;Derrick;Etienne Jr.;Derrick Etienne Jr.;Haiti;FORWARD;1000000;0.0;3.217;0.0
+pl-k00099370;Richie;Laryea;Richie Laryea;Kanada;DEFENDER;4000000;0.5;4.635;2.318
+pl-k00099403;Cristian;Roldan;Cristian Roldan;USA;MIDFIELDER;2000000;0.0;3.756;0.0
+pl-k00099454;Cristian;Martinez;Cristian Martinez;Panama;MIDFIELDER;2000000;0.5;3.91;1.955
+pl-k00099476;Matt;Turner;Matt Turner;USA;GOALKEEPER;2000000;0.4;3.756;1.502
+pl-k00099583;Alphonso;Davies;Alphonso Davies;Kanada;DEFENDER;6000000;0.75;4.635;3.477
+pl-k00099757;Mattias;Svanberg;Mattias Svanberg;Schweden;MIDFIELDER;4000000;0.0;3.784;0.0
+pl-k00099758;Dennis;Hadzikadunic;Dennis Hadzikadunic;Bosnien-Herzegowina;DEFENDER;2000000;0.0;3.748;0.0
+pl-k00099888;Jean-Kevin;Duverne;Jean-Kevin Duverne;Haiti;DEFENDER;2000000;0.5;3.217;1.609
+pl-k00099891;Jean-Ricner;Bellegarde;Jean-Ricner Bellegarde;Haiti;MIDFIELDER;2000000;0.5;3.217;1.609
+pl-k00099911;Rodrigo;Bentancur;Rodrigo Bentancur;Uruguay;MIDFIELDER;4000000;0.5;4.658;2.329
+pl-k00100096;Scott;McTominay;Scott McTominay;Schottland;MIDFIELDER;6000000;1.0;4.145;4.145
+pl-k00100132;Leonardo;Pereira;Leo Pereira;Brasilien;DEFENDER;2000000;0.2;5.371;1.074
+pl-k00100297;Amine;Gouiri;Amine Gouiri;Algerien;FORWARD;4000000;0.5;3.712;1.856
+pl-k00100385;Angel;Romero;Angel Romero;Paraguay;FORWARD;1000000;0.0;4.432;0.0
+pl-k00100539;Billy;Gilmour;Billy Gilmour;Schottland;MIDFIELDER;4000000;0.5;4.145;2.073
+pl-k00100729;Lucas Tolentino;Coelho de Lima;Lucas Paqueta;Brasilien;MIDFIELDER;6000000;0.2;5.371;1.074
+pl-k00100735;Vinicius José;Paixao de Oliveira Junior;Vinicius Junior;Brasilien;FORWARD;10000000;0.6;5.371;3.223
+pl-k00100766;Pedro;Lomba Neto;Pedro Neto;Portugal;FORWARD;6000000;0.2;5.275;1.055
+pl-k00100775;Eric;Garcia Martret;Eric;Spanien;DEFENDER;4000000;0.0;6.495;0.0
+pl-k00100782;Ferran;Torres Garcia;Ferran Torres;Spanien;FORWARD;6000000;0.4;6.495;2.598
+pl-k00100789;Marc;Guehi;Marc Guehi;England;DEFENDER;6000000;1.0;5.644;5.644
+pl-k00100804;Ozan;Kabak;Ozan Kabak;Türkei;DEFENDER;4000000;0.5;4.927;2.463
+pl-k00100814;Yunus;Akgün;Yunus Akgün;Türkei;FORWARD;4000000;0.0;4.927;0.0
+pl-k00100992;Riley;McGree;Riley McGree;Australien;MIDFIELDER;2000000;0.667;4.094;2.73
+pl-k00101025;Michael;Boxall;Michael Boxall;Neuseeland;DEFENDER;1000000;0.5;3.461;1.73
+pl-k00101031;Alex;Rufer;Alex Rufer;Neuseeland;MIDFIELDER;1000000;0.5;3.461;1.73
+pl-k00101100;Takefusa;Kubo;Takefusa Kubo;Japan;MIDFIELDER;6000000;0.667;4.859;3.241
+pl-k00101109;Nikola;Katic;Nikola Katic;Bosnien-Herzegowina;DEFENDER;4000000;1.0;3.748;3.748
+pl-k00101120;Yehvann;Diouf;Yehvann Diouf;Senegal;GOALKEEPER;2000000;0.0;4.562;0.0
+pl-k00101133;Dean;Henderson;Dean Henderson;England;GOALKEEPER;2000000;0.0;5.644;0.0
+pl-k00101135;Ezri;Konsa;Ezri Konsa;England;DEFENDER;8000000;0.4;5.644;2.257
+pl-k00101264;Tomas;Chory;Tomas Chory;Tschechien;FORWARD;2000000;0.0;4.208;0.0
+pl-k00101284;Santiago;Bueno;Santiago Bueno;Uruguay;DEFENDER;2000000;0.0;4.658;0.0
+pl-k00101285;Santiago;Mele;Santiago Mele;Uruguay;GOALKEEPER;1000000;0.0;4.658;0.0
+pl-k00101287;José Luis;Rodriguez;José Luis Rodriguez;Uruguay;DEFENDER;1000000;0.0;4.658;0.0
+pl-k00101288;Mathias;Olivera;Mathias Olivera;Uruguay;DEFENDER;4000000;1.0;4.658;4.658
+pl-k00101293;Nicolas;de la Cruz;Nicolas de la Cruz;Uruguay;MIDFIELDER;2000000;0.0;4.658;0.0
+pl-k00101298;Federico Santiago;Valverde Dipetta;Fede Valverde;Uruguay;MIDFIELDER;8000000;1.0;4.658;4.658
+pl-k00101299;Matias;Vina;Matias Vina;Uruguay;DEFENDER;2000000;0.0;4.658;0.0
+pl-k00101301;Agustin;Canobbio;Agustin Canobbio;Uruguay;FORWARD;2000000;0.5;4.658;2.329
+pl-k00101347;Nicolas;Tagliafico;Nicolas Tagliafico;Argentinien;DEFENDER;4000000;0.6;6.094;3.656
+pl-k00101356;Ibrahima;Konaté;Ibrahima Konaté;Frankreich;DEFENDER;6000000;0.0;6.138;0.0
+pl-k00101378;Bruno;Guimaraes Rodriguez Moura;Bruno Guimaraes;Brasilien;MIDFIELDER;6000000;0.8;5.371;4.297
+pl-k00101481;Daichi;Kamada;Daichi Kamada;Japan;MIDFIELDER;6000000;1.0;4.859;4.859
+pl-k00101588;Viktor;Johansson;Viktor Johansson;Schweden;GOALKEEPER;2000000;0.0;3.784;0.0
+pl-k00101599;Viktor;Gyökeres;Viktor Gyökeres;Schweden;FORWARD;8000000;1.0;3.784;3.784
+pl-k00101605;Gleison Bremer;Silva Nascimento;Bremer;Brasilien;DEFENDER;4000000;0.0;5.371;0.0
+pl-k00101629;Rafael Alexandre;da Conceicao Leao;Rafael Leao;Portugal;FORWARD;6000000;0.8;5.275;4.22
+pl-k00101633;Armando;Obispo;Armando Obispo;Curacao;DEFENDER;2000000;0.5;3.118;1.559
+pl-k00101636;Teun;Koopmeiners;Teun Koopmeiners;Niederlande;MIDFIELDER;4000000;0.0;5.244;0.0
+pl-k00101638;Noa;Lang;Noa Lang;Niederlande;FORWARD;4000000;0.0;5.244;0.0
+pl-k00101663;Reece;James;Reece James;England;DEFENDER;6000000;0.4;5.644;2.257
+pl-k00101765;Sasa;Kalajdzic;Sasa Kalajdzic;Österreich;FORWARD;2000000;0.0;4.093;0.0
+pl-k00101781;Matheus;Santos Carneiro de Cunha;Matheus Cunha;Brasilien;FORWARD;8000000;0.6;5.371;3.223
+pl-k00101783;Ruben;Vargas;Ruben Vargas;Schweiz;FORWARD;4000000;1.0;5.153;5.153
+pl-k00101913;Edgar Yoel;Barcenas;Edgar Yoel Barcenas;Panama;MIDFIELDER;2000000;0.0;3.91;0.0
+pl-k00101917;Orlando;Mosquera;Orlando Mosquera;Panama;GOALKEEPER;4000000;0.5;3.91;1.955
+pl-k00102015;Jurien;Gaari;Jurien Gaari;Curacao;DEFENDER;1000000;1.0;3.118;3.118
+pl-k00102117;Moussa;Niakhaté;Moussa Niakhaté;Senegal;DEFENDER;4000000;0.75;4.562;3.421
+pl-k00102402;Donyell;Malen;Donyell Malen;Niederlande;FORWARD;6000000;1.0;5.244;5.244
+pl-k00102731;Josip;Stanisic;Josip Stanisic;Kroatien;DEFENDER;6000000;0.5;4.972;2.486
+pl-k00102793;Nuno Miguel;da Costa Joia;Nuno da Costa;Kap Verde;FORWARD;1000000;0.5;3.269;1.634
+pl-k00102800;Christoph;Baumgartner;Christoph Baumgartner;Österreich;MIDFIELDER;6000000;1.0;4.093;4.093
+pl-k00102817;Ritsu;Doan;Ritsu Doan;Japan;MIDFIELDER;6000000;0.667;4.859;3.241
+pl-k00103233;Samuel;Moutoussamy;Samuel Moutoussamy;DR Kongo;MIDFIELDER;2000000;1.0;3.381;3.381
+pl-k00103347;Marco;Pasalic;Marco Pasalic;Kroatien;FORWARD;1000000;0.0;4.972;0.0
+pl-k00103453;Tijjani;Reijnders;Tijjani Reijnders;Niederlande;MIDFIELDER;6000000;0.75;5.244;3.933
+pl-k00103601;Trevor;Doornbusch;Trevor Doornbusch;Curacao;GOALKEEPER;1000000;0.0;3.118;0.0
+pl-k00103776;Yusuf;Sari;Yusuf Sari;Türkei;FORWARD;2000000;0.0;4.927;0.0
+pl-k00103853;Min-Jae;Kim;Min-Jae Kim;Südkorea;DEFENDER;6000000;1.0;4.339;4.339
+pl-k00103860;Hyeon-Woo;Jo;Hyeon-Woo Jo;Südkorea;GOALKEEPER;1000000;0.0;4.339;0.0
+pl-k00103878;Omar;Marmoush;Omar Marmoush;Ägypten;FORWARD;8000000;0.5;3.946;1.973
+pl-k00104033;Gideon;Mensah;Gideon Mensah;Ghana;DEFENDER;2000000;0.5;3.134;1.567
+pl-k00104228;Ramin;Rezaeian;Ramin Rezaeian;Iran;DEFENDER;1000000;0.0;4.307;0.0
+pl-k00104230;Nicolas;Raskin;Nicolas Raskin;Belgien;MIDFIELDER;2000000;0.0;4.887;0.0
+pl-k00104271;Harry;Souttar;Harry Souttar;Australien;DEFENDER;2000000;0.667;4.094;2.73
+pl-k00104274;Elisha;Owusu;Elisha Owusu;Ghana;MIDFIELDER;2000000;0.0;3.134;0.0
+pl-k00104317;Angelo;Stiller;Angelo Stiller;Deutschland;MIDFIELDER;4000000;0.2;5.107;1.021
+pl-k00104437;Amirhossein;Hosseinzadeh;Amirhossein Hosseinzadeh;Iran;FORWARD;2000000;1.0;4.307;4.307
+pl-k00104441;Martin;Zlomislic;Martin Zlomislic;Bosnien-Herzegowina;GOALKEEPER;2000000;0.0;3.748;0.0
+pl-k00104485;Julian;Ryerson;Julian Ryerson;Norwegen;DEFENDER;6000000;1.0;4.791;4.791
+pl-k00104568;Mohammed;Al-Owais;Mohammed Al-Owais;Saudi-Arabien;GOALKEEPER;2000000;0.0;3.324;0.0
+pl-k00104581;Salem;Al-Dawsari;Salem Al-Dawsari;Saudi-Arabien;MIDFIELDER;2000000;1.0;3.324;3.324
+pl-k00104617;Jaminton;Campaz;Jaminton Campaz;Kolumbien;MIDFIELDER;2000000;0.0;5.185;0.0
+pl-k00104723;Milad;Mohammadi;Milad Mohammadi;Iran;DEFENDER;2000000;0.5;4.307;2.154
+pl-k00104727;Hossein;Kanaani;Hossein Kanaani;Iran;DEFENDER;2000000;0.0;4.307;0.0
+pl-k00104729;Mehdi;Torabi;Mehdi Torabi;Iran;MIDFIELDER;1000000;0.0;4.307;0.0
+pl-k00104730;Rouzbeh;Cheshmi;Rouzbeh Cheshmi;Iran;MIDFIELDER;1000000;0.0;4.307;0.0
+pl-k00104735;Mehdi;Taremi;Mehdi Taremi;Iran;FORWARD;4000000;1.0;4.307;4.307
+pl-k00104808;Max;Crocombe;Max Crocombe;Neuseeland;GOALKEEPER;2000000;1.0;3.461;3.461
+pl-k00104953;José;Fajardo;José Fajardo;Panama;FORWARD;2000000;0.0;3.91;0.0
+pl-k00104975;Keito;Nakamura;Keito Nakamura;Japan;MIDFIELDER;4000000;1.0;4.859;4.859
+pl-k00104978;Adam;Hlozek;Adam Hlozek;Tschechien;FORWARD;4000000;0.0;4.208;0.0
+pl-k00105008;Callum;McCowatt;Callum McCowatt;Neuseeland;MIDFIELDER;2000000;0.0;3.461;0.0
+pl-k00105138;Ahmed Reda;Tagnaouti;Ahmed Reda Tagnaouti;Marokko;GOALKEEPER;1000000;0.0;4.428;0.0
+pl-k00105180;Jamie;Leweling;Jamie Leweling;Deutschland;MIDFIELDER;4000000;0.0;5.107;0.0
+pl-k00105212;Ersin;Destanoglu;Ersin Destanoglu;Türkei;GOALKEEPER;1000000;0.0;4.927;0.0
+pl-k00105223;Anthony;Gordon;Anthony Gordon;England;FORWARD;6000000;0.2;5.644;1.129
+pl-k00105391;Junya;Ito;Junya Ito;Japan;MIDFIELDER;2000000;0.333;4.859;1.618
+pl-k00105434;Noussair;Mazraoui;Noussair Mazraoui;Marokko;DEFENDER;4000000;1.0;4.428;4.428
+pl-k00105471;Jacob;Italiano;Jacob Italiano;Australien;DEFENDER;2000000;0.333;4.094;1.363
+pl-k00105695;Abdullah;Al-Hamdan;Abdullah Al-Hamdan;Saudi-Arabien;FORWARD;1000000;0.0;3.324;0.0
+pl-k00105718;Mustafa;Eskihellac;Mustafa Eskihellac;Türkei;DEFENDER;2000000;0.0;4.927;0.0
+pl-k00105800;Stephen;Eustaquio;Stephen Eustaquio;Kanada;MIDFIELDER;4000000;0.75;4.635;3.477
+pl-k00105812;Cody;Gakpo;Cody Gakpo;Niederlande;FORWARD;8000000;1.0;5.244;5.244
+pl-k00105828;Ali;Abdi;Ali Abdi;Tunesien;DEFENDER;2000000;1.0;3.427;3.427
+pl-k00105829;Dylan;Bronn;Dylan Bronn;Tunesien;DEFENDER;2000000;1.0;3.427;3.427
+pl-k00105836;Firas;Chaouat;Firas Chaouat;Tunesien;FORWARD;1000000;0.0;3.427;0.0
+pl-k00105876;Jack;Hendry;Jack Hendry;Schottland;DEFENDER;2000000;0.0;4.145;0.0
+pl-k00105950;Seyed Hossein;Hosseini;Seyed Hossein Hosseini;Iran;GOALKEEPER;1000000;0.5;4.307;2.154
+pl-k00105955;Omid;Noorafkan;Omid Noorafkan;Iran;MIDFIELDER;1000000;0.0;4.307;0.0
+pl-k00105961;Ali;Alipour;Ali Alipour;Iran;FORWARD;2000000;0.0;4.307;0.0
+pl-k00105983;Aurelien;Tchouameni;Aurelien Tchouameni;Frankreich;MIDFIELDER;8000000;0.8;6.138;4.91
+pl-k00106053;Roshon;van Eijma;Roshon van Eijma;Curacao;DEFENDER;1000000;0.5;3.118;1.559
+pl-k00106067;Alejandro;Romero Gamarra;Kaku;Paraguay;MIDFIELDER;2000000;0.0;4.432;0.0
+pl-k00106087;Ko;Itakura;Ko Itakura;Japan;DEFENDER;4000000;0.667;4.859;3.241
+pl-k00106091;Ao;Tanaka;Ao Tanaka;Japan;MIDFIELDER;4000000;0.333;4.859;1.618
+pl-k00106095;Mark;McKenzie;Mark McKenzie;USA;DEFENDER;4000000;0.4;3.756;1.502
+pl-k00106109;Mohamed;Kanno;Mohamed Kanno;Saudi-Arabien;MIDFIELDER;2000000;1.0;3.324;3.324
+pl-k00106186;Abdulquddus;Atiah;Abdulquddus Atiah;Saudi-Arabien;GOALKEEPER;1000000;0.0;3.324;0.0
+pl-k00106205;Yukinari;Sugawara;Yukinari Sugawara;Japan;DEFENDER;2000000;0.0;4.859;0.0
+pl-k00106358;Hiroki;Ito;Hiroki Ito;Japan;DEFENDER;4000000;0.333;4.859;1.618
+pl-k00106359;Koki;Ogawa;Koki Ogawa;Japan;FORWARD;2000000;0.0;4.859;0.0
+pl-k00106362;Timothy;Weah;Timothy Weah;USA;MIDFIELDER;4000000;0.6;3.756;2.254
+pl-k00106538;Keisuke;Osako;Keisuke Osako;Japan;GOALKEEPER;1000000;0.333;4.859;1.618
+pl-k00106559;Abdullah;Al-Khaibari;Abdullah Al-Khaibari;Saudi-Arabien;MIDFIELDER;1000000;0.5;3.324;1.662
+pl-k00106597;Ayoub;El Kaabi;Ayoub El Kaabi;Marokko;FORWARD;4000000;0.75;4.428;3.321
+pl-k00106599;Mohamed;El-Shenawy;Mohamed El-Shenawy;Ägypten;GOALKEEPER;2000000;0.0;3.946;0.0
+pl-k00106676;Lautaro;Martinez;Lautaro Martinez;Argentinien;FORWARD;8000000;0.4;6.094;2.438
+pl-k00106680;Roger;Ibanez da Silva;Roger Ibanez;Brasilien;DEFENDER;4000000;0.2;5.371;1.074
+pl-k00106698;Nick;Woltemade;Nick Woltemade;Deutschland;FORWARD;6000000;0.2;5.107;1.021
+pl-k00106891;Mehmet Zeki;Celik;Mehmet Zeki Celik;Türkei;DEFENDER;4000000;1.0;4.927;4.927
+pl-k00106912;Edouard;Mendy;Edouard Mendy;Senegal;GOALKEEPER;4000000;0.5;4.562;2.281
+pl-k00106928;Felix;Nmecha;Felix Nmecha;Deutschland;MIDFIELDER;4000000;0.0;5.107;0.0
+pl-k00106946;Leo;Östigaard;Leo Östigaard;Norwegen;DEFENDER;2000000;0.0;4.791;0.0
+pl-k00107005;Orkun;Kökcü;Orkun Kökcü;Türkei;MIDFIELDER;4000000;0.5;4.927;2.463
+pl-k00107290;Rayan;Ait Nouri;Rayan Ait Nouri;Algerien;DEFENDER;4000000;1.0;3.712;3.712
+pl-k00107395;Liam;Millar;Liam Millar;Kanada;MIDFIELDER;2000000;0.25;4.635;1.159
+pl-k00107513;Noah;Okafor;Noah Okafor;Schweiz;FORWARD;4000000;0.0;5.153;0.0
+pl-k00107564;Adalberto;Carrasquilla;Adalberto Carrasquilla;Panama;MIDFIELDER;2000000;0.0;3.91;0.0
+pl-k00107692;Jamal;Musiala;Jamal Musiala;Deutschland;MIDFIELDER;8000000;0.8;5.107;4.085
+pl-k00107693;Florian;Wirtz;Florian Wirtz;Deutschland;MIDFIELDER;10000000;1.0;5.107;5.107
+pl-k00107767;Joan;Garcia;Joan Garcia;Spanien;GOALKEEPER;2000000;0.0;6.495;0.0
+pl-k00107833;Brian;Brobbey;Brian Brobbey;Niederlande;FORWARD;6000000;0.25;5.244;1.311
+pl-k00107834;Jurrien;Timber;Jurrien Timber;Niederlande;DEFENDER;6000000;0.25;5.244;1.311
+pl-k00107835;Quinten;Timber;Quinten Timber;Niederlande;MIDFIELDER;4000000;0.0;5.244;0.0
+pl-k00107846;Crysencio;Summerville;Crysencio Summerville;Niederlande;FORWARD;4000000;0.0;5.244;0.0
+pl-k00107848;Shurandy;Sambo;Shurandy Sambo;Curacao;DEFENDER;1000000;0.5;3.118;1.559
+pl-k00108054;Godfried;Roemeratoe;Godfried Roemeratoe;Curacao;MIDFIELDER;1000000;0.0;3.118;0.0
+pl-k00108107;Goncalo Matias;Ramos;Goncalo Ramos;Portugal;FORWARD;4000000;0.2;5.275;1.055
+pl-k00108112;Altay;Bayindir;Altay Bayindir;Türkei;GOALKEEPER;2000000;0.0;4.927;0.0
+pl-k00108337;Juan Camilo;Hernandez;Cucho Hernandez;Kolumbien;FORWARD;4000000;0.0;5.185;0.0
+pl-k00108493;José Luis;Rodriguez;José Luis Rodriguez;Panama;MIDFIELDER;2000000;0.0;3.91;0.0
+pl-k00108624;Leverton;Pierre;Leverton Pierre;Haiti;MIDFIELDER;1000000;0.5;3.217;1.609
+pl-k00108633;Antonee;Robinson;Antonee Robinson;USA;DEFENDER;4000000;0.6;3.756;2.254
+pl-k00108669;Kevin;Yakob;Kevin Yakob;Irak;MIDFIELDER;1000000;0.0;3.197;0.0
+pl-k00108822;Erling;Haaland;Erling Haaland;Norwegen;FORWARD;10000000;1.0;4.791;4.791
+pl-k00109674;Malik;Tillman;Malik Tillman;USA;MIDFIELDER;4000000;0.6;3.756;2.254
+pl-k00110076;Mert;Müldür;Mert Müldür;Türkei;DEFENDER;2000000;0.0;4.927;0.0
+pl-k00110095;Yassin;Fortuné;Yassin Fortuné;Haiti;FORWARD;1000000;0.0;3.217;0.0
+pl-k00110131;Francisco Antonio;Machado Mota Castro Trincao;Trincao;Portugal;FORWARD;4000000;0.2;5.275;1.055
+pl-k00110134;Yan;Valery;Yan Valery;Tunesien;DEFENDER;2000000;1.0;3.427;3.427
+pl-k00110177;Evan;Ndicka;Evan Ndicka;Elfenbeinküste;DEFENDER;4000000;0.5;3.871;1.935
+pl-k00110243;Ryan;Gravenberch;Ryan Gravenberch;Niederlande;MIDFIELDER;8000000;0.75;5.244;3.933
+pl-k00110300;Nicolas;Gonzalez;Nicolas Gonzalez;Argentinien;MIDFIELDER;6000000;0.2;6.094;1.219
+pl-k00110311;Chris;Richards;Chris Richards;USA;DEFENDER;4000000;0.8;3.756;3.005
+pl-k00110341;Pavel;Bucha;Pavel Bucha;Tschechien;MIDFIELDER;2000000;0.0;4.208;0.0
+pl-k00110344;Jaroslav;Zeleny;Jaroslav Zeleny;Tschechien;DEFENDER;2000000;0.5;4.208;2.104
+pl-k00110515;Mathieu;Choiniere;Mathieu Choiniere;Kanada;MIDFIELDER;2000000;0.25;4.635;1.159
+pl-k00110564;Juan Manuel;Sanabria;Juan Manuel Sanabria;Uruguay;MIDFIELDER;2000000;0.0;4.658;0.0
+pl-k00110616;Joao Felix;Sequeira;Joao Felix;Portugal;FORWARD;4000000;0.0;5.275;0.0
+pl-k00110655;Jovane Eduardo;Borges Cabral;Jovane Cabral;Kap Verde;FORWARD;1000000;0.0;3.269;0.0
+pl-k00110676;Amadou;Onana;Amadou Onana;Belgien;MIDFIELDER;6000000;0.5;4.887;2.444
+pl-k00110713;Krepin;Diatta;Krepin Diatta;Senegal;DEFENDER;2000000;0.5;4.562;2.281
+pl-k00110782;Alexis;Saelemaekers;Alexis Saelemaekers;Belgien;FORWARD;4000000;0.0;4.887;0.0
+pl-k00110802;Edo;Kayembe;Edo Kayembe;DR Kongo;MIDFIELDER;2000000;0.0;3.381;0.0
+pl-k00110835;Omar;Rekik;Omar Rekik;Tunesien;DEFENDER;2000000;0.0;3.427;0.0
+pl-k00110836;Jonathan;David;Jonathan David;Kanada;FORWARD;6000000;0.25;4.635;1.159
+pl-k00110964;Juan;Musso;Juan Musso;Argentinien;GOALKEEPER;1000000;0.0;6.094;0.0
+pl-k00111030;Alfie;Jones;Alfie Jones;Kanada;DEFENDER;2000000;0.0;4.635;0.0
+pl-k00111092;Musa;Al-Taamari;Musa Al-Taamari;Jordanien;FORWARD;2000000;0.0;3.491;0.0
+pl-k00111104;Malick;Thiaw;Malick Thiaw;Deutschland;DEFENDER;4000000;0.0;5.107;0.0
+pl-k00111248;Montassar;Talbi;Montassar Talbi;Tunesien;DEFENDER;2000000;1.0;3.427;3.427
+pl-k00111286;Nayef;Aguerd;Nayef Aguerd;Marokko;DEFENDER;6000000;1.0;4.428;4.428
+pl-k00111312;Michael;Woud;Michael Woud;Neuseeland;GOALKEEPER;1000000;0.0;3.461;0.0
+pl-k00111322;Wilson;Isidor;Wilson Isidor;Haiti;FORWARD;4000000;0.5;3.217;1.609
+pl-k00111323;Youcef;Atal;Youcef Atal;Algerien;DEFENDER;2000000;0.0;3.712;0.0
+pl-k00111352;William;Saliba;William Saliba;Frankreich;DEFENDER;8000000;0.8;6.138;4.91
+pl-k00111363;Kang-In;Lee;Kang-In Lee;Südkorea;MIDFIELDER;6000000;1.0;4.339;4.339
+pl-k00111483;Pedro Antonio;Porro Sauceda;Pedro Porro;Spanien;DEFENDER;4000000;0.4;6.495;2.598
+pl-k00111568;Cristian;Romero;Cristian Romero;Argentinien;DEFENDER;6000000;0.6;6.094;3.656
+pl-k00111572;Bradley;Cross;Bradley Cross;Südafrika;DEFENDER;1000000;0.0;3.312;0.0
+pl-k00111733;Lewis;Ferguson;Lewis Ferguson;Schottland;MIDFIELDER;4000000;0.5;4.145;2.073
+pl-k00111774;Abdul;Mumin;Abdul Mumin;Ghana;DEFENDER;2000000;0.0;3.134;0.0
+pl-k00111857;Seung-Ho;Paik;Seung-Ho Paik;Südkorea;MIDFIELDER;2000000;0.0;4.339;0.0
+pl-k00111860;Ivor;Pandur;Ivor Pandur;Kroatien;GOALKEEPER;1000000;0.0;4.972;0.0
+pl-k00111988;Jorge;Sanchez;Jorge Sanchez;Mexiko;DEFENDER;2000000;0.75;4.867;3.65
+pl-k00112075;Moon-Hwan;Kim;Moon-Hwan Kim;Südkorea;DEFENDER;1000000;0.333;4.339;1.445
+pl-k00112076;In-Beom;Hwang;In-Beom Hwang;Südkorea;MIDFIELDER;4000000;0.667;4.339;2.894
+pl-k00112077;Diego;Lainez;Diego Lainez;Mexiko;MIDFIELDER;1000000;0.0;4.867;0.0
+pl-k00112079;Roberto;Alvarado;Roberto Alvarado;Mexiko;FORWARD;4000000;0.75;4.867;3.65
+pl-k00112080;Dan;Ndoye;Dan Ndoye;Schweiz;FORWARD;4000000;1.0;5.153;5.153
+pl-k00112101;Nathan;Patterson;Nathan Patterson;Schottland;DEFENDER;2000000;0.0;4.145;0.0
+pl-k00112135;Jhon;Lucumi;Jhon Lucumi;Kolumbien;DEFENDER;4000000;0.5;5.185;2.593
+pl-k00112426;Jörgen;Strand Larsen;Jörgen Strand Larsen;Norwegen;FORWARD;4000000;0.0;4.791;0.0
+pl-k00112730;Jens;Castrop;Jens Castrop;Südkorea;DEFENDER;2000000;0.333;4.339;1.445
+pl-k00112780;Takehiro;Tomiyasu;Takehiro Tomiyasu;Japan;DEFENDER;4000000;0.333;4.859;1.618
+pl-k00112823;Tahith;Chong;Tahith Chong;Curacao;FORWARD;2000000;0.0;3.118;0.0
+pl-k00112868;Eldor;Shomurodov;Eldor Shomurodov;Usbekistan;FORWARD;4000000;1.0;3.696;3.696
+pl-k00112929;Jan Paul;van Hecke;Jan Paul van Hecke;Niederlande;DEFENDER;4000000;0.0;5.244;0.0
+pl-k00112936;Dominik;Kotarski;Dominik Kotarski;Kroatien;GOALKEEPER;2000000;0.0;4.972;0.0
+pl-k00113011;Dostonbek;Khamdamov;Dostonbek Khamdamov;Usbekistan;FORWARD;1000000;0.0;3.696;0.0
+pl-k00113069;Timothy;Fayulu;Timothy Fayulu;DR Kongo;GOALKEEPER;1000000;0.0;3.381;0.0
+pl-k00113146;Andres;Andrade;Andres Andrade;Panama;DEFENDER;2000000;0.0;3.91;0.0
+pl-k00113163;Gonzalo;Montiel;Gonzalo Montiel;Argentinien;DEFENDER;2000000;0.4;6.094;2.438
+pl-k00113179;Julian;Alvarez;Julian Alvarez;Argentinien;FORWARD;8000000;0.8;6.094;4.875
+pl-k00113185;Joe;Scally;Joe Scally;USA;DEFENDER;2000000;0.0;3.756;0.0
+pl-k00113214;Morgan;Rogers;Morgan Rogers;England;MIDFIELDER;6000000;0.4;5.644;2.257
+pl-k00113407;Bukayo;Saka;Bukayo Saka;England;FORWARD;8000000;0.8;5.644;4.515
+pl-k00113426;Alejandro;Zendejas;Alejandro Zendejas;USA;MIDFIELDER;2000000;0.2;3.756;0.751
+pl-k00113510;Alvaro;Fidalgo;Alvaro Fidalgo;Mexiko;MIDFIELDER;2000000;0.5;4.867;2.434
+pl-k00113695;Payam;Niazmand;Payam Niazmand;Iran;GOALKEEPER;1000000;0.0;4.307;0.0
+pl-k00113749;Jalal;Hassan;Jalal Hassan;Irak;GOALKEEPER;1000000;0.0;3.197;0.0
+pl-k00113751;Rebin;Sulaka;Rebin Sulaka;Irak;DEFENDER;1000000;0.0;3.197;0.0
+pl-k00113754;Frans;Putros;Frans Putros;Irak;DEFENDER;1000000;0.0;3.197;0.0
+pl-k00113759;Mohanad;Ali;Mohanad Ali;Irak;FORWARD;2000000;0.0;3.197;0.0
+pl-k00113856;Utkir;Yusupov;Utkir Yusupov;Usbekistan;GOALKEEPER;1000000;0.5;3.696;1.848
+pl-k00113863;Farrukh;Sayfiev;Farrukh Sayfiev;Usbekistan;DEFENDER;1000000;0.0;3.696;0.0
+pl-k00113866;Odiljon;Hamrobekov;Odiljon Hamrobekov;Usbekistan;MIDFIELDER;2000000;0.0;3.696;0.0
+pl-k00113867;Otabek;Shukurov;Otabek Shukurov;Usbekistan;MIDFIELDER;2000000;1.0;3.696;3.696
+pl-k00113914;Leonardo;Balerdi;Leonardo Balerdi;Argentinien;DEFENDER;4000000;0.2;6.094;1.219
+pl-k00113916;Hassan;Al-Haydos;Hassan Al-Haydos;Katar;MIDFIELDER;1000000;0.0;3.208;0.0
+pl-k00113920;Karim;Boudiaf;Karim Boudiaf;Katar;MIDFIELDER;2000000;0.5;3.208;1.604
+pl-k00113922;Ahmed;Alaaeldin;Ahmed Alaaeldin;Katar;FORWARD;1000000;0.0;3.208;0.0
+pl-k00113924;Pedro Miguel;Carvalho Deus Correia;Pedro Miguel;Katar;DEFENDER;2000000;0.5;3.208;1.604
+pl-k00113925;Abdulaziz;Hatem;Abdulaziz Hatem;Katar;MIDFIELDER;1000000;0.0;3.208;0.0
+pl-k00113926;Boualem;Khoukhi;Boualem Khoukhi;Katar;DEFENDER;2000000;0.5;3.208;1.604
+pl-k00113927;Ahmad;Fathi;Ahmad Fathi;Katar;MIDFIELDER;1000000;0.0;3.208;0.0
+pl-k00113930;Almoez;Ali;Almoez Ali;Katar;FORWARD;2000000;0.5;3.208;1.604
+pl-k00113931;Sultan;Al-Brake;Sultan Al-Brake;Katar;DEFENDER;1000000;0.5;3.208;1.604
+pl-k00113932;Assim;Madibo;Assim Madibo;Katar;MIDFIELDER;2000000;1.0;3.208;3.208
+pl-k00113966;Abdulelah;Al-Amri;Abdulelah Al-Amri;Saudi-Arabien;DEFENDER;1000000;0.0;3.324;0.0
+pl-k00113975;Jaloliddin;Masharipov;Jaloliddin Masharipov;Usbekistan;FORWARD;1000000;0.0;3.696;0.0
+pl-k00114084;Yazan;Al-Arab;Yazan Al-Arab;Jordanien;DEFENDER;2000000;0.5;3.491;1.746
+pl-k00114094;Ihsan;Haddad;Ihsan Haddad;Jordanien;DEFENDER;1000000;0.0;3.491;0.0
+pl-k00114256;Moises;Ramirez;Moises Ramirez;Ecuador;GOALKEEPER;1000000;0.0;5.127;0.0
+pl-k00114257;Jackson;Porozo;Jackson Porozo;Ecuador;DEFENDER;1000000;0.0;5.127;0.0
+pl-k00114259;Jordy;Alcivar;Jordy Alcivar;Ecuador;MIDFIELDER;1000000;0.0;5.127;0.0
+pl-k00114277;Gonzalo;Plata;Gonzalo Plata;Ecuador;FORWARD;4000000;1.0;5.127;5.127
+pl-k00114290;Braian;Ojeda;Braian Ojeda;Paraguay;MIDFIELDER;2000000;0.5;4.432;2.216
+pl-k00114307;Orlando;Gill;Orlando Gill;Paraguay;GOALKEEPER;4000000;0.5;4.432;2.216
+pl-k00114311;Sebastian;Caceres;Sebastian Caceres;Uruguay;DEFENDER;2000000;0.0;4.658;0.0
+pl-k00114315;Maximiliano Javier;Araujo Vilches;Maxi Araujo;Uruguay;FORWARD;4000000;1.0;4.658;4.658
+pl-k00114317;Rodrigo;Zalazar;Rodrigo Zalazar;Uruguay;MIDFIELDER;4000000;0.0;4.658;0.0
+pl-k00114335;Darwin Gabriel;Nunez Ribeiro;Darwin;Uruguay;FORWARD;6000000;0.5;4.658;2.329
+pl-k00114376;Facundo;Medina;Facundo Medina;Argentinien;DEFENDER;2000000;0.0;6.094;0.0
+pl-k00114381;Thiago;Almada;Thiago Almada;Argentinien;MIDFIELDER;4000000;0.0;6.094;0.0
+pl-k00114540;Alexis;Mac Allister;Alexis Mac Allister;Argentinien;MIDFIELDER;8000000;0.8;6.094;4.875
+pl-k00114723;Manu;Koné;Manu Koné;Frankreich;MIDFIELDER;6000000;0.0;6.138;0.0
+pl-k00114736;Maximilian;Beier;Maximilian Beier;Deutschland;FORWARD;4000000;0.0;5.107;0.0
+pl-k00114740;Kwasi;Sibo;Kwasi Sibo;Ghana;MIDFIELDER;1000000;1.0;3.134;3.134
+pl-k00114796;Hannibal;Mejbri;Hannibal;Tunesien;MIDFIELDER;4000000;1.0;3.427;3.427
+pl-k00114872;Sontje;Hansen;Sontje Hansen;Curacao;FORWARD;2000000;0.0;3.118;0.0
+pl-k00114972;Dayne;St. Clair;Dayne St. Clair;Kanada;GOALKEEPER;2000000;0.5;4.635;2.318
+pl-k00114978;Tajon;Buchanan;Tajon Buchanan;Kanada;MIDFIELDER;4000000;0.75;4.635;3.477
+pl-k00114996;Matt;Freese;Matt Freese;USA;GOALKEEPER;4000000;0.6;3.756;2.254
+pl-k00114998;Brenden;Aaronson;Brenden Aaronson;USA;MIDFIELDER;2000000;0.0;3.756;0.0
+pl-k00115053;Ayumu;Seko;Ayumu Seko;Japan;DEFENDER;4000000;0.0;4.859;0.0
+pl-k00115136;Ayase;Ueda;Ayase Ueda;Japan;FORWARD;4000000;1.0;4.859;4.859
+pl-k00115166;Daizen;Maeda;Daizen Maeda;Japan;FORWARD;4000000;0.0;4.859;0.0
+pl-k00115227;Tsuyoshi;Watanabe;Tsuyoshi Watanabe;Japan;DEFENDER;4000000;0.333;4.859;1.618
+pl-k00115263;Wilfried;Singo;Wilfried Singo;Elfenbeinküste;DEFENDER;4000000;0.0;3.871;0.0
+pl-k00115268;Julian;Araujo;Julian Araujo;Mexiko;DEFENDER;2000000;0.25;4.867;1.217
+pl-k00115533;Igor;Matanovic;Igor Matanovic;Kroatien;FORWARD;4000000;0.0;4.972;0.0
+pl-k00115539;Lyle;Foster;Lyle Foster;Südafrika;FORWARD;4000000;1.0;3.312;3.312
+pl-k00115590;Jorge;Carrascal;Jorge Carrascal;Kolumbien;MIDFIELDER;4000000;0.0;5.185;0.0
+pl-k00115605;Liam;Kelly;Liam Kelly;Schottland;GOALKEEPER;1000000;0.0;4.145;0.0
+pl-k00115622;Omar;Alderete;Omar Alderete;Paraguay;DEFENDER;4000000;0.5;4.432;2.216
+pl-k00115688;Nahuel;Molina;Nahuel Molina;Argentinien;DEFENDER;4000000;0.6;6.094;3.656
+pl-k00115723;Felix;Torres;Felix Torres;Ecuador;DEFENDER;2000000;0.5;5.127;2.563
+pl-k00115737;Luis Fernando;Diaz Marulanda;Luis Diaz;Kolumbien;FORWARD;8000000;1.0;5.185;5.185
+pl-k00115738;Alvaro;Montero;Alvaro Montero;Kolumbien;GOALKEEPER;2000000;0.5;5.185;2.593
+pl-k00115740;Lisandro;Martinez;Lisandro Martinez;Argentinien;DEFENDER;6000000;0.6;6.094;3.656
+pl-k00115743;Carlos;Rodriguez;Carlos Rodriguez;Mexiko;MIDFIELDER;2000000;0.0;4.867;0.0
+pl-k00115744;Alexis;Vega;Alexis Vega;Mexiko;FORWARD;2000000;0.25;4.867;1.217
+pl-k00115782;Mathias;Villasanti;Mathias Villasanti;Paraguay;MIDFIELDER;2000000;0.0;4.432;0.0
+pl-k00115787;Alan;Benitez;Alan Benitez;Paraguay;DEFENDER;1000000;0.0;4.432;0.0
+pl-k00115794;José;Canale;José Canale;Paraguay;DEFENDER;1000000;0.0;4.432;0.0
+pl-k00115803;Luis;Mejia;Luis Mejia;Panama;GOALKEEPER;1000000;0.0;3.91;0.0
+pl-k00115805;Julio;Enciso;Julio Enciso;Paraguay;FORWARD;4000000;0.5;4.432;2.216
+pl-k00115806;Cesar;Blackman;Cesar Blackman;Panama;DEFENDER;2000000;0.0;3.91;0.0
+pl-k00115934;Willer;Ditta;Willer Ditta;Kolumbien;DEFENDER;1000000;0.0;5.185;0.0
+pl-k00116010;Martin;Zubimendi;Martin Zubimendi;Spanien;MIDFIELDER;6000000;0.4;6.495;2.598
+pl-k00116213;Brian;Rodriguez;Brian Rodriguez;Uruguay;FORWARD;2000000;0.0;4.658;0.0
+pl-k00116395;Eren;Elmali;Eren Elmali;Türkei;DEFENDER;2000000;0.0;4.927;0.0
+pl-k00116479;Pathé;Ciss;Pathé Ciss;Senegal;MIDFIELDER;2000000;0.0;4.562;0.0
+pl-k00116517;Vitor;Machado Ferreira;Vitinha;Portugal;MIDFIELDER;8000000;0.6;5.275;3.165
+pl-k00116544;Yeremi;Pino;Yeremy;Spanien;FORWARD;4000000;0.0;6.495;0.0
+pl-k00116568;Lukas;Hornicek;Lukas Hornicek;Tschechien;GOALKEEPER;2000000;0.0;4.208;0.0
+pl-k00116607;Tomas;Lemos Araujo;Tomas Araujo;Portugal;DEFENDER;4000000;0.2;5.275;1.055
+pl-k00116618;James;Trafford;James Trafford;England;GOALKEEPER;1000000;0.0;5.644;0.0
+pl-k00116621;Valentino;Livramento;Valentino Livramento;England;DEFENDER;6000000;0.0;5.644;0.0
+pl-k00116627;Noni;Madueke;Noni Madueke;England;FORWARD;6000000;0.0;5.644;0.0
+pl-k00116636;Senne;Lammens;Senne Lammens;Belgien;GOALKEEPER;4000000;0.0;4.887;0.0
+pl-k00116650;Jeremy;Doku;Jeremy Doku;Belgien;FORWARD;8000000;0.5;4.887;2.444
+pl-k00116659;Anass;Salah-Eddine;Anass Salah-Eddine;Marokko;DEFENDER;4000000;0.0;4.428;0.0
+pl-k00116711;Adil;Aouchiche;Adil Aouchiche;Algerien;MIDFIELDER;2000000;0.0;3.712;0.0
+pl-k00116718;Nathanael;Mbuku;Nathanael Mbuku;DR Kongo;MIDFIELDER;4000000;1.0;3.381;3.381
+pl-k00116727;Hussein;Ali;Hussein Ali;Irak;DEFENDER;1000000;1.0;3.197;3.197
+pl-k00116730;Anthony;Elanga;Anthony Elanga;Schweden;MIDFIELDER;6000000;1.0;3.784;3.784
+pl-k00116735;Armin;Gigovic;Armin Gigovic;Bosnien-Herzegowina;MIDFIELDER;2000000;0.0;3.748;0.0
+pl-k00117046;Zion;Suzuki;Zion Suzuki;Japan;GOALKEEPER;4000000;0.333;4.859;1.618
+pl-k00117047;CJ;dos Santos;CJ dos Santos;Kap Verde;GOALKEEPER;1000000;0.0;3.269;0.0
+pl-k00117048;Sergino;Dest;Sergino Dest;USA;DEFENDER;4000000;0.6;3.756;2.254
+pl-k00117065;Jens Petter;Hauge;Jens Petter Hauge;Norwegen;MIDFIELDER;4000000;0.0;4.791;0.0
+pl-k00117066;Kristian;Thorstvedt;Kristian Thorstvedt;Norwegen;MIDFIELDER;2000000;0.0;4.791;0.0
+pl-k00117247;Josué;Duverger;Josué Duverger;Haiti;GOALKEEPER;1000000;0.0;3.217;0.0
+pl-k00117251;Ricardo;Adé;Ricardo Adé;Haiti;DEFENDER;1000000;1.0;3.217;3.217
+pl-k00117270;Frantzdy;Pierrot;Frantzdy Pierrot;Haiti;FORWARD;2000000;0.5;3.217;1.609
+pl-k00117527;Ronald;Araujo;Ronald Araujo;Uruguay;DEFENDER;6000000;1.0;4.658;4.658
+pl-k00117544;Moustapha;Mbow;Moustapha Mbow;Senegal;DEFENDER;2000000;0.0;4.562;0.0
+pl-k00117605;Nando;Pijnaker;Nando Pijnaker;Neuseeland;DEFENDER;1000000;0.0;3.461;0.0
+pl-k00117607;Elijah;Just;Elijah Just;Neuseeland;MIDFIELDER;2000000;1.0;3.461;3.461
+pl-k00117608;Joe;Bell;Joe Bell;Neuseeland;MIDFIELDER;2000000;0.5;3.461;1.73
+pl-k00117610;Sarpreet;Singh;Sarpreet Singh;Neuseeland;MIDFIELDER;2000000;1.0;3.461;3.461
+pl-k00117612;Liberato;Cacace;Liberato Cacace;Neuseeland;DEFENDER;2000000;0.5;3.461;1.73
+pl-k00117615;Callan;Elliot;Callan Elliot;Neuseeland;DEFENDER;1000000;0.0;3.461;0.0
+pl-k00117616;Ben;Waine;Ben Waine;Neuseeland;FORWARD;1000000;0.5;3.461;1.73
+pl-k00117619;Salah;Zakaria;Salah Zakaria;Katar;GOALKEEPER;1000000;0.0;3.208;0.0
+pl-k00117627;Yusuf;Abdurisag;Yusuf Abdurisag;Katar;MIDFIELDER;1000000;0.0;3.208;0.0
+pl-k00117630;Homam;Ahmed;Homam Ahmed;Katar;DEFENDER;2000000;1.0;3.208;3.208
+pl-k00117636;Shehab;Ellethy;Shehab Ellethy;Katar;GOALKEEPER;1000000;0.0;3.208;0.0
+pl-k00117676;Ahmed;Fatouh;Ahmed Fatouh;Ägypten;DEFENDER;1000000;0.0;3.946;0.0
+pl-k00117677;Nabil;Emad Aly El-Mahdy Aly;Dunga;Ägypten;MIDFIELDER;1000000;0.0;3.946;0.0
+pl-k00117727;Saud;Abdulhamid;Saud Abdulhamid;Saudi-Arabien;DEFENDER;2000000;0.5;3.324;1.662
+pl-k00117731;Hassan;Al-Tambakti;Hassan Al-Tambakti;Saudi-Arabien;DEFENDER;2000000;0.5;3.324;1.662
+pl-k00117736;Firas;Al-Buraikan;Firas Al-Buraikan;Saudi-Arabien;FORWARD;2000000;1.0;3.324;3.324
+pl-k00117738;Khalid;Al-Ghannam;Khalid Al-Ghannam;Saudi-Arabien;MIDFIELDER;1000000;0.0;3.324;0.0
+pl-k00117763;Oswin;Appollis;Oswin Appollis;Südafrika;FORWARD;2000000;1.0;3.312;3.312
+pl-k00117780;Carlos;Harvey;Carlos Harvey;Panama;MIDFIELDER;2000000;0.5;3.91;1.955
+pl-k00117789;Tomas;Rodriguez;Tomas Rodriguez;Panama;FORWARD;2000000;0.0;3.91;0.0
+pl-k00117900;Ronwen;Williams;Ronwen Williams;Südafrika;GOALKEEPER;2000000;1.0;3.312;3.312
+pl-k00117968;Simon;Banza;Simon Banza;DR Kongo;FORWARD;2000000;0.0;3.381;0.0
+pl-k00117979;Hicham;Boudaoui;Hicham Boudaoui;Algerien;MIDFIELDER;4000000;1.0;3.712;3.712
+pl-k00118072;Michael;Svoboda;Michael Svoboda;Österreich;DEFENDER;2000000;0.0;4.093;0.0
+pl-k00118242;Mauricio;Magalhaes Prado;Mauricio;Paraguay;MIDFIELDER;2000000;0.0;4.432;0.0
+pl-k00118244;Aymen;Dahmen;Aymen Dahmen;Tunesien;GOALKEEPER;1000000;1.0;3.427;3.427
+pl-k00118384;Ricardo;Pepi;Ricardo Pepi;USA;FORWARD;4000000;0.2;3.756;0.751
+pl-k00118385;Jacob;Shaffelburg;Jacob Shaffelburg;Kanada;MIDFIELDER;2000000;0.25;4.635;1.159
+pl-k00118616;Samuel;Almeida Costa;Samuel Costa;Portugal;MIDFIELDER;4000000;0.2;5.275;1.055
+pl-k00118634;Marcus;Pedersen;Marcus Pedersen;Norwegen;DEFENDER;1000000;0.0;4.791;0.0
+pl-k00118662;Matej;Kovar;Matej Kovar;Tschechien;GOALKEEPER;4000000;1.0;4.208;4.208
+pl-k00118670;David;Zima;David Zima;Tschechien;DEFENDER;2000000;0.0;4.208;0.0
+pl-k00118676;Pavel;Sulc;Pavel Sulc;Tschechien;MIDFIELDER;4000000;1.0;4.208;4.208
+pl-k00118737;Gabriel;Gudmundsson;Gabriel Gudmundsson;Schweden;DEFENDER;4000000;1.0;3.784;3.784
+pl-k00118751;Ché;Adams;Ché Adams;Schottland;FORWARD;4000000;0.5;4.145;2.073
+pl-k00118755;Giovanni;Reyna;Giovanni Reyna;USA;MIDFIELDER;2000000;0.2;3.756;0.751
+pl-k00118788;Gabriel Teodoro;Martinelli Silva;Gabriel Martinelli;Brasilien;FORWARD;6000000;0.2;5.371;1.074
+pl-k00119808;Ramiz;Zerrouki;Ramiz Zerrouki;Algerien;MIDFIELDER;2000000;0.5;3.712;1.856
+pl-k00119829;Nuno Alexandre;Tavares Mendes;Nuno Mendes;Portugal;DEFENDER;8000000;0.8;5.275;4.22
+pl-k00120081;Odilon;Kossounou;Odilon Kossounou;Elfenbeinküste;DEFENDER;4000000;1.0;3.871;3.871
+pl-k00120099;Ladislav;Krejci;Ladislav Krejci;Tschechien;DEFENDER;4000000;1.0;4.208;4.208
+pl-k00120125;Tomas;Ladra;Tomas Ladra;Tschechien;MIDFIELDER;2000000;0.0;4.208;0.0
+pl-k00121256;Dylan;Batubinsika;Dylan Batubinsika;DR Kongo;DEFENDER;1000000;0.0;3.381;0.0
+pl-k00121260;Abdoulaye;Seck;Abdoulaye Seck;Senegal;DEFENDER;1000000;0.0;4.562;0.0
+pl-k00121357;Benjamin;Nygren;Benjamin Nygren;Schweden;FORWARD;4000000;0.5;3.784;1.892
+pl-k00121878;Evann;Guessand;Evann Guessand;Elfenbeinküste;FORWARD;4000000;1.0;3.871;3.871
+pl-k00121912;Lukas;Provod;Lukas Provod;Tschechien;MIDFIELDER;4000000;1.0;4.208;4.208
+pl-k00123095;Alejandro;Baena Rdoriguez;Alex Baena;Spanien;MIDFIELDER;4000000;0.0;6.495;0.0
+pl-k00123112;Dong-Gyeong;Lee;Dong-Gyeong Lee;Südkorea;MIDFIELDER;1000000;0.0;4.339;0.0
+pl-k00123303;Folarin;Balogun;Folarin Balogun;USA;FORWARD;4000000;0.6;3.756;2.254
+pl-k00123383;Johan;Vasquez;Johan Vasquez;Mexiko;DEFENDER;4000000;1.0;4.867;4.867
+pl-k00123466;Luis;Romo;Luis Romo;Mexiko;MIDFIELDER;1000000;0.0;4.867;0.0
+pl-k00123544;Jesse;Randall;Jesse Randall;Neuseeland;FORWARD;1000000;0.0;3.461;0.0
+pl-k00123545;Matthew;Garbett;Matthew Garbett;Neuseeland;MIDFIELDER;1000000;0.5;3.461;1.73
+pl-k00123553;Ben;Old;Ben Old;Neuseeland;DEFENDER;2000000;1.0;3.461;3.461
+pl-k00123555;Marko;Stamenic;Marko Stamenic;Neuseeland;MIDFIELDER;2000000;1.0;3.461;3.461
+pl-k00123588;Haissem;Hassan;Haissem Hassan;Ägypten;MIDFIELDER;2000000;0.0;3.946;0.0
+pl-k00123602;Bart;Verbruggen;Bart Verbruggen;Niederlande;GOALKEEPER;6000000;0.75;5.244;3.933
+pl-k00123610;Pedro;Gonzalez Lopez;Pedri;Spanien;MIDFIELDER;8000000;0.8;6.495;5.196
+pl-k00123794;Pape;Sarr;Pape Sarr;Senegal;MIDFIELDER;4000000;0.0;4.562;0.0
+pl-k00123844;Piero;Hincapie;Piero Hincapie;Ecuador;DEFENDER;6000000;0.5;5.127;2.563
+pl-k00123857;John;Mercado;John Mercado;Ecuador;FORWARD;2000000;0.0;5.127;0.0
+pl-k00123858;Pedro;Vite;Pedro Vite;Ecuador;MIDFIELDER;4000000;0.5;5.127;2.563
+pl-k00123893;Carl;Sainté;Carl Sainté;Haiti;MIDFIELDER;1000000;0.0;3.217;0.0
+pl-k00123957;Rayan;Cherki;Rayan Cherki;Frankreich;FORWARD;6000000;0.2;6.138;1.228
+pl-k00123960;Tae-Seok;Lee;Tae-Seok Lee;Südkorea;DEFENDER;2000000;0.667;4.339;2.894
+pl-k00123962;Han-Beom;Lee;Han-Beom Lee;Südkorea;DEFENDER;2000000;0.333;4.339;1.445
+pl-k00123977;Ji-Sung;Eom;Ji-Sung Eom;Südkorea;MIDFIELDER;2000000;0.0;4.339;0.0
+pl-k00123994;Charles;de Ketelaere;Charles de Ketelaere;Belgien;FORWARD;4000000;0.25;4.887;1.222
+pl-k00124076;Amad;Diallo Traoré;Amad;Elfenbeinküste;FORWARD;6000000;1.0;3.871;3.871
+pl-k00124100;Sphephelo;Sithole;Yaya Sithole;Südafrika;MIDFIELDER;1000000;0.0;3.312;0.0
+pl-k00124742;Paul;Izzo;Paul Izzo;Australien;GOALKEEPER;1000000;0.333;4.094;1.363
+pl-k00124769;Kai;Trewin;Kai Trewin;Australien;DEFENDER;1000000;0.333;4.094;1.363
+pl-k00124790;Joe;Gauci;Joe Gauci;Australien;GOALKEEPER;1000000;0.0;4.094;0.0
+pl-k00124795;Nathaniel;Atkinson;Nathaniel Atkinson;Australien;DEFENDER;1000000;0.0;4.094;0.0
+pl-k00124798;Connor;Metcalfe;Connor Metcalfe;Australien;MIDFIELDER;2000000;0.667;4.094;2.73
+pl-k00124901;Cameron;Devlin;Cameron Devlin;Australien;MIDFIELDER;1000000;0.0;4.094;0.0
+pl-k00124927;Jude;Bellingham;Jude Bellingham;England;MIDFIELDER;8000000;0.8;5.644;4.515
+pl-k00124952;David;Raya;David Raya;Spanien;GOALKEEPER;4000000;0.2;6.495;1.299
+pl-k00124965;Ollie;Watkins;Ollie Watkins;England;FORWARD;4000000;0.0;5.644;0.0
+pl-k00124974;Antoine;Semenyo;Antoine Semenyo;Ghana;FORWARD;6000000;1.0;3.134;3.134
+pl-k00125047;Djed;Spence;Djed Spence;England;DEFENDER;4000000;0.0;5.644;0.0
+pl-k00125107;Meshaal;Barsham;Meshaal Barsham;Katar;GOALKEEPER;1000000;1.0;3.208;3.208
+pl-k00125116;Hassan;Kadesh;Hassan Kadesh;Saudi-Arabien;DEFENDER;1000000;0.0;3.324;0.0
+pl-k00125119;Nasser;Al-Dawsari;Nasser Al-Dawsari;Saudi-Arabien;MIDFIELDER;2000000;0.5;3.324;1.662
+pl-k00125123;Saleh;Al-Shehri;Saleh Al-Shehri;Saudi-Arabien;FORWARD;1000000;0.0;3.324;0.0
+pl-k00125129;Mohamed Amine;Ben Hamida;Mohamed Amine Ben Hamida;Tunesien;DEFENDER;1000000;0.0;3.427;0.0
+pl-k00125171;Eberechi;Eze;Eberechi Eze;England;MIDFIELDER;6000000;0.0;5.644;0.0
+pl-k00125181;Michael;Olise;Michael Olise;Frankreich;FORWARD;10000000;0.6;6.138;3.683
+pl-k00125266;Logan;Costa;Logan Costa;Kap Verde;DEFENDER;2000000;0.0;3.269;0.0
+pl-k00125269;Patrick;Wimmer;Patrick Wimmer;Österreich;MIDFIELDER;4000000;0.5;4.093;2.046
+pl-k00125275;Aaron;Hickey;Aaron Hickey;Schottland;DEFENDER;2000000;1.0;4.145;4.145
+pl-k00125311;Lyndon;Dykes;Lyndon Dykes;Schottland;FORWARD;4000000;0.5;4.145;2.073
+pl-k00125406;Ross;Stewart;Ross Stewart;Schottland;FORWARD;2000000;0.0;4.145;0.0
+pl-k00125655;Joseph;Anang;Joseph Anang;Ghana;GOALKEEPER;1000000;0.0;3.134;0.0
+pl-k00125842;Alistair;Johnston;Alistair Johnston;Kanada;DEFENDER;4000000;0.75;4.635;3.477
+pl-k00125872;Sebastian;Berhalter;Sebastian Berhalter;USA;MIDFIELDER;2000000;0.2;3.756;0.751
+pl-k00125875;Joel;Waterman;Joel Waterman;Kanada;DEFENDER;2000000;0.0;4.635;0.0
+pl-k00125972;Livano;Comenencia;Livano Comenencia;Curacao;MIDFIELDER;1000000;1.0;3.118;3.118
+pl-k00126071;Mohamed;Touré;Mohamed Touré;Australien;FORWARD;2000000;1.0;4.094;4.094
+pl-k00126161;Yuito;Suzuki;Yuito Suzuki;Japan;MIDFIELDER;4000000;0.0;4.859;0.0
+pl-k00126190;Azzedine;Ounahi;Azzedine Ounahi;Marokko;MIDFIELDER;4000000;0.25;4.428;1.107
+pl-k00126192;Oston;Urunov;Oston Urunov;Usbekistan;FORWARD;2000000;0.5;3.696;1.848
+pl-k00126214;Maxim;de Cuyper;Maxim de Cuyper;Belgien;DEFENDER;4000000;0.75;4.887;3.666
+pl-k00126539;Jhon;Arias;Jhon Arias;Kolumbien;MIDFIELDER;4000000;0.5;5.185;2.593
+pl-k00126579;Willian;Pacho;Willian Pacho;Ecuador;DEFENDER;8000000;0.5;5.127;2.563
+pl-k00126584;Angelo;Preciado;Angelo Preciado;Ecuador;DEFENDER;2000000;0.0;5.127;0.0
+pl-k00126585;Alan;Franco;Alan Franco;Ecuador;MIDFIELDER;4000000;1.0;5.127;5.127
+pl-k00126589;Moises;Caicedo;Moises Caicedo;Ecuador;MIDFIELDER;6000000;0.5;5.127;2.563
+pl-k00126598;Petar;Musa;Petar Musa;Kroatien;FORWARD;1000000;0.0;4.972;0.0
+pl-k00126697;Anthony;Valencia;Anthony Valencia;Ecuador;MIDFIELDER;1000000;0.0;5.127;0.0
+pl-k00126826;Facundo;Pellistri;Facundo Pellistri;Uruguay;FORWARD;2000000;0.0;4.658;0.0
+pl-k00126831;Enzo;Fernandez;Enzo Fernandez;Argentinien;MIDFIELDER;8000000;0.8;6.094;4.875
+pl-k00126882;Emiliano;Martinez;Emiliano Martinez;Uruguay;MIDFIELDER;1000000;0.0;4.658;0.0
+pl-k00126894;Juan José;Caceres;Juan José Caceres;Paraguay;DEFENDER;2000000;0.5;4.432;2.216
+pl-k00128521;Richard;Rios;Richard Rios;Kolumbien;MIDFIELDER;4000000;1.0;5.185;5.185
+pl-k00128608;Bum-Keun;Song;Bum-Keun Song;Südkorea;GOALKEEPER;1000000;0.667;4.339;2.894
+pl-k00128763;Rustam;Ashurmatov;Rustam Ashurmatov;Usbekistan;DEFENDER;1000000;1.0;3.696;3.696
+pl-k00128790;Marvin;Keller;Marvin Keller;Schweiz;GOALKEEPER;1000000;0.0;5.153;0.0
+pl-k00128826;Jamshid;Iskanderov;Jamshid Iskanderov;Usbekistan;MIDFIELDER;1000000;0.0;3.696;0.0
+pl-k00128894;Jin-Gyu;Kim;Jin-Gyu Kim;Südkorea;MIDFIELDER;2000000;0.333;4.339;1.445
+pl-k00128987;Matheus Luiz;Nunes;Matheus Nunes;Portugal;DEFENDER;6000000;0.0;5.275;0.0
+pl-k00129004;Young-Woo;Seol;Young-Woo Seol;Südkorea;DEFENDER;4000000;0.667;4.339;2.894
+pl-k00129073;Luis Javier;Suarez Charris;Luis Suarez;Kolumbien;FORWARD;6000000;1.0;5.185;5.185
+pl-k00129218;Ardon;Jashari;Ardon Jashari;Schweiz;MIDFIELDER;4000000;0.5;5.153;2.576
+pl-k00129278;Pape;Gueye;Pape Gueye;Senegal;MIDFIELDER;6000000;0.75;4.562;3.421
+pl-k00129313;Telmo Emanuel;Gomes Arcanjo;Telmo Arcanjo;Kap Verde;MIDFIELDER;2000000;0.5;3.269;1.634
+pl-k00129317;Goncalo Bernardo;Inacio;Goncalo Inacio;Portugal;DEFENDER;6000000;0.6;5.275;3.165
+pl-k00129372;Daniel;Munoz;Daniel Munoz;Kolumbien;DEFENDER;4000000;1.0;5.185;5.185
+pl-k00129414;Arthur;Theate;Arthur Theate;Belgien;DEFENDER;4000000;0.75;4.887;3.666
+pl-k00129425;George;Hirst;George Hirst;Schottland;FORWARD;2000000;0.0;4.145;0.0
+pl-k00129671;Nathaniel;Brown;Nathaniel Brown;Deutschland;DEFENDER;4000000;0.2;5.107;1.021
+pl-k00129904;Jasurbek;Jaloliddinov;Jasurbek Jaloliddinov;Usbekistan;MIDFIELDER;1000000;0.0;3.696;0.0
+pl-k00130230;Luiz Henrique André;Rosa da Silva;Luiz Henrique;Brasilien;FORWARD;6000000;0.0;5.371;0.0
+pl-k00130252;Nicolas;Seiwald;Nicolas Seiwald;Österreich;MIDFIELDER;4000000;1.0;4.093;4.093
+pl-k00130288;Brian;Gutierrez;Brian Gutierrez;Mexiko;MIDFIELDER;4000000;0.5;4.867;2.434
+pl-k00130356;Maxence;Lacroix;Maxence Lacroix;Frankreich;DEFENDER;4000000;0.2;6.138;1.228
+pl-k00130453;Dominic;Hyam;Dominic Hyam;Schottland;DEFENDER;2000000;0.0;4.145;0.0
+pl-k00130586;Luka;Sucic;Luka Sucic;Kroatien;MIDFIELDER;2000000;0.0;4.972;0.0
+pl-k00130739;Emmanuel;Agbadou;Emmanuel Agbadou;Elfenbeinküste;DEFENDER;2000000;0.5;3.871;1.935
+pl-k00130790;Ismail;Yüksek;Ismail Yüksek;Türkei;MIDFIELDER;4000000;1.0;4.927;4.927
+pl-k00130792;Cherif;Ndiaye;Cherif Ndiaye;Senegal;FORWARD;2000000;0.0;4.562;0.0
+pl-k00130795;Patrick;Berg;Patrick Berg;Norwegen;MIDFIELDER;2000000;1.0;4.791;4.791
+pl-k00131106;Hyeon-Gyu;Oh;Hyeon-Gyu Oh;Südkorea;FORWARD;4000000;0.333;4.339;1.445
+pl-k00131344;Ahmetcan;Kaplan;Ahmetcan Kaplan;Türkei;DEFENDER;2000000;0.0;4.927;0.0
+pl-k00131539;Josko;Gvardiol;Josko Gvardiol;Kroatien;DEFENDER;8000000;0.5;4.972;2.486
+pl-k00131547;Jan;Kuchta;Jan Kuchta;Tschechien;FORWARD;2000000;0.0;4.208;0.0
+pl-k00131579;Ruben;Providence;Ruben Providence;Haiti;FORWARD;1000000;0.5;3.217;1.609
+pl-k00131658;Youssef;Amyn;Youssef Amyn;Irak;MIDFIELDER;2000000;1.0;3.197;3.197
+pl-k00131688;Amar;Dedic;Amar Dedic;Bosnien-Herzegowina;DEFENDER;4000000;1.0;3.748;3.748
+pl-k00131702;Josip;Sutalo;Josip Sutalo;Kroatien;DEFENDER;4000000;0.5;4.972;2.486
+pl-k00131780;Kerem;Aktürkoglu;Kerem Aktürkoglu;Türkei;FORWARD;4000000;1.0;4.927;4.927
+pl-k00131834;Hernan;Galindez;Hernan Galindez;Ecuador;GOALKEEPER;4000000;0.5;5.127;2.563
+pl-k00131847;Peter;Gwargis;Peter Gwargis;Irak;MIDFIELDER;1000000;0.0;3.197;0.0
+pl-k00131854;Elliot;Anderson;Elliot Anderson;England;MIDFIELDER;6000000;0.6;5.644;3.386
+pl-k00131930;Fabian;Rieder;Fabian Rieder;Schweiz;MIDFIELDER;4000000;1.0;5.153;5.153
+pl-k00131945;Malo;Gusto;Malo Gusto;Frankreich;DEFENDER;6000000;0.2;6.138;1.228
+pl-k00132051;Danilo;dos Santos de Oliveira;Danilo Santos;Brasilien;MIDFIELDER;4000000;0.2;5.371;1.074
+pl-k00132098;Koni;de Winter;Koni de Winter;Belgien;DEFENDER;4000000;0.5;4.887;2.444
+pl-k00132107;Ismael;Saibari;Ismael Saibari;Marokko;MIDFIELDER;6000000;0.25;4.428;1.107
+pl-k00132159;Marvin;Senaya;Marvin Senaya;Ghana;DEFENDER;2000000;0.0;3.134;0.0
+pl-k00132220;Denis;Visinsky;Denis Visinsky;Tschechien;MIDFIELDER;2000000;0.0;4.208;0.0
+pl-k00132314;Isidro;Pitta;Isidro Pitta;Paraguay;FORWARD;2000000;0.0;4.432;0.0
+pl-k00132423;Gaston;Olveira;Gaston Olveira;Paraguay;GOALKEEPER;1000000;0.0;4.432;0.0
+pl-k00132544;Alexandre;Pierre;Alexandre Pierre;Haiti;GOALKEEPER;1000000;0.5;3.217;1.609
+pl-k00132694;Jordan;Bos;Jordan Bos;Australien;DEFENDER;4000000;0.333;4.094;1.363
+pl-k00132741;Elye;Wahi;Elye Wahi;Elfenbeinküste;FORWARD;2000000;0.0;3.871;0.0
+pl-k00132788;Emil;Holm;Emil Holm;Schweden;DEFENDER;4000000;0.0;3.784;0.0
+pl-k00132797;Fredrik;Björkan;Fredrik Björkan;Norwegen;DEFENDER;1000000;0.0;4.791;0.0
+pl-k00132802;Sebastian;Tounekti;Sebastian Tounekti;Tunesien;FORWARD;2000000;0.0;3.427;0.0
+pl-k00132816;Martin;Baturina;Martin Baturina;Kroatien;MIDFIELDER;4000000;0.5;4.972;2.486
+pl-k00133004;Nico;Williams;Nico Williams;Spanien;FORWARD;8000000;0.4;6.495;2.598
+pl-k00133116;Manuel;Ugarte;Manuel Ugarte;Uruguay;MIDFIELDER;4000000;1.0;4.658;4.658
+pl-k00133182;José Andres;Hurtado;José Andres Hurtado;Ecuador;DEFENDER;1000000;0.0;5.127;0.0
+pl-k00133238;Francisco;Fernandes da Conceicao;Francisco Conceicao;Portugal;FORWARD;4000000;0.2;5.275;1.055
+pl-k00133267;Mohammed;Muntari;Mohammed Muntari;Katar;FORWARD;1000000;0.5;3.208;1.604
+pl-k00133274;Kamaldeen;Sulemana;Kamaldeen Sulemana;Ghana;MIDFIELDER;4000000;0.0;3.134;0.0
+pl-k00133304;Julian;Quinones;Julian Quinones;Mexiko;FORWARD;2000000;0.75;4.867;3.65
+pl-k00133309;Mostafa;Shoubeir;Mostafa Shoubeir;Ägypten;GOALKEEPER;4000000;0.0;3.946;0.0
+pl-k00133310;Mohamed;Hany;Mohamed Hany;Ägypten;DEFENDER;2000000;1.0;3.946;3.946
+pl-k00133311;Yasser;Ibrahim;Yasser Ibrahim;Ägypten;DEFENDER;1000000;0.0;3.946;0.0
+pl-k00133370;Jeremy;Antonisse;Jeremy Antonisse;Curacao;FORWARD;1000000;0.5;3.118;1.559
+pl-k00133399;David;Affengruber;David Affengruber;Österreich;DEFENDER;2000000;0.0;4.093;0.0
+pl-k00133422;Iliman;Ndiaye;Iliman Ndiaye;Senegal;FORWARD;4000000;0.5;4.562;2.281
+pl-k00133439;Tae-Hyeon;Kim;Tae-Hyeon Kim;Südkorea;DEFENDER;1000000;0.333;4.339;1.445
+pl-k00133529;Bamba;Dieng;Bamba Dieng;Senegal;FORWARD;2000000;0.0;4.562;0.0
+pl-k00133547;Zeno;Debast;Zeno Debast;Belgien;DEFENDER;4000000;0.5;4.887;2.444
+pl-k00133569;Tomoki;Hayakawa;Tomoki Hayakawa;Japan;GOALKEEPER;2000000;0.0;4.859;0.0
+pl-k00133609;Carney;Chukwuemeka;Carney Chukwuemeka;Österreich;MIDFIELDER;4000000;0.0;4.093;0.0
+pl-k00133745;Ki-Hyuk;Lee;Ki-Hyuk Lee;Südkorea;DEFENDER;1000000;0.0;4.339;0.0
+pl-k00133783;Andreas;Schjelderup;Andreas Schjelderup;Norwegen;MIDFIELDER;4000000;0.0;4.791;0.0
+pl-k00133786;Daniel;Svensson;Daniel Svensson;Schweden;DEFENDER;4000000;1.0;3.784;3.784
+pl-k00133862;Patrick;Yazbek;Patrick Yazbek;Australien;MIDFIELDER;2000000;0.0;4.094;0.0
+pl-k00133883;Yu-Min;Cho;Yu-Min Cho;Südkorea;DEFENDER;2000000;0.333;4.339;1.445
+pl-k00133933;Chris;Brady;Chris Brady;USA;GOALKEEPER;1000000;0.0;3.756;0.0
+pl-k00133968;Nathan;Saliba;Nathan Saliba;Kanada;MIDFIELDER;2000000;0.0;4.635;0.0
+pl-k00134174;Ivan;Basic;Ivan Basic;Bosnien-Herzegowina;MIDFIELDER;1000000;0.5;3.748;1.874
+pl-k00134218;Ismael;Gharbi;Ismael Gharbi;Tunesien;MIDFIELDER;2000000;0.5;3.427;1.714
+pl-k00134234;Simon;Adingra;Simon Adingra;Elfenbeinküste;FORWARD;4000000;0.0;3.871;0.0
+pl-k00134321;Damian;Bobadilla;Damian Bobadilla;Paraguay;MIDFIELDER;2000000;0.5;4.432;2.216
+pl-k00134333;Ramon;Sosa;Ramon Sosa;Paraguay;MIDFIELDER;2000000;0.5;4.432;2.216
+pl-k00134390;Gabriel;Avalos;Gabriel Avalos;Paraguay;FORWARD;2000000;0.0;4.432;0.0
+pl-k00134479;Tarik;Muharemovic;Tarik Muharemovic;Bosnien-Herzegowina;DEFENDER;4000000;1.0;3.748;3.748
+pl-k00134534;Nishan;Velupillay;Nishan Velupillay;Australien;FORWARD;1000000;0.0;4.094;0.0
+pl-k00134779;Nathan;Ngoy;Nathan Ngoy;Belgien;DEFENDER;2000000;0.25;4.887;1.222
+pl-k00135031;Arda;Güler;Arda Güler;Türkei;FORWARD;8000000;1.0;4.927;4.927
+pl-k00135040;Jovo;Lukic;Jovo Lukic;Bosnien-Herzegowina;FORWARD;1000000;0.0;3.748;0.0
+pl-k00135043;Antoine;Mendy;Antoine Mendy;Senegal;DEFENDER;4000000;0.25;4.562;1.14
+pl-k00135245;Willy Johnson;Semedo Afonso;Willy Semedo;Kap Verde;FORWARD;2000000;0.5;3.269;1.634
+pl-k00135290;Matthieu;Epolo;Matthieu Epolo;DR Kongo;GOALKEEPER;2000000;0.0;3.381;0.0
+pl-k00135346;Aurele;Amenda;Aurele Amenda;Schweiz;DEFENDER;2000000;0.0;5.153;0.0
+pl-k00135361;Hyun-Jun;Yang;Hyun-Jun Yang;Südkorea;MIDFIELDER;2000000;0.0;4.339;0.0
+pl-k00135484;Alidu;Seidu;Alidu Seidu;Ghana;DEFENDER;4000000;0.0;3.134;0.0
+pl-k00135506;Jordy;Caicedo;Jordy Caicedo;Ecuador;FORWARD;2000000;0.0;5.127;0.0
+pl-k00135523;Samet;Akaydin;Samet Akaydin;Türkei;DEFENDER;2000000;0.0;4.927;0.0
+pl-k00135740;Anis;Ben Slimane;Anis Ben Slimane;Tunesien;MIDFIELDER;2000000;0.5;3.427;1.714
+pl-k00135744;Aral;Simsir;Aral Simsir;Türkei;FORWARD;2000000;0.0;4.927;0.0
+pl-k00135917;Merchas;Doski;Merchas Doski;Irak;DEFENDER;2000000;1.0;3.197;3.197
+pl-k00136083;Zeki;Amdouni;Zeki Amdouni;Schweiz;FORWARD;2000000;0.0;5.153;0.0
+pl-k00136321;Cesar;Yanis;Cesar Yanis;Panama;MIDFIELDER;1000000;0.0;3.91;0.0
+pl-k00136322;Cecilio;Waterman;Cecilio Waterman;Panama;FORWARD;1000000;0.5;3.91;1.955
+pl-k00136435;Alexander;Prass;Alexander Prass;Österreich;DEFENDER;4000000;0.0;4.093;0.0
+pl-k00136538;Tyrick;Bodak;Tyrick Bodak;Curacao;GOALKEEPER;1000000;0.0;3.118;0.0
+pl-k00136539;Kevin;Felida;Kevin Felida;Curacao;MIDFIELDER;1000000;0.0;3.118;0.0
+pl-k00136686;Louicius;Deedson;Louicius Deedson;Haiti;FORWARD;1000000;1.0;3.217;3.217
+pl-k00136687;Martin;Experience;Martin Experience;Haiti;DEFENDER;1000000;0.5;3.217;1.609
+pl-k00136731;Ilan;Kebbal;Ilan Kebbal;Algerien;MIDFIELDER;2000000;0.0;3.712;0.0
+pl-k00136758;Ibrahim;Adel;Ibrahim Adel;Ägypten;MIDFIELDER;2000000;0.0;3.946;0.0
+pl-k00136761;Emam;Ashour;Emam Ashour;Ägypten;MIDFIELDER;4000000;1.0;3.946;3.946
+pl-k00136773;Alex;Paulsen;Alex Paulsen;Neuseeland;GOALKEEPER;2000000;0.0;3.461;0.0
+pl-k00136788;Alex;Robertson;Alex Robertson;Australien;MIDFIELDER;1000000;0.0;4.094;0.0
+pl-k00136888;Robin;Roefs;Robin Roefs;Niederlande;GOALKEEPER;1000000;0.0;5.244;0.0
+pl-k00136965;Teboho;Mokoena;Teboho Mokoena;Südafrika;MIDFIELDER;2000000;1.0;3.312;3.312
+pl-k00136970;Evidence;Makgopa;Evidence Makgopa;Südafrika;FORWARD;1000000;0.0;3.312;0.0
+pl-k00137012;Ayman;Yahya;Ayman Yahya;Saudi-Arabien;MIDFIELDER;1000000;0.0;3.324;0.0
+pl-k00137164;Lenny;Joseph;Lenny Joseph;Haiti;FORWARD;2000000;0.0;3.217;0.0
+pl-k00137173;Elias;Achouri;Elias Achouri;Tunesien;FORWARD;2000000;0.5;3.427;1.714
+pl-k00137174;Gilson;Benchimol Tavares;Benchimol;Kap Verde;FORWARD;2000000;0.0;3.269;0.0
+pl-k00137234;Obed;Vargas;Obed Vargas;Mexiko;MIDFIELDER;2000000;0.0;4.867;0.0
+pl-k00137302;Adem;Zorgane;Adem Zorgane;Algerien;MIDFIELDER;2000000;0.0;3.712;0.0
+pl-k00137337;Melvin;Mastil;Melvin Mastil;Algerien;GOALKEEPER;2000000;0.0;3.712;0.0
+pl-k00137656;Oguz;Aydin;Oguz Aydin;Türkei;FORWARD;2000000;0.0;4.927;0.0
+pl-k00137667;Baris;Yilmaz;Baris Yilmaz;Türkei;FORWARD;4000000;0.5;4.927;2.463
+pl-k00137668;Mortadha;Ben Ouanes;Mortadha Ben Ouanes;Tunesien;MIDFIELDER;1000000;0.0;3.427;0.0
+pl-k00137741;Jerome;Opoku;Jerome Opoku;Ghana;DEFENDER;2000000;0.5;3.134;1.567
+pl-k00137760;Habib;Diarra;Habib Diarra;Senegal;MIDFIELDER;4000000;0.25;4.562;1.14
+pl-k00137800;Elias;Saad;Elias Saad;Tunesien;FORWARD;2000000;0.5;3.427;1.714
+pl-k00138529;Aleksandar;Pavlovic;Aleksandar Pavlovic;Deutschland;MIDFIELDER;6000000;0.6;5.107;3.064
+pl-k00138530;Paul;Wanner;Paul Wanner;Österreich;MIDFIELDER;4000000;0.0;4.093;0.0
+pl-k00138680;Ar'jany;Martha;Ar'jany Martha;Curacao;MIDFIELDER;1000000;0.0;3.118;0.0
+pl-k00138684;Ismael;Koné;Ismael Koné;Kanada;MIDFIELDER;4000000;0.75;4.635;3.477
+pl-k00138719;Giuliano;Simeone;Giuliano Simeone;Argentinien;MIDFIELDER;6000000;0.2;6.094;1.219
+pl-k00138744;Pablo Martin;Paez Gavira;Gavi;Spanien;MIDFIELDER;4000000;0.2;6.495;1.299
+pl-k00138868;Aimar;Sher;Aimar Sher;Irak;MIDFIELDER;2000000;0.0;3.197;0.0
+pl-k00139020;Samed;Bazdar;Samed Bazdar;Bosnien-Herzegowina;FORWARD;2000000;0.0;3.748;0.0
+pl-k00139075;Mohammad;Mohebi;Mohammad Mohebi;Iran;MIDFIELDER;2000000;1.0;4.307;4.307
+pl-k00139246;Mohamed;Belhadj Mahmoud;Hadj Mahmoud;Tunesien;MIDFIELDER;2000000;0.5;3.427;1.714
+pl-k00139251;Ahmad;Assaf;Ahmad Assaf;Jordanien;DEFENDER;1000000;0.5;3.491;1.746
+pl-k00139300;Augustine;Boakye;Augustine Boakye;Ghana;MIDFIELDER;2000000;0.0;3.134;0.0
+pl-k00139302;Mohammed;Amoura;Mohammed Amoura;Algerien;FORWARD;4000000;1.0;3.712;3.712
+pl-k00139304;Micky;van de Ven;Micky van de Ven;Niederlande;DEFENDER;6000000;0.25;5.244;1.311
+pl-k00139305;Antonio;Nusa;Antonio Nusa;Norwegen;MIDFIELDER;6000000;1.0;4.791;4.791
+pl-k00139390;Gue-Sung;Cho;Gue-Sung Cho;Südkorea;FORWARD;2000000;0.0;4.339;0.0
+pl-k00140663;Ayoube;Amaimouni-Echghouyab;Ayoube Amaimouni-Echghouyab;Marokko;FORWARD;2000000;0.0;4.428;0.0
+pl-k00140879;Bradley;Barcola;Bradley Barcola;Frankreich;FORWARD;8000000;0.0;6.138;0.0
+pl-k00140950;Redouane;Halhal;Redouane Halhal;Marokko;DEFENDER;2000000;0.0;4.428;0.0
+pl-k00140953;Ange-Yoan;Bonny;Ange-Yoan Bonny;Elfenbeinküste;FORWARD;4000000;0.0;3.871;0.0
+pl-k00141046;Demir Ege;Tiknaz;Demir Ege Tiknaz;Türkei;MIDFIELDER;2000000;0.0;4.927;0.0
+pl-k00141102;Nicolas;Jackson;Nicolas Jackson;Senegal;FORWARD;6000000;0.75;4.562;3.421
+pl-k00141182;Shoja;Khalilzadeh;Shoja Khalilzadeh;Iran;DEFENDER;2000000;1.0;4.307;4.307
+pl-k00141184;Saleh;Hardani;Saleh Hardani;Iran;DEFENDER;2000000;0.0;4.307;0.0
+pl-k00141205;Sander;Tangvik;Sander Tangvik;Norwegen;GOALKEEPER;1000000;0.0;4.791;0.0
+pl-k00141214;Gustaf;Lagerbielke;Gustaf Lagerbielke;Schweden;DEFENDER;4000000;1.0;3.784;3.784
+pl-k00141222;Ahmed;Qasem;Ahmed Qasem;Irak;MIDFIELDER;2000000;0.0;3.197;0.0
+pl-k00141224;Alexander;Bernhardsson;Alexander Bernhardsson;Schweden;MIDFIELDER;2000000;0.0;3.784;0.0
+pl-k00141284;Maghnes;Akliouche;Maghnes Akliouche;Frankreich;FORWARD;6000000;0.2;6.138;1.228
+pl-k00141360;Kenan;Yildiz;Kenan Yildiz;Türkei;FORWARD;6000000;1.0;4.927;4.927
+pl-k00141367;Diego Manuel Jadon;da Silva Moreira;Diego Moreira;Belgien;FORWARD;2000000;0.0;4.887;0.0
+pl-k00141370;Joao Pedro;Goncalves Neves;Joao Neves;Portugal;MIDFIELDER;8000000;0.0;5.275;0.0
+pl-k00141474;Santiago;Gimenez;Santiago Gimenez;Mexiko;FORWARD;4000000;0.25;4.867;1.217
+pl-k00141476;Erik;Lira;Erik Lira;Mexiko;MIDFIELDER;1000000;0.25;4.867;1.217
+pl-k00141489;Igor;Sergeev;Igor Sergeev;Usbekistan;FORWARD;2000000;0.0;3.696;0.0
+pl-k00141559;Abdessamad;Ezzalzouli;Abde;Marokko;FORWARD;4000000;0.75;4.428;3.321
+pl-k00141673;Nestory;Irankunda;Nestory Irankunda;Australien;MIDFIELDER;2000000;0.667;4.094;2.73
+pl-k00143231;Alessandro;Circati;Alessandro Circati;Australien;DEFENDER;4000000;0.333;4.094;1.363
+pl-k00143329;Mike;Penders;Mike Penders;Belgien;GOALKEEPER;1000000;0.0;4.887;0.0
+pl-k00143335;Zidane;Iqbal;Zidane Iqbal;Irak;MIDFIELDER;2000000;1.0;3.197;3.197
+pl-k00143407;Luca;Jaquez;Luca Jaquez;Schweiz;DEFENDER;2000000;0.0;5.153;0.0
+pl-k00143445;Wesley Vinicius;Franca Lima;Wesley;Brasilien;DEFENDER;6000000;0.2;5.371;1.074
+pl-k00143483;Jarell;Quansah;Jarell Quansah;England;DEFENDER;6000000;0.0;5.644;0.0
+pl-k00143488;Marc;Pubill;Marc Pubill;Spanien;DEFENDER;4000000;0.0;6.495;0.0
+pl-k00143512;Ben;Gannon-Doak;Ben Gannon-Doak;Schottland;MIDFIELDER;4000000;1.0;4.145;4.145
+pl-k00143529;Mohamed;Abdelmonem;Mohamed Abdelmonem;Ägypten;DEFENDER;2000000;0.5;3.946;1.973
+pl-k00143531;Hamdy;Fathy;Hamdy Fathy;Ägypten;DEFENDER;2000000;0.5;3.946;1.973
+pl-k00143532;Mohanad;Lasheen;Mohanad Lasheen;Ägypten;MIDFIELDER;2000000;0.5;3.946;1.973
+pl-k00143569;Finn;Surman;Finn Surman;Neuseeland;DEFENDER;2000000;0.5;3.461;1.73
+pl-k00143575;Soufiane;Rahimi;Soufiane Rahimi;Marokko;FORWARD;4000000;0.0;4.428;0.0
+pl-k00143579;Joao Paulo;Moreira Fernandes;Joao Paulo;Kap Verde;DEFENDER;2000000;0.5;3.269;1.634
+pl-k00143659;Abdul;Fatawu;Abdul Fatawu;Ghana;MIDFIELDER;4000000;0.0;3.134;0.0
+pl-k00143899;Oumar;Diakité;Oumar Diakité;Elfenbeinküste;FORWARD;2000000;0.0;3.871;0.0
+pl-k00143945;Danley;Jean Jacques;Danley Jean Jacques;Haiti;MIDFIELDER;2000000;0.5;3.217;1.609
+pl-k00144041;Endrick Felipe;Moreira de Sousa;Endrick;Brasilien;FORWARD;6000000;0.2;5.371;1.074
+pl-k00144238;Musab;Al-Juwayr;Musab Al-Juwayr;Saudi-Arabien;MIDFIELDER;2000000;0.5;3.324;1.662
+pl-k00144265;Patrick;Beach;Patrick Beach;Australien;GOALKEEPER;2000000;0.0;4.094;0.0
+pl-k00144394;Junnosuke;Suzuki;Junnosuke Suzuki;Japan;DEFENDER;2000000;0.0;4.859;0.0
+pl-k00144510;Jin-Seop;Park;Jin-Seop Park;Südkorea;DEFENDER;2000000;0.333;4.339;1.445
+pl-k00144518;Desiré;Doué;Desiré Doué;Frankreich;FORWARD;8000000;0.4;6.138;2.455
+pl-k00144561;Alex;Freeman;Alex Freeman;USA;DEFENDER;2000000;0.2;3.756;0.751
+pl-k00144605;Tani;Oluwaseyi;Tani Oluwaseyi;Kanada;FORWARD;4000000;0.0;4.635;0.0
+pl-k00144663;Bilal;El Khannouss;Bilal El Khannouss;Marokko;MIDFIELDER;6000000;0.5;4.428;2.214
+pl-k00144754;Renato;Palma Veiga;Renato Veiga;Portugal;DEFENDER;4000000;0.0;5.275;0.0
+pl-k00144841;Diego;Gomez;Diego Gomez;Paraguay;MIDFIELDER;4000000;0.0;4.432;0.0
+pl-k00144871;Valentin;Barco;Valentin Barco;Argentinien;DEFENDER;4000000;0.0;6.094;0.0
+pl-k00145410;Joel;Ordonez;Joel Ordonez;Ecuador;DEFENDER;4000000;0.5;5.127;2.563
+pl-k00145425;Alan;Minda;Alan Minda;Ecuador;MIDFIELDER;1000000;0.0;5.127;0.0
+pl-k00145451;Marcelo;Flores;Marcelo Flores;Kanada;MIDFIELDER;2000000;0.0;4.635;0.0
+pl-k00145456;Carlos;Acevedo;Carlos Acevedo;Mexiko;GOALKEEPER;1000000;0.0;4.867;0.0
+pl-k00145459;Israel;Reyes;Israel Reyes;Mexiko;DEFENDER;2000000;0.0;4.867;0.0
+pl-k00145558;Matias;Galarza;Matias Galarza;Paraguay;MIDFIELDER;2000000;0.0;4.432;0.0
+pl-k00145676;Ernest;Nuamah;Ernest Nuamah;Ghana;FORWARD;2000000;0.0;3.134;0.0
+pl-k00145875;Ali;Ahmed;Ali Ahmed;Kanada;MIDFIELDER;2000000;0.25;4.635;1.159
+pl-k00145891;Noah;Sadiki;Noah Sadiki;DR Kongo;MIDFIELDER;4000000;1.0;3.381;3.381
+pl-k00146019;Elias;Benkara;Elias Benkara;Algerien;DEFENDER;1000000;0.0;3.712;0.0
+pl-k00146045;Chemsdine;Talbi;Chemsdine Talbi;Marokko;FORWARD;4000000;0.0;4.428;0.0
+pl-k00146190;Mamadou;Sarr;Mamadou Sarr;Senegal;DEFENDER;4000000;0.25;4.562;1.14
+pl-k00146196;Warren;Zaire-Emery;Warren Zaire-Emery;Frankreich;MIDFIELDER;6000000;0.2;6.138;1.228
+pl-k00146292;Can;Uzun;Can Uzun;Türkei;FORWARD;4000000;0.0;4.927;0.0
+pl-k00146999;Hjalmar;Ekdal;Hjalmar Ekdal;Schweden;DEFENDER;2000000;0.0;3.784;0.0
+pl-k00147020;Jaouen;Hadjam;Jaouen Hadjam;Algerien;DEFENDER;2000000;0.0;3.712;0.0
+pl-k00147223;Luis;Chavez;Luis Chavez;Mexiko;MIDFIELDER;2000000;0.0;4.867;0.0
+pl-k00147419;Nilson;Angulo;Nilson Angulo;Ecuador;FORWARD;2000000;0.5;5.127;2.563
+pl-k00147623;Jearl;Margaritha;Jearl Margaritha;Curacao;FORWARD;1000000;0.5;3.118;1.559
+pl-k00147672;David;Jurasek;David Jurasek;Tschechien;DEFENDER;2000000;0.5;4.208;2.104
+pl-k00147673;David;Doudera;David Doudera;Tschechien;DEFENDER;2000000;0.0;4.208;0.0
+pl-k00147699;Lukas;Cerv;Lukas Cerv;Tschechien;MIDFIELDER;4000000;0.0;4.208;0.0
+pl-k00147716;Mojmir;Chytil;Mojmir Chytil;Tschechien;FORWARD;2000000;0.0;4.208;0.0
+pl-k00147775;Stepan;Chaloupek;Stepan Chaloupek;Tschechien;DEFENDER;4000000;1.0;4.208;4.208
+pl-k00147820;Ousmane;Diomande;Ousmane Diomande;Elfenbeinküste;DEFENDER;4000000;0.0;3.871;0.0
+pl-k00147890;Robin;Hranac;Robin Hranac;Tschechien;DEFENDER;4000000;1.0;4.208;4.208
+pl-k00147896;Samir;Chergui;Samir Chergui;Algerien;DEFENDER;1000000;0.0;3.712;0.0
+pl-k00147948;Mohamed;Koné;Mohamed Koné;Elfenbeinküste;GOALKEEPER;1000000;0.0;3.871;0.0
+pl-k00147960;Josué;Casimir;Josué Casimir;Haiti;FORWARD;1000000;0.5;3.217;1.609
+pl-k00148046;Steve;Kapuadi;Steve Kapuadi;DR Kongo;DEFENDER;1000000;0.0;3.381;0.0
+pl-k00148180;Gedeon;Kalulu;Gedeon Kalulu;DR Kongo;DEFENDER;1000000;0.0;3.381;0.0
+pl-k00148187;Fares;Chaibi;Fares Chaibi;Algerien;MIDFIELDER;4000000;0.5;3.712;1.856
+pl-k00148383;Sidny;Lopes Cabral;Sidny;Kap Verde;DEFENDER;2000000;0.0;3.269;0.0
+pl-k00148545;Nadhir;Benbouali;Nadhir Benbouali;Algerien;FORWARD;1000000;0.0;3.712;0.0
+pl-k00148588;Thelo;Aasgaard;Thelo Aasgaard;Norwegen;MIDFIELDER;1000000;0.0;4.791;0.0
+pl-k00148743;Lionel;Mpasi;Lionel Mpasi;DR Kongo;GOALKEEPER;4000000;0.5;3.381;1.69
+pl-k00148899;Deveron;Fonville;Deveron Fonville;Curacao;DEFENDER;1000000;0.0;3.118;0.0
+pl-k00149092;Yahia;Fofana;Yahia Fofana;Elfenbeinküste;GOALKEEPER;4000000;0.5;3.871;1.935
+pl-k00149093;Himad;Abdelli;Himad Abdelli;Algerien;MIDFIELDER;2000000;0.0;3.712;0.0
+pl-k00149102;Robin;Risser;Robin Risser;Frankreich;GOALKEEPER;2000000;0.0;6.138;0.0
+pl-k00149128;Kevin Lenini;Goncalves Pereira da Pina;Kevin Pina;Kap Verde;MIDFIELDER;2000000;0.5;3.269;1.634
+pl-k00149146;Ibrahim;Maza;Ibrahim Maza;Algerien;MIDFIELDER;6000000;0.5;3.712;1.856
+pl-k00149335;Mats;Wieffer;Mats Wieffer;Niederlande;MIDFIELDER;4000000;0.0;5.244;0.0
+pl-k00149496;Dailon;Rocha Livramento do Rosario;Dailon Livramento;Kap Verde;FORWARD;1000000;0.5;3.269;1.634
+pl-k00149648;Yousef;Qashi;Yousef Qashi;Jordanien;MIDFIELDER;1000000;0.0;3.491;0.0
+pl-k00149895;Mehdi;Dorval;Mehdi Dorval;Algerien;DEFENDER;1000000;0.0;3.712;0.0
+pl-k00150098;Guela;Doué;Guela Doué;Elfenbeinküste;DEFENDER;4000000;1.0;3.871;3.871
+pl-k00150138;Esmir;Bajraktarevic;Esmir Bajraktarevic;Bosnien-Herzegowina;MIDFIELDER;4000000;1.0;3.748;3.748
+pl-k00150653;Oscar;Bobb;Oscar Bobb;Norwegen;MIDFIELDER;4000000;0.0;4.791;0.0
+pl-k00150687;Isak;Hien;Isak Hien;Schweden;DEFENDER;4000000;0.5;3.784;1.892
+pl-k00150715;Igor Thiago;Nascimento Rodrigues;Igor Thiago;Brasilien;FORWARD;6000000;0.0;5.371;0.0
+pl-k00150818;Brandon;Thomas-Asante;Brandon Thomas-Asante;Ghana;FORWARD;2000000;0.0;3.134;0.0
+pl-k00150839;Jacob;Widell Zetterström;Jacob Widell Zetterström;Schweden;GOALKEEPER;1000000;0.0;3.784;0.0
+pl-k00151785;Ali;Lajami;Ali Lajami;Saudi-Arabien;DEFENDER;1000000;0.5;3.324;1.662
+pl-k00151824;Gonzalo;Valle;Gonzalo Valle;Ecuador;GOALKEEPER;2000000;0.5;5.127;2.563
+pl-k00151835;Chadi;Riad;Chadi Riad;Marokko;DEFENDER;2000000;0.0;4.428;0.0
+pl-k00151939;Kobbie;Mainoo;Kobbie Mainoo;England;MIDFIELDER;6000000;0.2;5.644;1.129
+pl-k00151949;Benjamin;Tahirovic;Benjamin Tahirovic;Bosnien-Herzegowina;MIDFIELDER;4000000;0.5;3.748;1.874
+pl-k00151950;Owen;Goodman;Owen Goodman;Kanada;GOALKEEPER;1000000;0.0;4.635;0.0
+pl-k00151955;Yasin;Ayari;Yasin Ayari;Schweden;MIDFIELDER;4000000;1.0;3.784;3.784
+pl-k00151994;Nawaf;Al-Aqidi;Nawaf Al-Aqidi;Saudi-Arabien;GOALKEEPER;1000000;0.5;3.324;1.662
+pl-k00151999;Jassem;Gaber;Jassem Gaber;Katar;MIDFIELDER;1000000;0.0;3.208;0.0
+pl-k00152040;Nico;Paz;Nico Paz;Argentinien;MIDFIELDER;6000000;0.0;6.094;0.0
+pl-k00152043;Nico;O'Reilly;Nico O'Reilly;England;DEFENDER;8000000;0.6;5.644;3.386
+pl-k00152134;José Manuel;Lopez;José Manuel Lopez;Argentinien;FORWARD;2000000;0.2;6.094;1.219
+pl-k00152144;Jorrel;Hato;Jorrel Hato;Niederlande;DEFENDER;6000000;0.0;5.244;0.0
+pl-k00152225;Besfort;Zeneli;Besfort Zeneli;Schweden;MIDFIELDER;2000000;0.0;3.784;0.0
+pl-k00152229;Zakaria;Hawsawi;Zakaria Hawsawi;Saudi-Arabien;DEFENDER;1000000;0.0;3.324;0.0
+pl-k00152337;Kevin;Rodriguez;Kevin Rodriguez;Ecuador;FORWARD;2000000;0.0;5.127;0.0
+pl-k00152382;Egil;Selvik;Egil Selvik;Norwegen;GOALKEEPER;1000000;0.0;4.791;0.0
+pl-k00152578;Dominique;Simon;Dominique Simon;Haiti;MIDFIELDER;1000000;0.0;3.217;0.0
+pl-k00152897;Ngal'ayel;Mukau;Ngal'ayel Mukau;DR Kongo;MIDFIELDER;4000000;0.0;3.381;0.0
+pl-k00153055;Parfait;Guiagon;Parfait Guiagon;Elfenbeinküste;MIDFIELDER;2000000;0.0;3.871;0.0
+pl-k00153445;Andres;Gomez;Andres Gomez;Kolumbien;FORWARD;2000000;0.0;5.185;0.0
+pl-k00153481;Gustavo;Puerta;Gustavo Puerta;Kolumbien;MIDFIELDER;2000000;0.0;5.185;0.0
+pl-k00153492;Lucas;Bergvall;Lucas Bergvall;Schweden;MIDFIELDER;6000000;0.0;3.784;0.0
+pl-k00153529;Jonas;Adjetey;Jonas Adjetey;Ghana;DEFENDER;4000000;1.0;3.134;3.134
+pl-k00153553;Marwan;Attia;Marwan Attia;Ägypten;MIDFIELDER;2000000;0.5;3.946;1.973
+pl-k00153662;Kaishu;Sano;Kaishu Sano;Japan;MIDFIELDER;6000000;0.667;4.859;3.241
+pl-k00153748;Tyrese;Noslin;Tyrese Noslin;Curacao;MIDFIELDER;1000000;0.0;3.118;0.0
+pl-k00153779;Johan;Manzambi;Johan Manzambi;Schweiz;MIDFIELDER;6000000;0.0;5.153;0.0
+pl-k00154062;Matias;Fernandez-Pardo;Matias Fernandez-Pardo;Belgien;FORWARD;2000000;0.0;4.887;0.0
+pl-k00154134;Max;Arfsten;Max Arfsten;USA;DEFENDER;2000000;0.0;3.756;0.0
+pl-k00154187;Moise;Bombito;Moise Bombito;Kanada;DEFENDER;4000000;0.5;4.635;2.318
+pl-k00154861;Marcel;Ruiz;Marcel Ruiz;Mexiko;MIDFIELDER;2000000;0.0;4.867;0.0
+pl-k00155533;Lamine;Camara;Lamine Camara;Senegal;MIDFIELDER;6000000;0.25;4.562;1.14
+pl-k00155566;Paul;Reverson;Paul Reverson;Ghana;GOALKEEPER;1000000;0.0;3.134;0.0
+pl-k00155772;Lamine Yamal;Nasraoui Ebana;Lamine Yamal;Spanien;FORWARD;10000000;0.8;6.495;5.196
+pl-k00155823;Luka;Vuskovic;Luka Vuskovic;Kroatien;DEFENDER;4000000;1.0;4.972;4.972
+pl-k00155858;Yaimar;Medina;Yaimar Medina;Ecuador;DEFENDER;1000000;0.0;5.127;0.0
+pl-k00155860;Kendry;Paez;Kendry Paez;Ecuador;MIDFIELDER;2000000;0.0;5.127;0.0
+pl-k00155868;Petar;Sucic;Petar Sucic;Kroatien;MIDFIELDER;4000000;0.5;4.972;2.486
+pl-k00156015;Lennart;Karl;Lennart Karl;Deutschland;MIDFIELDER;4000000;0.0;5.107;0.0
+pl-k00156130;Rayan Vitor;Simplicio Rocha;Rayan;Brasilien;FORWARD;4000000;0.0;5.371;0.0
+pl-k00156476;José;Cordoba;José Cordoba;Panama;DEFENDER;2000000;0.5;3.91;1.955
+pl-k00156642;Cristhian;Loor;Cristhian Loor;Ecuador;GOALKEEPER;1000000;0.0;5.127;0.0
+pl-k00156656;Denil;Castillo;Denil Castillo;Ecuador;MIDFIELDER;2000000;0.0;5.127;0.0
+pl-k00156668;Abdukodir;Khusanov;Abdukodir Khusanov;Usbekistan;DEFENDER;4000000;0.5;3.696;1.848
+pl-k00156671;Jakhongir;Urozov;Jakhongir Urozov;Usbekistan;DEFENDER;1000000;0.0;3.696;0.0
+pl-k00156678;Umarali;Rakhmonaliev;Umarali Rakhmonaliev;Usbekistan;MIDFIELDER;1000000;0.0;3.696;0.0
+pl-k00156680;Sherzod;Esanov;Sherzod Esanov;Usbekistan;MIDFIELDER;1000000;0.0;3.696;0.0
+pl-k00156687;Abbosbek;Fayzullayev;Abbosbek Fayzullayev;Usbekistan;FORWARD;2000000;0.0;3.696;0.0
+pl-k00156869;Jun-Ho;Bae;Jun-Ho Bae;Südkorea;MIDFIELDER;2000000;0.0;4.339;0.0
+pl-k00157020;Pau;Cubarsi;Pau Cubarsi;Spanien;DEFENDER;8000000;0.4;6.495;2.598
+pl-k00157077;Ali;Jasim;Ali Jasim;Irak;MIDFIELDER;1000000;0.0;3.197;0.0
+pl-k00157528;David Möller;Wolfe;David Möller Wolfe;Norwegen;DEFENDER;2000000;1.0;4.791;4.791
+pl-k00157538;Niko;Sigur;Niko Sigur;Kanada;DEFENDER;2000000;0.0;4.635;0.0
+pl-k00157541;Toni;Fruk;Toni Fruk;Kroatien;MIDFIELDER;2000000;0.0;4.972;0.0
+pl-k00157754;Joaquin;Seys;Joaquin Seys;Belgien;DEFENDER;2000000;0.0;4.887;0.0
+pl-k00157847;Kevin;Castano;Kevin Castano;Kolumbien;MIDFIELDER;1000000;0.0;5.185;0.0
+pl-k00157873;Jussef;Nasrawe;Jussef Nasrawe;Irak;MIDFIELDER;1000000;0.0;3.197;0.0
+pl-k00158117;Azarias;Londono;Azarias Londono;Panama;FORWARD;1000000;0.0;3.91;0.0
+pl-k00158118;Cesar;Samudio;Cesar Samudio;Panama;GOALKEEPER;1000000;0.0;3.91;0.0
+pl-k00158296;Assane;Diao;Assane Diao;Senegal;FORWARD;4000000;0.0;4.562;0.0
+pl-k00158506;Amar;Memic;Amar Memic;Bosnien-Herzegowina;MIDFIELDER;1000000;1.0;3.748;3.748
+pl-k00158727;Cameron;Burgess;Cameron Burgess;Australien;DEFENDER;2000000;0.667;4.094;2.73
+pl-k00158935;Neil;El Aynaoui;Neil El Aynaoui;Marokko;MIDFIELDER;4000000;0.75;4.428;3.321
+pl-k00159168;Florian;Wiegele;Florian Wiegele;Österreich;GOALKEEPER;1000000;0.0;4.093;0.0
+pl-k00159278;Wagner Fabricio;Cardoso Pina;Wagner Pina;Kap Verde;DEFENDER;2000000;0.0;3.269;0.0
+pl-k00159373;Rafik;Belghali;Rafik Belghali;Algerien;DEFENDER;4000000;1.0;3.712;3.712
+pl-k00159375;Zakaria;El Ouahdi;Zakaria El Ouahdi;Marokko;DEFENDER;4000000;0.0;4.428;0.0
+pl-k00159415;Christopher;Bonsu Baah;Christopher Bonsu Baah;Ghana;FORWARD;4000000;0.0;3.134;0.0
+pl-k00159775;Ruslanbek;Jiyanov;Ruslanbek Jiyanov;Usbekistan;FORWARD;1000000;0.0;3.696;0.0
+pl-k00159810;Luc;de Fougerolles;Luc de Fougerolles;Kanada;DEFENDER;1000000;0.0;4.635;0.0
+pl-k00159983;Helio Sandro;Oliveira Alves Varela;Helio Varela;Kap Verde;FORWARD;1000000;1.0;3.269;3.269
+pl-k00160199;Jeremy;Arevalo;Jeremy Arevalo;Ecuador;FORWARD;2000000;0.0;5.127;0.0
+pl-k00160498;Ermin;Mahmic;Ermin Mahmic;Bosnien-Herzegowina;MIDFIELDER;1000000;0.0;3.748;0.0
+pl-k00160664;Monsef;Bakrar;Monsef Bakrar;Algerien;FORWARD;2000000;0.0;3.712;0.0
+pl-k00161073;Olwethu;Makhanya;Olwethu Makhanya;Südafrika;DEFENDER;1000000;0.0;3.312;0.0
+pl-k00161351;Ilay;Camara;Ilay Camara;Senegal;DEFENDER;2000000;0.0;4.562;0.0
+pl-k00161633;Ayyoub;Bouaddi;Ayyoub Bouaddi;Marokko;MIDFIELDER;4000000;0.0;4.428;0.0
+pl-k00161642;Yusuf;Akcicek;Yusuf Akcicek;Türkei;DEFENDER;2000000;0.0;4.927;0.0
+pl-k00162106;Lachlan;Bayliss;Lachlan Bayliss;Neuseeland;MIDFIELDER;1000000;0.0;3.461;0.0
+pl-k00162640;Bekhruz;Karimov;Bekhruz Karimov;Usbekistan;DEFENDER;1000000;0.0;3.696;0.0
+pl-k00162760;Amirmohammad;Razzaghinia;Amirmohammad Razzaghinia;Iran;MIDFIELDER;1000000;0.0;4.307;0.0
+pl-k00162762;Kasra;Taheri;Kasra Taheri;Iran;FORWARD;1000000;0.0;4.307;0.0
+pl-k00162785;Federico;Vinas;Federico Vinas;Uruguay;FORWARD;2000000;0.0;4.658;0.0
+pl-k00162898;Kerim;Alajbegovic;Kerim Alajbegovic;Bosnien-Herzegowina;MIDFIELDER;4000000;0.0;3.748;0.0
+pl-k00162977;Fiston;Mayele;Fiston Mayele;DR Kongo;FORWARD;2000000;0.0;3.381;0.0
+pl-k00163051;Ricardo;Goss;Ricardo Goss;Südafrika;GOALKEEPER;1000000;0.0;3.312;0.0
+pl-k00163067;Nkosinathi;Sibisi;Nkosinathi Sibisi;Südafrika;DEFENDER;1000000;0.5;3.312;1.656
+pl-k00163078;Khuliso;Mudau;Khuliso Mudau;Südafrika;DEFENDER;2000000;1.0;3.312;3.312
+pl-k00163084;Jayden;Adams;Jayden Adams;Südafrika;MIDFIELDER;2000000;0.0;3.312;0.0
+pl-k00163113;Ahmed;Basil;Ahmed Basil;Irak;GOALKEEPER;2000000;1.0;3.197;3.197
+pl-k00163114;Ahmed;Yahya;Ahmed Yahya;Irak;DEFENDER;1000000;0.0;3.197;0.0
+pl-k00163117;Oussama;Benbout;Oussama Benbout;Algerien;GOALKEEPER;1000000;0.0;3.712;0.0
+pl-k00163118;Mohamed Amine;Tougai;Mohamed Amine Tougai;Algerien;DEFENDER;1000000;0.0;3.712;0.0
+pl-k00163127;Ibrahim;Bayesh;Ibrahim Bayesh;Irak;MIDFIELDER;1000000;1.0;3.197;3.197
+pl-k00163129;Amir;Al-Ammari;Amir Al-Ammari;Irak;MIDFIELDER;1000000;1.0;3.197;3.197
+pl-k00163131;Hasan;Abdulkareem;Hasan Abdulkareem;Irak;MIDFIELDER;1000000;0.0;3.197;0.0
+pl-k00163134;Ayman;Hussein;Ayman Hussein;Irak;FORWARD;1000000;1.0;3.197;3.197
+pl-k00163135;Ali;Al-Hamadi;Ali Al-Hamadi;Irak;FORWARD;2000000;1.0;3.197;3.197
+pl-k00163193;Thapelo;Maseko;Thapelo Maseko;Südafrika;FORWARD;1000000;0.0;3.312;0.0
+pl-k00163292;Mohammad;Abu Hashish;Mohammad Abu Hashish;Jordanien;DEFENDER;1000000;0.0;3.491;0.0
+pl-k00163293;Abdallah;Nasib;Abdallah Nasib;Jordanien;DEFENDER;2000000;0.5;3.491;1.746
+pl-k00163294;Mohannad;Abu Taha;Mohannad Abu Taha;Jordanien;MIDFIELDER;2000000;0.5;3.491;1.746
+pl-k00163295;Nizar;Al-Rashdan;Nizar Al-Rashdan;Jordanien;MIDFIELDER;2000000;0.5;3.491;1.746
+pl-k00163296;Ahmad;Al-Juaidi;Ahmad Al-Juaidi;Jordanien;GOALKEEPER;1000000;0.0;3.491;0.0
+pl-k00163300;Ali;Olwan;Ali Olwan;Jordanien;FORWARD;2000000;0.5;3.491;1.746
+pl-k00163301;Noor;Al-Rawabdeh;Noor Al-Rawabdeh;Jordanien;MIDFIELDER;2000000;0.5;3.491;1.746
+pl-k00163310;Rajaei;Ayed;Rajaei Ayed;Jordanien;MIDFIELDER;1000000;0.0;3.491;0.0
+pl-k00163312;Yazeed;Abulaila;Yazeed Abulaila;Jordanien;GOALKEEPER;2000000;1.0;3.491;3.491
+pl-k00163313;Mahmoud;Al-Mardi;Mahmoud Al-Mardi;Jordanien;FORWARD;2000000;0.0;3.491;0.0
+pl-k00163335;Abdulla;Abdullaev;Abdulla Abdullaev;Usbekistan;DEFENDER;1000000;0.5;3.696;1.848
+pl-k00163337;Abduvokhid;Nematov;Abduvokhid Nematov;Usbekistan;GOALKEEPER;2000000;0.5;3.696;1.848
+pl-k00163340;Sherzod;Nasrullaev;Sherzod Nasrullaev;Usbekistan;DEFENDER;2000000;0.0;3.696;0.0
+pl-k00163342;Botirali;Ergashev;Botirali Ergashev;Usbekistan;GOALKEEPER;1000000;0.0;3.696;0.0
+pl-k00163343;Umar;Eshmurodov;Umar Eshmurodov;Usbekistan;DEFENDER;1000000;0.0;3.696;0.0
+pl-k00163344;Khojiakbar;Alijonov;Khojiakbar Alijonov;Usbekistan;DEFENDER;1000000;0.5;3.696;1.848
+pl-k00163345;Azizjon;Ganiev;Azizjon Ganiev;Usbekistan;MIDFIELDER;2000000;0.5;3.696;1.848
+pl-k00164025;Guillermo;Martinez;Guillermo Martinez;Mexiko;FORWARD;1000000;0.0;4.867;0.0
+pl-k00164068;Samir;El Mourabet;Samir El Mourabet;Marokko;MIDFIELDER;4000000;0.0;4.428;0.0
+pl-k00164170;Ahmed;Al-Ganehi;Ahmed Al-Ganehi;Katar;MIDFIELDER;2000000;0.0;3.208;0.0
+pl-k00164204;Hossam;Abdel-Maguid;Hossam Abdel-Maguid;Ägypten;DEFENDER;2000000;0.0;3.946;0.0
+pl-k00164206;Abdallah;Al-Fakhouri;Abdallah Al-Fakhouri;Jordanien;GOALKEEPER;1000000;0.0;3.491;0.0
+pl-k00164207;Salim;Obaid;Salim Obaid;Jordanien;DEFENDER;1000000;0.0;3.491;0.0
+pl-k00164208;Ibrahim;Sadeh;Ibrahim Sadeh;Jordanien;MIDFIELDER;1000000;0.0;3.491;0.0
+pl-k00164234;Zaid;Tahseen;Zaid Tahseen;Irak;DEFENDER;1000000;1.0;3.197;3.197
+pl-k00164244;Zineddine;Belaid;Zineddine Belaid;Algerien;DEFENDER;1000000;0.0;3.712;0.0
+pl-k00164280;Aria;Yousefi;Aria Yousefi;Iran;MIDFIELDER;1000000;0.5;4.307;2.154
+pl-k00164281;Ahmed;Al-Kassar;Ahmed Al-Kassar;Saudi-Arabien;GOALKEEPER;1000000;0.0;3.324;0.0
+pl-k00164282;Mehdi;Ghayedi;Mehdi Ghayedi;Iran;MIDFIELDER;2000000;0.5;4.307;2.154
+pl-k00164297;Akam;Hashem;Akam Hashem;Irak;DEFENDER;1000000;0.0;3.197;0.0
+pl-k00164331;Dario;Naamo;Dario Naamo;Irak;DEFENDER;1000000;0.0;3.197;0.0
+pl-k00164341;Azizbek;Amonov;Azizbek Amonov;Usbekistan;FORWARD;1000000;0.0;3.696;0.0
+pl-k00164366;Fares;Ghedjemis;Fares Ghedjemis;Algerien;FORWARD;1000000;0.0;3.712;0.0
+pl-k00164398;El Hadji Malick;Diouf;El Hadji Malick Diouf;Senegal;DEFENDER;4000000;0.25;4.562;1.14
+pl-k00164434;Taha;Ali;Taha Ali;Schweden;MIDFIELDER;1000000;0.0;3.784;0.0
+pl-k00164504;Gessime;Yassine;Gessime Yassine;Marokko;FORWARD;4000000;0.0;4.428;0.0
+pl-k00165013;Anis;Hadj Moussa;Anis Hadj Moussa;Algerien;FORWARD;2000000;0.0;3.712;0.0
+pl-k00165535;Kento;Shiogai;Kento Shiogai;Japan;FORWARD;2000000;0.0;4.859;0.0
+pl-k00165936;Marko;Farji;Marko Farji;Irak;MIDFIELDER;2000000;0.0;3.197;0.0
+pl-k00165980;Mohammad;Ghorbani;Mohammad Ghorbani;Iran;MIDFIELDER;1000000;0.5;4.307;2.154
+pl-k00166081;Sohaib;Nair;Sohaib Nair;Algerien;DEFENDER;1000000;0.0;3.712;0.0
+pl-k00166588;Juan;Portilla;Juan Portilla;Kolumbien;MIDFIELDER;1000000;0.0;5.185;0.0
+pl-k00166769;Jiovany;Ramos;Jiovany Ramos;Panama;DEFENDER;1000000;0.0;3.91;0.0
+pl-k00166848;Alex;Arce;Alex Arce;Paraguay;FORWARD;2000000;0.0;4.432;0.0
+pl-k00167079;Sondre;Langaas;Sondre Langaas;Norwegen;DEFENDER;1000000;0.0;4.791;0.0
+pl-k00167795;Wilguens;Paugain;Wilguens Paugain;Haiti;DEFENDER;1000000;0.0;3.217;0.0
+pl-k00168538;Raul;Rangel;Raul Rangel;Mexiko;GOALKEEPER;4000000;0.75;4.867;3.65
+pl-k00168586;Edgardo;Farina;Edgardo Farina;Panama;DEFENDER;1000000;0.0;3.91;0.0
+pl-k00168599;Gustavo;Velazquez;Gustavo Velazquez;Paraguay;DEFENDER;1000000;0.5;4.432;2.216
+pl-k00168931;Kumel;Saadi;Kumel Saadi;Irak;GOALKEEPER;1000000;0.0;3.197;0.0
+pl-k00168935;Mustafa;Saadoon;Mustafa Saadoon;Irak;DEFENDER;1000000;0.0;3.197;0.0
+pl-k00169048;Christophe;Kabongo;Christophe Kabongo;Tschechien;FORWARD;1000000;0.0;4.208;0.0
+pl-k00169114;Mahmoud;Saber;Mahmoud Saber;Ägypten;MIDFIELDER;1000000;0.0;3.946;0.0
+pl-k00169120;Gustavo;Caballero;Gustavo Caballero;Paraguay;MIDFIELDER;1000000;0.0;4.432;0.0
+pl-k00169163;Tyler;Bindon;Tyler Bindon;Neuseeland;DEFENDER;2000000;1.0;3.461;3.461
+pl-k00169646;Caleb;Yirenkyi;Caleb Yirenkyi;Ghana;MIDFIELDER;4000000;1.0;3.134;3.134
+pl-k00169695;Amin;Chiakha;Amin Chiakha;Algerien;FORWARD;2000000;0.0;3.712;0.0
+pl-k00169738;Alexandr;Sojka;Alexandr Sojka;Tschechien;MIDFIELDER;2000000;0.0;4.208;0.0
+pl-k00170043;Yacine;Titraoui;Yacine Titraoui;Algerien;MIDFIELDER;1000000;0.0;3.712;0.0
+pl-k00170138;Promise;David;Promise David;Kanada;FORWARD;1000000;0.0;4.635;0.0
+pl-k00171059;Torbjörn;Heggem;Torbjörn Heggem;Norwegen;DEFENDER;2000000;0.0;4.791;0.0
+pl-k00171525;Ibrahim;Mbaye;Ibrahim Mbaye;Senegal;FORWARD;4000000;0.0;4.562;0.0
+pl-k00172013;Brian;Cipenga;Brian Cipenga;DR Kongo;MIDFIELDER;2000000;0.0;3.381;0.0
+pl-k00172054;Deniz;Gül;Deniz Gül;Türkei;FORWARD;2000000;0.0;4.927;0.0
+pl-k00172178;Christ;Inao Oulai;Christ Inao Oulai;Elfenbeinküste;MIDFIELDER;4000000;0.5;3.871;1.935
+pl-k00172237;Prince Kwabena;Adu;Prince Kwabena Adu;Ghana;FORWARD;2000000;0.5;3.134;1.567
+pl-k00172933;Findlay;Curtis;Findlay Curtis;Schottland;MIDFIELDER;1000000;0.0;4.145;0.0
+pl-k00173156;Francis;de Vries;Francis de Vries;Neuseeland;DEFENDER;1000000;0.5;3.461;1.73
+pl-k00173161;Lucas;Herrington;Lucas Herrington;Australien;DEFENDER;1000000;0.0;4.094;0.0
+pl-k00173746;Nidal;Celik;Nidal Celik;Bosnien-Herzegowina;DEFENDER;2000000;0.0;3.748;0.0
+pl-k00174370;Victor;Munoz;Victor Munoz;Spanien;FORWARD;4000000;0.0;6.495;0.0
+pl-k00174671;Keisuke;Goto;Keisuke Goto;Japan;FORWARD;4000000;0.0;4.859;0.0
+pl-k00174699;Gilberto;Mora;Gilberto Mora;Mexiko;MIDFIELDER;4000000;0.25;4.867;1.217
+pl-k00174794;Bazoumana;Touré;Bazoumana Touré;Elfenbeinküste;FORWARD;4000000;0.0;3.871;0.0
+pl-k00176299;Yan;Diomande;Yan Diomande;Elfenbeinküste;FORWARD;6000000;0.5;3.871;1.935
+pl-k00176341;Darwin;Guagua;Darwin Guagua;Ecuador;MIDFIELDER;1000000;0.0;5.127;0.0
+pl-k00176354;Henrik;Falchener;Henrik Falchener;Norwegen;DEFENDER;1000000;0.0;4.791;0.0
+pl-k00176368;Samukele;Kabini;Samukele Kabini;Südafrika;DEFENDER;2000000;0.5;3.312;1.656
+pl-k00176529;Hamza;Abdelkarim;Hamza Abdelkarim;Ägypten;FORWARD;1000000;0.0;3.946;0.0
+pl-k00177011;Moteb;Al-Harbi;Moteb Al-Harbi;Saudi-Arabien;DEFENDER;2000000;0.0;3.324;0.0
+pl-k00177016;Iqraam;Rayners;Iqraam Rayners;Südafrika;FORWARD;1000000;0.0;3.312;0.0
+pl-k00177713;Hugo;Sochurek;Hugo Sochurek;Tschechien;MIDFIELDER;2000000;0.0;4.208;0.0
+pl-k00177919;Mateo;Chavez;Mateo Chavez;Mexiko;DEFENDER;1000000;0.0;4.867;0.0
+pl-k00177949;Duke;Lacroix;Duke Lacroix;Haiti;DEFENDER;1000000;0.5;3.217;1.609
+pl-k00177969;Nawaf;Boushal;Nawaf Boushal;Saudi-Arabien;DEFENDER;1000000;1.0;3.324;3.324
+pl-k00177972;Ziyad;Al-Johani;Ziyad Al-Johani;Saudi-Arabien;MIDFIELDER;1000000;0.0;3.324;0.0
+pl-k00177974;Abdullah;Al-Salem;Abdullah Al-Salem;Saudi-Arabien;FORWARD;1000000;0.0;3.324;0.0
+pl-k00177978;Ali;Majrashi;Ali Majrashi;Saudi-Arabien;DEFENDER;1000000;0.5;3.324;1.662
+pl-k00177981;Jorge;Gutierrez;Jorge Gutierrez;Panama;DEFENDER;2000000;0.0;3.91;0.0
+pl-k00178067;Rayan;Elloumi;Rayan Elloumi;Tunesien;FORWARD;1000000;0.0;3.427;0.0
+pl-k00178191;Ime;Okon;Ime Okon;Südafrika;DEFENDER;2000000;0.5;3.312;1.656
+pl-k00179915;Ibrahim;Sabra;Ibrahim Sabra;Jordanien;FORWARD;1000000;0.0;3.491;0.0
+pl-k00180202;Kojo;Peprah Oppong;Kojo Peprah Oppong;Ghana;DEFENDER;4000000;0.5;3.134;1.567
+pl-k00180334;Hazem;Mastouri;Hazem Mastouri;Tunesien;FORWARD;1000000;0.5;3.427;1.714
+pl-k00181348;Adem;Arous;Adem Arous;Tunesien;DEFENDER;2000000;0.0;3.427;0.0
+pl-k00181848;Paul;Okon;Paul Okon;Australien;MIDFIELDER;1000000;0.0;4.094;0.0
+pl-k00182019;Alexandro;Maidana;Alexandro Maidana;Paraguay;DEFENDER;1000000;0.0;4.432;0.0
+pl-k00182504;Sultan;Mandash;Sultan Mandash;Saudi-Arabien;MIDFIELDER;1000000;0.0;3.324;0.0
+pl-k00182644;Saleh;Abu Al-Shamat;Saleh Abu Al-Shamat;Saudi-Arabien;MIDFIELDER;1000000;0.0;3.324;0.0
+pl-k00182788;Mohammed;Abu Al-Shamat;Mohammed Abu Al-Shamat;Saudi-Arabien;DEFENDER;1000000;0.0;3.324;0.0
+pl-k00182789;Jehad;Thakri;Jehad Thakri;Saudi-Arabien;DEFENDER;1000000;0.0;3.324;0.0
+pl-k00182969;Lucas;Romero;Lucas Romero;Paraguay;MIDFIELDER;1000000;0.0;4.432;0.0
+pl-k00183117;Nour;Bani Attiah;Nour Bani Attiah;Jordanien;GOALKEEPER;1000000;0.0;3.491;0.0
+pl-k00183122;Mo;Abualnadi;Mo Abualnadi;Jordanien;DEFENDER;1000000;0.5;3.491;1.746
+pl-k00183124;Saed;Al-Rosan;Saed Al-Rosan;Jordanien;DEFENDER;1000000;0.0;3.491;0.0
+pl-k00183130;Amer;Jamous;Amer Jamous;Jordanien;MIDFIELDER;2000000;0.5;3.491;1.746
+pl-k00183135;Mohammad;Abu Zrayq;Shararh;Jordanien;MIDFIELDER;1000000;0.0;3.491;0.0
+pl-k00183139;Ali;Al-Azaizeh;Ali Al-Azaizeh;Jordanien;FORWARD;1000000;0.0;3.491;0.0
+pl-k00183142;Odeh;Al-Fakhouri;Odeh Al-Fakhouri;Jordanien;FORWARD;1000000;0.0;3.491;0.0
+pl-k00183298;Akmal;Mozgovoy;Akmal Mozgovoy;Usbekistan;MIDFIELDER;1000000;0.5;3.696;1.848
+pl-k00183340;Mohammad;Khalife;Mohammad Khalife;Iran;GOALKEEPER;1000000;0.0;4.307;0.0
+pl-k00183346;Ali;Nemati;Ali Nemati;Iran;DEFENDER;1000000;1.0;4.307;4.307
+pl-k00183403;Kelvin Spencer;Pires;Djack;Kap Verde;DEFENDER;2000000;0.5;3.269;1.634
+pl-k00183407;Jair;Semedo Monteiro;Yannick Semedo;Kap Verde;MIDFIELDER;2000000;0.0;3.269;0.0
+pl-k00183839;Alaa;Al-Hajji ;Alaa Al-Hajji ;Saudi-Arabien;MIDFIELDER;1000000;0.0;3.324;0.0
+pl-k00184849;Mahmud;Abunada;Mahmud Abunada;Katar;GOALKEEPER;1000000;0.0;3.208;0.0
+pl-k00184850;Ayoub;Al-Oui;Ayoub Al-Oui;Katar;DEFENDER;2000000;0.5;3.208;1.604
+pl-k00184851;Tahsin;Jamshid;Tahsin Jamshid;Katar;FORWARD;1000000;0.0;3.208;0.0
+pl-k00184852;Mohamed;Al-Mannai;Mohamed Al-Mannai;Katar;MIDFIELDER;2000000;0.5;3.208;1.604
+pl-k00185081;Kilian;Belazzoug;Kilian Belazzoug;Algerien;GOALKEEPER;1000000;0.0;3.712;0.0
+pl-k00185671;Benjamin;Asare;Benjamin Asare;Ghana;GOALKEEPER;4000000;1.0;3.134;3.134
+pl-k00185831;Keeto;Thermoncy;Keeto Thermoncy;Haiti;DEFENDER;1000000;0.0;3.217;0.0
+pl-k00186204;Husam;Abu Dahab;Husam Abu Dahab;Jordanien;DEFENDER;2000000;0.5;3.491;1.746
+pl-k00186303;Hadi;Habibinejad;Hadi Habibinejad;Iran;FORWARD;1000000;0.0;4.307;0.0
+pl-k00186316;Al-Hashmi;Al-Hussain;Al-Hashmi Al-Hussain;Katar;DEFENDER;1000000;0.0;3.208;0.0
+pl-k00186356;Armando;Gonzalez;Armando Gonzalez;Mexiko;FORWARD;1000000;0.0;4.867;0.0
+pl-k00186383;Youssef;Belammari;Youssef Belammari;Marokko;DEFENDER;1000000;0.0;4.428;0.0
+pl-k00186771;Sipho;Chaine;Sipho Chaine;Südafrika;GOALKEEPER;1000000;0.0;3.312;0.0
+pl-k00186772;Thabang;Matuludi;Thabang Matuludi;Südafrika;DEFENDER;1000000;0.0;3.312;0.0
+pl-k00186773;Mbekezeli;Mbokazi;Mbekezeli Mbokazi;Südafrika;DEFENDER;2000000;1.0;3.312;3.312
+pl-k00186804;Khulumani;Ndamane;Khulumani Ndamane;Südafrika;DEFENDER;1000000;0.0;3.312;0.0
+pl-k00186805;Thalente;Mbatha;Thalente Mbatha;Südafrika;MIDFIELDER;2000000;0.5;3.312;1.656
+pl-k00186806;Relebohile;Mofokeng;Relebohile Mofokeng;Südafrika;FORWARD;2000000;0.5;3.312;1.656
+pl-k00186807;Tshepang;Moremi;Tshepang Moremi;Südafrika;FORWARD;2000000;0.5;3.312;1.656
+pl-k00187286;Adil;Boulbina;Adil Boulbina;Algerien;FORWARD;2000000;0.0;3.712;0.0
+pl-k00187495;Redouane;Berkane;Redouane Berkane;Algerien;FORWARD;1000000;0.0;3.712;0.0
+pl-k00187691;Bara;Sapoko Ndiaye;Bara Sapoko Ndiaye;Senegal;MIDFIELDER;1000000;0.0;4.562;0.0
+pl-k00192544;Bruno;Caicedo;Bruno Caicedo;Ecuador;FORWARD;2000000;0.0;5.127;0.0
+pl-k00193378;Sabri;Ben Hessen;Sabri Ben Hessen;Tunesien;GOALKEEPER;2000000;0.0;3.427;0.0
+pl-k00194142;Elliot;Stroud;Elliot Stroud;Schweden;DEFENDER;2000000;0.0;3.784;0.0
+pl-k00194337;Kamogelo;Sebelebele;Kamogelo Sebelebele;Südafrika;DEFENDER;1000000;0.0;3.312;0.0
+pl-k00194341;Issa;Laye;Issa Laye;Katar;DEFENDER;1000000;0.0;3.208;0.0
+pl-k00194733;Woodensky;Pierre;Woodensky Pierre;Haiti;MIDFIELDER;1000000;0.0;3.217;0.0
+pl-k00195271;Manaf;Younis;Manaf Younis;Irak;DEFENDER;1000000;0.0;3.197;0.0
+pl-k00195272;Ahmed;Maknzi;Ahmed Maknzi;Irak;DEFENDER;1000000;0.0;3.197;0.0
+pl-k00195273;Zaid;Ismail;Zaid Ismail;Irak;MIDFIELDER;1000000;0.0;3.197;0.0
+pl-k00195274;Ali;Yousif;Ali Yousif;Irak;FORWARD;1000000;0.0;3.197;0.0
+pl-k00195395;Mohammad;Taha;Mohammad Taha;Jordanien;MIDFIELDER;1000000;0.0;3.491;0.0
+pl-k00195396;Mohammad;Al-Dawoud;Mohammad Al-Dawoud;Jordanien;MIDFIELDER;1000000;0.0;3.491;0.0
+pl-k00195444;Mouhib;Chamakh;Mouhib Chamakh;Tunesien;GOALKEEPER;1000000;0.0;3.427;0.0
+pl-k00195446;Moutaz;Neffati;Moutaz Neffati;Tunesien;DEFENDER;1000000;0.0;3.427;0.0
+pl-k00195447;Raed;Chikhaoui;Raed Chikhaoui;Tunesien;DEFENDER;1000000;0.0;3.427;0.0
+pl-k00195449;Khalil;Ayari;Khalil Ayari;Tunesien;FORWARD;1000000;0.0;3.427;0.0
+pl-k00195453;Sherzod;Temirov;Sherzod Temirov;Usbekistan;FORWARD;1000000;0.0;3.696;0.0
+pl-k00195655;Achref;Abada;Achref Abada;Algerien;DEFENDER;1000000;0.0;3.712;0.0
+pl-k00195661;Amirhossein;Mahmoudi;Amirhossein Mahmoudi;Iran;FORWARD;1000000;0.0;4.307;0.0
+pl-k00195662;El-Mahdi;Soliman;El-Mahdi Soliman;Ägypten;GOALKEEPER;1000000;0.0;3.946;0.0
+pl-k00195663;Mohamed;Alaa;Mohamed Alaa;Ägypten;GOALKEEPER;1000000;0.0;3.946;0.0
+pl-k00195664;Tarek;Alaa;Tarek Alaa;Ägypten;DEFENDER;1000000;0.0;3.946;0.0
+pl-k00196610;Ederson;Castillo;Ederson Castillo;Ecuador;MIDFIELDER;1000000;0.0;5.127;0.0
+pl-k00199799;Rayan;Al-Ali;Rayan Al-Ali;Katar;DEFENDER;1000000;0.0;3.208;0.0
+pl-k00200613;Maytham;Jabbar;Maytham Jabbar;Irak;DEFENDER;1000000;0.0;3.197;0.0
+pl-k00200616;Karar;Nabeel;Karar Nabeel;Irak;MIDFIELDER;1000000;0.0;3.197;0.0
+pl-k00200620;Danial;Eiri;Danial Eiri;Iran;DEFENDER;1000000;0.0;4.307;0.0
+pl-k00200625;Anas;Badawi;Anas Badawi;Jordanien;DEFENDER;1000000;0.0;3.491;0.0
+pl-k00200629;Mostafa;Mohamed Zaki Abdelraouf;Mostafa Ziko;Ägypten;MIDFIELDER;1000000;0.5;3.946;1.973
+pl-k00200796;Solomon;Agbasi;Solomon Agbasi;Ghana;GOALKEEPER;1000000;0.0;3.134;0.0
+pl-k00201006;Fricio;Caicedo;Fricio Caicedo;Ecuador;DEFENDER;1000000;0.0;5.127;0.0
+pl-k00201007;Luis;Fragozo;Luis Fragozo;Ecuador;FORWARD;1000000;0.0;5.127;0.0
+pl-k00201011;Avazbek;Ulmasaliev;Avazbek Ulmasaliev;Usbekistan;DEFENDER;1000000;0.0;3.696;0.0

@@ -7,6 +7,12 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
+from expected_player_games import (
+    OUT_PATH as EXPECTED_GAMES_PATH,
+    apply_expected_games,
+    load_default_probabilities,
+    mc_to_team_exp_games_de,
+)
 from optimizer import (
     BUDGET,
     DATA_DEFAULT,
@@ -34,6 +40,9 @@ DISPLAY_COLS = [
     "Notendurchschnitt",
 ]
 
+OBJ_ERWARTET_DEFAULT = "Erwartete Spiele"
+OBJ_ERWARTET_CUSTOM = "Erwartete Spiele (Custom)"
+
 
 # ---------- Caching ----------
 
@@ -52,6 +61,17 @@ def cached_default_ratings(source: str = "elo") -> dict[str, float]:
     return load_ratings(source=source)
 
 
+@st.cache_data
+def cached_default_probabilities() -> dict[str, float]:
+    return load_default_probabilities()
+
+
+@st.cache_data
+def cached_default_expected_games_csv() -> pd.DataFrame:
+    """Vorberechnete ``Erwartete Spiele`` (ID + Wert) aus der CSV."""
+    return pd.read_csv(EXPECTED_GAMES_PATH, sep=";")[["ID", "Erwartete Spiele"]]
+
+
 RATING_SOURCES = {
     "Elo (World Football)": "elo",
     "WM-Sieger-Quoten (Buchmacher)": "betting",
@@ -64,10 +84,38 @@ def format_eur(value: int) -> str:
     return f"{value:,} €".replace(",", ".")
 
 
+def _attach_default_expected_games(players: pd.DataFrame) -> pd.DataFrame:
+    eg = cached_default_expected_games_csv()
+    out = players.merge(eg, on="ID", how="left")
+    out["Erwartete Spiele"] = out["Erwartete Spiele"].fillna(0.0)
+    return out
+
+
+def _attach_custom_expected_games(players: pd.DataFrame) -> pd.DataFrame:
+    """Verknüpft eigene Sim + eigene Wahrscheinlichkeiten zu Erwartete Spiele."""
+    team_eg: dict[str, float] = st.session_state["custom_team_exp_games"]
+    # Defaults aus CSV + benutzerdefinierte Overrides.
+    probs = dict(cached_default_probabilities())
+    probs.update(st.session_state.get("custom_probabilities", {}))
+    return apply_expected_games(players, team_eg, probs)
+
+
+def _custom_eg_available() -> bool:
+    return "custom_team_exp_games" in st.session_state
+
+
 # ===================== OPTIMIZER TAB =====================
 
 def render_optimizer() -> None:
     st.subheader("Kader-Optimierung")
+
+    # Verfügbare Ziele zusammenbauen — Custom nur, wenn eine eigene Sim
+    # gelaufen ist (Probabilities-Overrides sind optional und fallen zurück).
+    objective_options = ["Punkte", "Notendurchschnitt"]
+    if EXPECTED_GAMES_PATH.exists():
+        objective_options.append(OBJ_ERWARTET_DEFAULT)
+    if _custom_eg_available():
+        objective_options.append(OBJ_ERWARTET_CUSTOM)
 
     with st.container(border=True):
         c1, c2, c3 = st.columns([3, 2, 2])
@@ -80,7 +128,7 @@ def render_optimizer() -> None:
             )
         with c3:
             objective = st.selectbox(
-                "Zielgröße", options=["Punkte", "Notendurchschnitt"], index=0, key="opt_obj",
+                "Zielgröße", options=objective_options, index=0, key="opt_obj",
             )
 
         c4, c5 = st.columns([3, 1])
@@ -90,7 +138,7 @@ def render_optimizer() -> None:
                 exclude_zero = st.checkbox(
                     "Spieler mit 0 Punkten ausschließen", value=False, key="opt_zero_p",
                 )
-            else:
+            elif objective == "Notendurchschnitt":
                 direction = st.radio(
                     "Optimierungsrichtung",
                     options=["Minimieren (beste Note)", "Maximieren"],
@@ -101,6 +149,23 @@ def render_optimizer() -> None:
                     "Spieler mit Note 0.0 ausschließen (kein Spiel)",
                     value=True, key="opt_zero_n",
                 )
+            else:
+                # Erwartete Spiele (Default / Custom): maximieren, 0-Spieler
+                # nicht ausschließen (sonst fallen alle Reservisten raus).
+                minimize = False
+                exclude_zero = False
+                if objective == OBJ_ERWARTET_CUSTOM:
+                    st.caption(
+                        "Custom: Team-Erwartungswerte aus deiner zuletzt "
+                        "gelaufenen Simulation + ggf. angepasste Startelf-"
+                        "Wahrscheinlichkeiten."
+                    )
+                else:
+                    st.caption(
+                        "Default: vorberechnete Werte aus "
+                        f"`{EXPECTED_GAMES_PATH.name}` (Elo-Sim × Lineup-"
+                        "Wahrscheinlichkeiten)."
+                    )
         with c5:
             run = st.button("Optimieren", type="primary", use_container_width=True)
 
@@ -110,6 +175,11 @@ def render_optimizer() -> None:
         st.error(f"CSV konnte nicht geladen werden: {exc}")
         return
     st.caption(f"{len(players)} Spieler geladen aus `{data_path}`")
+
+    if objective == OBJ_ERWARTET_DEFAULT:
+        players = _attach_default_expected_games(players)
+    elif objective == OBJ_ERWARTET_CUSTOM:
+        players = _attach_custom_expected_games(players)
 
     if not run:
         st.info("Einstellungen wählen und „Optimieren“ klicken.")
@@ -132,29 +202,41 @@ def render_optimizer() -> None:
     col3.metric("Restbudget", format_eur(int(budget) - result.total_cost))
     col4.metric("Kadergröße", f"{len(picks)} / {sum(POSITION_QUOTA.values())}")
 
+    # Anzeige-Spalten: bei Erwartete-Spiele-Zielen die Spielanzahl mit zeigen.
+    if objective in (OBJ_ERWARTET_DEFAULT, OBJ_ERWARTET_CUSTOM):
+        display_cols = DISPLAY_COLS + ["Erwartete Spiele"]
+        sort_col = "Erwartete Spiele"
+    else:
+        display_cols = DISPLAY_COLS
+        sort_col = "Punkte" if objective == "Punkte" else "Notendurchschnitt"
+
     st.divider()
     st.subheader("Gewählter Kader")
     pos_cols = st.columns(len(POSITION_QUOTA))
     for col, (pos, quota) in zip(pos_cols, POSITION_QUOTA.items()):
-        block = picks[picks["Position"] == pos][DISPLAY_COLS].copy()
-        block_sorted = block.sort_values(
-            "Punkte" if objective == "Punkte" else "Notendurchschnitt",
-            ascending=minimize,
-        )
+        block = picks[picks["Position"] == pos][display_cols].copy()
+        block_sorted = block.sort_values(sort_col, ascending=minimize)
         with col:
             st.markdown(f"**{POSITION_LABEL[pos]}** ({len(block_sorted)}/{quota})")
+            fmt: dict[str, object] = {
+                "Marktwert": format_eur,
+                "Notendurchschnitt": "{:.2f}",
+            }
+            if "Erwartete Spiele" in block_sorted.columns:
+                fmt["Erwartete Spiele"] = "{:.2f}"
             st.dataframe(
-                block_sorted.style.format(
-                    {"Marktwert": format_eur, "Notendurchschnitt": "{:.2f}"}
-                ),
+                block_sorted.style.format(fmt),
                 hide_index=True, use_container_width=True,
             )
 
     st.divider()
     with st.expander("Gesamttabelle / Export"):
-        full = picks[["Position"] + DISPLAY_COLS]
+        full = picks[["Position"] + display_cols]
+        fmt = {"Marktwert": format_eur, "Notendurchschnitt": "{:.2f}"}
+        if "Erwartete Spiele" in full.columns:
+            fmt["Erwartete Spiele"] = "{:.2f}"
         st.dataframe(
-            full.style.format({"Marktwert": format_eur, "Notendurchschnitt": "{:.2f}"}),
+            full.style.format(fmt),
             hide_index=True, use_container_width=True,
         )
         st.download_button(
@@ -196,6 +278,7 @@ def render_simulation() -> None:
         st.session_state["_last_source"] = source
         # Alte Simulationsergebnisse verwerfen — beziehen sich auf andere Quelle
         st.session_state.pop("sim_results", None)
+        st.session_state.pop("custom_team_exp_games", None)
 
     # Session-State initialisieren (für allerersten Render)
     for team, elo in defaults.items():
@@ -226,6 +309,7 @@ def render_simulation() -> None:
             for team, elo in defaults.items():
                 st.session_state[f"elo_{team}"] = float(elo)
             st.session_state.pop("sim_results", None)
+            st.session_state.pop("custom_team_exp_games", None)
             st.rerun()
     with c2:
         n_runs = st.slider(
@@ -242,6 +326,8 @@ def render_simulation() -> None:
             df = run_monte_carlo(schedule, ratings, n_runs=n_runs)
         st.session_state["sim_results"] = df
         st.session_state["sim_n_runs"] = n_runs
+        # Team-Erwartungswerte (DE-Namen) für den Optimizer-Hook bereitstellen.
+        st.session_state["custom_team_exp_games"] = mc_to_team_exp_games_de(df)
 
     # ---- Ergebnis ----
     if "sim_results" not in st.session_state:
@@ -295,17 +381,135 @@ def render_simulation() -> None:
     )
 
 
+# ===================== STARTELF-WAHRSCHEINLICHKEITEN =====================
+
+def _prob_state_key(player_id: str) -> str:
+    return f"prob_{player_id}"
+
+
+def render_probabilities() -> None:
+    st.subheader("Startelf-Wahrscheinlichkeiten anpassen")
+    st.caption(
+        "Pro Team editierbar. Defaults stammen aus den aggregierten "
+        "Lineup-Vorhersagen. Änderungen fließen — gemeinsam mit deiner "
+        "Simulation — in das Ziel „Erwartete Spiele (Custom)“ ein."
+    )
+
+    try:
+        players = cached_load_players(str(DATA_DEFAULT))
+    except Exception as exc:
+        st.error(f"Spieler-CSV konnte nicht geladen werden: {exc}")
+        return
+
+    defaults = cached_default_probabilities()
+
+    # Session-State initialisieren.
+    for pid in players["ID"]:
+        st.session_state.setdefault(
+            _prob_state_key(pid), float(defaults.get(pid, 0.0))
+        )
+
+    # Team-Auswahl + Filter.
+    teams = sorted(players["Verein"].unique())
+    c1, c2, c3 = st.columns([2, 1, 1])
+    with c1:
+        team = st.selectbox("Team", options=teams, key="prob_team")
+    with c2:
+        if st.button("Team auf Default", use_container_width=True):
+            mask = players["Verein"] == team
+            for pid in players.loc[mask, "ID"]:
+                st.session_state[_prob_state_key(pid)] = float(defaults.get(pid, 0.0))
+            st.rerun()
+    with c3:
+        if st.button("Alle Teams auf Default", use_container_width=True):
+            for pid in players["ID"]:
+                st.session_state[_prob_state_key(pid)] = float(defaults.get(pid, 0.0))
+            st.rerun()
+
+    # Editor je Position.
+    team_players = players[players["Verein"] == team].copy()
+    if team_players.empty:
+        st.info(f"Keine Spieler für {team} gefunden.")
+        return
+
+    st.markdown("##### Wahrscheinlichkeiten")
+    for pos in ["GOALKEEPER", "DEFENDER", "MIDFIELDER", "FORWARD"]:
+        block = team_players[team_players["Position"] == pos]
+        if block.empty:
+            continue
+        with st.container(border=True):
+            st.markdown(f"**{POSITION_LABEL[pos]}** ({len(block)})")
+            cols = st.columns(2)
+            for i, (_, row) in enumerate(block.iterrows()):
+                with cols[i % 2]:
+                    pid = row["ID"]
+                    st.slider(
+                        row["Angezeigter Name"],
+                        min_value=0.0, max_value=1.0, step=0.05,
+                        key=_prob_state_key(pid),
+                        help=f"Default: {defaults.get(pid, 0.0):.2f}",
+                    )
+
+    # Custom-Overrides berechnen (nur Werte, die vom Default abweichen) und
+    # in den Session-State legen. Der Optimizer-Tab liest das.
+    overrides: dict[str, float] = {}
+    for pid in players["ID"]:
+        cur = float(st.session_state[_prob_state_key(pid)])
+        if abs(cur - float(defaults.get(pid, 0.0))) > 1e-9:
+            overrides[pid] = cur
+    st.session_state["custom_probabilities"] = overrides
+
+    st.divider()
+    st.caption(
+        f"Aktuell überschriebene Spieler: **{len(overrides)}** "
+        f"(von {len(players)} insgesamt)."
+    )
+    if not _custom_eg_available():
+        st.warning(
+            "Noch keine Simulation gelaufen. Wechsle zum Simulator-Tab und "
+            "klicke „Simulation starten“, damit „Erwartete Spiele (Custom)“ "
+            "im Optimizer verfügbar wird."
+        )
+
+
 # ===================== MAIN =====================
 
 def main() -> None:
     st.set_page_config(page_title="Kicker Manager Optimizer", layout="wide")
     st.title("⚽ Kicker Manager Optimizer")
 
-    tab_opt, tab_sim = st.tabs(["🧮 Optimizer", "🏆 WM-Simulation"])
-    with tab_opt:
+    with st.sidebar:
+        st.markdown("### Modus")
+        advanced = st.toggle(
+            "Erweiterte Optionen",
+            value=False,
+            help=(
+                "Schaltet Simulator und Startelf-Wahrscheinlichkeiten frei. "
+                "Aus deren Kombination wird „Erwartete Spiele (Custom)“ im "
+                "Optimizer verfügbar."
+            ),
+        )
+        if advanced:
+            st.caption(
+                "Custom-Ziel im Optimizer: zuerst auf dem Simulator-Tab eine "
+                "Simulation starten, optional auf dem Wahrscheinlichkeiten-"
+                "Tab einzelne Spieler anpassen."
+            )
+
+    if advanced:
+        tab_opt, tab_sim, tab_prob = st.tabs([
+            "🧮 Optimizer",
+            "🏆 WM-Simulation",
+            "👥 Startelf-Wahrscheinlichkeiten",
+        ])
+        with tab_opt:
+            render_optimizer()
+        with tab_sim:
+            render_simulation()
+        with tab_prob:
+            render_probabilities()
+    else:
         render_optimizer()
-    with tab_sim:
-        render_simulation()
 
 
 if __name__ == "__main__":
