@@ -282,7 +282,14 @@ def simulate_tournament(
 
 def run_monte_carlo(
     schedule: Schedule, ratings: dict[str, float], n_runs: int = 10_000, seed: int = 42,
+    progress_callback=None,
 ) -> pd.DataFrame:
+    """Monte-Carlo-Aggregation über ``n_runs`` Turniere.
+
+    ``progress_callback(i, n_runs)`` wird – falls gesetzt – nach jedem
+    Iterationsschritt aufgerufen (``i`` ist 1-indiziert, ``i == n_runs`` am
+    Ende). Nützlich z.B. für ``st.progress`` im Dashboard.
+    """
     rng = np.random.default_rng(seed)
     sigma = compute_sigma(ratings)
     counts = defaultdict(lambda: Counter())  # stage -> Counter(team -> reached)
@@ -293,7 +300,7 @@ def run_monte_carlo(
 
     stage_of_match = {m["match_no"]: m["stage"] for m in schedule.raw["matches"]}
 
-    for _ in range(n_runs):
+    for i in range(n_runs):
         outcome = simulate_tournament(schedule, ratings, rng, sigma=sigma)
 
         # Sieger pro Stage zählen → bestimmt p_r16/p_qf/p_sf/p_final
@@ -313,6 +320,9 @@ def run_monte_carlo(
         podium_counter[outcome["champion"]] += 1
         podium_counter[outcome["runner_up"]] += 1
         podium_counter[outcome["third"]] += 1
+
+        if progress_callback is not None:
+            progress_callback(i + 1, n_runs)
 
     # Aggregierte Wahrscheinlichkeiten pro Team
     rows = []

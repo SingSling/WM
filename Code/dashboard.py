@@ -320,16 +320,33 @@ def render_simulation() -> None:
     with c2:
         n_runs = st.slider(
             "Anzahl Simulationen",
-            min_value=500, max_value=10_000, value=2_000, step=500,
-            help="2000 ≈ 50 s · 5000 ≈ 2 min · 10000 ≈ 4 min",
+            min_value=200, max_value=5_000, value=1_000, step=200,
+            help=(
+                "Lokal ≈ 25 ms/Turnier, Streamlit Cloud (1 vCPU) "
+                "deutlich langsamer. 1000 Läufe reichen für robuste "
+                "Titel-Wahrscheinlichkeiten."
+            ),
         )
     with c3:
         run = st.button("Simulation starten", type="primary", use_container_width=True)
 
     if run:
         ratings = {team: float(st.session_state[f"elo_{team}"]) for team in defaults}
-        with st.spinner(f"Simuliere {n_runs:,} Turniere… (~{n_runs * 0.025:.0f} s)"):
-            df = run_monte_carlo(schedule, ratings, n_runs=n_runs)
+        progress = st.progress(0.0, text=f"Simuliere {n_runs:,} Turniere…")
+        # Nur alle ~1% updaten — sonst dominiert das UI-Roundtrip die Laufzeit.
+        update_every = max(1, n_runs // 100)
+
+        def on_step(i: int, total: int) -> None:
+            if i == total or i % update_every == 0:
+                progress.progress(
+                    i / total,
+                    text=f"Simuliere Turnier {i:,} / {total:,}",
+                )
+
+        df = run_monte_carlo(
+            schedule, ratings, n_runs=n_runs, progress_callback=on_step,
+        )
+        progress.empty()
         st.session_state["sim_results"] = df
         st.session_state["sim_n_runs"] = n_runs
         # Team-Erwartungswerte (DE-Namen) für den Optimizer-Hook bereitstellen.
