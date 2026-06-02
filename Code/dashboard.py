@@ -2,7 +2,14 @@
 
 from __future__ import annotations
 
+import sys
 from pathlib import Path
+
+# Code/ explizit auf sys.path legen — Streamlit Cloud (Python ≥3.14) initialisiert
+# das Skript-Verzeichnis nicht zuverlässig vor unseren Top-Level-Imports.
+_HERE = Path(__file__).resolve().parent
+if str(_HERE) not in sys.path:
+    sys.path.insert(0, str(_HERE))
 
 import pandas as pd
 import streamlit as st
