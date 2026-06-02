@@ -23,7 +23,8 @@ from expected_player_games import (
 from optimizer import (
     BUDGET,
     DATA_DEFAULT,
-    POSITION_QUOTA,
+    DEFAULT_FORMATION,
+    FORMATIONS,
     load_players,
     optimize,
 )
@@ -125,21 +126,33 @@ def render_optimizer() -> None:
         objective_options.append(OBJ_ERWARTET_CUSTOM)
 
     with st.container(border=True):
-        c1, c2, c3 = st.columns([3, 2, 2])
+        c1, c2, c3, c4 = st.columns([3, 2, 1.5, 2])
         with c1:
             data_path = st.text_input("CSV-Pfad", value=str(DATA_DEFAULT), key="opt_csv")
         with c2:
             budget = st.number_input(
                 "Budget (€)", min_value=10_000_000, max_value=200_000_000,
                 value=BUDGET, step=1_000_000, key="opt_budget",
+                help=(
+                    "Default: 66 Mio (= 70 Mio Squad-Kasse − 4 × 1 Mio "
+                    "Bank-Spieler). Der Solver wählt nur die Startelf; "
+                    "Bank füllst du manuell."
+                ),
             )
         with c3:
+            formation = st.selectbox(
+                "Formation",
+                options=list(FORMATIONS),
+                index=list(FORMATIONS).index(DEFAULT_FORMATION),
+                key="opt_formation",
+            )
+        with c4:
             objective = st.selectbox(
                 "Zielgröße", options=objective_options, index=0, key="opt_obj",
             )
 
-        c4, c5 = st.columns([3, 1])
-        with c4:
+        c_opts, c_btn = st.columns([3, 1])
+        with c_opts:
             if objective == "Punkte":
                 minimize = False
                 exclude_zero = st.checkbox(
@@ -173,7 +186,7 @@ def render_optimizer() -> None:
                         f"`{EXPECTED_GAMES_PATH.name}` (Elo-Sim × Lineup-"
                         "Wahrscheinlichkeiten)."
                     )
-        with c5:
+        with c_btn:
             run = st.button("Optimieren", type="primary", use_container_width=True)
 
     try:
@@ -198,11 +211,14 @@ def render_optimizer() -> None:
         else objective
     )
 
+    position_quota = FORMATIONS[formation]
+
     with st.spinner("Solver läuft…"):
         try:
             result = optimize(
                 players, objective_col=objective_col, minimize=minimize,
                 exclude_zero_objective=exclude_zero, budget=int(budget),
+                position_quota=position_quota,
             )
         except Exception as exc:
             st.error(f"Optimierung fehlgeschlagen: {exc}")
@@ -213,7 +229,9 @@ def render_optimizer() -> None:
     col1.metric(f"Σ {objective}", f"{result.objective_value:.2f}")
     col2.metric("Gesamtkosten", format_eur(result.total_cost))
     col3.metric("Restbudget", format_eur(int(budget) - result.total_cost))
-    col4.metric("Kadergröße", f"{len(picks)} / {sum(POSITION_QUOTA.values())}")
+    col4.metric(
+        "Startelf", f"{len(picks)} / {sum(position_quota.values())} ({formation})",
+    )
 
     # Anzeige-Spalten: bei Erwartete-Spiele-Zielen die Spielanzahl mit zeigen.
     if objective in (OBJ_ERWARTET_DEFAULT, OBJ_ERWARTET_CUSTOM):
@@ -224,9 +242,9 @@ def render_optimizer() -> None:
         sort_col = "Punkte" if objective == "Punkte" else "Notendurchschnitt"
 
     st.divider()
-    st.subheader("Gewählter Kader")
-    pos_cols = st.columns(len(POSITION_QUOTA))
-    for col, (pos, quota) in zip(pos_cols, POSITION_QUOTA.items()):
+    st.subheader(f"Gewählte Startelf — {formation}")
+    pos_cols = st.columns(len(position_quota))
+    for col, (pos, quota) in zip(pos_cols, position_quota.items()):
         block = picks[picks["Position"] == pos][display_cols].copy()
         block_sorted = block.sort_values(sort_col, ascending=minimize)
         with col:

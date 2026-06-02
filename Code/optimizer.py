@@ -17,14 +17,35 @@ import pulp
 DATA_DEFAULT = Path(__file__).resolve().parent.parent / "Data" / "players-se-k01012026.csv"
 EXPECTED_GAMES_PATH = Path(__file__).resolve().parent.parent / "Data" / "expected_player_games.csv"
 
-BUDGET = 70_000_000
-POSITION_QUOTA = {
-    "GOALKEEPER": 2,
-    "DEFENDER": 5,
-    "MIDFIELDER": 5,
-    "FORWARD": 3,
+# Volle Kicker-Manager-Squad und Budget: 15 Spieler / 70 Mio €. Der Optimizer
+# wählt aber nur die Startelf (11 Spieler) — die 4 Bank-Plätze füllt der User
+# manuell mit 1-Mio-Spielern. Das reserviert 4 × 1 Mio = 4 Mio von der Squad-
+# Kasse für die Bank; der Solver bekommt 66 Mio.
+SQUAD_BUDGET = 70_000_000
+BENCH_FILLER_COST = 1_000_000
+BENCH_SIZE = 4
+STARTING_XI_BUDGET = SQUAD_BUDGET - BENCH_SIZE * BENCH_FILLER_COST  # 66_000_000
+
+# Erlaubte Formationen (immer 1 GK). Schlüssel ist die übliche Schreibweise
+# DEF-MID-FWD, der Wert die exakte Positions-Quote für den Solver.
+FORMATIONS: dict[str, dict[str, int]] = {
+    "4-4-2": {"GOALKEEPER": 1, "DEFENDER": 4, "MIDFIELDER": 4, "FORWARD": 2},
+    "3-4-3": {"GOALKEEPER": 1, "DEFENDER": 3, "MIDFIELDER": 4, "FORWARD": 3},
+    "3-5-2": {"GOALKEEPER": 1, "DEFENDER": 3, "MIDFIELDER": 5, "FORWARD": 2},
+    "4-3-3": {"GOALKEEPER": 1, "DEFENDER": 4, "MIDFIELDER": 3, "FORWARD": 3},
+    "4-5-1": {"GOALKEEPER": 1, "DEFENDER": 4, "MIDFIELDER": 5, "FORWARD": 1},
+    "5-3-2": {"GOALKEEPER": 1, "DEFENDER": 5, "MIDFIELDER": 3, "FORWARD": 2},
+    "5-4-1": {"GOALKEEPER": 1, "DEFENDER": 5, "MIDFIELDER": 4, "FORWARD": 1},
 }
-SQUAD_SIZE = sum(POSITION_QUOTA.values())
+DEFAULT_FORMATION = "3-4-3"
+
+# Default-Quote für den Solver (entspricht DEFAULT_FORMATION). Aus
+# Rückwärtskompatibilitäts-/Convenience-Gründen weiterhin als POSITION_QUOTA
+# exportiert — das Dashboard kann via ``formation``-Argument abweichen.
+POSITION_QUOTA = FORMATIONS[DEFAULT_FORMATION]
+SQUAD_SIZE = sum(POSITION_QUOTA.values())  # 11
+# Alias für Bestandsskripte/Dashboard, die ``BUDGET`` als Solver-Budget nutzen.
+BUDGET = STARTING_XI_BUDGET
 
 
 @dataclass
@@ -69,7 +90,12 @@ def optimize(
     minimize: bool = False,
     exclude_zero_objective: bool = False,
     budget: int = BUDGET,
+    position_quota: dict[str, int] | None = None,
 ) -> Result:
+    if position_quota is None:
+        position_quota = POSITION_QUOTA
+    squad_size = sum(position_quota.values())
+
     df = players.copy()
     if exclude_zero_objective:
         df = df[df[objective_col] > 0].reset_index(drop=True)
@@ -86,13 +112,13 @@ def optimize(
     prob += pulp.lpSum(df.loc[i, "Marktwert"] * x[i] for i in df.index) <= budget
 
     # Positions-Kontingente (exakt)
-    for pos, quota in POSITION_QUOTA.items():
+    for pos, quota in position_quota.items():
         prob += (
             pulp.lpSum(x[i] for i in df.index if df.loc[i, "Position"] == pos) == quota
         )
 
     # Squad-Größe (redundant, aber explizit)
-    prob += pulp.lpSum(x) == SQUAD_SIZE
+    prob += pulp.lpSum(x) == squad_size
 
     status = prob.solve(pulp.PULP_CBC_CMD(msg=False))
     if pulp.LpStatus[status] != "Optimal":
@@ -111,7 +137,9 @@ def optimize(
     )
 
 
-def format_result(result: Result, objective_col: str) -> str:
+def format_result(
+    result: Result, objective_col: str, budget: int = BUDGET,
+) -> str:
     lines = []
     cols = ["Position", "Angezeigter Name", "Verein", "Marktwert", "Punkte", "Notendurchschnitt"]
     if objective_col not in cols:
@@ -122,8 +150,8 @@ def format_result(result: Result, objective_col: str) -> str:
         lines.append(block.to_string(index=False))
     lines.append("")
     lines.append(f"Zielwert ({objective_col}): {result.objective_value:.2f}")
-    lines.append(f"Gesamtkosten: {result.total_cost:,} € (Budget: {BUDGET:,} €)")
-    lines.append(f"Restbudget:   {BUDGET - result.total_cost:,} €")
+    lines.append(f"Gesamtkosten: {result.total_cost:,} € (Budget: {budget:,} €)")
+    lines.append(f"Restbudget:   {budget - result.total_cost:,} €")
     return "\n".join(lines)
 
 
@@ -137,6 +165,12 @@ def main() -> None:
         help="Zu optimierende Spalte",
     )
     parser.add_argument(
+        "--formation",
+        default=DEFAULT_FORMATION,
+        choices=list(FORMATIONS),
+        help="Startformation (1 GK + DEF-MID-FWD)",
+    )
+    parser.add_argument(
         "--minimize",
         action="store_true",
         help="Zielwert minimieren statt maximieren (z.B. Notendurchschnitt)",
@@ -146,7 +180,11 @@ def main() -> None:
         action="store_true",
         help="Spieler mit Zielwert == 0 ausschließen (sinnvoll bei Notendurchschnitt)",
     )
-    parser.add_argument("--budget", type=int, default=BUDGET)
+    parser.add_argument(
+        "--budget", type=int, default=STARTING_XI_BUDGET,
+        help=f"Solver-Budget für die Startelf (Default {STARTING_XI_BUDGET:,} € = "
+             f"{SQUAD_BUDGET:,} € Squad-Kasse − {BENCH_SIZE} × {BENCH_FILLER_COST:,} € Bank)",
+    )
     args = parser.parse_args()
 
     players = load_players(args.data)
@@ -158,8 +196,10 @@ def main() -> None:
         minimize=args.minimize,
         exclude_zero_objective=args.exclude_zero,
         budget=args.budget,
+        position_quota=FORMATIONS[args.formation],
     )
-    print(format_result(result, args.objective))
+    print(f"Formation: {args.formation}")
+    print(format_result(result, args.objective, budget=args.budget))
 
 
 if __name__ == "__main__":
