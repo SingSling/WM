@@ -185,10 +185,16 @@ def render_optimizer() -> None:
         st.info("Einstellungen wählen und „Optimieren“ klicken.")
         return
 
+    objective_col = (
+        "Erwartete Spiele"
+        if objective in (OBJ_ERWARTET_DEFAULT, OBJ_ERWARTET_CUSTOM)
+        else objective
+    )
+
     with st.spinner("Solver läuft…"):
         try:
             result = optimize(
-                players, objective_col=objective, minimize=minimize,
+                players, objective_col=objective_col, minimize=minimize,
                 exclude_zero_objective=exclude_zero, budget=int(budget),
             )
         except Exception as exc:
@@ -383,8 +389,31 @@ def render_simulation() -> None:
 
 # ===================== STARTELF-WAHRSCHEINLICHKEITEN =====================
 
-def _prob_state_key(player_id: str) -> str:
-    return f"prob_{player_id}"
+# Canonical store: dict {player_id: probability} unter "probs". Slider-Widgets
+# bekommen einen team-skopierten Key (``prob_<team>_<pid>``) — beim Wechsel
+# des Teams entstehen frische Widgets, die ihren Anfangswert aus dem
+# Canonical-Dict ziehen. Ohne Team-Skopierung würde Streamlit das Widget
+# am gleichen Skript-Slot wiederverwenden und den Session-State-Wert
+# ignorieren.
+
+def _prob_widget_key(team: str, player_id: str) -> str:
+    return f"prob_{team}_{player_id}"
+
+
+def _ensure_probs_state(player_ids, defaults: dict[str, float]) -> None:
+    if "probs" not in st.session_state:
+        st.session_state["probs"] = {
+            pid: float(defaults.get(pid, 0.0)) for pid in player_ids
+        }
+
+
+def _reset_team_to_defaults(
+    team: str, team_ids, defaults: dict[str, float],
+) -> None:
+    probs = st.session_state["probs"]
+    for pid in team_ids:
+        probs[pid] = float(defaults.get(pid, 0.0))
+        st.session_state.pop(_prob_widget_key(team, pid), None)
 
 
 def render_probabilities() -> None:
@@ -402,12 +431,7 @@ def render_probabilities() -> None:
         return
 
     defaults = cached_default_probabilities()
-
-    # Session-State initialisieren.
-    for pid in players["ID"]:
-        st.session_state.setdefault(
-            _prob_state_key(pid), float(defaults.get(pid, 0.0))
-        )
+    _ensure_probs_state(players["ID"], defaults)
 
     # Team-Auswahl + Filter.
     teams = sorted(players["Verein"].unique())
@@ -416,14 +440,21 @@ def render_probabilities() -> None:
         team = st.selectbox("Team", options=teams, key="prob_team")
     with c2:
         if st.button("Team auf Default", use_container_width=True):
-            mask = players["Verein"] == team
-            for pid in players.loc[mask, "ID"]:
-                st.session_state[_prob_state_key(pid)] = float(defaults.get(pid, 0.0))
+            team_ids = players.loc[players["Verein"] == team, "ID"]
+            _reset_team_to_defaults(team, team_ids, defaults)
             st.rerun()
     with c3:
         if st.button("Alle Teams auf Default", use_container_width=True):
-            for pid in players["ID"]:
-                st.session_state[_prob_state_key(pid)] = float(defaults.get(pid, 0.0))
+            # Alle Team-Slots im Widget-State löschen, damit beim nächsten
+            # Render saubere Widgets aus dem Canonical-Dict initialisiert
+            # werden. Wir kennen nur die Widget-Keys des aktuellen Teams
+            # (und müssten sie für alle Teams kennen), darum ein Vollscan:
+            for key in [k for k in st.session_state if k.startswith("prob_")
+                        and k != "prob_team"]:
+                del st.session_state[key]
+            st.session_state["probs"] = {
+                pid: float(defaults.get(pid, 0.0)) for pid in players["ID"]
+            }
             st.rerun()
 
     # Editor je Position.
@@ -431,6 +462,8 @@ def render_probabilities() -> None:
     if team_players.empty:
         st.info(f"Keine Spieler für {team} gefunden.")
         return
+
+    probs = st.session_state["probs"]
 
     st.markdown("##### Wahrscheinlichkeiten")
     for pos in ["GOALKEEPER", "DEFENDER", "MIDFIELDER", "FORWARD"]:
@@ -443,20 +476,31 @@ def render_probabilities() -> None:
             for i, (_, row) in enumerate(block.iterrows()):
                 with cols[i % 2]:
                     pid = row["ID"]
+                    widget_key = _prob_widget_key(team, pid)
+                    # Erst-Render eines Widgets in diesem Team: aus
+                    # Canonical-Dict initialisieren. Spätere Renders lesen
+                    # den Widget-State direkt.
+                    if widget_key not in st.session_state:
+                        st.session_state[widget_key] = float(probs[pid])
                     st.slider(
                         row["Angezeigter Name"],
                         min_value=0.0, max_value=1.0, step=0.05,
-                        key=_prob_state_key(pid),
+                        key=widget_key,
                         help=f"Default: {defaults.get(pid, 0.0):.2f}",
                     )
 
-    # Custom-Overrides berechnen (nur Werte, die vom Default abweichen) und
-    # in den Session-State legen. Der Optimizer-Tab liest das.
+    # Widget-Werte zurück in das Canonical-Dict synchronisieren (nur das
+    # aktuelle Team — andere Teams behalten ihre zuletzt gesetzten Werte).
+    for pid in team_players["ID"]:
+        widget_key = _prob_widget_key(team, pid)
+        if widget_key in st.session_state:
+            probs[pid] = float(st.session_state[widget_key])
+
+    # Custom-Overrides für den Optimizer.
     overrides: dict[str, float] = {}
-    for pid in players["ID"]:
-        cur = float(st.session_state[_prob_state_key(pid)])
-        if abs(cur - float(defaults.get(pid, 0.0))) > 1e-9:
-            overrides[pid] = cur
+    for pid, val in probs.items():
+        if abs(val - float(defaults.get(pid, 0.0))) > 1e-9:
+            overrides[pid] = val
     st.session_state["custom_probabilities"] = overrides
 
     st.divider()
