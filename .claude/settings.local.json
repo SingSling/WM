@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk -F';' 'NR>1 {print $7}' players-se-k01012026.csv)",
+      "Bash(awk -F';' 'NR>1 {print $8}' players-se-k01012026.csv)"
+    ]
+  }
+}

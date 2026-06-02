@@ -1,0 +1,240 @@
+{
+  "sources": {
+    "bulinews": "https://bulinews.com/predicted-lineups-for-all-48-teams-the-2026-world-cup (per-fixture pages)",
+    "rotowire": "https://www.rotowire.com/soccer/article/2026-world-cup-group-{a-l}-preview (per-group pages)",
+    "fifaworldcup_live": "https://fifaworldcup.live/fifa-world-cup-2026-predicted-starting-xi-for-every-team/",
+    "espn_clean": "https://www.espn.com/soccer/story/_/id/47964079/2026-world-cup-rosters-predictions-starting-xis-usa-france-mexico-england-spain-germany-brazil-argentina",
+    "espn_images": "https://www.espn.com/soccer/story/_/id/48677243/2026-world-cup-rosters-predictions-starting-xis (text extracted; noisy — may include retired/historical players)"
+  },
+  "lineups": {
+    "Mexico": {
+      "bulinews": ["J. Rangel", "Jorge Sánchez", "César Montes", "Johan Vásquez", "Jesús Gallardo", "Erik Lira Méndez", "Orbelín Pineda", "Brian Gutierrez", "Á. Fidalgo Fernández", "J. Quiñones Quiñones", "Raúl Jiménez"],
+      "rotowire": ["Rangel", "Sanchez", "Montes", "Vasquez", "Gallardo", "Fidalgo", "Lira", "Mora", "Alvarado", "Jimenez", "Quinones"],
+      "espn_clean": ["Guillermo Ochoa", "Julian Araujo", "Johan Vasquez", "Cesar Montes", "Jesus Gallardo", "Edson Alvarez", "Orbelín Pineda", "Roberto Alvarado", "Alexis Vega", "Raúl Jiménez", "Santi Giménez"],
+      "espn_images": ["Rangel", "Sánchez", "Vásquez", "Montes", "Fidalgo", "Gutiérrez", "Quiñones", "Alvarado", "Lozano", "Jiménez", "Ochoa"]
+    },
+    "South Africa": {
+      "bulinews": ["Ronwen Williams", "Siyabonga Ngezana", "Nkosinathi Sibisi", "Mbekezeli Mbokazi", "Khuliso Mudau", "Teboho Mokoena", "Bathusi Aubaas", "Samukelo Kabini", "Oswin Appollis", "Relebohile Ratomo", "Lyle Foster"],
+      "rotowire": ["Williams", "Mudau", "Okon", "Mbokazi", "Modiba", "Mbatha", "Mokoena", "Appollis", "Mofokeng", "Moremi", "Foster"]
+    },
+    "South Korea": {
+      "bulinews": ["Song Bum-Keun", "Seol Young-Woo", "Cho Yu-Min", "Park Jin-Sub", "Kim Min-Jae", "Lee Tae-Seok", "Lee Kang-In", "Jens Castrop", "Hyeok-Kyu Kwon", "Son Heung-Min", "Oh Hyun-Gyu"],
+      "rotowire": ["Kim Seung-Gyu", "Lee Han-Beom", "Kim Min-Jae", "Kim Tae-Hyeon", "Seol Young-Woo", "Kim Jin-Gyu", "Hwang In-Beom", "Lee Tae-Seok", "Lee Kang-In", "Hwang Hee-Chan", "Son Heung-Min"],
+      "espn_images": ["Kim Seung-gyu", "Kim Moon-hwan", "Kim Min-jae", "Kim Young-gwon", "Lee Yong", "Lee Jae-sung", "Hwang In-beom", "Son", "Lee Kang-in", "Hwang Hee-chan", "Song"]
+    },
+    "Czech Republic": {
+      "bulinews": ["Matěj Kovář", "Chaloupek", "Robin Hranáč", "Ladislav Krejčí", "Vladimír Coufal", "Tomáš Souček", "Vladimír Darida", "Jaroslav Zelený", "Lukáš Provod", "Pavel Šulc", "Patrik Schick"],
+      "rotowire": ["Kovar", "Chaloupek", "Hranac", "Krejci", "Coufal", "Soucek", "Darida", "Jurasek", "Provod", "Schick", "Sulc"]
+    },
+    "Canada": {
+      "bulinews": ["James Pantemis", "Shola Jimoh", "Kamal Miller", "Mathieu Choiniere", "Richie Laryea", "Ralph Priso-Mbongue", "Zohran Bassong", "Jayden Nelson", "Jonathan Osorio", "Rayan Elloumi", "Jacen Russell-Rowe"],
+      "rotowire": ["St. Clair", "Johnston", "Bombito", "Cornelius", "Davies", "Buchanan", "Kone", "Eustaquio", "Ahmed", "Larin", "David"],
+      "espn_clean": ["Dayne St. Clair", "Alistair Johnston", "Moise Bombito", "Derek Cornelius", "Alphonso Davies", "Stephen Eustaquio", "Ismael Kone", "Tajon Buchanan", "Jacob Schaffelburg", "Jonathan David", "Liam Millar"],
+      "espn_images": ["Borjan", "Johnston", "Davies", "Miller", "Laryea", "Osorio", "Kone", "Buchanan", "Shaffelburg", "David", "Eustáquio"]
+    },
+    "Bosnia": {
+      "bulinews": ["Nikola Vasilj", "Amar Dedić", "Tarik Muharemovic", "Sead Kolašinac", "Ivan Bašić", "Ivan Šunjić", "A. Memić", "Esmir Bajraktarevic", "Ermedin Demirović", "Edin Džeko", "Nikola Katić"],
+      "rotowire": ["Vasilj", "Dedic", "Katic", "Muharemovic", "Kolasinac", "Bajraktarevic", "Tahirovic", "Sunjic", "Memic", "Dzeko", "Demirovic"]
+    },
+    "Qatar": {
+      "bulinews": ["Meshaal Barsham", "Ayoub Al Oui", "E. El Hussain Mohi aldin", "Yousef Ayman", "Homam Ahmed", "Jassem Abdulsallam", "Assim Madibo", "Mohamed Gouda", "Mostafa Mashaal", "Khalid Mohammed", "Ahmed Alaa Eldin"],
+      "rotowire": ["Barsham", "Miguel", "Khoukhi", "Mendes", "Al Brake", "Al Mannai", "Boudiaf", "Madibo", "Edmilson", "Almoez Ali", "Afif"]
+    },
+    "Switzerland": {
+      "bulinews": ["Yvon Mvogo", "Denis Zakaria", "Manuel Akanji", "Nico Elvedi", "Michel Aebischer", "Remo Freuler", "Ardon Jashari", "Fabian Rieder", "Dan Ndoye", "Breel-Donald Embolo", "Ruben Vargas"],
+      "rotowire": ["Kobel", "Widmer", "Elvedi", "Akanji", "Rodriguez", "Freuler", "Xhaka", "Vargas", "Rieder", "Ndoye", "Embolo"]
+    },
+    "Brazil": {
+      "bulinews": ["Bento Krepski", "Ibañez", "Marquinhos", "Léo Pereira", "Douglas Santos", "D. dos Santos de Oliveira", "Casemiro", "Matheus Cunha", "Luiz Rosa da Silva", "João Pedro", "Vinícius Júnior"],
+      "rotowire": ["Alisson", "Wesley", "Marquinhos", "Gabriel", "Alex Sandro", "Raphinha", "Guimaraes", "Casemiro", "Martinelli", "Cunha", "Vinicius"],
+      "fifaworldcup_live": ["Alisson Becker", "Danilo", "Marquinhos", "Éder Militão", "Guilherme Arana", "Casemiro", "Bruno Guimarães", "Lucas Paquetá", "Vinícius Jr", "Rodrygo", "Endrick"],
+      "espn_clean": ["Alisson", "Vanderson", "Marquinhos", "Gabriel Magalhães", "Alex Sandro", "Casemiro", "Bruno Guimarães", "Raphinha", "Vinicius Jr", "Estevão", "Matheus Cunha"],
+      "espn_images": ["Alisson", "Danilo", "Marquinhos", "Neymar", "Vinícius Júnior", "Casemiro", "Bruno Guimarães", "Rodrygo", "Raphinha", "Richarlison", "Cebolinha"]
+    },
+    "Morocco": {
+      "bulinews": ["Yassine Bounou", "Achraf Hakimi", "Naif Aguerd", "Adam Masina", "Noussair Mazraoui", "Neil El Aynaoui", "Brahim Díaz", "Bilal El Khannous", "I. Saibari Ben El Basra", "A. Ezzalzouli", "Ayoub El Kaabi"],
+      "rotowire": ["Bounou", "Hakimi", "Diop", "Aguerd", "Mazraoui", "El Aynaoui", "Saibari", "El Khannouss", "Diaz", "El Kaabi", "Abde"],
+      "espn_clean": ["Yassine Bounou", "Achraf Hakimi", "Romain Saiss", "Nayef Aguerd", "Noussair Mazraoui", "Neil El Aynaoui", "Sofyan Amrabat", "Brahim Diaz", "Abde Ezzalzouli", "Ayoub El Kaabi", "Ilias Akhomach"],
+      "espn_images": ["Bono", "Hakimi", "Aguerd", "Diop", "Mendy", "Ounahi", "Mazraoui", "Amrabat", "Ziyech", "En-Nesyri", "Benabid"]
+    },
+    "Haiti": {
+      "bulinews": ["Alexandre Pierre", "Carlens Arcus", "Jean-Kevin Duverne", "Ricardo Ade", "Martin Expérience", "Leverton Pierre", "Danley Jean Jacques", "Christopher Attys", "Louicius Deedson", "Duckens Nazon", "Frantzdy Pierrot"],
+      "rotowire": ["Placide", "Arcus", "Ade", "Delcroix", "Lacroix", "Bellegarde", "Pierre", "Deedson", "Casimir", "Providence", "Isidor"]
+    },
+    "Scotland": {
+      "bulinews": ["Craig Gordon", "Aaron Hickey", "Grant Hanley", "Scott McKenna", "Andrew Robertson", "Lewis Ferguson", "Ben Doak", "Ryan Christie", "Scott McTominay", "John McGinn", "Lyndon Dykes"],
+      "rotowire": ["Gunn", "Hickey", "Souttar", "McKenna", "Robertson", "Christie", "Gilmour", "Doak", "McTominay", "McGinn", "Adams"]
+    },
+    "USA": {
+      "bulinews": ["Matthew Freese", "Alexander Freeman", "Chris Richards", "Auston Trusty", "Antonee Robinson", "Weston McKennie", "Sebastian Berhalter", "Aidan Morris", "Timothy Weah", "Christian Pulisic", "Malik Tillman"],
+      "rotowire": ["Freese", "Richards", "Trusty", "McKenzie", "Weah", "McKennie", "Adams", "Robinson", "Tillman", "Balogun", "Pulisic"],
+      "fifaworldcup_live": ["Matt Turner", "Sergiño Dest", "Chris Richards", "Tim Ream", "Antonee Robinson", "Tyler Adams", "Weston McKennie", "Yunus Musah", "Christian Pulisic", "Ricardo Pepi", "Timothy Weah"],
+      "espn_clean": ["Matt Freese", "Sergiño Dest", "Chris Richards", "Tim Ream", "Antonee Robinson", "Tyler Adams", "Weston McKennie", "Christian Pulisic", "Malik Tillman", "Folarin Balogun", "Alejandro Zendejas"],
+      "espn_images": ["Steffen", "Dest", "Ream", "McKenzie", "Robinson", "Adams", "Cardoso", "Reyna", "Pulisic", "Balogun", "Turner"]
+    },
+    "Paraguay": {
+      "bulinews": ["Orlando Gill", "A. Benítez Domínguez", "Víctor Velázquez", "Alexis Duarte", "A. Sández", "Braian Ojeda", "M. Galarza Fonda", "Ramón Sosa", "D. Gómez Amarilla", "Miguel Almirón", "Arnaldo Sanabria"],
+      "rotowire": ["Fernandez", "Caceres", "Alderete", "Gomez", "Alonso", "Bobadilla", "Cubas", "Enciso", "Gomez", "Almiron", "Sanabria"]
+    },
+    "Australia": {
+      "bulinews": ["Paul Izzo", "Lewis Miller", "Kai Trewin", "Miloš Degenek", "Cameron Burgess", "Kye Rowles", "Connor Metcalfe", "Jackson Irvine", "Aiden O'Neill", "Riley McGree", "Mohamed Toure"],
+      "rotowire": ["Ryan", "Circati", "Souttar", "Burgess", "Italiano", "Metcalfe", "Irvine", "Bos", "Boyle", "Toure", "Irankunda"],
+      "espn_images": ["Souttar", "Degenek", "Behich", "McGree", "Irvine", "Mooy", "Touré", "Irankunda", "Goodwin", "Duke", "Langerak"]
+    },
+    "Turkey": {
+      "bulinews": ["Uğurcan Çakır", "İ. Yüksek", "Ozan Kabak", "A. Bardakcı", "Mehmet Çelik", "Hakan Çalhanoğlu", "Orkun Kökçü", "Ferdi Kadıoğlu", "Arda Guler", "Kenan Yildiz", "M. Aktürkoğlu"],
+      "rotowire": ["Cakir", "Celik", "Demiral", "Bardakci", "Kadioglu", "Calhanoglu", "Yuksek", "Yilmaz", "Guler", "Yildiz", "Akturkoglu"]
+    },
+    "Germany": {
+      "bulinews": ["Alexander Nübel", "Joshua Kimmich", "Jonathan Tah", "Nico Schlotterbeck", "Nathaniel Brown", "Pascal Groß", "Angelo Stiller", "Kai Havertz", "Serge Gnabry", "Florian Wirtz", "Nick Woltemade"],
+      "rotowire": ["Neuer", "Kimmich", "Tah", "Schlotterbeck", "Raum", "Goretzka", "Pavlovic", "Sane", "Musiala", "Wirtz", "Havertz"],
+      "fifaworldcup_live": ["Marc-André ter Stegen", "Joshua Kimmich", "Antonio Rüdiger", "Nico Schlotterbeck", "David Raum", "Leon Goretzka", "İlkay Gündoğan", "Jamal Musiala", "Florian Wirtz", "Leroy Sané", "Kai Havertz"],
+      "espn_clean": ["Oliver Baumann", "Joshua Kimmich", "Jonathan Tah", "Nico Schlotterbeck", "David Raum", "Aleksandar Pavlovic", "Leon Goretzka", "Florian Wirtz", "Jamal Musiala", "Kai Havertz", "Serge Gnabry"],
+      "espn_images": ["Baumann", "Kimmich", "Rüdiger", "Schlotterbeck", "Mittelstädt", "Goretzka", "Pavlović", "Wirtz", "Musiala", "Havertz", "Muller"]
+    },
+    "Curacao": {
+      "bulinews": ["Eloy Room", "Leandro Bacuna", "Joshua Brenet", "Juriën Gaari", "Sherel Floranus", "Roshon van Eijma", "Livano Comenencia", "Juninho Bacuna", "Gervane Kastaneer", "Kenji Gorré", "Jearl Margaritha"],
+      "rotowire": ["Room", "Sambo", "Gaari", "Obispo", "Floranus", "Comenencia", "L. Bacuna", "J. Bacuna", "Antonisse", "Kastaneer", "Gorre"]
+    },
+    "Ivory Coast": {
+      "bulinews": ["Yahia Fofana", "Guela Doué", "Kossonou Odilon", "Evan N'Dicka", "Ghislain Konan", "Franck Kessié", "Ibrahim Sangaré", "Christ Inao Oulaï", "Amad Traoré", "Evann Guessand", "Yan Diomande"],
+      "rotowire": ["Fofana", "Doue", "Kossounou", "Agbadou", "Konan", "Sangare", "Kessie", "Fofana", "Diallo", "Guessand", "Diomande"]
+    },
+    "Ecuador": {
+      "bulinews": ["Gonzalo Valle", "J. Ordóñez Guerrero", "Felix Torres", "W. Pacho Tenorio", "Alan Franco", "Moisés Caicedo", "Pedro Vite Uca", "Pervis Estupiñán", "John Zamora", "Enner Valencia", "Gonzalo Plata"],
+      "rotowire": ["Galindez", "Ordonez", "Pacho", "Hincapie", "Estupinan", "Franco", "Caicedo", "Vite", "Angulo", "Plata", "Valencia"]
+    },
+    "Netherlands": {
+      "bulinews": ["Mark Flekken", "Denzel Dumfries", "Stefan de Vrij", "Virgil van Dijk", "Nathan Aké", "Jerdy Schouten", "Quinten Maduro", "Xavi Simons", "Donyell Malen", "Brian Brobbey", "Cody Gakpo"],
+      "rotowire": ["Verbruggen", "Dumfries", "Van Dijk", "Ake", "van de Ven", "Gravenberch", "de Jong", "Malen", "Reijnders", "Gakpo", "Depay"],
+      "espn_clean": ["Bart Verbruggen", "Denzel Dumfries", "Jurrien Timber", "Virgil van Dijk", "Nathan Ake", "Frenkie de Jong", "Ryan Gravenberch", "Tijjani Reijnders", "Donyell Malen", "Cody Gakpo", "Memphis Depay"],
+      "espn_images": ["Verbruggen", "Dumfries", "Van Dijk", "Ake", "Aké", "De Jong", "Gravenberch", "Reijnders", "Gakpo", "Malen", "Depay"]
+    },
+    "Japan": {
+      "bulinews": ["Zion Suzuki", "Tsuyoshi Watanabe", "Shogo Taniguchi", "Hiroki Ito", "Ritsu Doan", "Kaishu Sano", "Daichi Kamada", "Keito Nakamura", "Junya Ito", "Kaoru Mitoma", "Ayase Ueda"],
+      "rotowire": ["Suzuki", "Taniguchi", "Itakura", "Ito", "Doan", "Sano", "Kamada", "Nakamura", "Kubo", "Ueda", "Ito"],
+      "espn_images": ["Gonda", "Tomiyasu", "Itakura", "Taniguchi", "Nakamura", "Tanaka", "Kamada", "Mitoma", "Kubo", "Ueda", "Osako"]
+    },
+    "Sweden": {
+      "bulinews": ["K. Nordfeldt", "Gustaf Lagerbielke", "Carl Starfelt", "Victor Lindelöf", "Daniel Svensson", "Yasin Ayari", "Jesper Karlström", "Gabriel Gudmundsson", "Anthony Elanga", "Benjamin Nygren", "Viktor Gyökeres"],
+      "rotowire": ["Nordfeldt", "Hien", "Lagerbielke", "Lindelof", "Svensson", "Karlstrom", "Ayari", "Gudmundsson", "Elanga", "Gyokeres", "Isak"]
+    },
+    "Tunisia": {
+      "bulinews": ["Aymen Dahmen", "Yan Valery", "Dylan Bronn", "Montassar Talbi", "Ali Abdi", "Ellyes Skhiri", "Ferjani Sassi", "Ismaël Gharbi", "M. Belhaj Mahmoud", "Hannibal Mejbri", "Hazem Mastouri"],
+      "rotowire": ["Dahmen", "Valery", "Talbi", "Bronn", "El Abdi", "Skhiri", "Khedira", "Achouri", "Hannibal", "Ben Slimane", "Saad"]
+    },
+    "Belgium": {
+      "bulinews": ["Matz Sels", "Timothy Castagne", "Koni De Winter", "Nathan Ngoy", "Maxim De Cuyper", "Youri Tielemans", "Axel Witsel", "Dodi Lukebakio", "Kevin De Bruyne", "Mika Godts", "Lois Openda"],
+      "rotowire": ["Courtois", "Meunier", "De Winter", "Theate", "De Cuyper", "Onana", "Tielemans", "Trossard", "De Bruyne", "Doku", "De Ketelaere"],
+      "espn_clean": ["Thibaut Courtois", "Thomas Meunier", "Zeno Debast", "Arthur Theate", "Maxim De Cuyper", "Youri Tielemans", "Amadou Onana", "Kevin De Bruyne", "Jeremy Doku", "Romelu Lukaku", "Leandro Trossard"],
+      "espn_images": ["Courtois", "Debast", "Theate", "Castagne", "Sels", "Witsel", "Tielemans", "De Bruyne", "Hazard", "Lukaku", "Meunier"]
+    },
+    "Egypt": {
+      "bulinews": ["Mostafa Shobeir", "Mohamed Hany", "Hamdi Fathi", "Rami Rabia", "Khaled Sobhy", "Zizo", "M. Mostafa Lasheen", "Mohamed Salah", "Emam Ashour", "Trézéguet", "Mostafa Mohamed"],
+      "rotowire": ["Shobeir", "Hany", "El Hanafi", "Abdelmonem", "El Fetouh", "Attia", "Fathy", "Salah", "Ashour", "Trezeguet", "Marmoush"]
+    },
+    "Iran": {
+      "bulinews": ["Alireza Beiranvand", "Ali Nemati", "Danial Esmaeilifar", "Majid Hosseini", "Shoja Khalilzadeh", "Saeid Ezatolahi", "M. Ghorbani", "Saman Ghoddos", "Mohammad Mohebi", "Mehdi Taremi", "A. Hosseinzadeh"],
+      "rotowire": ["Beiranvand", "Yousefi", "Nemati", "Khalilzadeh", "Mohammadi", "Ezatolahi", "Ghoddos", "Mohebi", "Ghayedi", "Taremi", "Hosseinzadeh"]
+    },
+    "New Zealand": {
+      "bulinews": ["Maxime Crocombe", "Bill Tuiloma", "Finn Surman", "Tyler Bindon", "Francis De Vries", "Marko Stamenic", "Alex Rufer", "Elijah Just", "Sarpeet Singh", "Benjamin Old", "Ben Waine"],
+      "rotowire": ["Crocombe", "Cacace", "Boxall", "Bindon", "Old", "Stamenic", "Bell", "Just", "Garbett", "Singh", "Wood"]
+    },
+    "Spain": {
+      "bulinews": ["Unai Simón", "Marcos Llorente", "Pau Cubarsí", "Aymeric Laporte", "Marc Cucurella", "Mikel Merino", "Aleix García", "Fabián Ruiz", "Y. Jesús Pino Santos", "Mikel Oyarzabal", "Daniel Olmo"],
+      "rotowire": ["Simon", "Porro", "Cubarsi", "Laporte", "Cucurella", "Rodri", "Pedri", "Ruiz", "Yamal", "Oyarzabal", "Olmo"],
+      "fifaworldcup_live": ["Unai Simón", "Dani Carvajal", "Pau Torres", "Aymeric Laporte", "Alejandro Balde", "Rodri", "Pedri", "Gavi", "Lamine Yamal", "Álvaro Morata", "Nico Williams"],
+      "espn_clean": ["Unai Simón", "Pedro Porro", "Robin Le Normand", "Aymeric Laporte", "Marc Cucurella", "Martín Zubimendi", "Rodri", "Pedri", "Nico Williams", "Lamine Yamal", "Ferran Torres"],
+      "espn_images": ["Unai Simón", "Llorente", "Laporte", "Le Normand", "Grimaldo", "Rodri", "Zubimendi", "Pedri", "Yamal", "Oyarzabal", "Raya"]
+    },
+    "Cape Verde": {
+      "bulinews": ["Bruno Varela", "Jorge Lopes Xavier", "E. Monteiro Sanches Borges", "Kelvin Pires", "David Moreira", "K. Gonçalves Pereira de Pina", "Laros Duarte", "Garry Rodrigues", "Telmo Gomes Arcanjo", "H. Oliveira Alves Varela", "Nuno Da Costa"],
+      "rotowire": ["Vozinha", "Moreira", "Costa", "Pico", "Paulo", "Pina", "Y. Semedo", "Mendes", "Monteiro", "W. Semedo", "Livramento"]
+    },
+    "Saudi Arabia": {
+      "bulinews": ["Nawaf Alaqidi", "Ali Majrashi", "J. Abdullatif Ahm", "Mohammed Sulaiman", "Nawaf Boushal", "M. Fahz Aljuwayr", "Abdullah Alkhaibari", "Mohammed Kanno", "Salem Al Dawsari", "Firas Al Buraikan", "Waheb Saleh"],
+      "rotowire": ["Al Aqidi", "Abdulhamid", "Tambakti", "Ali Lajami", "Boushal", "Kanno", "Al-Khaibari", "Al Juwayr", "N. Al Dawsari", "Al Buraikan", "S. Al-Dawsari"]
+    },
+    "Uruguay": {
+      "bulinews": ["Fernando Muslera", "Guillermo Varela", "Ronald Araújo", "Mathías Olivera", "Joaquín Piquerez", "Agustín Canobbio", "Federico Valverde", "Manuel Ugarte", "Maximiliano Araújo", "G. De Arrascaeta", "Rodrigo Aguirre"],
+      "rotowire": ["Muslera", "Valera", "R. Araujo", "Gimenez", "Olivera", "Valverde", "Bentancur", "Ugarte", "M. Araujo", "De Arrascaeta", "Nunez"]
+    },
+    "France": {
+      "bulinews": ["Brice Samba", "P. Kalulu Kyatengwa", "Maxence Lacroix", "Lucas Hernández", "Lucas Digne", "Warren Zaire Emery", "N'Golo Kanté", "Maghnes Akliouche", "Mathis Cherki", "Desire Doue", "Marcus Thuram"],
+      "rotowire": ["Maignan", "Kounde", "Saliba", "Upamecano", "Hernandez", "Tchouameni", "Rabiot", "Olise", "Dembele", "Doue", "Mbappe"],
+      "fifaworldcup_live": ["Mike Maignan", "Jules Koundé", "Dayot Upamecano", "William Saliba", "Theo Hernández", "Aurélien Tchouaméni", "Eduardo Camavinga", "Ousmane Dembélé", "Antoine Griezmann", "Kingsley Coman", "Kylian Mbappé"],
+      "espn_clean": ["Mike Maignan", "Malo Gusto", "William Saliba", "Dayot Upamecano", "Lucas Digne", "Aurelien Tchouameni", "N'Golo Kante", "Ousmane Dembele", "Kylian Mbappe", "Michael Olise", "Marcus Thuram"],
+      "espn_images": ["Maignan", "Koundé", "Saliba", "Upamecano", "Digne", "Tchouaméni", "Griezmann", "Mbappé", "Benzema", "Griezmann", "Olise"]
+    },
+    "Senegal": {
+      "bulinews": ["Edouard Mendy", "Antoine Mendy", "Mamadou Sarr", "Moussa Niakhate", "El Diouf", "Lamine Camara", "Idrissa Gueye", "Pape Gueye", "Iliman Ndiaye", "Nicolas Jackson", "Sadio Mané"],
+      "rotowire": ["Mendy", "Diatta", "Koulibaly", "Niakhate", "Diouf", "Diarra", "I.Gueye", "P.Gueye", "Ndiaye", "Jackson", "Mane"],
+      "espn_clean": ["Edouard Mendy", "Krepin Diatta", "Kalidou Koulibaly", "Moussa Niakhate", "Ismail Jakobs", "Idrissa Gueye", "Pape Gueye", "Iliman Ndiaye", "Ismaila Sarr", "Sadio Mane", "Nicolas Jackson"],
+      "espn_images": ["Sow", "Sabaly", "Koulibaly", "Diouf", "PPass", "Ndiaye", "Mendy", "Sarr", "Diallo", "Mane", "Diaw"]
+    },
+    "Iraq": {
+      "rotowire": ["Basil", "Hussein Ali", "Zaid Tahseen", "Hashim Rahman", "Merchas Doski", "Youssef Amyn", "Iqbal", "Al Ammari", "Ibrahim Bayesh", "Aymen Hussein", "Al Hamadi"]
+    },
+    "Norway": {
+      "rotowire": ["Nyland", "Ryerson", "Ajer", "Ostigard", "Wolfe", "Odegaard", "Berge", "Berg", "Sorloth", "Haaland", "Nusa"]
+    },
+    "Austria": {
+      "bulinews": ["Alexander Schlager", "Kevin Danso", "Philipp Lienhart", "Philipp Mwene", "Xaver Schlager", "Nicolas Seiwald", "Konrad Laimer", "Patrick Wimmer", "Christoph Baumgartner", "Marcel Sabitzer", "Marko Arnautović"],
+      "rotowire": ["A. Schlager", "Laimer", "Friedl", "Danso", "Mwene", "X. Schlager", "Seiwald", "Schmid", "Sabitzer", "Baumgartner", "Arnautovic"]
+    },
+    "Jordan": {
+      "bulinews": ["Yazeed Abu laila", "Mohammad Abualnadi", "A. Musallam Naseeb", "M. Hasan Abu Hasheesh", "Yazan Alarab", "Yazan Alnaimat", "Rajaei Hasan", "Noor Al Rawabdeh", "Ahmad Ersan", "Tammer Bany", "Adham Al Quraishi"],
+      "rotowire": ["Abulaila", "Al Arab", "Nasib", "Al Dahab", "Assaf", "Al Rashdan", "Jamous", "Abu Taha", "Al Olwan", "Al Naimat", "Al Tamari"]
+    },
+    "Argentina": {
+      "bulinews": ["Emiliano Martínez", "Gonzalo Montiel", "Leonardo Balerdi", "Nicolás Otamendi", "Nicolás González", "Giuliano Simeone", "Rodrigo de Paul", "Giovani Lo Celso", "Alexis Mac Allister", "Lionel Messi", "J. López"],
+      "rotowire": ["E. Martinez", "Molina", "Otamendi", "Lisandro Martinez", "Tagliafico", "Fernandez", "De Paul", "Messi", "Mac Allister", "Alvarez", "Lautaro Martinez"],
+      "fifaworldcup_live": ["Emiliano Martínez", "Nahuel Molina", "Cristian Romero", "Lisandro Martínez", "Marcos Acuña", "Rodrigo De Paul", "Enzo Fernández", "Alexis Mac Allister", "Ángel Di María", "Lionel Messi", "Julián Álvarez"],
+      "espn_clean": ["Emiliano Martinez", "Nahuel Molina", "Cristian Romero", "Lisandro Martinez", "Nicolas Tagliafico", "Alexis Mac Allister", "Enzo Fernandez", "Rodrigo De Paul", "Lionel Messi", "Lautaro Martinez", "Julian Alvarez"],
+      "espn_images": ["Martínez", "Montiel", "Otamendi", "Romero", "Tagliafico", "Enzo Fernández", "Paredes", "Messi", "Álvarez", "Higuaín", "Dibu Martínez"]
+    },
+    "Algeria": {
+      "bulinews": ["Luca Zidane", "R. Belghali", "Aïssa Mandi", "Ramy Bensebaini", "Rayan Aït Nouri", "Hichem Boudaoui", "Ramiz Zerrouki", "Riyad Mahrez", "Ibrahim Maza", "Fares Chaïbi", "Mohamed Amoura"],
+      "rotowire": ["Zidane", "Belghali", "Mandi", "Bensebaini", "Ait Nouri", "Boudaoui", "Bennacer", "Mahrez", "Aouar", "Amoura", "Gouiri"]
+    },
+    "Portugal": {
+      "bulinews": ["José Sá", "Diogo Dalot", "Tomás Araújo", "Gonçalo Inácio", "João Cancelo", "Samuel Costa", "Vitor Ferreira", "Francisco Trincão", "Bruno Fernandes", "Pedro Neto", "Goncalo Ramos"],
+      "rotowire": ["Costa", "Cancelo", "Dias", "Inacio", "Mendes", "Vitinha", "Neves", "Silva", "Fernandes", "Leao", "Ronaldo"],
+      "fifaworldcup_live": ["Diogo Costa", "João Cancelo", "Rúben Dias", "Gonçalo Inácio", "Nuno Mendes", "Bruno Fernandes", "Bernardo Silva", "João Palhinha", "Rafael Leão", "Cristiano Ronaldo", "Diogo Jota"],
+      "espn_clean": ["Diogo Costa", "Joao Cancelo", "Ruben Dias", "Antonio Silva", "Nuno Mendes", "Vitinha", "Ruben Neves", "Bruno Fernandes", "Rafael Leao", "Cristiano Ronaldo", "Francisco Conceicao"],
+      "espn_images": ["Rui Patrício", "Cancelo", "Pereira", "Dias", "Mendes", "Fernandes", "Neves", "Ronaldo", "Leão", "Conceição", "Sá"]
+    },
+    "DR Congo": {
+      "bulinews": ["Lionel Mpasi-Nzau", "Aaron Wan-Bissaka", "Axel Tuanzebe", "Chancel Mbemba", "Arthur Masuaku", "Samuel Moutoussamy", "Nathanaël Mbuku", "Meschak Elia", "Cédric Bakambu", "Yoane Wissa", "Noah Sadiki"],
+      "rotowire": ["Mpasi", "Wan-Bissaka", "Mbemba", "Tuanzebe", "Masuaku", "Mbuku", "Sadiki", "Moutoussamy", "Elia", "Wissa", "Bakambu"]
+    },
+    "Uzbekistan": {
+      "bulinews": ["Abduvohid Nematov", "M. Khamraliyev", "R. Ashurmatov", "Umar Eshmuradov", "K. Alidjanov", "Akmal Mozgovoy", "Otabek Shukurov", "Sherzod Nasrullayev", "Azizjon Ganiev", "Eldor Shomurodov", "Khojimat Erkinov"],
+      "rotowire": ["Yusupov", "Khusanov", "Ashurmatov", "Abdullaev", "Alijonov", "Khamrobekov", "Shukurov", "Nasrullayev", "Fayzullaev", "Shomurodov", "Urunov"]
+    },
+    "Colombia": {
+      "bulinews": ["Á. Montero", "Daniel Muñoz", "Davinson Sánchez", "Juan Cabal", "Johan Mojica", "Richard Rios", "Jefferson Lerma", "Jhon Arias", "James Rodríguez", "Luis Díaz", "Luis Suárez"],
+      "rotowire": ["Vargas", "Munoz", "Sanchez", "Lucumi", "Mojica", "Rios", "Lerma", "Arias", "Rodriguez", "Diaz", "Suarez"]
+    },
+    "England": {
+      "bulinews": ["Jordan Pickford", "Ben White", "Ezri Konsa", "Marc Guehi", "Nico O'Reilly", "Elliott Anderson", "Kobbie Mainoo", "Morgan Rogers", "Cole Palmer", "Anthony Gordon", "Philip Foden"],
+      "rotowire": ["Jordan Pickford", "Reece James", "Ezri Konsa", "Marc Guehi", "Nico O'Reilly", "Elliot Anderson", "Declan Rice", "Bukayo Saka", "Jude Bellingham", "Marcus Rashford", "Harry Kane"],
+      "fifaworldcup_live": ["Jordan Pickford", "Kyle Walker", "John Stones", "Marc Guéhi", "Luke Shaw", "Declan Rice", "Jude Bellingham", "Phil Foden", "Bukayo Saka", "Harry Kane", "Marcus Rashford"],
+      "espn_clean": ["Jordan Pickford", "Reece James", "Marc Guehi", "John Stones", "Lewis Hall", "Declan Rice", "Jude Bellingham", "Phil Foden", "Morgan Rogers", "Harry Kane", "Bukayo Saka"],
+      "espn_images": ["Pickford", "Alexander-Arnold", "Guéhi", "O'Reilly", "Porro", "Anderson", "Rodri", "Foden", "Bellingham", "Kane", "Saka"]
+    },
+    "Croatia": {
+      "bulinews": ["Dominik Livaković", "Josip Šutalo", "Luka Vušković", "Duje Ćaleta-Car", "Josip Stanisic", "Ivan Perišić", "Andrej Kramarić", "Luka Modrić", "Petar Sučić", "Martin Baturina", "Ante Budimir"],
+      "rotowire": ["Dominik Livakovic", "Sime Vrsaljko", "Luka Vuskovic", "Duje Caleta-Car", "Josko Gvardiol", "Mateo Kovacic", "Luka Modric", "Mario Pasalic", "Ivan Perisic", "Andrej Kramaric", "Ante Budimir"]
+    },
+    "Ghana": {
+      "bulinews": ["Benjamin Asare", "Caleb Yirenkyi", "Jonas Adjei Adjetey", "Alexander Djiku", "Kojo Peprah Oppong", "Derrick Köhn", "Antoine Semenyo", "Kwasi Sibo", "Thomas Partey", "Jordan Ayew", "Prince Adu"],
+      "rotowire": ["Benjamin Asare", "Jonas Adjetey", "Alexander Djiku", "Jerome Opoku", "Yirenkyi", "Thomas Partey", "Sibo", "Mensah", "Antoine Semenyo", "Williams", "Jordan Ayew"]
+    },
+    "Panama": {
+      "bulinews": ["JD Gunn", "O. Córdoba Quintero", "Ariel Arroyo", "D. Blanco Aparicio", "R. Peralta Robledo", "Kevin Galván Lopez", "Giovany Herbert", "José Murillo", "Héctor Humberto Hurtado Biscanio", "R. Phillips Hinds", "Kadir Barria"],
+      "rotowire": ["Orlando Mosquera", "Harvey", "Andres Andrade Cedeno", "Jose Cordoba", "Amir Murillo", "Anibal Godoy", "Martinez", "Eric Davis", "Rodriguez", "Cecilio Waterman", "Ismael Diaz"]
+    }
+  }
+}

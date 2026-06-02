@@ -1,0 +1,66 @@
+{
+  "_source": "Buchmacher-Quoten für Gruppensieg (American Odds)",
+  "_imported": "2026-05-30",
+  "_format": "team_name -> american_odds (negative = Favorit, positive = Außenseiter)",
+  "odds": {
+    "Mexico": -120,
+    "Czechia": 330,
+    "South Korea": 340,
+    "South Africa": 1100,
+
+    "Switzerland": -130,
+    "Canada": 210,
+    "Bosnia-Herzegovina": 550,
+    "Qatar": 2200,
+
+    "Brazil": -330,
+    "Morocco": 380,
+    "Scotland": 900,
+    "Haiti": 12500,
+
+    "USA": 130,
+    "Turkey": 195,
+    "Paraguay": 430,
+    "Australia": 750,
+
+    "Germany": -195,
+    "Ecuador": 310,
+    "Ivory Coast": 500,
+    "Curacao": 17500,
+
+    "Netherlands": -115,
+    "Japan": 250,
+    "Sweden": 420,
+    "Tunisia": 1200,
+
+    "Belgium": -190,
+    "Egypt": 380,
+    "Iran": 550,
+    "New Zealand": 2000,
+
+    "Spain": -370,
+    "Uruguay": 370,
+    "Saudi Arabia": 2700,
+    "Cape Verde": 6500,
+
+    "France": -200,
+    "Norway": 270,
+    "Senegal": 750,
+    "Iraq": 7500,
+
+    "Argentina": -260,
+    "Austria": 380,
+    "Algeria": 750,
+    "Jordan": 6500,
+
+    "Portugal": -200,
+    "Colombia": 220,
+    "Congo DR": 1700,
+    "Uzbekistan": 3000,
+
+    "England": -240,
+    "Croatia": 350,
+    "Ghana": 900,
+    "Panama": 2700
+  }
+}

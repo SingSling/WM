@@ -1,0 +1,218 @@
+# Unmatched predictions: 217
+Mexiko | bulinews | Erik Lira Méndez
+Mexiko | bulinews | Á. Fidalgo Fernández
+Mexiko | espn_images | Lozano
+Südafrika | bulinews | Siyabonga Ngezana
+Südafrika | bulinews | Bathusi Aubaas
+Südafrika | bulinews | Relebohile Ratomo
+Südkorea | bulinews | Hyeok-Kyu Kwon
+Südkorea | espn_images | Kim Young-gwon
+Südkorea | espn_images | Lee Yong
+Kanada | bulinews | James Pantemis
+Kanada | bulinews | Shola Jimoh
+Kanada | bulinews | Kamal Miller
+Kanada | bulinews | Ralph Priso-Mbongue
+Kanada | bulinews | Zohran Bassong
+Kanada | bulinews | Jayden Nelson
+Kanada | bulinews | Rayan Elloumi
+Kanada | bulinews | Jacen Russell-Rowe
+Kanada | rotowire | David
+Kanada | espn_clean | Jacob Schaffelburg
+Kanada | espn_images | Borjan
+Kanada | espn_images | Miller
+Kanada | espn_images | David
+Katar | bulinews | E. El Hussain Mohi aldin
+Katar | bulinews | Yousef Ayman
+Katar | bulinews | Jassem Abdulsallam
+Katar | bulinews | Mohamed Gouda
+Katar | bulinews | Mostafa Mashaal
+Brasilien | bulinews | Bento Krepski
+Brasilien | bulinews | Luiz Rosa da Silva
+Brasilien | bulinews | João Pedro
+Brasilien | rotowire | Gabriel
+Brasilien | fifaworldcup_live | Danilo
+Brasilien | fifaworldcup_live | Éder Militão
+Brasilien | fifaworldcup_live | Guilherme Arana
+Brasilien | fifaworldcup_live | Vinícius Jr
+Brasilien | fifaworldcup_live | Rodrygo
+Brasilien | espn_clean | Vanderson
+Brasilien | espn_clean | Vinicius Jr
+Brasilien | espn_clean | Estevão
+Brasilien | espn_images | Danilo
+Brasilien | espn_images | Rodrygo
+Brasilien | espn_images | Richarlison
+Brasilien | espn_images | Cebolinha
+Marokko | bulinews | Adam Masina
+Marokko | bulinews | I. Saibari Ben El Basra
+Marokko | espn_clean | Romain Saiss
+Marokko | espn_clean | Ilias Akhomach
+Marokko | espn_images | Mendy
+Marokko | espn_images | Ziyech
+Marokko | espn_images | En-Nesyri
+Marokko | espn_images | Benabid
+Haiti | bulinews | Christopher Attys
+Haiti | rotowire | Pierre
+USA | bulinews | Aidan Morris
+USA | rotowire | Robinson
+USA | fifaworldcup_live | Yunus Musah
+USA | espn_images | Steffen
+USA | espn_images | Robinson
+USA | espn_images | Cardoso
+Paraguay | bulinews | A. Benítez Domínguez
+Paraguay | bulinews | Alexis Duarte
+Paraguay | bulinews | A. Sández
+Paraguay | bulinews | M. Galarza Fonda
+Paraguay | bulinews | D. Gómez Amarilla
+Paraguay | rotowire | Gomez
+Paraguay | rotowire | Gomez
+Australien | bulinews | Lewis Miller
+Australien | espn_images | Mooy
+Australien | espn_images | Goodwin
+Australien | espn_images | Langerak
+Türkei | bulinews | Uğurcan Çakır
+Türkei | bulinews | Ferdi Kadıoğlu
+Deutschland | bulinews | Serge Gnabry
+Deutschland | fifaworldcup_live | Marc-André ter Stegen
+Deutschland | fifaworldcup_live | İlkay Gündoğan
+Deutschland | espn_clean | Serge Gnabry
+Deutschland | espn_images | Mittelstädt
+Deutschland | espn_images | Muller
+Elfenbeinküste | rotowire | Fofana
+Elfenbeinküste | rotowire | Fofana
+Elfenbeinküste | rotowire | Diomande
+Ecuador | bulinews | J. Ordóñez Guerrero
+Ecuador | bulinews | W. Pacho Tenorio
+Ecuador | bulinews | Pedro Vite Uca
+Ecuador | bulinews | John Zamora
+Ecuador | rotowire | Caicedo
+Ecuador | rotowire | Valencia
+Niederlande | bulinews | Stefan de Vrij
+Niederlande | bulinews | Jerdy Schouten
+Niederlande | bulinews | Quinten Maduro
+Niederlande | bulinews | Xavi Simons
+Japan | bulinews | Kaoru Mitoma
+Japan | rotowire | Suzuki
+Japan | rotowire | Ito
+Japan | rotowire | Ito
+Japan | espn_images | Gonda
+Japan | espn_images | Mitoma
+Tunesien | bulinews | Ferjani Sassi
+Belgien | bulinews | Matz Sels
+Belgien | bulinews | Mika Godts
+Belgien | bulinews | Lois Openda
+Belgien | espn_images | Sels
+Belgien | espn_images | Hazard
+Ägypten | bulinews | Mostafa Shobeir
+Ägypten | bulinews | Hamdi Fathi
+Ägypten | bulinews | Khaled Sobhy
+Ägypten | rotowire | Shobeir
+Ägypten | rotowire | El Hanafi
+Ägypten | rotowire | El Fetouh
+Iran | bulinews | Danial Esmaeilifar
+Neuseeland | bulinews | Bill Tuiloma
+Spanien | bulinews | Aleix García
+Spanien | bulinews | Y. Jesús Pino Santos
+Spanien | fifaworldcup_live | Alejandro Balde
+Spanien | fifaworldcup_live | Álvaro Morata
+Spanien | espn_clean | Robin Le Normand
+Spanien | espn_images | Le Normand
+Kap Verde | bulinews | Jorge Lopes Xavier
+Kap Verde | bulinews | David Moreira
+Kap Verde | rotowire | Moreira
+Kap Verde | rotowire | Costa
+Kap Verde | rotowire | Pina
+Kap Verde | rotowire | Y. Semedo
+Kap Verde | rotowire | Mendes
+Kap Verde | rotowire | Monteiro
+Saudi-Arabien | bulinews | Nawaf Alaqidi
+Saudi-Arabien | bulinews | J. Abdullatif Ahm
+Saudi-Arabien | bulinews | Mohammed Sulaiman
+Saudi-Arabien | bulinews | M. Fahz Aljuwayr
+Saudi-Arabien | bulinews | Abdullah Alkhaibari
+Saudi-Arabien | bulinews | Waheb Saleh
+Uruguay | bulinews | Joaquín Piquerez
+Uruguay | rotowire | Valera
+Frankreich | bulinews | P. Kalulu Kyatengwa
+Frankreich | rotowire | Hernandez
+Frankreich | fifaworldcup_live | Eduardo Camavinga
+Frankreich | fifaworldcup_live | Antoine Griezmann
+Frankreich | fifaworldcup_live | Kingsley Coman
+Frankreich | espn_images | Griezmann
+Frankreich | espn_images | Benzema
+Frankreich | espn_images | Griezmann
+Senegal | rotowire | Mendy
+Senegal | rotowire | Diouf
+Senegal | rotowire | Ndiaye
+Senegal | espn_images | Sow
+Senegal | espn_images | Sabaly
+Senegal | espn_images | Diouf
+Senegal | espn_images | PPass
+Senegal | espn_images | Ndiaye
+Senegal | espn_images | Mendy
+Senegal | espn_images | Sarr
+Senegal | espn_images | Diallo
+Irak | rotowire | Hashim Rahman
+Norwegen | rotowire | Ostigard
+Jordanien | bulinews | A. Musallam Naseeb
+Jordanien | bulinews | M. Hasan Abu Hasheesh
+Jordanien | bulinews | Yazan Alarab
+Jordanien | bulinews | Yazan Alnaimat
+Jordanien | bulinews | Rajaei Hasan
+Jordanien | bulinews | Ahmad Ersan
+Jordanien | bulinews | Tammer Bany
+Jordanien | bulinews | Adham Al Quraishi
+Jordanien | rotowire | Al Naimat
+Jordanien | rotowire | Al Tamari
+Argentinien | fifaworldcup_live | Marcos Acuña
+Argentinien | fifaworldcup_live | Ángel Di María
+Argentinien | espn_images | Martínez
+Argentinien | espn_images | Higuaín
+Argentinien | espn_images | Dibu Martínez
+Portugal | rotowire | Costa
+Portugal | rotowire | Neves
+Portugal | rotowire | Silva
+Portugal | rotowire | Fernandes
+Portugal | fifaworldcup_live | João Palhinha
+Portugal | fifaworldcup_live | Diogo Jota
+Portugal | espn_clean | Antonio Silva
+Portugal | espn_images | Rui Patrício
+Portugal | espn_images | Pereira
+Portugal | espn_images | Fernandes
+Portugal | espn_images | Neves
+Portugal | espn_images | Conceição
+DR Kongo | bulinews | Lionel Mpasi-Nzau
+Usbekistan | bulinews | M. Khamraliyev
+Usbekistan | bulinews | Umar Eshmuradov
+Usbekistan | bulinews | K. Alidjanov
+Usbekistan | bulinews | Sherzod Nasrullayev
+Usbekistan | bulinews | Khojimat Erkinov
+Usbekistan | rotowire | Khamrobekov
+Usbekistan | rotowire | Nasrullayev
+Usbekistan | rotowire | Fayzullaev
+Kolumbien | bulinews | Juan Cabal
+Kolumbien | rotowire | Arias
+England | bulinews | Ben White
+England | bulinews | Cole Palmer
+England | bulinews | Philip Foden
+England | fifaworldcup_live | Kyle Walker
+England | fifaworldcup_live | Luke Shaw
+England | fifaworldcup_live | Phil Foden
+England | espn_clean | Lewis Hall
+England | espn_clean | Phil Foden
+England | espn_images | Alexander-Arnold
+England | espn_images | Porro
+England | espn_images | Rodri
+England | espn_images | Foden
+Kroatien | rotowire | Sime Vrsaljko
+Ghana | bulinews | Derrick Köhn
+Panama | bulinews | JD Gunn
+Panama | bulinews | Ariel Arroyo
+Panama | bulinews | D. Blanco Aparicio
+Panama | bulinews | R. Peralta Robledo
+Panama | bulinews | Kevin Galván Lopez
+Panama | bulinews | Giovany Herbert
+Panama | bulinews | Héctor Humberto Hurtado Biscanio
+Panama | bulinews | R. Phillips Hinds
+Panama | bulinews | Kadir Barria
+Panama | rotowire | Andres Andrade Cedeno
+Panama | rotowire | Rodriguez
