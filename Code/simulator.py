@@ -297,6 +297,10 @@ def run_monte_carlo(
     champion_counter: Counter[str] = Counter()
     runner_up_counter: Counter[str] = Counter()
     podium_counter: Counter[str] = Counter()
+    # Summe (über alle Sims) der gesamten Tor-Differenz pro Team — Gruppe und
+    # K.o. zusammen. Penalty-Shootouts zählen nicht (Goals1/Goals2 enthalten
+    # nur Tore aus regulärer Spielzeit + Verlängerung).
+    gd_sum: defaultdict[str, float] = defaultdict(float)
 
     stage_of_match = {m["match_no"]: m["stage"] for m in schedule.raw["matches"]}
 
@@ -321,6 +325,15 @@ def run_monte_carlo(
         podium_counter[outcome["runner_up"]] += 1
         podium_counter[outcome["third"]] += 1
 
+        # Tor-Differenz aufsummieren: Gruppen-Tabellen tragen GD bereits,
+        # K.o.-Spiele addieren wir aus den MatchResults.
+        for table in outcome["groups"].values():
+            for team_name, gd in table["GD"].items():
+                gd_sum[team_name] += float(gd)
+        for mr in outcome["matches"].values():
+            gd_sum[mr.team1] += mr.goals1 - mr.goals2
+            gd_sum[mr.team2] += mr.goals2 - mr.goals1
+
         if progress_callback is not None:
             progress_callback(i + 1, n_runs)
 
@@ -342,6 +355,7 @@ def run_monte_carlo(
             "rating": ratings[team],
             "p_winner":  champion_counter.get(team, 0) / n_runs,
             "exp_games": exp_games,
+            "exp_gd": gd_sum.get(team, 0.0) / n_runs,
             "p_qualified": p_qualified,
             "p_r16":   p_r16,
             "p_qf":    p_qf,
@@ -364,11 +378,13 @@ def main() -> None:
     df = run_monte_carlo(schedule, ratings, n_runs=args.runs, seed=args.seed)
     print(f"\nMonte-Carlo: {args.runs:,} Simulationen\n")
 
-    headline = df[["team", "rating", "p_winner", "exp_games"]].copy()
+    headline = df[["team", "rating", "p_winner", "exp_games", "exp_gd"]].copy()
     headline["p_winner"] = (headline["p_winner"] * 100).round(2).astype(str) + "%"
     headline["exp_games"] = headline["exp_games"].round(2)
+    headline["exp_gd"] = headline["exp_gd"].round(2)
     headline = headline.rename(columns={
-        "rating": "Rating", "p_winner": "Titel-Wkt.", "exp_games": "Ø Spiele",
+        "rating": "Rating", "p_winner": "Titel-Wkt.",
+        "exp_games": "Ø Spiele", "exp_gd": "Ø TD",
     })
 
     print("Top 15:")
@@ -376,10 +392,12 @@ def main() -> None:
     print(f"\nBottom 10 (von {len(df)}):")
     print(headline.tail(10).to_string(index=False))
 
-    # Sanity-Check: Summe der erwarteten Spiele = Summe aller team-spiele
+    # Sanity-Checks
     total_exp = df["exp_games"].sum()
     # 72 Gruppenspiele (2 Teams je) + 32 K.o. (2 Teams je) = 208 Team-Spiele
     print(f"\nΣ erwartete Spiele über alle Teams: {total_exp:.1f}  (exakt: 208)")
+    # Tor-Differenz ist ein Nullsummenspiel → Summe ≈ 0
+    print(f"Σ erwartete Tor-Differenz: {df['exp_gd'].sum():+.2f}  (erwartet: 0)")
 
 
 if __name__ == "__main__":

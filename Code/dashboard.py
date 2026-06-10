@@ -394,6 +394,7 @@ def render_simulation() -> None:
         "rating": "Elo",
         "p_winner": "Titel-Wkt.",
         "exp_games": "Ø Spiele",
+        "exp_gd": "Ø TD",
         "p_qualified": "K.o.",
         "p_r16": "R16",
         "p_qf": "QF",
@@ -401,7 +402,7 @@ def render_simulation() -> None:
         "p_final": "Finale",
         "p_podium": "Podium",
     })
-    df = df[["Team", "Elo", "Titel-Wkt.", "Ø Spiele",
+    df = df[["Team", "Elo", "Titel-Wkt.", "Ø Spiele", "Ø TD",
              "K.o.", "R16", "QF", "SF", "Finale", "Podium"]]
 
     st.dataframe(
@@ -409,6 +410,7 @@ def render_simulation() -> None:
             "Elo": "{:.0f}",
             "Titel-Wkt.": "{:.2%}",
             "Ø Spiele": "{:.2f}",
+            "Ø TD": "{:+.2f}",
             "K.o.":   "{:.1%}",
             "R16":    "{:.1%}",
             "QF":     "{:.1%}",
@@ -416,7 +418,8 @@ def render_simulation() -> None:
             "Finale": "{:.1%}",
             "Podium": "{:.1%}",
         }).background_gradient(subset=["Titel-Wkt."], cmap="Greens")
-          .background_gradient(subset=["Ø Spiele"], cmap="Blues"),
+          .background_gradient(subset=["Ø Spiele"], cmap="Blues")
+          .background_gradient(subset=["Ø TD"], cmap="RdYlGn"),
         hide_index=True,
         use_container_width=True,
         height=600,
