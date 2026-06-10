@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Local-only Claude config
+.claude/launch.json
+
+# Raw Transfermarkt Kaggle dumps (~40 MB) — only needed when regenerating
+# transfermarkt_values.csv via Code/transfermarkt_values.py; the joined
+# CSV is what's shipped and read at runtime.
+Data/players_tm.csv
+Data/player_valuations_tm.csv

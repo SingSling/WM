@@ -1,0 +1,117 @@
+# Unmatched kicker players: 116
+Kap Verde | pl-k00065748 | Stopira
+Curacao | pl-k00070960 | Jürgen Locadia
+Kap Verde | pl-k00073842 | Pico
+Marokko | pl-k00074369 | Bono
+Kap Verde | pl-k00076249 | Vozinha
+Norwegen | pl-k00083165 | Alexander Sörloth
+Iran | pl-k00083239 | Ehsan Haji Safi
+Iran | pl-k00083544 | Alireza Beiranvand
+Norwegen | pl-k00083613 | Martin Ödegaard
+Südafrika | pl-k00083739 | Themba Zwane
+Haiti | pl-k00087512 | Johny Placide
+Türkei | pl-k00087622 | Ugurcan Cakir
+Curacao | pl-k00088249 | Kenji Gorré
+Curacao | pl-k00088946 | Gervane Kastaneer
+Türkei | pl-k00090353 | Abdülkerim Bardakci
+Australien | pl-k00090698 | Awer Mabil
+Frankreich | pl-k00092246 | Theo
+Kap Verde | pl-k00093378 | Diney
+Kap Verde | pl-k00093952 | Marcio Rosa
+Panama | pl-k00094313 | Roderick Miller
+Algerien | pl-k00095836 | Baghdad Bounedjah
+Türkei | pl-k00096489 | Ferdi Kadioglu
+Algerien | pl-k00096721 | Anthony Mandrea
+Algerien | pl-k00097376 | Alexis Guendouz
+Ägypten | pl-k00098535 | Zizo
+Spanien | pl-k00100775 | Eric
+Curacao | pl-k00103601 | Trevor Doornbusch
+Türkei | pl-k00103776 | Yusuf Sari
+Iran | pl-k00104727 | Hossein Kanaani
+Iran | pl-k00104729 | Mehdi Torabi
+Iran | pl-k00104730 | Rouzbeh Cheshmi
+Panama | pl-k00104953 | José Fajardo
+Marokko | pl-k00105138 | Ahmed Reda Tagnaouti
+Tunesien | pl-k00105836 | Firas Chaouat
+Iran | pl-k00105955 | Omid Noorafkan
+Paraguay | pl-k00106067 | Kaku
+Norwegen | pl-k00106946 | Leo Östigaard
+Kanada | pl-k00107395 | Liam Millar
+Türkei | pl-k00108112 | Altay Bayindir
+Haiti | pl-k00110095 | Yassin Fortuné
+Argentinien | pl-k00110300 | Nicolas Gonzalez
+Tunesien | pl-k00110835 | Omar Rekik
+Jordanien | pl-k00111092 | Musa Al-Taamari
+Südafrika | pl-k00111572 | Bradley Cross
+Curacao | pl-k00112823 | Tahith Chong
+USA | pl-k00113426 | Alejandro Zendejas
+Iran | pl-k00113695 | Payam Niazmand
+Katar | pl-k00113925 | Abdulaziz Hatem
+Panama | pl-k00115803 | Luis Mejia
+Türkei | pl-k00116395 | Eren Elmali
+Algerien | pl-k00116711 | Adil Aouchiche
+Haiti | pl-k00117247 | Josué Duverger
+Haiti | pl-k00117251 | Ricardo Adé
+Portugal | pl-k00118616 | Samuel Costa
+Haiti | pl-k00123893 | Carl Sainté
+Usbekistan | pl-k00129904 | Jasurbek Jaloliddinov
+Schottland | pl-k00130453 | Dominic Hyam
+Paraguay | pl-k00132423 | Gaston Olveira
+Norwegen | pl-k00132797 | Fredrik Björkan
+Ägypten | pl-k00133309 | Mostafa Shoubeir
+Panama | pl-k00136322 | Cecilio Waterman
+Haiti | pl-k00136687 | Martin Experience
+Ägypten | pl-k00136761 | Emam Ashour
+Algerien | pl-k00137337 | Melvin Mastil
+Türkei | pl-k00137667 | Baris Yilmaz
+Türkei | pl-k00141046 | Demir Ege Tiknaz
+Iran | pl-k00141182 | Shoja Khalilzadeh
+Iran | pl-k00141184 | Saleh Hardani
+Türkei | pl-k00141360 | Kenan Yildiz
+Marokko | pl-k00141559 | Abde
+Ägypten | pl-k00143532 | Mohanad Lasheen
+Kanada | pl-k00145875 | Ali Ahmed
+Curacao | pl-k00147623 | Jearl Margaritha
+Jordanien | pl-k00149648 | Yousef Qashi
+Ecuador | pl-k00151824 | Gonzalo Valle
+Ägypten | pl-k00153553 | Marwan Attia
+Usbekistan | pl-k00156687 | Abbosbek Fayzullayev
+Panama | pl-k00158118 | Cesar Samudio
+Usbekistan | pl-k00162640 | Bekhruz Karimov
+Iran | pl-k00162760 | Amirmohammad Razzaghinia
+DR Kongo | pl-k00162977 | Fiston Mayele
+Südafrika | pl-k00163193 | Thapelo Maseko
+Jordanien | pl-k00163292 | Mohammad Abu Hashish
+Jordanien | pl-k00163296 | Ahmad Al-Juaidi
+Usbekistan | pl-k00163344 | Khojiakbar Alijonov
+Jordanien | pl-k00164208 | Ibrahim Sadeh
+Iran | pl-k00164280 | Aria Yousefi
+Usbekistan | pl-k00164341 | Azizbek Amonov
+Norwegen | pl-k00167079 | Sondre Langaas
+Paraguay | pl-k00168599 | Gustavo Velazquez
+Irak | pl-k00168931 | Kumel Saadi
+DR Kongo | pl-k00172013 | Brian Cipenga
+Ecuador | pl-k00176341 | Darwin Guagua
+Ägypten | pl-k00176529 | Hamza Abdelkarim
+Haiti | pl-k00177949 | Duke Lacroix
+Südafrika | pl-k00178191 | Ime Okon
+Iran | pl-k00183340 | Mohammad Khalife
+Iran | pl-k00183346 | Ali Nemati
+Kap Verde | pl-k00183403 | Djack
+Saudi-Arabien | pl-k00183839 | Alaa Al-Hajji 
+Algerien | pl-k00185081 | Kilian Belazzoug
+Haiti | pl-k00185831 | Keeto Thermoncy
+Iran | pl-k00186303 | Hadi Habibinejad
+Irak | pl-k00195272 | Ahmed Maknzi
+Tunesien | pl-k00195444 | Mouhib Chamakh
+Tunesien | pl-k00195447 | Raed Chikhaoui
+Tunesien | pl-k00195449 | Khalil Ayari
+Usbekistan | pl-k00195453 | Sherzod Temirov
+Iran | pl-k00195661 | Amirhossein Mahmoudi
+Ägypten | pl-k00195662 | El-Mahdi Soliman
+Ägypten | pl-k00195664 | Tarek Alaa
+Iran | pl-k00200620 | Danial Eiri
+Jordanien | pl-k00200625 | Anas Badawi
+Ägypten | pl-k00200629 | Mostafa Ziko
+Ghana | pl-k00200796 | Solomon Agbasi
+Ecuador | pl-k00201007 | Luis Fragozo

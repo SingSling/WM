@@ -16,6 +16,7 @@ import pulp
 
 DATA_DEFAULT = Path(__file__).resolve().parent.parent / "Data" / "players-se-k01012026.csv"
 EXPECTED_GAMES_PATH = Path(__file__).resolve().parent.parent / "Data" / "expected_player_games.csv"
+TM_VALUES_PATH = Path(__file__).resolve().parent.parent / "Data" / "transfermarkt_values.csv"
 
 # Volle Kicker-Manager-Squad und Budget: 15 Spieler / 70 Mio €. Der Optimizer
 # wählt aber nur die Startelf (11 Spieler) — die 4 Bank-Plätze füllt der User
@@ -94,6 +95,26 @@ def attach_expected_metrics(
 
 # Back-compat-Alias.
 attach_expected_games = attach_expected_metrics
+
+
+def attach_tm_values(
+    players: pd.DataFrame, path: Path = TM_VALUES_PATH,
+) -> pd.DataFrame:
+    """Mergt die Spalte ``Marktwert TM`` aus dem TM-Join-CSV an.
+
+    Spieler ohne TM-Match erhalten ``Marktwert TM = 0`` — der Optimizer
+    wird sie damit beim Maximieren von Marktwert TM nicht aktiv wählen
+    (es sei denn, sie sind gepinnt oder die Formations-Quote zwingt sie).
+    """
+    if not path.exists():
+        raise FileNotFoundError(
+            f"{path} fehlt — bitte zuerst `python3 Code/transfermarkt_values.py` "
+            "laufen lassen."
+        )
+    tm = pd.read_csv(path, sep=";")[["ID", "Marktwert TM"]]
+    out = players.merge(tm, on="ID", how="left")
+    out["Marktwert TM"] = out["Marktwert TM"].fillna(0.0)
+    return out
 
 
 def optimize(
@@ -203,6 +224,7 @@ def main() -> None:
         choices=[
             "Punkte", "Notendurchschnitt",
             "Erwartete Spiele", "Erwartete Tordifferenz",
+            "Marktwert TM",
         ],
         help="Zu optimierende Spalte",
     )
@@ -232,6 +254,8 @@ def main() -> None:
     players = load_players(args.data)
     if args.objective in EXPECTED_PLAYER_COLS:
         players = attach_expected_metrics(players)
+    elif args.objective == "Marktwert TM":
+        players = attach_tm_values(players)
     result = optimize(
         players,
         objective_col=args.objective,
