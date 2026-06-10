@@ -32,6 +32,7 @@ from lineup_probabilities import (
     match_prediction,
     normalize,
     player_aliases,
+    tokens,
 )
 
 
@@ -108,6 +109,44 @@ KICKER_POS_TO_ELO: dict[str, set[str]] = {
 }
 
 
+# Sonderzeichen, die ``unicodedata.NFKD`` nicht zerlegt (es gibt keine
+# Decomposition). Wir mappen sie BEVOR ``normalize`` greift, sonst landen
+# Norweger/Türken/Skandinavier unmatched.
+_CHAR_FIXUPS = str.maketrans({
+    "ø": "o", "Ø": "O",
+    "ı": "i", "İ": "I",
+    "æ": "ae", "Æ": "Ae",
+    "ð": "d", "Ð": "D",
+    "þ": "th", "Þ": "Th",
+})
+
+
+def _demangle(s: str) -> str:
+    return s.translate(_CHAR_FIXUPS) if isinstance(s, str) else s
+
+
+# Handgepflegte Overrides für Spitznamen / Schreibvarianten, die selbst
+# nach Char-Fixup nicht eindeutig matchen. Schlüssel ist die kicker-
+# Anzeige (kursiv), Wert der eindeutige Elo-Spielername inkl. Nation,
+# um Mehrdeutigkeit auszuschließen.
+ELO_NAME_OVERRIDES: dict[tuple[str, str], str] = {
+    # (Verein_DE, Angezeigter Name kicker) -> exakter Elo-Spielername.
+    # Pflege bei Bedarf manuell: für Spitznamen und Schreibvarianten, die
+    # aus der Heuristik fallen.
+    ("Marokko", "Bono"): "Y. Bounou",
+    ("Marokko", "Munir"): "M. El Haddadi",
+    ("Marokko", "Abde"): "A. Ezzalzouli",
+    ("Kolumbien", "James"): "J. Rodríguez",
+    ("Niederlande", "Memphis Depay"): "Memphis",
+    ("Uruguay", "Darwin"): "D. Núñez",
+    ("Tunesien", "Hannibal"): "H. Mejbri",
+    ("Elfenbeinküste", "Amad"): "A. Diallo",
+    ("Paraguay", "Kaku"): "A. Romero",  # höchster Elo unter A. Romero (PY)
+    ("Ägypten", "Ramy Rabia"): "Rami Rabia",
+    ("Irak", "Rebin Sulaka"): "Rebin Solaka",
+}
+
+
 def load_elo_players() -> pd.DataFrame:
     cols = [
         "player_id", "player_name", "elo", "current_rank",
@@ -123,18 +162,21 @@ def _enriched_candidates(elo: pd.DataFrame) -> dict[str, list[dict]]:
 
     Der Elo-Datensatz liefert nur einen Vollnamen — wir splitten ihn am
     ersten Leerzeichen in (Vorname, Nachname) für die Match-Heuristik.
+    Zeichen-Fixup (ø → o, ı → i, …) läuft VOR der Alias-Generierung,
+    damit der spätere Vergleich mit den (ebenfalls demangleten)
+    kicker-Namen aufgeht.
     """
     by_team: dict[str, list[dict]] = {}
     for row in elo.itertuples(index=False):
         if pd.isna(row.team_de):
             continue
-        full = row.player_name if isinstance(row.player_name, str) else ""
+        full = _demangle(row.player_name) if isinstance(row.player_name, str) else ""
         first, _, last = full.partition(" ")
         if not last:
             last = first  # Single-Name Spieler („Casemiro“)
         cand = {
             "elo_id": int(row.player_id),
-            "name": full,
+            "name": row.player_name,  # Original behalten (für Output/Override)
             "first": first,
             "last": last,
             "display": full,
@@ -149,16 +191,99 @@ def _enriched_candidates(elo: pd.DataFrame) -> dict[str, list[dict]]:
     return by_team
 
 
+def _match_asian_reversed(pred_name: str, candidates: list[dict]) -> dict | None:
+    """Fallback für gemischte Asien-Schreibweisen (Family→Last vs Family→First).
+
+    Beispiel: kicker ``Jin-Gyu Kim`` (westliche Reihenfolge) vs. Elo
+    ``Kim Jin-Gyu`` (koreanische Reihenfolge). Wir bauen die Reverse-Form
+    (letztes Pred-Token nach vorne) und matchen exakt gegen den
+    normalisierten Display-Namen.
+    """
+    pt = tokens(pred_name)
+    if len(pt) < 2:
+        return None
+    reversed_norm = " ".join([pt[-1]] + pt[:-1])
+    hits = [c for c in candidates if normalize(c["display"]) == reversed_norm]
+    if len(hits) == 1:
+        return hits[0]
+    return None
+
+
+def _match_initial_form(pred_name: str, candidates: list[dict]) -> dict | None:
+    """Fallback: pred hat vollen Vornamen, Kandidat nur Initial.
+
+    Beispiel: kicker ``Virgil van Dijk`` vs. Elo ``V. van Dijk``. Der
+    Default-Matcher kennt nur den umgekehrten Fall (initiale pred,
+    vollständiger Kandidat). Diese Variante akzeptiert einen Treffer,
+    wenn die Nachnamens-Token übereinstimmen UND der Kandidaten-Vorname
+    aus einem Anfangsbuchstaben besteht, mit dem auch pred beginnt.
+    """
+    pt = tokens(pred_name)
+    if not pt:
+        return None
+    pred_last = pt[-1]
+    pred_first = pt[0]
+
+    hits: list[dict] = []
+    for c in candidates:
+        c_last_tokens = set(tokens(c["last"]))
+        if pred_last not in c_last_tokens:
+            continue
+        c_first_tokens = tokens(c["first"])
+        if not c_first_tokens:
+            hits.append(c)
+            continue
+        c_first = c_first_tokens[0]
+        # Akzeptiere exakten Vornamens-Match oder Initial-Match.
+        if c_first == pred_first or (
+            len(c_first) == 1 and pred_first.startswith(c_first)
+        ):
+            hits.append(c)
+    if len(hits) == 1:
+        return hits[0]
+    # Bei Mehrdeutigkeit: höchster Elo gewinnt (analog Single-Name-Tiebreak).
+    if hits:
+        return max(hits, key=lambda c: c["elo"])
+    return None
+
+
 def _resolve_ambiguous_single_name(
     pred_norm: str, candidates: list[dict],
 ) -> dict | None:
-    """Tiebreaker bei Same-Name-Spielern: höchster Elo gewinnt."""
-    same_name = [
+    """Tiebreaker bei Same-Name-Spielern: höchster Elo gewinnt.
+
+    Greift zwei Fälle ab:
+    1. Mehrere Kandidaten mit *identischem* normalisiertem Display-Namen
+       (z.B. mehrere „Marquinhos" in Brasilien).
+    2. Single-Token pred trifft mehrere Kandidaten, deren *Vorname*
+       exakt dem pred entspricht (z.B. kicker „Eric" → Eric García /
+       Eric Ruiz / …). Annahme: ein Spieler, der unter seinem Vornamen
+       allein bekannt ist, hat den höchsten Elo seiner Namensvettern.
+    """
+    same_display = [
         c for c in candidates if normalize(c["display"]) == pred_norm
     ]
-    if not same_name:
+    if same_display:
+        return max(same_display, key=lambda c: c["elo"])
+
+    same_first = [
+        c for c in candidates
+        if tokens(c["first"]) and tokens(c["first"])[0] == pred_norm
+    ]
+    if same_first:
+        return max(same_first, key=lambda c: c["elo"])
+    return None
+
+
+def _find_override(team_de: str, display: str, candidates: list[dict]) -> dict | None:
+    """Manueller Override-Hit, falls für (team, display) hinterlegt."""
+    elo_target = ELO_NAME_OVERRIDES.get((team_de, display))
+    if elo_target is None:
         return None
-    return max(same_name, key=lambda c: c["elo"])
+    for c in candidates:
+        if c["name"] == elo_target:
+            return c
+    return None
 
 
 def build_matches() -> tuple[pd.DataFrame, list[tuple[str, str, str]]]:
@@ -172,6 +297,8 @@ def build_matches() -> tuple[pd.DataFrame, list[tuple[str, str, str]]]:
         pid = krow["ID"]
         team_de = krow["Verein"]
         display = krow["Angezeigter Name"]
+        # Demangle für die Match-Heuristik; das Original bleibt im Log.
+        search_name = _demangle(display)
         kpos = krow["Position"]
         elo_buckets = KICKER_POS_TO_ELO.get(kpos, set())
 
@@ -185,15 +312,31 @@ def build_matches() -> tuple[pd.DataFrame, list[tuple[str, str, str]]]:
         else:
             cands = all_cands
 
-        match = match_prediction(display, cands) if cands else None
+        # 1) Override hat höchste Priorität.
+        match = _find_override(team_de, display, cands) \
+            or _find_override(team_de, display, all_cands)
+
+        # 2) Standard-Matcher mit Position-Filter.
+        if match is None:
+            match = match_prediction(search_name, cands) if cands else None
+        # 3) Same-Name-Tiebreaker (höchster Elo).
         if match is None and cands:
-            match = _resolve_ambiguous_single_name(normalize(display), cands)
-        # Position-Fallback ohne Filter, falls Elo den Spieler abweichend
-        # einordnet (z.B. ein RB als "Midfielder").
+            match = _resolve_ambiguous_single_name(normalize(search_name), cands)
+        # 4) Initial-Form-Fallback (kicker full-name vs Elo "X. Name").
+        if match is None and cands:
+            match = _match_initial_form(search_name, cands)
+        # 5) Asia-Reverse: koreanisch/japanische Namen in vertauschter
+        #    Reihenfolge im Elo-Datensatz.
+        if match is None and cands:
+            match = _match_asian_reversed(search_name, cands)
+        # 6) Position-Filter aufheben, falls Elo abweichend eingeordnet hat.
         if match is None and all_cands:
-            match = match_prediction(display, all_cands)
-            if match is None:
-                match = _resolve_ambiguous_single_name(normalize(display), all_cands)
+            match = (
+                match_prediction(search_name, all_cands)
+                or _resolve_ambiguous_single_name(normalize(search_name), all_cands)
+                or _match_initial_form(search_name, all_cands)
+                or _match_asian_reversed(search_name, all_cands)
+            )
 
         if match is None:
             unmatched.append((team_de, pid, display))

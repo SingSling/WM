@@ -1,256 +1,60 @@
-# Unmatched kicker players: 255
-Mexiko | pl-k00039824 | Guillermo Ochoa
-Kolumbien | pl-k00045914 | James
-Neuseeland | pl-k00046508 | Tommy Smith
-Senegal | pl-k00062748 | Idrissa Gueye
-Ghana | pl-k00065996 | Jordan Ayew
-Kolumbien | pl-k00071862 | Santiago Arias
-Elfenbeinküste | pl-k00072663 | Seko Fofana
-Mexiko | pl-k00073943 | Raul Jimenez
-Marokko | pl-k00074369 | Bono
-Argentinien | pl-k00074991 | Emiliano Martinez
-Bosnien-Herzegowina | pl-k00075261 | Haris Tabakovic
-Ägypten | pl-k00075957 | Ramy Rabia
-Uruguay | pl-k00077564 | Guillermo Varela
-Curacao | pl-k00078155 | Leandro Bacuna
-Niederlande | pl-k00078230 | Virgil van Dijk
-Paraguay | pl-k00080522 | Gustavo Gomez
-Kolumbien | pl-k00081292 | Jhon Cordoba
-Schottland | pl-k00082878 | Andrew Robertson
-Ecuador | pl-k00082905 | Enner Valencia
-Argentinien | pl-k00083013 | Leandro Paredes
-Norwegen | pl-k00083165 | Alexander Sörloth
+# Unmatched kicker players: 59
 Iran | pl-k00083239 | Ehsan Haji Safi
-Norwegen | pl-k00083613 | Martin Ödegaard
-Südafrika | pl-k00083739 | Themba Zwane
-Paraguay | pl-k00083783 | Junior Alonso
-Schweiz | pl-k00084365 | Nico Elvedi
-Türkei | pl-k00087622 | Ugurcan Cakir
-Tschechien | pl-k00087974 | Michal Sadilek
-Paraguay | pl-k00088866 | Fabian Balbuena
-Curacao | pl-k00088946 | Gervane Kastaneer
-Japan | pl-k00089060 | Shogo Taniguchi
-Frankreich | pl-k00089444 | Marcus Thuram
-Kap Verde | pl-k00089452 | Laros Duarte
-Niederlande | pl-k00089457 | Frenkie de Jong
-Curacao | pl-k00090003 | Juninho Bacuna
-Marokko | pl-k00090018 | Sofyan Amrabat
-Türkei | pl-k00090353 | Abdülkerim Bardakci
-Kolumbien | pl-k00090525 | Jefferson Lerma
-Japan | pl-k00090788 | Wataru Endo
-Argentinien | pl-k00090996 | Exequiel Palacios
 Mexiko | pl-k00091000 | German Berterame
-Frankreich | pl-k00091137 | Ousmane Dembelé
-Panama | pl-k00094325 | Ismael Diaz
-Kolumbien | pl-k00094622 | Yerry Mina
-Schweden | pl-k00095547 | Gustaf Nilsson
-Argentinien | pl-k00095657 | Giovani Lo Celso
-Mexiko | pl-k00095671 | Cesar Montes
-Kolumbien | pl-k00095732 | Deiver Machado
-Deutschland | pl-k00096140 | Nico Schlotterbeck
-Türkei | pl-k00096489 | Ferdi Kadioglu
-Kolumbien | pl-k00096715 | Davinson Sanchez
-Senegal | pl-k00096723 | Ismaila Sarr
-Australien | pl-k00096877 | Aiden O'Neill
-Mexiko | pl-k00098067 | Edson Alvarez
-Niederlande | pl-k00098095 | Justin Kluivert
-Marokko | pl-k00098226 | Munir
-Ecuador | pl-k00098854 | Pervis Estupinan
-USA | pl-k00099308 | Miles Robinson
 Haiti | pl-k00099350 | Derrick Etienne Jr.
-Paraguay | pl-k00100385 | Angel Romero
-Schottland | pl-k00100539 | Billy Gilmour
-Spanien | pl-k00100775 | Eric
-Neuseeland | pl-k00101025 | Michael Boxall
-Japan | pl-k00101100 | Takefusa Kubo
-Uruguay | pl-k00101284 | Santiago Bueno
-Uruguay | pl-k00101287 | José Luis Rodriguez
-Uruguay | pl-k00101288 | Mathias Olivera
-Frankreich | pl-k00101356 | Ibrahima Konaté
-Schweden | pl-k00101588 | Viktor Johansson
-Niederlande | pl-k00101636 | Teun Koopmeiners
-Niederlande | pl-k00103453 | Tijjani Reijnders
-Türkei | pl-k00103776 | Yusuf Sari
-Ghana | pl-k00104033 | Gideon Mensah
-Ghana | pl-k00104274 | Elisha Owusu
-Iran | pl-k00104723 | Milad Mohammadi
 Iran | pl-k00104727 | Hossein Kanaani
-England | pl-k00105223 | Anthony Gordon
-Japan | pl-k00105391 | Junya Ito
-Paraguay | pl-k00106067 | Kaku
-Japan | pl-k00106091 | Ao Tanaka
-Japan | pl-k00106358 | Hiroki Ito
 Norwegen | pl-k00106946 | Leo Östigaard
-Türkei | pl-k00108112 | Altay Bayindir
-Kolumbien | pl-k00108337 | Cucho Hernandez
-Haiti | pl-k00108624 | Leverton Pierre
-USA | pl-k00108633 | Antonee Robinson
-Argentinien | pl-k00110300 | Nicolas Gonzalez
-Kanada | pl-k00110515 | Mathieu Choiniere
-Senegal | pl-k00110713 | Krepin Diatta
-Kanada | pl-k00110836 | Jonathan David
 Jordanien | pl-k00111092 | Musa Al-Taamari
-Argentinien | pl-k00111568 | Cristian Romero
-Mexiko | pl-k00111988 | Jorge Sanchez
-Mexiko | pl-k00112077 | Diego Lainez
-Mexiko | pl-k00112079 | Roberto Alvarado
-Norwegen | pl-k00112426 | Jörgen Strand Larsen
-Niederlande | pl-k00112929 | Jan Paul van Hecke
-Argentinien | pl-k00113163 | Gonzalo Montiel
-Argentinien | pl-k00113179 | Julian Alvarez
-USA | pl-k00113426 | Alejandro Zendejas
-Irak | pl-k00113751 | Rebin Sulaka
 Usbekistan | pl-k00113863 | Farrukh Sayfiev
 Katar | pl-k00113931 | Sultan Al-Brake
-Ecuador | pl-k00114259 | Jordy Alcivar
-Uruguay | pl-k00114311 | Sebastian Caceres
-Uruguay | pl-k00114315 | Maxi Araujo
-Uruguay | pl-k00114335 | Darwin
-Argentinien | pl-k00114381 | Thiago Almada
-Frankreich | pl-k00114723 | Manu Koné
-Tunesien | pl-k00114796 | Hannibal
-USA | pl-k00114998 | Brenden Aaronson
-Japan | pl-k00115166 | Daizen Maeda
-Japan | pl-k00115227 | Tsuyoshi Watanabe
-Mexiko | pl-k00115268 | Julian Araujo
-Kolumbien | pl-k00115590 | Jorge Carrascal
-Argentinien | pl-k00115688 | Nahuel Molina
-Ecuador | pl-k00115723 | Felix Torres
-Mexiko | pl-k00115743 | Carlos Rodriguez
-Paraguay | pl-k00115787 | Alan Benitez
-Paraguay | pl-k00115805 | Julio Enciso
-Uruguay | pl-k00116213 | Brian Rodriguez
-Marokko | pl-k00116659 | Anass Salah-Eddine
 Algerien | pl-k00116711 | Adil Aouchiche
-Japan | pl-k00117046 | Zion Suzuki
-Norwegen | pl-k00117065 | Jens Petter Hauge
-Haiti | pl-k00117270 | Frantzdy Pierrot
-Uruguay | pl-k00117527 | Ronald Araujo
 Saudi-Arabien | pl-k00117736 | Firas Al-Buraikan
 Portugal | pl-k00118616 | Samuel Costa
-Norwegen | pl-k00118634 | Marcus Pedersen
-Senegal | pl-k00121260 | Abdoulaye Seck
-Neuseeland | pl-k00123545 | Matthew Garbett
-Ägypten | pl-k00123588 | Haissem Hassan
-Senegal | pl-k00123794 | Pape Sarr
-Elfenbeinküste | pl-k00124076 | Amad
 Südafrika | pl-k00124100 | Yaya Sithole
-England | pl-k00125171 | Eberechi Eze
-Österreich | pl-k00125269 | Patrick Wimmer
-Australien | pl-k00126071 | Mohamed Touré
-Japan | pl-k00126161 | Yuito Suzuki
 Usbekistan | pl-k00126192 | Oston Urunov
-Kolumbien | pl-k00126539 | Jhon Arias
-Ecuador | pl-k00126584 | Angelo Preciado
-Ecuador | pl-k00126589 | Moises Caicedo
-Ecuador | pl-k00126697 | Anthony Valencia
-Argentinien | pl-k00126831 | Enzo Fernandez
-Paraguay | pl-k00126894 | Juan José Caceres
-Kolumbien | pl-k00128521 | Richard Rios
-Südkorea | pl-k00128894 | Jin-Gyu Kim
-Senegal | pl-k00129278 | Pape Gueye
-Kolumbien | pl-k00129372 | Daniel Munoz
-Mexiko | pl-k00130288 | Brian Gutierrez
-Kroatien | pl-k00130586 | Luka Sucic
-Senegal | pl-k00130792 | Cherif Ndiaye
-Kroatien | pl-k00131702 | Josip Sutalo
-England | pl-k00131854 | Elliot Anderson
-Ecuador | pl-k00133182 | José Andres Hurtado
-Senegal | pl-k00133422 | Iliman Ndiaye
-Schweden | pl-k00133786 | Daniel Svensson
-Paraguay | pl-k00134333 | Ramon Sosa
-Bosnien-Herzegowina | pl-k00134479 | Tarik Muharemovic
-Bosnien-Herzegowina | pl-k00135040 | Jovo Lukic
-Senegal | pl-k00135043 | Antoine Mendy
-Ghana | pl-k00135484 | Alidu Seidu
-Ecuador | pl-k00135506 | Jordy Caicedo
-Türkei | pl-k00135744 | Aral Simsir
 Curacao | pl-k00136538 | Tyrick Bodak
-Haiti | pl-k00137164 | Lenny Joseph
 Algerien | pl-k00137337 | Melvin Mastil
-Senegal | pl-k00137760 | Habib Diarra
-Niederlande | pl-k00139304 | Micky van de Ven
 Marokko | pl-k00140663 | Ayoube Amaimouni-Echghouyab
-Türkei | pl-k00141046 | Demir Ege Tiknaz
-Marokko | pl-k00141559 | Abde
 Ägypten | pl-k00143531 | Hamdy Fathy
-Marokko | pl-k00143575 | Soufiane Rahimi
-Japan | pl-k00144394 | Junnosuke Suzuki
-Südkorea | pl-k00144510 | Jin-Seop Park
-Paraguay | pl-k00144841 | Diego Gomez
-Ecuador | pl-k00145410 | Joel Ordonez
-Mexiko | pl-k00145459 | Israel Reyes
 Algerien | pl-k00146019 | Elias Benkara
-Ecuador | pl-k00147419 | Nilson Angulo
-Tschechien | pl-k00147673 | David Doudera
 Kap Verde | pl-k00148383 | Sidny
-Elfenbeinküste | pl-k00149092 | Yahia Fofana
 Jordanien | pl-k00149648 | Yousef Qashi
-Ghana | pl-k00150818 | Brandon Thomas-Asante
-Schweden | pl-k00151955 | Yasin Ayari
-Argentinien | pl-k00152040 | Nico Paz
-England | pl-k00152043 | Nico O'Reilly
-Kolumbien | pl-k00153445 | Andres Gomez
-Japan | pl-k00153662 | Kaishu Sano
 Kanada | pl-k00154187 | Moise Bombito
-Senegal | pl-k00155533 | Lamine Camara
-Ecuador | pl-k00155858 | Yaimar Medina
-Kroatien | pl-k00155868 | Petar Sucic
-Ecuador | pl-k00156656 | Denil Castillo
 Usbekistan | pl-k00156678 | Umarali Rakhmonaliev
 Usbekistan | pl-k00156687 | Abbosbek Fayzullayev
 Irak | pl-k00157873 | Jussef Nasrawe
 Panama | pl-k00158118 | Cesar Samudio
-Ghana | pl-k00159415 | Christopher Bonsu Baah
 Irak | pl-k00163114 | Ahmed Yahya
 Algerien | pl-k00163117 | Oussama Benbout
-Südafrika | pl-k00163193 | Thapelo Maseko
 Jordanien | pl-k00163293 | Abdallah Nasib
 Jordanien | pl-k00163312 | Yazeed Abulaila
 Usbekistan | pl-k00163337 | Abduvokhid Nematov
 Usbekistan | pl-k00163340 | Sherzod Nasrullaev
-Usbekistan | pl-k00163342 | Botirali Ergashev
 Usbekistan | pl-k00163345 | Azizjon Ganiev
-Mexiko | pl-k00164025 | Guillermo Martinez
 Jordanien | pl-k00164208 | Ibrahim Sadeh
 Irak | pl-k00164297 | Akam Hashem
 Irak | pl-k00164331 | Dario Naamo
-Senegal | pl-k00164398 | El Hadji Malick Diouf
 Algerien | pl-k00166081 | Sohaib Nair
 Norwegen | pl-k00167079 | Sondre Langaas
 Irak | pl-k00168931 | Kumel Saadi
 Irak | pl-k00168935 | Mustafa Saadoon
 Algerien | pl-k00169695 | Amin Chiakha
-Kanada | pl-k00170138 | Promise David
-Senegal | pl-k00171525 | Ibrahim Mbaye
-Elfenbeinküste | pl-k00174794 | Bazoumana Touré
-Elfenbeinküste | pl-k00176299 | Yan Diomande
 Ecuador | pl-k00176341 | Darwin Guagua
-Mexiko | pl-k00177919 | Mateo Chavez
-Paraguay | pl-k00182969 | Lucas Romero
 Jordanien | pl-k00183117 | Nour Bani Attiah
 Jordanien | pl-k00183135 | Shararh
-Iran | pl-k00183346 | Ali Nemati
 Kap Verde | pl-k00183403 | Djack
 Katar | pl-k00184852 | Mohamed Al-Mannai
 Algerien | pl-k00185081 | Kilian Belazzoug
 Jordanien | pl-k00186204 | Husam Abu Dahab
-Mexiko | pl-k00186356 | Armando Gonzalez
 Südafrika | pl-k00186804 | Khulumani Ndamane
-Südafrika | pl-k00186805 | Thalente Mbatha
-Südafrika | pl-k00186807 | Tshepang Moremi
 Tunesien | pl-k00193378 | Sabri Ben Hessen
-Schweden | pl-k00194142 | Elliot Stroud
-Haiti | pl-k00194733 | Woodensky Pierre
 Irak | pl-k00195271 | Manaf Younis
 Irak | pl-k00195272 | Ahmed Maknzi
 Tunesien | pl-k00195444 | Mouhib Chamakh
-Tunesien | pl-k00195446 | Moutaz Neffati
 Tunesien | pl-k00195449 | Khalil Ayari
 Iran | pl-k00195661 | Amirhossein Mahmoudi
 Katar | pl-k00199799 | Rayan Al-Ali
 Iran | pl-k00200620 | Danial Eiri
 Jordanien | pl-k00200625 | Anas Badawi
 Ghana | pl-k00200796 | Solomon Agbasi
-Ecuador | pl-k00201006 | Fricio Caicedo
 Ecuador | pl-k00201007 | Luis Fragozo
