@@ -30,7 +30,9 @@ from optimizer import (
     TM_STRENGTH_PATH,
     TM_VALUES_PATH,
     attach_elo_strength_metrics,
+    QUALITY_PLAYER_COLS,
     attach_player_quality,
+    attach_quality_metrics,
     attach_tm_strength_metrics,
     attach_tm_values,
     load_players,
@@ -68,6 +70,9 @@ OBJ_ELO_GAMES = "Erwartete Spiele (Elo)"
 OBJ_ELO_TD = "Erwartete Tordifferenz (Elo)"
 ELO_STRENGTH_OBJECTIVES = (OBJ_ELO_GAMES, OBJ_ELO_TD)
 OBJ_QUALITY = "Qualität"
+OBJ_QUALITY_GAMES = "Erwartete Spiele (Qualität)"
+OBJ_QUALITY_TD = "Erwartete Tordifferenz (Qualität)"
+QUALITY_METRIC_OBJECTIVES = (OBJ_QUALITY_GAMES, OBJ_QUALITY_TD)
 
 # Mapping zwischen dem Default/Custom-Label und (player_col, team_metric_col).
 EXPECTED_OBJ_SPECS: dict[str, dict[str, str]] = {
@@ -183,6 +188,7 @@ def render_optimizer() -> None:
         objective_options.extend(ELO_STRENGTH_OBJECTIVES)
     if PLAYER_QUALITY_PATH.exists():
         objective_options.append(OBJ_QUALITY)
+        objective_options.extend(QUALITY_METRIC_OBJECTIVES)
 
     with st.container(border=True):
         c1, c2, c3, c4 = st.columns([3, 2, 1.5, 2])
@@ -319,8 +325,17 @@ def render_optimizer() -> None:
                 exclude_zero = False
                 st.caption(
                     "Qualität = 0.5·z(Elo) + 0.5·z(EAR-180), z-Werte pro "
-                    "Position. Im Team behalten Top-1-GK / Top-3-Feldspieler "
-                    "den Roh-Score, alle weiteren werden mit 0.5 multipliziert."
+                    "Position. Roher Score ohne Team-Anpassung."
+                )
+            elif objective in QUALITY_METRIC_OBJECTIVES:
+                minimize = False
+                exclude_zero = False
+                st.caption(
+                    "Multiplikator = Min-Max-Normierung der Qualität pro "
+                    "Position (∈ [0, 1]); Top-1 GK / Top-3 Feldspieler pro "
+                    "Team behalten die Basis, alle weiteren × 0.5. "
+                    f"Multipliziert mit dem Team-Erwartungswert "
+                    f"({'exp_games' if objective == OBJ_QUALITY_GAMES else 'exp_gd'})."
                 )
             else:
                 # Erwartungswert-Ziele (Spiele / Tordifferenz, Default oder
@@ -366,6 +381,8 @@ def render_optimizer() -> None:
         players = attach_elo_strength_metrics(players)
     elif objective == OBJ_QUALITY:
         players = attach_player_quality(players)
+    elif objective in QUALITY_METRIC_OBJECTIVES:
+        players = attach_quality_metrics(players)
 
     if not run:
         st.info("Einstellungen wählen und „Optimieren“ klicken.")
@@ -423,6 +440,9 @@ def render_optimizer() -> None:
     elif objective == OBJ_QUALITY:
         display_cols = DISPLAY_COLS + ["Qualität"]
         sort_col = "Qualität"
+    elif objective in QUALITY_METRIC_OBJECTIVES:
+        display_cols = DISPLAY_COLS + ["Qualitäts-Multiplikator", objective]
+        sort_col = objective
     else:
         display_cols = DISPLAY_COLS
         sort_col = "Punkte" if objective == "Punkte" else "Notendurchschnitt"
@@ -454,11 +474,13 @@ def render_optimizer() -> None:
                 fmt["TM-Stärke"] = "{:.2f}"
             if "Elo-Stärke" in block_sorted.columns:
                 fmt["Elo-Stärke"] = "{:.2f}"
-            for c in TM_STRENGTH_OBJECTIVES + ELO_STRENGTH_OBJECTIVES:
+            for c in TM_STRENGTH_OBJECTIVES + ELO_STRENGTH_OBJECTIVES + QUALITY_METRIC_OBJECTIVES:
                 if c in block_sorted.columns:
                     fmt[c] = "{:+.2f}" if "Tordifferenz" in c else "{:.2f}"
             if "Qualität" in block_sorted.columns:
                 fmt["Qualität"] = "{:+.2f}"
+            if "Qualitäts-Multiplikator" in block_sorted.columns:
+                fmt["Qualitäts-Multiplikator"] = "{:.2f}"
             st.dataframe(
                 block_sorted.style.format(fmt),
                 hide_index=True, use_container_width=True,
@@ -477,11 +499,13 @@ def render_optimizer() -> None:
             fmt["TM-Stärke"] = "{:.2f}"
         if "Elo-Stärke" in full.columns:
             fmt["Elo-Stärke"] = "{:.2f}"
-        for c in TM_STRENGTH_OBJECTIVES + ELO_STRENGTH_OBJECTIVES:
+        for c in TM_STRENGTH_OBJECTIVES + ELO_STRENGTH_OBJECTIVES + QUALITY_METRIC_OBJECTIVES:
             if c in full.columns:
                 fmt[c] = "{:+.2f}" if "Tordifferenz" in c else "{:.2f}"
         if "Qualität" in full.columns:
             fmt["Qualität"] = "{:+.2f}"
+        if "Qualitäts-Multiplikator" in full.columns:
+            fmt["Qualitäts-Multiplikator"] = "{:.2f}"
         st.dataframe(
             full.style.format(fmt),
             hide_index=True, use_container_width=True,

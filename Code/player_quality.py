@@ -1,23 +1,26 @@
-"""Spieler-Qualitätsscore aus Elo + EAR-180.
+"""Spieler-Qualitätsscore aus Elo + EAR-180 und passender Spielzeit-Multiplikator.
 
 Pipeline:
 
-1. Eingabe ist ``Data/player_elo_values.csv`` (vom Elo-Joiner erzeugt).
+1. Eingabe: ``Data/player_elo_values.csv`` (Elo-Joiner) und für die
+   abgeleiteten Erwartungswerte ``Data/expected_player_games.csv``
+   (Team-Erwartungswerte).
 2. Pro Kicker-Position werden ``Elo`` und ``EAR-180`` jeweils
-   z-standardisiert: ``z = (x − μ_pos) / σ_pos``. Position statt Team,
-   damit Torhüter nicht systematisch unter Stürmern leiden.
+   z-standardisiert (über alle 48 Nationen hinweg). Position statt
+   Team, damit Torhüter nicht systematisch unter Stürmern leiden.
    Spieler ohne EAR-Lesart bekommen ``z_EAR = 0`` (positions-neutral).
-3. ``Qualität (roh) = 0.5 · z_Elo + 0.5 · z_EAR``.
-4. Innerhalb jedes Teams pro Position wird gerankt. Top-3
-   Feldspieler bleiben, Reservisten bekommen ``× 0.5``. Bei
-   Torhütern bleibt nur der beste; Backup-GKs werden halbiert.
+3. ``Qualität = 0.5 · z_Elo + 0.5 · z_EAR`` — **roher Qualitätsscore
+   ohne Team-Anpassung**.
+4. ``Qualitäts-Multiplikator (Basis)`` — Min-Max-Normierung von
+   ``Qualität`` pro Position. Bester der Position = 1.0, schlechtester
+   = 0.0. Damit liegt der Multiplikator in [0, 1].
+5. ``Qualitäts-Multiplikator`` — Basis × Team-Rang-Faktor. Top-1 GK /
+   Top-3 Feldspieler pro Team behalten ihre Basis (Faktor 1.0), alle
+   übrigen werden mit ``0.5`` multipliziert.
+6. ``Erwartete Spiele (Qualität) = Multiplikator × team.exp_games``
+   und analog für die Tordifferenz.
 
-Negative Roh-Scores werden mit dem 0.5-Faktor näher an 0 gebracht
-(weniger negativ) — bewusst akzeptiert, dies entspricht der wörtlichen
-„reduce by 50 %"-Auslegung. Wer das anders haben möchte, dreht am
-``PENALTY``-Faktor oder klemmt zuerst auf ≥ 0.
-
-Ausgabe: ``Data/player_quality.csv`` mit ID + Komponenten + Endwert.
+Ausgabe: ``Data/player_quality.csv``.
 """
 
 from __future__ import annotations
@@ -30,12 +33,12 @@ import pandas as pd
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "Data"
 ELO_MATCHES_PATH = DATA_DIR / "player_elo_values.csv"
+EXPECTED_GAMES_PATH = DATA_DIR / "expected_player_games.csv"
 KICKER_PATH = DATA_DIR / "players-se-k01012026.csv"
 OUT_PATH = DATA_DIR / "player_quality.csv"
 
 
-# Wie viele Spieler einer Position auf einem Team behalten ihren Roh-Score?
-# Außerhalb: ``× PENALTY``.
+# Top-N pro Team-Position, die volle Spielzeit (Multiplikator 1.0) bekommen.
 KEEP_TOP_BY_POS: dict[str, int] = {
     "GOALKEEPER": 1,
     "DEFENDER":   3,
@@ -71,31 +74,60 @@ def compute() -> pd.DataFrame:
     df["z_EAR"] = df.groupby("Position")["EAR-180"].transform(_zscore)
     df["z_EAR"] = df["z_EAR"].fillna(0.0)
 
-    df["Qualität (roh)"] = 0.5 * df["z_Elo"] + 0.5 * df["z_EAR"]
+    # Roher Qualitätsscore — keine Team-Anpassung.
+    df["Qualität"] = 0.5 * df["z_Elo"] + 0.5 * df["z_EAR"]
 
-    # Pro Team × Position ranken (1 = bester).
+    # Basis-Multiplikator: Min-Max-Normierung der Qualität pro Position.
+    def _min_max(s: pd.Series) -> pd.Series:
+        lo, hi = s.min(), s.max()
+        if hi == lo:
+            return pd.Series(0.5, index=s.index)
+        return (s - lo) / (hi - lo)
+    df["Qualitäts-Multiplikator (Basis)"] = (
+        df.groupby("Position")["Qualität"].transform(_min_max)
+    )
+
+    # Team × Position-Ranking (1 = bester) für den Penalty-Faktor.
     df["Pos-Rang im Team"] = (
-        df.groupby(["Verein", "Position"])["Qualität (roh)"]
+        df.groupby(["Verein", "Position"])["Qualität"]
           .rank(ascending=False, method="first")
           .astype(int)
     )
-
     keep_thresholds = df["Position"].map(KEEP_TOP_BY_POS)
-    df["Qualität"] = df["Qualität (roh)"].where(
+    # Finaler Multiplikator: Basis behalten (Top-N) oder × PENALTY (Backups).
+    df["Qualitäts-Multiplikator"] = df["Qualitäts-Multiplikator (Basis)"].where(
         df["Pos-Rang im Team"] <= keep_thresholds,
-        df["Qualität (roh)"] * PENALTY,
+        df["Qualitäts-Multiplikator (Basis)"] * PENALTY,
     )
+
+    # Team-Erwartungswerte beimergen für die abgeleiteten Spielerspalten.
+    if not EXPECTED_GAMES_PATH.exists():
+        from expected_player_games import build_expected_player_metrics, write_csv as _write_expected
+        _write_expected(build_expected_player_metrics())
+    team_metrics = pd.read_csv(EXPECTED_GAMES_PATH, sep=";")[
+        ["ID", "exp_games", "exp_gd"]
+    ]
+    df = df.merge(team_metrics, on="ID", how="left")
+
+    df["Erwartete Spiele (Qualität)"] = df["Qualitäts-Multiplikator"] * df["exp_games"]
+    df["Erwartete Tordifferenz (Qualität)"] = df["Qualitäts-Multiplikator"] * df["exp_gd"]
     return df
 
 
 def write_csv(df: pd.DataFrame, path: Path = OUT_PATH) -> None:
     cols = [
         "ID", "Verein", "Position",
-        "Elo", "EAR-180", "z_Elo", "z_EAR",
-        "Qualität (roh)", "Pos-Rang im Team", "Qualität",
+        "Elo", "EAR-180", "z_Elo", "z_EAR", "Qualität",
+        "Pos-Rang im Team",
+        "Qualitäts-Multiplikator (Basis)", "Qualitäts-Multiplikator",
+        "exp_games", "Erwartete Spiele (Qualität)",
+        "exp_gd", "Erwartete Tordifferenz (Qualität)",
     ]
     out = df[cols].copy()
-    for c in ("z_Elo", "z_EAR", "Qualität (roh)", "Qualität"):
+    for c in ("z_Elo", "z_EAR", "Qualität",
+              "Qualitäts-Multiplikator (Basis)", "Qualitäts-Multiplikator",
+              "exp_games", "Erwartete Spiele (Qualität)",
+              "exp_gd", "Erwartete Tordifferenz (Qualität)"):
         out[c] = out[c].round(4)
     out["Elo"] = out["Elo"].round(1)
     if "EAR-180" in out.columns:
@@ -115,19 +147,21 @@ def main() -> None:
     print(f"Spieler bewertet: {len(df)}")
     print(f"Ausgabe:          {OUT_PATH}\n")
 
-    cols = [
+    qcols = [
         "Angezeigter Name", "Verein", "Position",
-        "z_Elo", "z_EAR", "Qualität (roh)",
-        "Pos-Rang im Team", "Qualität",
+        "z_Elo", "z_EAR", "Qualität",
+        "Pos-Rang im Team", "Qualitäts-Multiplikator",
     ]
-    print("Top 15 nach Qualität:")
-    print(show.sort_values("Qualität", ascending=False).head(15)[cols].to_string(index=False))
-    print("\nBeispiel: schlechtester gerankter Top-3-Stürmer (Vergleich Roh vs. Endwert):")
-    sample = show[(show["Position"] == "FORWARD") & (show["Pos-Rang im Team"] == 3)]
-    print(sample.sort_values("Qualität", ascending=False).head(5)[cols].to_string(index=False))
-    print("\nBeispiel: erster halbierter Backup-Stürmer pro Top-Team:")
-    backup = show[(show["Position"] == "FORWARD") & (show["Pos-Rang im Team"] == 4)]
-    print(backup.sort_values("Qualität (roh)", ascending=False).head(5)[cols].to_string(index=False))
+    print("Top 15 nach Qualität (ohne Team-Anpassung):")
+    print(show.sort_values("Qualität", ascending=False).head(15)[qcols].to_string(index=False))
+
+    ecols = [
+        "Angezeigter Name", "Verein", "Position",
+        "Qualität", "Qualitäts-Multiplikator",
+        "exp_games", "Erwartete Spiele (Qualität)",
+    ]
+    print("\nTop 15 nach Erwartete Spiele (Qualität):")
+    print(show.sort_values("Erwartete Spiele (Qualität)", ascending=False).head(15)[ecols].to_string(index=False))
 
 
 if __name__ == "__main__":

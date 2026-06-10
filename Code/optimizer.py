@@ -125,10 +125,19 @@ def attach_elo_strength_metrics(
     return out
 
 
+QUALITY_PLAYER_COLS = (
+    "Erwartete Spiele (Qualität)", "Erwartete Tordifferenz (Qualität)",
+)
+
+
 def attach_player_quality(
     players: pd.DataFrame, path: Path = PLAYER_QUALITY_PATH,
 ) -> pd.DataFrame:
-    """Mergt den Spieler-Qualitätsscore (z-Score-Kombination aus Elo + EAR)."""
+    """Mergt den rohen Spieler-Qualitätsscore (z-Score-Kombi aus Elo + EAR).
+
+    Keine Team-Anpassung — der Score steht für absolute Spielerqualität.
+    Spielzeit-Effekte stecken in :func:`attach_quality_metrics`.
+    """
     if not path.exists():
         raise FileNotFoundError(
             f"{path} fehlt — bitte `python3 Code/player_quality.py` laufen lassen."
@@ -139,6 +148,27 @@ def attach_player_quality(
     # niedrigen Default, damit der Solver sie nicht wegen 0 == 0-Ties zufällig
     # bevorzugt. -5 liegt deutlich unter dem schlechtesten realen Wert.
     out["Qualität"] = out["Qualität"].fillna(-5.0)
+    return out
+
+
+def attach_quality_metrics(
+    players: pd.DataFrame, path: Path = PLAYER_QUALITY_PATH,
+) -> pd.DataFrame:
+    """Mergt Multiplikator-basierte Erwartungswerte (Spiele + Tordifferenz).
+
+    Multiplikator = 1.0 für Top-1 GK / Top-3 Feldspieler pro Team, sonst
+    0.5. Die abgeleiteten Spielerspalten = Multiplikator × Team-Wert.
+    """
+    if not path.exists():
+        raise FileNotFoundError(
+            f"{path} fehlt — bitte `python3 Code/player_quality.py` laufen lassen."
+        )
+    cols = ["ID", "Qualitäts-Multiplikator"] + list(QUALITY_PLAYER_COLS)
+    q = pd.read_csv(path, sep=";")[cols]
+    out = players.merge(q, on="ID", how="left")
+    out["Qualitäts-Multiplikator"] = out["Qualitäts-Multiplikator"].fillna(0.0)
+    for c in QUALITY_PLAYER_COLS:
+        out[c] = out[c].fillna(0.0)
     return out
 
 
@@ -295,6 +325,7 @@ def main() -> None:
             "Erwartete Spiele (TM)", "Erwartete Tordifferenz (TM)",
             "Erwartete Spiele (Elo)", "Erwartete Tordifferenz (Elo)",
             "Qualität",
+            "Erwartete Spiele (Qualität)", "Erwartete Tordifferenz (Qualität)",
         ],
         help="Zu optimierende Spalte",
     )
@@ -332,6 +363,8 @@ def main() -> None:
         players = attach_elo_strength_metrics(players)
     elif args.objective == "Qualität":
         players = attach_player_quality(players)
+    elif args.objective in QUALITY_PLAYER_COLS:
+        players = attach_quality_metrics(players)
     result = optimize(
         players,
         objective_col=args.objective,
