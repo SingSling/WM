@@ -17,7 +17,7 @@ import streamlit as st
 from expected_player_games import (
     OUT_PATH as EXPECTED_GAMES_PATH,
     apply_expected_metric,
-    load_default_probabilities,
+    load_default_quality_multipliers,
     mc_to_team_metric_de,
 )
 from optimizer import (
@@ -104,8 +104,9 @@ def cached_default_ratings(source: str = "elo") -> dict[str, float]:
 
 
 @st.cache_data
-def cached_default_probabilities() -> dict[str, float]:
-    return load_default_probabilities()
+def cached_default_multipliers() -> dict[str, float]:
+    """Qualitäts-Multiplikator als Default-Wert für den Slider-Editor."""
+    return load_default_quality_multipliers()
 
 
 @st.cache_data
@@ -119,9 +120,9 @@ def cached_default_expected_metrics_csv() -> pd.DataFrame:
 
 
 RATING_SOURCES = {
+    "Spieler-Elo (aggregiert)": "player_elo",
     "Elo (World Football)": "elo",
     "WM-Sieger-Quoten (Buchmacher)": "betting",
-    "Spieler-Elo (aggregiert)": "player_elo",
 }
 
 
@@ -149,7 +150,7 @@ def _attach_default_expected(
 def _attach_custom_expected(
     players: pd.DataFrame, player_col: str, team_col: str,
 ) -> pd.DataFrame:
-    """Verknüpft eigene Sim + eigene Wahrscheinlichkeiten."""
+    """Verknüpft eigene Sim + eigene Qualitäts-Multiplikatoren."""
     state_key = f"custom_team_{team_col}"
     if state_key not in st.session_state:
         raise RuntimeError(
@@ -157,9 +158,9 @@ def _attach_custom_expected(
             "Erst auf dem Simulator-Tab Simulation starten."
         )
     team_metric: dict[str, float] = st.session_state[state_key]
-    probs = dict(cached_default_probabilities())
-    probs.update(st.session_state.get("custom_probabilities", {}))
-    return apply_expected_metric(players, team_metric, probs, out_col=player_col)
+    multipliers = dict(cached_default_multipliers())
+    multipliers.update(st.session_state.get("custom_multipliers", {}))
+    return apply_expected_metric(players, team_metric, multipliers, out_col=player_col)
 
 
 def _custom_eg_available() -> bool:
@@ -346,8 +347,8 @@ def render_optimizer() -> None:
                 if objective in CUSTOM_OBJECTIVES:
                     st.caption(
                         "Custom: Team-Erwartungswerte aus deiner zuletzt "
-                        "gelaufenen Simulation + ggf. angepasste Startelf-"
-                        "Wahrscheinlichkeiten."
+                        "gelaufenen Simulation + ggf. angepasste Qualitäts-"
+                        "Multiplikatoren."
                     )
                 else:
                     st.caption(
@@ -675,22 +676,22 @@ def render_simulation() -> None:
     )
 
 
-# ===================== STARTELF-WAHRSCHEINLICHKEITEN =====================
+# ===================== QUALITÄTS-MULTIPLIKATOR =====================
 
-# Canonical store: dict {player_id: probability} unter "probs". Slider-Widgets
-# bekommen einen team-skopierten Key (``prob_<team>_<pid>``) — beim Wechsel
-# des Teams entstehen frische Widgets, die ihren Anfangswert aus dem
-# Canonical-Dict ziehen. Ohne Team-Skopierung würde Streamlit das Widget
-# am gleichen Skript-Slot wiederverwenden und den Session-State-Wert
-# ignorieren.
+# Canonical store: dict {player_id: multiplier} unter "multipliers". Slider-
+# Widgets bekommen einen team-skopierten Key (``mult_<team>_<pid>``) — beim
+# Wechsel des Teams entstehen frische Widgets, die ihren Anfangswert aus
+# dem Canonical-Dict ziehen. Ohne Team-Skopierung würde Streamlit das
+# Widget am gleichen Skript-Slot wiederverwenden und den Session-State-
+# Wert ignorieren.
 
-def _prob_widget_key(team: str, player_id: str) -> str:
-    return f"prob_{team}_{player_id}"
+def _mult_widget_key(team: str, player_id: str) -> str:
+    return f"mult_{team}_{player_id}"
 
 
-def _ensure_probs_state(player_ids, defaults: dict[str, float]) -> None:
-    if "probs" not in st.session_state:
-        st.session_state["probs"] = {
+def _ensure_multipliers_state(player_ids, defaults: dict[str, float]) -> None:
+    if "multipliers" not in st.session_state:
+        st.session_state["multipliers"] = {
             pid: float(defaults.get(pid, 0.0)) for pid in player_ids
         }
 
@@ -698,18 +699,20 @@ def _ensure_probs_state(player_ids, defaults: dict[str, float]) -> None:
 def _reset_team_to_defaults(
     team: str, team_ids, defaults: dict[str, float],
 ) -> None:
-    probs = st.session_state["probs"]
+    mults = st.session_state["multipliers"]
     for pid in team_ids:
-        probs[pid] = float(defaults.get(pid, 0.0))
-        st.session_state.pop(_prob_widget_key(team, pid), None)
+        mults[pid] = float(defaults.get(pid, 0.0))
+        st.session_state.pop(_mult_widget_key(team, pid), None)
 
 
-def render_probabilities() -> None:
-    st.subheader("Startelf-Wahrscheinlichkeiten anpassen")
+def render_multipliers() -> None:
+    st.subheader("Qualitäts-Multiplikatoren anpassen")
     st.caption(
-        "Pro Team editierbar. Defaults stammen aus den aggregierten "
-        "Lineup-Vorhersagen. Änderungen fließen — gemeinsam mit deiner "
-        "Simulation — in das Ziel „Erwartete Spiele (Custom)“ ein."
+        "Pro Team editierbar. Defaults stammen aus dem Qualitäts-"
+        "Multiplikator (Min-Max-Norm von 0.8·z(Elo) + 0.2·z(EAR-180) "
+        "pro Position, plus Team-Rang-Halbierung für Backups). "
+        "Änderungen fließen — gemeinsam mit deiner Simulation — in das "
+        "Ziel „Erwartete Spiele (Custom)“ ein."
     )
 
     try:
@@ -718,14 +721,14 @@ def render_probabilities() -> None:
         st.error(f"Spieler-CSV konnte nicht geladen werden: {exc}")
         return
 
-    defaults = cached_default_probabilities()
-    _ensure_probs_state(players["ID"], defaults)
+    defaults = cached_default_multipliers()
+    _ensure_multipliers_state(players["ID"], defaults)
 
     # Team-Auswahl + Filter.
     teams = sorted(players["Verein"].unique())
     c1, c2, c3 = st.columns([2, 1, 1])
     with c1:
-        team = st.selectbox("Team", options=teams, key="prob_team")
+        team = st.selectbox("Team", options=teams, key="mult_team")
     with c2:
         if st.button("Team auf Default", use_container_width=True):
             team_ids = players.loc[players["Verein"] == team, "ID"]
@@ -737,10 +740,10 @@ def render_probabilities() -> None:
             # Render saubere Widgets aus dem Canonical-Dict initialisiert
             # werden. Wir kennen nur die Widget-Keys des aktuellen Teams
             # (und müssten sie für alle Teams kennen), darum ein Vollscan:
-            for key in [k for k in st.session_state if k.startswith("prob_")
-                        and k != "prob_team"]:
+            for key in [k for k in st.session_state if k.startswith("mult_")
+                        and k != "mult_team"]:
                 del st.session_state[key]
-            st.session_state["probs"] = {
+            st.session_state["multipliers"] = {
                 pid: float(defaults.get(pid, 0.0)) for pid in players["ID"]
             }
             st.rerun()
@@ -751,9 +754,9 @@ def render_probabilities() -> None:
         st.info(f"Keine Spieler für {team} gefunden.")
         return
 
-    probs = st.session_state["probs"]
+    mults = st.session_state["multipliers"]
 
-    st.markdown("##### Wahrscheinlichkeiten")
+    st.markdown("##### Multiplikatoren")
     for pos in ["GOALKEEPER", "DEFENDER", "MIDFIELDER", "FORWARD"]:
         block = team_players[team_players["Position"] == pos]
         if block.empty:
@@ -764,12 +767,12 @@ def render_probabilities() -> None:
             for i, (_, row) in enumerate(block.iterrows()):
                 with cols[i % 2]:
                     pid = row["ID"]
-                    widget_key = _prob_widget_key(team, pid)
+                    widget_key = _mult_widget_key(team, pid)
                     # Erst-Render eines Widgets in diesem Team: aus
                     # Canonical-Dict initialisieren. Spätere Renders lesen
                     # den Widget-State direkt.
                     if widget_key not in st.session_state:
-                        st.session_state[widget_key] = float(probs[pid])
+                        st.session_state[widget_key] = float(mults[pid])
                     st.slider(
                         row["Angezeigter Name"],
                         min_value=0.0, max_value=1.0, step=0.05,
@@ -780,16 +783,16 @@ def render_probabilities() -> None:
     # Widget-Werte zurück in das Canonical-Dict synchronisieren (nur das
     # aktuelle Team — andere Teams behalten ihre zuletzt gesetzten Werte).
     for pid in team_players["ID"]:
-        widget_key = _prob_widget_key(team, pid)
+        widget_key = _mult_widget_key(team, pid)
         if widget_key in st.session_state:
-            probs[pid] = float(st.session_state[widget_key])
+            mults[pid] = float(st.session_state[widget_key])
 
     # Custom-Overrides für den Optimizer.
     overrides: dict[str, float] = {}
-    for pid, val in probs.items():
+    for pid, val in mults.items():
         if abs(val - float(defaults.get(pid, 0.0))) > 1e-9:
             overrides[pid] = val
-    st.session_state["custom_probabilities"] = overrides
+    st.session_state["custom_multipliers"] = overrides
 
     st.divider()
     st.caption(
@@ -816,7 +819,7 @@ def main() -> None:
             "Erweiterte Optionen",
             value=False,
             help=(
-                "Schaltet Simulator und Startelf-Wahrscheinlichkeiten frei. "
+                "Schaltet Simulator und Qualitäts-Multiplikator frei. "
                 "Aus deren Kombination wird „Erwartete Spiele (Custom)“ im "
                 "Optimizer verfügbar."
             ),
@@ -824,22 +827,22 @@ def main() -> None:
         if advanced:
             st.caption(
                 "Custom-Ziel im Optimizer: zuerst auf dem Simulator-Tab eine "
-                "Simulation starten, optional auf dem Wahrscheinlichkeiten-"
-                "Tab einzelne Spieler anpassen."
+                "Simulation starten, optional auf dem Multiplikator-Tab "
+                "einzelne Spieler anpassen."
             )
 
     if advanced:
-        tab_opt, tab_sim, tab_prob = st.tabs([
+        tab_opt, tab_sim, tab_mult = st.tabs([
             "🧮 Optimizer",
             "🏆 WM-Simulation",
-            "👥 Startelf-Wahrscheinlichkeiten",
+            "👥 Qualitäts-Multiplikator",
         ])
         with tab_opt:
             render_optimizer()
         with tab_sim:
             render_simulation()
-        with tab_prob:
-            render_probabilities()
+        with tab_mult:
+            render_multipliers()
     else:
         render_optimizer()
 

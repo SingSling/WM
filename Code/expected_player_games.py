@@ -30,6 +30,7 @@ from simulator import run_monte_carlo
 DATA_DIR = Path(__file__).resolve().parent.parent / "Data"
 PLAYERS_PATH = DATA_DIR / "players-se-k01012026.csv"
 LINEUP_PROB_PATH = DATA_DIR / "lineup_probabilities.csv"
+PLAYER_QUALITY_PATH = DATA_DIR / "player_quality.csv"
 OUT_PATH = DATA_DIR / "expected_player_games.csv"
 
 
@@ -122,13 +123,32 @@ def mc_to_team_exp_games_de(mc: pd.DataFrame) -> dict[str, float]:
 
 
 def load_default_probabilities() -> dict[str, float]:
-    """Lädt die Default-Startelf-Wahrscheinlichkeiten aus der CSV ({ID: p})."""
+    """Lädt die Default-Startelf-Wahrscheinlichkeiten aus der CSV ({ID: p}).
+
+    Quelle für die *vorberechnete* ``expected_player_games.csv``. Das
+    Dashboard nutzt stattdessen :func:`load_default_quality_multipliers`
+    als Anfangswert für die editierbaren Slider.
+    """
     df = pd.read_csv(LINEUP_PROB_PATH, sep=";")[["ID", "Probability"]]
     # Upstream-Daten können vereinzelt Probability > 1 liefern (z.B. wenn ein
     # Spieler in einer Quelle mehrfach gematcht wird). Klemmen, damit
     # "Erwartete Spiele" semantisch ≤ exp_games bleibt.
     df["Probability"] = df["Probability"].clip(lower=0.0, upper=1.0)
     return dict(zip(df["ID"], df["Probability"]))
+
+
+def load_default_quality_multipliers() -> dict[str, float]:
+    """Qualitäts-Multiplikator ({ID: m}) als Default für das Dashboard-Slider-UI.
+
+    Liest ``Data/player_quality.csv`` (vom Quality-Pipeline-Skript). Fehlt
+    die Datei, fällt die Funktion auf die Lineup-Wahrscheinlichkeiten
+    zurück, damit das Dashboard trotzdem bootet.
+    """
+    if not PLAYER_QUALITY_PATH.exists():
+        return load_default_probabilities()
+    df = pd.read_csv(PLAYER_QUALITY_PATH, sep=";")[["ID", "Qualitäts-Multiplikator"]]
+    df["Qualitäts-Multiplikator"] = df["Qualitäts-Multiplikator"].clip(0.0, 1.0)
+    return dict(zip(df["ID"], df["Qualitäts-Multiplikator"]))
 
 
 def apply_expected_metric(
