@@ -25,7 +25,9 @@ from optimizer import (
     DATA_DEFAULT,
     DEFAULT_FORMATION,
     FORMATIONS,
+    TM_STRENGTH_PATH,
     TM_VALUES_PATH,
+    attach_tm_strength_metrics,
     attach_tm_values,
     load_players,
     optimize,
@@ -55,6 +57,9 @@ OBJ_ERWARTET_CUSTOM = "Erwartete Spiele (Custom)"
 OBJ_TD_DEFAULT = "Erwartete Tordifferenz"
 OBJ_TD_CUSTOM = "Erwartete Tordifferenz (Custom)"
 OBJ_TM = "Marktwert TM"
+OBJ_TM_GAMES = "Erwartete Spiele (TM)"
+OBJ_TM_TD = "Erwartete Tordifferenz (TM)"
+TM_STRENGTH_OBJECTIVES = (OBJ_TM_GAMES, OBJ_TM_TD)
 
 # Mapping zwischen dem Default/Custom-Label und (player_col, team_metric_col).
 EXPECTED_OBJ_SPECS: dict[str, dict[str, str]] = {
@@ -163,6 +168,8 @@ def render_optimizer() -> None:
         objective_options.extend(CUSTOM_OBJECTIVES)
     if TM_VALUES_PATH.exists():
         objective_options.append(OBJ_TM)
+    if TM_STRENGTH_PATH.exists():
+        objective_options.extend(TM_STRENGTH_OBJECTIVES)
 
     with st.container(border=True):
         c1, c2, c3, c4 = st.columns([3, 2, 1.5, 2])
@@ -276,6 +283,15 @@ def render_optimizer() -> None:
                     f"`{TM_VALUES_PATH.name}`. Spieler ohne TM-Match werden "
                     "mit 0 € gewertet."
                 )
+            elif objective in TM_STRENGTH_OBJECTIVES:
+                minimize = False
+                exclude_zero = False
+                st.caption(
+                    "TM-Stärke = Marktwert / max(Marktwert im Team), 0..1. "
+                    f"Multipliziert mit dem Team-Erwartungswert "
+                    f"({'exp_games' if objective == OBJ_TM_GAMES else 'exp_gd'}) "
+                    "aus dem Default-Sim-Output."
+                )
             else:
                 # Erwartungswert-Ziele (Spiele / Tordifferenz, Default oder
                 # Custom): maximieren, 0-Spieler nicht ausschließen (sonst
@@ -314,6 +330,8 @@ def render_optimizer() -> None:
             )
     elif objective == OBJ_TM:
         players = attach_tm_values(players)
+    elif objective in TM_STRENGTH_OBJECTIVES:
+        players = attach_tm_strength_metrics(players)
 
     if not run:
         st.info("Einstellungen wählen und „Optimieren“ klicken.")
@@ -326,7 +344,9 @@ def render_optimizer() -> None:
     if objective in EXPECTED_OBJECTIVES:
         objective_col = EXPECTED_OBJ_SPECS[objective]["player_col"]
     else:
-        objective_col = objective  # passt für Punkte, Notendurchschnitt, Marktwert TM
+        # passt für Punkte, Notendurchschnitt, Marktwert TM,
+        # Erwartete Spiele (TM), Erwartete Tordifferenz (TM)
+        objective_col = objective
 
     position_quota = FORMATIONS[formation]
 
@@ -360,6 +380,9 @@ def render_optimizer() -> None:
     elif objective == OBJ_TM:
         display_cols = DISPLAY_COLS + ["Marktwert TM"]
         sort_col = "Marktwert TM"
+    elif objective in TM_STRENGTH_OBJECTIVES:
+        display_cols = DISPLAY_COLS + ["TM-Stärke", objective]
+        sort_col = objective
     else:
         display_cols = DISPLAY_COLS
         sort_col = "Punkte" if objective == "Punkte" else "Notendurchschnitt"
@@ -387,6 +410,11 @@ def render_optimizer() -> None:
                     fmt[c] = "{:+.2f}" if c == "Erwartete Tordifferenz" else "{:.2f}"
             if "Marktwert TM" in block_sorted.columns:
                 fmt["Marktwert TM"] = lambda v: format_eur(int(v)) if v else "—"
+            if "TM-Stärke" in block_sorted.columns:
+                fmt["TM-Stärke"] = "{:.2f}"
+            for c in TM_STRENGTH_OBJECTIVES:
+                if c in block_sorted.columns:
+                    fmt[c] = "{:+.2f}" if "Tordifferenz" in c else "{:.2f}"
             st.dataframe(
                 block_sorted.style.format(fmt),
                 hide_index=True, use_container_width=True,
@@ -401,6 +429,11 @@ def render_optimizer() -> None:
                 fmt[c] = "{:+.2f}" if c == "Erwartete Tordifferenz" else "{:.2f}"
         if "Marktwert TM" in full.columns:
             fmt["Marktwert TM"] = lambda v: format_eur(int(v)) if v else "—"
+        if "TM-Stärke" in full.columns:
+            fmt["TM-Stärke"] = "{:.2f}"
+        for c in TM_STRENGTH_OBJECTIVES:
+            if c in full.columns:
+                fmt[c] = "{:+.2f}" if "Tordifferenz" in c else "{:.2f}"
         st.dataframe(
             full.style.format(fmt),
             hide_index=True, use_container_width=True,

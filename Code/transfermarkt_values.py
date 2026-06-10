@@ -38,6 +38,8 @@ TM_VALUATIONS_PATH = DATA_DIR / "player_valuations_tm.csv"
 KICKER_PATH = DATA_DIR / "players-se-k01012026.csv"
 OUT_PATH = DATA_DIR / "transfermarkt_values.csv"
 UNMATCHED_LOG = DATA_DIR / "tm_unmatched.txt"
+STRENGTH_PATH = DATA_DIR / "tm_strength.csv"
+EXPECTED_GAMES_PATH = DATA_DIR / "expected_player_games.csv"
 
 
 # TM ``country_of_citizenship`` → kicker ``Verein`` (DE).
@@ -234,6 +236,69 @@ def build_values() -> tuple[pd.DataFrame, list[tuple[str, str, str]]]:
     return df, unmatched
 
 
+def build_strength_table(values_df: pd.DataFrame | None = None) -> pd.DataFrame:
+    """Leitet Stärke-Scores aus Marktwerten ab und multipliziert mit Team-Werten.
+
+    Stärke = Marktwert / max(Marktwert im selben WM-Team), zwischen 0 und 1.
+    Damit ist der teuerste Spieler jedes Teams 1,0, ein halb so wertvoller
+    Backup 0,5, ein Spieler ohne TM-Match 0,0.
+
+    Zusätzlich werden Strength × Team-Erwartungswert berechnet:
+    * ``Erwartete Spiele (TM)`` = Strength × ``exp_games`` (Team).
+    * ``Erwartete Tordifferenz (TM)`` = Strength × ``exp_gd`` (Team).
+
+    Beide nutzen die Team-Werte aus :data:`EXPECTED_GAMES_PATH`. Fehlt die
+    Datei, wird sie über ``expected_player_games`` erzeugt.
+    """
+    if values_df is None:
+        if not OUT_PATH.exists():
+            raise FileNotFoundError(
+                f"{OUT_PATH} fehlt — zuerst `build_values()` laufen lassen."
+            )
+        values_df = pd.read_csv(OUT_PATH, sep=";")
+
+    # Kicker-Stammdaten für vollständige Spielerliste (auch ohne TM-Match).
+    kicker = pd.read_csv(KICKER_PATH, sep=";")[["ID", "Verein", "Position"]]
+    df = kicker.merge(
+        values_df[["ID", "Marktwert TM"]], on="ID", how="left",
+    )
+
+    # Stärke innerhalb des Teams normalisieren.
+    team_max = df.groupby("Verein")["Marktwert TM"].transform("max")
+    # Falls ein ganzes Team keinen Match hat (sollte nicht passieren), Score = 0.
+    df["TM-Stärke"] = (df["Marktwert TM"].fillna(0.0) / team_max).fillna(0.0)
+    df["TM-Stärke"] = df["TM-Stärke"].clip(lower=0.0, upper=1.0)
+
+    # Team-Erwartungswerte beschaffen (aus dem Simulator-Output).
+    if not EXPECTED_GAMES_PATH.exists():
+        # Lazy: gleiche Pipeline wie der Default-Workflow im Optimizer.
+        from expected_player_games import build_expected_player_metrics, write_csv
+        write_csv(build_expected_player_metrics())
+    teams = pd.read_csv(EXPECTED_GAMES_PATH, sep=";")[["ID", "exp_games", "exp_gd"]]
+    df = df.merge(teams, on="ID", how="left")
+
+    df["Erwartete Spiele (TM)"] = df["TM-Stärke"] * df["exp_games"]
+    df["Erwartete Tordifferenz (TM)"] = df["TM-Stärke"] * df["exp_gd"]
+    return df
+
+
+def write_strength_csv(strength: pd.DataFrame, path: Path = STRENGTH_PATH) -> None:
+    cols = [
+        "ID", "Verein", "Position",
+        "Marktwert TM", "TM-Stärke",
+        "exp_games", "Erwartete Spiele (TM)",
+        "exp_gd", "Erwartete Tordifferenz (TM)",
+    ]
+    out = strength[cols].copy()
+    for c in ("Marktwert TM",):
+        if c in out.columns:
+            out[c] = out[c].astype("Int64")  # NaN-tolerant int
+    for c in ("TM-Stärke", "exp_games", "exp_gd",
+              "Erwartete Spiele (TM)", "Erwartete Tordifferenz (TM)"):
+        out[c] = out[c].round(4)
+    out.to_csv(path, sep=";", index=False)
+
+
 def write_outputs(df: pd.DataFrame, unmatched: list[tuple[str, str, str]]) -> None:
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(OUT_PATH, sep=";", index=False)
@@ -270,6 +335,24 @@ def main() -> None:
         print("\nTop 10 nach Marktwert TM (gematcht):")
         top = df.dropna(subset=["Marktwert TM"]).sort_values("Marktwert TM", ascending=False).head(10)
         print(top[["TM-Name", "Verein", "Marktwert TM"]].to_string(index=False))
+
+    # Strength-Tabelle: Marktwert → Score 0..1 (team-normalisiert) und
+    # Strength × Team-Erwartungswerte.
+    print("\nBerechne TM-Stärke …")
+    strength = build_strength_table(df)
+    write_strength_csv(strength)
+    print(f"Stärke-Output: {STRENGTH_PATH}")
+
+    print("\nTop 15 nach Erwartete Spiele (TM):")
+    cols = ["ID", "Verein", "Position", "TM-Stärke",
+            "Erwartete Spiele (TM)", "Erwartete Tordifferenz (TM)"]
+    top_s = strength.sort_values("Erwartete Spiele (TM)", ascending=False).head(15)
+    # Schöne Anzeige: Namen aus Kicker-Stammdaten holen
+    names = pd.read_csv(KICKER_PATH, sep=";")[["ID", "Angezeigter Name"]]
+    print(top_s.merge(names, on="ID")[
+        ["Angezeigter Name", "Verein", "Position", "TM-Stärke",
+         "Erwartete Spiele (TM)", "Erwartete Tordifferenz (TM)"]
+    ].to_string(index=False))
 
 
 if __name__ == "__main__":

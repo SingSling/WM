@@ -17,6 +17,7 @@ import pulp
 DATA_DEFAULT = Path(__file__).resolve().parent.parent / "Data" / "players-se-k01012026.csv"
 EXPECTED_GAMES_PATH = Path(__file__).resolve().parent.parent / "Data" / "expected_player_games.csv"
 TM_VALUES_PATH = Path(__file__).resolve().parent.parent / "Data" / "transfermarkt_values.csv"
+TM_STRENGTH_PATH = Path(__file__).resolve().parent.parent / "Data" / "tm_strength.csv"
 
 # Volle Kicker-Manager-Squad und Budget: 15 Spieler / 70 Mio €. Der Optimizer
 # wählt aber nur die Startelf (11 Spieler) — die 4 Bank-Plätze füllt der User
@@ -95,6 +96,33 @@ def attach_expected_metrics(
 
 # Back-compat-Alias.
 attach_expected_games = attach_expected_metrics
+
+
+TM_STRENGTH_PLAYER_COLS = (
+    "Erwartete Spiele (TM)", "Erwartete Tordifferenz (TM)",
+)
+
+
+def attach_tm_strength_metrics(
+    players: pd.DataFrame, path: Path = TM_STRENGTH_PATH,
+) -> pd.DataFrame:
+    """Mergt TM-Stärke-basierte Erwartungswerte (Spiele + Tordifferenz).
+
+    Liest ``tm_strength.csv`` (kommt aus ``transfermarkt_values.build_strength_table``)
+    und hängt die Spalten ``Erwartete Spiele (TM)`` und
+    ``Erwartete Tordifferenz (TM)`` an.
+    """
+    if not path.exists():
+        raise FileNotFoundError(
+            f"{path} fehlt — bitte `python3 Code/transfermarkt_values.py` laufen lassen."
+        )
+    cols = ["ID", "TM-Stärke"] + list(TM_STRENGTH_PLAYER_COLS)
+    tm = pd.read_csv(path, sep=";")[cols]
+    out = players.merge(tm, on="ID", how="left")
+    for c in TM_STRENGTH_PLAYER_COLS:
+        out[c] = out[c].fillna(0.0)
+    out["TM-Stärke"] = out["TM-Stärke"].fillna(0.0)
+    return out
 
 
 def attach_tm_values(
@@ -225,6 +253,7 @@ def main() -> None:
             "Punkte", "Notendurchschnitt",
             "Erwartete Spiele", "Erwartete Tordifferenz",
             "Marktwert TM",
+            "Erwartete Spiele (TM)", "Erwartete Tordifferenz (TM)",
         ],
         help="Zu optimierende Spalte",
     )
@@ -256,6 +285,8 @@ def main() -> None:
         players = attach_expected_metrics(players)
     elif args.objective == "Marktwert TM":
         players = attach_tm_values(players)
+    elif args.objective in TM_STRENGTH_PLAYER_COLS:
+        players = attach_tm_strength_metrics(players)
     result = optimize(
         players,
         objective_col=args.objective,
