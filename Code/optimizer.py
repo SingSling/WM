@@ -19,6 +19,7 @@ EXPECTED_GAMES_PATH = Path(__file__).resolve().parent.parent / "Data" / "expecte
 TM_VALUES_PATH = Path(__file__).resolve().parent.parent / "Data" / "transfermarkt_values.csv"
 TM_STRENGTH_PATH = Path(__file__).resolve().parent.parent / "Data" / "tm_strength.csv"
 ELO_STRENGTH_PATH = Path(__file__).resolve().parent.parent / "Data" / "elo_strength.csv"
+PLAYER_QUALITY_PATH = Path(__file__).resolve().parent.parent / "Data" / "player_quality.csv"
 
 # Volle Kicker-Manager-Squad und Budget: 15 Spieler / 70 Mio €. Der Optimizer
 # wählt aber nur die Startelf (11 Spieler) — die 4 Bank-Plätze füllt der User
@@ -121,6 +122,23 @@ def attach_elo_strength_metrics(
     for c in ELO_STRENGTH_PLAYER_COLS:
         out[c] = out[c].fillna(0.0)
     out["Elo-Stärke"] = out["Elo-Stärke"].fillna(0.0)
+    return out
+
+
+def attach_player_quality(
+    players: pd.DataFrame, path: Path = PLAYER_QUALITY_PATH,
+) -> pd.DataFrame:
+    """Mergt den Spieler-Qualitätsscore (z-Score-Kombination aus Elo + EAR)."""
+    if not path.exists():
+        raise FileNotFoundError(
+            f"{path} fehlt — bitte `python3 Code/player_quality.py` laufen lassen."
+        )
+    q = pd.read_csv(path, sep=";")[["ID", "Qualität"]]
+    out = players.merge(q, on="ID", how="left")
+    # Spieler ohne Elo-Match (= ohne Qualitäts-Datensatz) bekommen einen
+    # niedrigen Default, damit der Solver sie nicht wegen 0 == 0-Ties zufällig
+    # bevorzugt. -5 liegt deutlich unter dem schlechtesten realen Wert.
+    out["Qualität"] = out["Qualität"].fillna(-5.0)
     return out
 
 
@@ -276,6 +294,7 @@ def main() -> None:
             "Marktwert TM",
             "Erwartete Spiele (TM)", "Erwartete Tordifferenz (TM)",
             "Erwartete Spiele (Elo)", "Erwartete Tordifferenz (Elo)",
+            "Qualität",
         ],
         help="Zu optimierende Spalte",
     )
@@ -311,6 +330,8 @@ def main() -> None:
         players = attach_tm_strength_metrics(players)
     elif args.objective in ELO_STRENGTH_PLAYER_COLS:
         players = attach_elo_strength_metrics(players)
+    elif args.objective == "Qualität":
+        players = attach_player_quality(players)
     result = optimize(
         players,
         objective_col=args.objective,

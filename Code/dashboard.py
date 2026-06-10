@@ -26,9 +26,11 @@ from optimizer import (
     DEFAULT_FORMATION,
     ELO_STRENGTH_PATH,
     FORMATIONS,
+    PLAYER_QUALITY_PATH,
     TM_STRENGTH_PATH,
     TM_VALUES_PATH,
     attach_elo_strength_metrics,
+    attach_player_quality,
     attach_tm_strength_metrics,
     attach_tm_values,
     load_players,
@@ -65,6 +67,7 @@ TM_STRENGTH_OBJECTIVES = (OBJ_TM_GAMES, OBJ_TM_TD)
 OBJ_ELO_GAMES = "Erwartete Spiele (Elo)"
 OBJ_ELO_TD = "Erwartete Tordifferenz (Elo)"
 ELO_STRENGTH_OBJECTIVES = (OBJ_ELO_GAMES, OBJ_ELO_TD)
+OBJ_QUALITY = "Qualität"
 
 # Mapping zwischen dem Default/Custom-Label und (player_col, team_metric_col).
 EXPECTED_OBJ_SPECS: dict[str, dict[str, str]] = {
@@ -178,6 +181,8 @@ def render_optimizer() -> None:
         objective_options.extend(TM_STRENGTH_OBJECTIVES)
     if ELO_STRENGTH_PATH.exists():
         objective_options.extend(ELO_STRENGTH_OBJECTIVES)
+    if PLAYER_QUALITY_PATH.exists():
+        objective_options.append(OBJ_QUALITY)
 
     with st.container(border=True):
         c1, c2, c3, c4 = st.columns([3, 2, 1.5, 2])
@@ -309,6 +314,14 @@ def render_optimizer() -> None:
                     f"({'exp_games' if objective == OBJ_ELO_GAMES else 'exp_gd'}) "
                     "aus dem Default-Sim-Output."
                 )
+            elif objective == OBJ_QUALITY:
+                minimize = False
+                exclude_zero = False
+                st.caption(
+                    "Qualität = 0.5·z(Elo) + 0.5·z(EAR-180), z-Werte pro "
+                    "Position. Im Team behalten Top-1-GK / Top-3-Feldspieler "
+                    "den Roh-Score, alle weiteren werden mit 0.5 multipliziert."
+                )
             else:
                 # Erwartungswert-Ziele (Spiele / Tordifferenz, Default oder
                 # Custom): maximieren, 0-Spieler nicht ausschließen (sonst
@@ -351,6 +364,8 @@ def render_optimizer() -> None:
         players = attach_tm_strength_metrics(players)
     elif objective in ELO_STRENGTH_OBJECTIVES:
         players = attach_elo_strength_metrics(players)
+    elif objective == OBJ_QUALITY:
+        players = attach_player_quality(players)
 
     if not run:
         st.info("Einstellungen wählen und „Optimieren“ klicken.")
@@ -405,6 +420,9 @@ def render_optimizer() -> None:
     elif objective in ELO_STRENGTH_OBJECTIVES:
         display_cols = DISPLAY_COLS + ["Elo-Stärke", objective]
         sort_col = objective
+    elif objective == OBJ_QUALITY:
+        display_cols = DISPLAY_COLS + ["Qualität"]
+        sort_col = "Qualität"
     else:
         display_cols = DISPLAY_COLS
         sort_col = "Punkte" if objective == "Punkte" else "Notendurchschnitt"
@@ -439,6 +457,8 @@ def render_optimizer() -> None:
             for c in TM_STRENGTH_OBJECTIVES + ELO_STRENGTH_OBJECTIVES:
                 if c in block_sorted.columns:
                     fmt[c] = "{:+.2f}" if "Tordifferenz" in c else "{:.2f}"
+            if "Qualität" in block_sorted.columns:
+                fmt["Qualität"] = "{:+.2f}"
             st.dataframe(
                 block_sorted.style.format(fmt),
                 hide_index=True, use_container_width=True,
@@ -460,6 +480,8 @@ def render_optimizer() -> None:
         for c in TM_STRENGTH_OBJECTIVES + ELO_STRENGTH_OBJECTIVES:
             if c in full.columns:
                 fmt[c] = "{:+.2f}" if "Tordifferenz" in c else "{:.2f}"
+        if "Qualität" in full.columns:
+            fmt["Qualität"] = "{:+.2f}"
         st.dataframe(
             full.style.format(fmt),
             hide_index=True, use_container_width=True,

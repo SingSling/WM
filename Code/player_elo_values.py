@@ -150,7 +150,7 @@ ELO_NAME_OVERRIDES: dict[tuple[str, str], str] = {
 def load_elo_players() -> pd.DataFrame:
     cols = [
         "player_id", "player_name", "elo", "current_rank",
-        "position", "nationality",
+        "position", "nationality", "ear_180",
     ]
     df = pd.read_csv(ELO_PATH, usecols=cols)
     df["team_de"] = df["nationality"].map(ELO_COUNTRY_TO_DE)
@@ -183,6 +183,7 @@ def _enriched_candidates(elo: pd.DataFrame) -> dict[str, list[dict]]:
             "display_short": last or full,
             "position": row.position if isinstance(row.position, str) else "",
             "elo": float(row.elo),
+            "ear_180": float(row.ear_180) if pd.notna(row.ear_180) else None,
             "current_rank": int(row.current_rank) if pd.notna(row.current_rank) else None,
         }
         cand["_aliases"] = player_aliases(first, last, full)
@@ -346,6 +347,7 @@ def build_matches() -> tuple[pd.DataFrame, list[tuple[str, str, str]]]:
             "Verein": team_de,
             "Position": kpos,
             "Elo": float(match["elo"]),
+            "EAR-180": match.get("ear_180"),
             "Elo-Rang": match["current_rank"],
             "Elo-ID": match["elo_id"],
             "Elo-Name": match["name"],
@@ -383,6 +385,8 @@ def build_strength_table(matches_df: pd.DataFrame | None = None) -> pd.DataFrame
 def write_match_csv(df: pd.DataFrame, path: Path = OUT_PATH) -> None:
     out = df.copy()
     out["Elo"] = out["Elo"].round(1)
+    if "EAR-180" in out.columns:
+        out["EAR-180"] = out["EAR-180"].round(3)
     out.to_csv(path, sep=";", index=False)
 
 
