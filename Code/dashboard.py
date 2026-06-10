@@ -16,9 +16,9 @@ import streamlit as st
 
 from expected_player_games import (
     OUT_PATH as EXPECTED_GAMES_PATH,
-    apply_expected_games,
+    apply_expected_metric,
     load_default_probabilities,
-    mc_to_team_exp_games_de,
+    mc_to_team_metric_de,
 )
 from optimizer import (
     BUDGET,
@@ -50,6 +50,19 @@ DISPLAY_COLS = [
 
 OBJ_ERWARTET_DEFAULT = "Erwartete Spiele"
 OBJ_ERWARTET_CUSTOM = "Erwartete Spiele (Custom)"
+OBJ_TD_DEFAULT = "Erwartete Tordifferenz"
+OBJ_TD_CUSTOM = "Erwartete Tordifferenz (Custom)"
+
+# Mapping zwischen dem Default/Custom-Label und (player_col, team_metric_col).
+EXPECTED_OBJ_SPECS: dict[str, dict[str, str]] = {
+    OBJ_ERWARTET_DEFAULT: {"player_col": "Erwartete Spiele",       "team_col": "exp_games"},
+    OBJ_ERWARTET_CUSTOM:  {"player_col": "Erwartete Spiele",       "team_col": "exp_games"},
+    OBJ_TD_DEFAULT:       {"player_col": "Erwartete Tordifferenz", "team_col": "exp_gd"},
+    OBJ_TD_CUSTOM:        {"player_col": "Erwartete Tordifferenz", "team_col": "exp_gd"},
+}
+DEFAULT_OBJECTIVES = (OBJ_ERWARTET_DEFAULT, OBJ_TD_DEFAULT)
+CUSTOM_OBJECTIVES = (OBJ_ERWARTET_CUSTOM, OBJ_TD_CUSTOM)
+EXPECTED_OBJECTIVES = DEFAULT_OBJECTIVES + CUSTOM_OBJECTIVES
 
 
 # ---------- Caching ----------
@@ -75,9 +88,13 @@ def cached_default_probabilities() -> dict[str, float]:
 
 
 @st.cache_data
-def cached_default_expected_games_csv() -> pd.DataFrame:
-    """Vorberechnete ``Erwartete Spiele`` (ID + Wert) aus der CSV."""
-    return pd.read_csv(EXPECTED_GAMES_PATH, sep=";")[["ID", "Erwartete Spiele"]]
+def cached_default_expected_metrics_csv() -> pd.DataFrame:
+    """Vorberechnete Erwartungswerte (ID + alle bekannten Spielerspalten)."""
+    df = pd.read_csv(EXPECTED_GAMES_PATH, sep=";")
+    keep = ["ID"] + [c for c in (
+        "Erwartete Spiele", "Erwartete Tordifferenz"
+    ) if c in df.columns]
+    return df[keep]
 
 
 RATING_SOURCES = {
@@ -92,23 +109,40 @@ def format_eur(value: int) -> str:
     return f"{value:,} €".replace(",", ".")
 
 
-def _attach_default_expected_games(players: pd.DataFrame) -> pd.DataFrame:
-    eg = cached_default_expected_games_csv()
-    out = players.merge(eg, on="ID", how="left")
-    out["Erwartete Spiele"] = out["Erwartete Spiele"].fillna(0.0)
+def _attach_default_expected(
+    players: pd.DataFrame, player_col: str,
+) -> pd.DataFrame:
+    """Merge die vorberechnete Erwartungswert-Spalte aus der CSV."""
+    eg = cached_default_expected_metrics_csv()
+    if player_col not in eg.columns:
+        raise KeyError(
+            f"Spalte '{player_col}' fehlt in {EXPECTED_GAMES_PATH.name}. "
+            "Regeneriere die Datei via expected_player_games.py."
+        )
+    out = players.merge(eg[["ID", player_col]], on="ID", how="left")
+    out[player_col] = out[player_col].fillna(0.0)
     return out
 
 
-def _attach_custom_expected_games(players: pd.DataFrame) -> pd.DataFrame:
-    """Verknüpft eigene Sim + eigene Wahrscheinlichkeiten zu Erwartete Spiele."""
-    team_eg: dict[str, float] = st.session_state["custom_team_exp_games"]
-    # Defaults aus CSV + benutzerdefinierte Overrides.
+def _attach_custom_expected(
+    players: pd.DataFrame, player_col: str, team_col: str,
+) -> pd.DataFrame:
+    """Verknüpft eigene Sim + eigene Wahrscheinlichkeiten."""
+    state_key = f"custom_team_{team_col}"
+    if state_key not in st.session_state:
+        raise RuntimeError(
+            f"Keine Custom-Sim für {team_col} vorhanden. "
+            "Erst auf dem Simulator-Tab Simulation starten."
+        )
+    team_metric: dict[str, float] = st.session_state[state_key]
     probs = dict(cached_default_probabilities())
     probs.update(st.session_state.get("custom_probabilities", {}))
-    return apply_expected_games(players, team_eg, probs)
+    return apply_expected_metric(players, team_metric, probs, out_col=player_col)
 
 
 def _custom_eg_available() -> bool:
+    # exp_games und exp_gd werden im selben Sim-Lauf gesetzt — eines reicht
+    # als Indikator für „Sim ist gelaufen“.
     return "custom_team_exp_games" in st.session_state
 
 
@@ -121,9 +155,9 @@ def render_optimizer() -> None:
     # gelaufen ist (Probabilities-Overrides sind optional und fallen zurück).
     objective_options = ["Punkte", "Notendurchschnitt"]
     if EXPECTED_GAMES_PATH.exists():
-        objective_options.append(OBJ_ERWARTET_DEFAULT)
+        objective_options.extend(DEFAULT_OBJECTIVES)
     if _custom_eg_available():
-        objective_options.append(OBJ_ERWARTET_CUSTOM)
+        objective_options.extend(CUSTOM_OBJECTIVES)
 
     with st.container(border=True):
         c1, c2, c3, c4 = st.columns([3, 2, 1.5, 2])
@@ -170,11 +204,12 @@ def render_optimizer() -> None:
                     value=True, key="opt_zero_n",
                 )
             else:
-                # Erwartete Spiele (Default / Custom): maximieren, 0-Spieler
-                # nicht ausschließen (sonst fallen alle Reservisten raus).
+                # Erwartungswert-Ziele (Spiele / Tordifferenz, Default oder
+                # Custom): maximieren, 0-Spieler nicht ausschließen (sonst
+                # fallen alle Reservisten raus).
                 minimize = False
                 exclude_zero = False
-                if objective == OBJ_ERWARTET_CUSTOM:
+                if objective in CUSTOM_OBJECTIVES:
                     st.caption(
                         "Custom: Team-Erwartungswerte aus deiner zuletzt "
                         "gelaufenen Simulation + ggf. angepasste Startelf-"
@@ -196,18 +231,22 @@ def render_optimizer() -> None:
         return
     st.caption(f"{len(players)} Spieler geladen aus `{data_path}`")
 
-    if objective == OBJ_ERWARTET_DEFAULT:
-        players = _attach_default_expected_games(players)
-    elif objective == OBJ_ERWARTET_CUSTOM:
-        players = _attach_custom_expected_games(players)
+    if objective in EXPECTED_OBJECTIVES:
+        spec = EXPECTED_OBJ_SPECS[objective]
+        if objective in DEFAULT_OBJECTIVES:
+            players = _attach_default_expected(players, spec["player_col"])
+        else:
+            players = _attach_custom_expected(
+                players, spec["player_col"], spec["team_col"],
+            )
 
     if not run:
         st.info("Einstellungen wählen und „Optimieren“ klicken.")
         return
 
     objective_col = (
-        "Erwartete Spiele"
-        if objective in (OBJ_ERWARTET_DEFAULT, OBJ_ERWARTET_CUSTOM)
+        EXPECTED_OBJ_SPECS[objective]["player_col"]
+        if objective in EXPECTED_OBJECTIVES
         else objective
     )
 
@@ -233,10 +272,12 @@ def render_optimizer() -> None:
         "Startelf", f"{len(picks)} / {sum(position_quota.values())} ({formation})",
     )
 
-    # Anzeige-Spalten: bei Erwartete-Spiele-Zielen die Spielanzahl mit zeigen.
-    if objective in (OBJ_ERWARTET_DEFAULT, OBJ_ERWARTET_CUSTOM):
-        display_cols = DISPLAY_COLS + ["Erwartete Spiele"]
-        sort_col = "Erwartete Spiele"
+    # Anzeige-Spalten: bei Erwartungswert-Zielen die entsprechende Spalte
+    # zusätzlich einblenden.
+    if objective in EXPECTED_OBJECTIVES:
+        extra_col = EXPECTED_OBJ_SPECS[objective]["player_col"]
+        display_cols = DISPLAY_COLS + [extra_col]
+        sort_col = extra_col
     else:
         display_cols = DISPLAY_COLS
         sort_col = "Punkte" if objective == "Punkte" else "Notendurchschnitt"
@@ -253,8 +294,9 @@ def render_optimizer() -> None:
                 "Marktwert": format_eur,
                 "Notendurchschnitt": "{:.2f}",
             }
-            if "Erwartete Spiele" in block_sorted.columns:
-                fmt["Erwartete Spiele"] = "{:.2f}"
+            for c in ("Erwartete Spiele", "Erwartete Tordifferenz"):
+                if c in block_sorted.columns:
+                    fmt[c] = "{:+.2f}" if c == "Erwartete Tordifferenz" else "{:.2f}"
             st.dataframe(
                 block_sorted.style.format(fmt),
                 hide_index=True, use_container_width=True,
@@ -264,8 +306,9 @@ def render_optimizer() -> None:
     with st.expander("Gesamttabelle / Export"):
         full = picks[["Position"] + display_cols]
         fmt = {"Marktwert": format_eur, "Notendurchschnitt": "{:.2f}"}
-        if "Erwartete Spiele" in full.columns:
-            fmt["Erwartete Spiele"] = "{:.2f}"
+        for c in ("Erwartete Spiele", "Erwartete Tordifferenz"):
+            if c in full.columns:
+                fmt[c] = "{:+.2f}" if c == "Erwartete Tordifferenz" else "{:.2f}"
         st.dataframe(
             full.style.format(fmt),
             hide_index=True, use_container_width=True,
@@ -310,6 +353,7 @@ def render_simulation() -> None:
         # Alte Simulationsergebnisse verwerfen — beziehen sich auf andere Quelle
         st.session_state.pop("sim_results", None)
         st.session_state.pop("custom_team_exp_games", None)
+        st.session_state.pop("custom_team_exp_gd", None)
 
     # Session-State initialisieren (für allerersten Render)
     for team, elo in defaults.items():
@@ -341,6 +385,7 @@ def render_simulation() -> None:
                 st.session_state[f"elo_{team}"] = float(elo)
             st.session_state.pop("sim_results", None)
             st.session_state.pop("custom_team_exp_games", None)
+            st.session_state.pop("custom_team_exp_gd", None)
             st.rerun()
     with c2:
         n_runs = st.slider(
@@ -375,7 +420,8 @@ def render_simulation() -> None:
         st.session_state["sim_results"] = df
         st.session_state["sim_n_runs"] = n_runs
         # Team-Erwartungswerte (DE-Namen) für den Optimizer-Hook bereitstellen.
-        st.session_state["custom_team_exp_games"] = mc_to_team_exp_games_de(df)
+        st.session_state["custom_team_exp_games"] = mc_to_team_metric_de(df, "exp_games")
+        st.session_state["custom_team_exp_gd"] = mc_to_team_metric_de(df, "exp_gd")
 
     # ---- Ergebnis ----
     if "sim_results" not in st.session_state:

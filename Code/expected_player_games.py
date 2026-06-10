@@ -90,8 +90,17 @@ SIM_TEAM_TO_DE: dict[str, str] = {
 }
 
 
-def mc_to_team_exp_games_de(mc: pd.DataFrame) -> dict[str, float]:
-    """Wandelt eine Simulator-Ausgabe in {team_de: exp_games} um.
+# Welche Team-Metriken aus dem Monte-Carlo-Output unterstützen wir und welche
+# Spalte produzieren sie auf Spielerebene? Erweiterbar (für weitere
+# Erwartungswerte wäre hier zu ergänzen).
+METRIC_SPECS: dict[str, dict[str, str]] = {
+    "exp_games": {"player_col": "Erwartete Spiele"},
+    "exp_gd":    {"player_col": "Erwartete Tordifferenz"},
+}
+
+
+def mc_to_team_metric_de(mc: pd.DataFrame, metric_col: str) -> dict[str, float]:
+    """Wandelt eine Simulator-Spalte in {team_de: value} um.
 
     Übersetzt die EN-Teamnamen aus der Simulator-Ausgabe in das in der
     Spieler-CSV verwendete Deutsch.
@@ -99,7 +108,17 @@ def mc_to_team_exp_games_de(mc: pd.DataFrame) -> dict[str, float]:
     missing = set(mc["team"]) - set(SIM_TEAM_TO_DE)
     if missing:
         raise KeyError(f"Kein DE-Mapping für Simulator-Teams: {sorted(missing)}")
-    return {SIM_TEAM_TO_DE[r.team]: float(r.exp_games) for r in mc.itertuples()}
+    if metric_col not in mc.columns:
+        raise KeyError(f"Spalte '{metric_col}' fehlt im Monte-Carlo-Output")
+    return {
+        SIM_TEAM_TO_DE[r["team"]]: float(r[metric_col])
+        for r in mc[["team", metric_col]].to_dict("records")
+    }
+
+
+def mc_to_team_exp_games_de(mc: pd.DataFrame) -> dict[str, float]:
+    """Kurzform für ``mc_to_team_metric_de(mc, 'exp_games')`` (back-compat)."""
+    return mc_to_team_metric_de(mc, "exp_games")
 
 
 def load_default_probabilities() -> dict[str, float]:
@@ -112,17 +131,42 @@ def load_default_probabilities() -> dict[str, float]:
     return dict(zip(df["ID"], df["Probability"]))
 
 
+def apply_expected_metric(
+    players: pd.DataFrame,
+    team_metric: dict[str, float],
+    probabilities: dict[str, float],
+    out_col: str,
+) -> pd.DataFrame:
+    """Hängt die Spalte ``out_col`` an einen Spieler-DataFrame.
+
+    ``team_metric`` ist ein Dict ``{Verein_DE: metric}``, ``probabilities``
+    ein Dict ``{Spieler-ID: p}``. Resultat = ``p × team_metric``. Spieler
+    ohne Eintrag in ``probabilities`` werden mit p=0 behandelt; fehlende
+    Vereine lösen einen Fehler aus.
+    """
+    out = players.copy()
+    out["Probability"] = out["ID"].map(probabilities).fillna(0.0).clip(0.0, 1.0)
+    tmp_col = f"_{out_col}_team"
+    out[tmp_col] = out["Verein"].map(team_metric)
+
+    missing_teams = out.loc[out[tmp_col].isna(), "Verein"].unique()
+    if len(missing_teams):
+        raise KeyError(
+            f"Keine Team-Werte für CSV-Vereine: {sorted(missing_teams)}"
+        )
+    out[out_col] = out["Probability"] * out[tmp_col]
+    return out.drop(columns=tmp_col)
+
+
 def apply_expected_games(
     players: pd.DataFrame,
     team_exp_games: dict[str, float],
     probabilities: dict[str, float],
 ) -> pd.DataFrame:
-    """Hängt die Spalte ``Erwartete Spiele`` an einen Spieler-DataFrame.
+    """Back-compat-Wrapper: setzt nur die Spalte ``Erwartete Spiele``.
 
-    ``team_exp_games`` ist ein Dict ``{Verein_DE: exp_games}``,
-    ``probabilities`` ein Dict ``{Spieler-ID: p}``. Spieler ohne Eintrag in
-    ``probabilities`` werden mit p=0 behandelt; fehlende Vereine in
-    ``team_exp_games`` lösen einen Fehler aus.
+    Erhält zusätzlich die Spalte ``exp_games`` (Team-Wert) im Resultat, wie
+    in der ursprünglichen Implementierung.
     """
     out = players.copy()
     out["Probability"] = out["ID"].map(probabilities).fillna(0.0).clip(0.0, 1.0)
@@ -140,11 +184,7 @@ def apply_expected_games(
 def team_expected_games(
     n_runs: int = 10_000, seed: int = 42, source: str = "elo",
 ) -> pd.DataFrame:
-    """Liefert pro Team die erwartete Anzahl Turnierspiele (Index: DE-Name).
-
-    Spalten: ``exp_games``. Übersetzung der Simulator-EN-Namen ins
-    Deutsche via :data:`SIM_TEAM_TO_DE`.
-    """
+    """Liefert pro Team die erwartete Anzahl Turnierspiele (Index: DE-Name)."""
     schedule = load_schedule()
     ratings = load_ratings(source=source)
     mc = run_monte_carlo(schedule, ratings, n_runs=n_runs, seed=seed)
@@ -153,30 +193,56 @@ def team_expected_games(
     )
 
 
-def build_expected_player_games(
+def build_expected_player_metrics(
     n_runs: int = 10_000, seed: int = 42, source: str = "elo",
 ) -> pd.DataFrame:
     """Verknüpft Lineup-Wahrscheinlichkeiten mit Team-Erwartungswerten.
 
-    Rückgabe enthält alle Spieler aus der Stammdaten-CSV inklusive einer
-    Spalte ``Erwartete Spiele`` (= ``Probability × team.exp_games``).
+    Resultat enthält alle Spieler aus der Stammdaten-CSV inklusive der
+    Team-Spalten ``exp_games`` / ``exp_gd`` und der Spielerspalten
+    ``Erwartete Spiele`` und ``Erwartete Tordifferenz``.
     """
+    schedule = load_schedule()
+    ratings = load_ratings(source=source)
+    mc = run_monte_carlo(schedule, ratings, n_runs=n_runs, seed=seed)
+
     players = pd.read_csv(PLAYERS_PATH, sep=";")
-    team_eg = team_expected_games(n_runs=n_runs, seed=seed, source=source)
-    team_dict = team_eg["exp_games"].to_dict()
-    return apply_expected_games(players, team_dict, load_default_probabilities())
+    probs = load_default_probabilities()
+
+    # Probability einmal anhängen — danach für jede Metrik (Team-Spalte +
+    # Spieler-Spalte) ein Produkt bilden.
+    out = players.copy()
+    out["Probability"] = out["ID"].map(probs).fillna(0.0).clip(0.0, 1.0)
+
+    for team_col, spec in METRIC_SPECS.items():
+        team_vals = mc_to_team_metric_de(mc, team_col)
+        out[team_col] = out["Verein"].map(team_vals)
+        missing = out.loc[out[team_col].isna(), "Verein"].unique()
+        if len(missing):
+            raise KeyError(f"Keine {team_col} für CSV-Vereine: {sorted(missing)}")
+        out[spec["player_col"]] = out["Probability"] * out[team_col]
+    return out
+
+
+def build_expected_player_games(
+    n_runs: int = 10_000, seed: int = 42, source: str = "elo",
+) -> pd.DataFrame:
+    """Back-compat-Wrapper: liefert nur ``Erwartete Spiele``."""
+    return build_expected_player_metrics(n_runs=n_runs, seed=seed, source=source)
 
 
 def write_csv(df: pd.DataFrame, path: Path = OUT_PATH) -> None:
     cols = [
         "ID", "Vorname", "Nachname", "Angezeigter Name", "Verein",
-        "Position", "Marktwert", "Probability", "exp_games",
-        "Erwartete Spiele",
+        "Position", "Marktwert", "Probability",
+        "exp_games", "Erwartete Spiele",
+        "exp_gd", "Erwartete Tordifferenz",
     ]
     out = df[cols].copy()
-    out["Probability"] = out["Probability"].round(3)
-    out["exp_games"] = out["exp_games"].round(3)
-    out["Erwartete Spiele"] = out["Erwartete Spiele"].round(3)
+    for c in cols:
+        if c not in {"ID", "Vorname", "Nachname", "Angezeigter Name",
+                     "Verein", "Position", "Marktwert"}:
+            out[c] = out[c].round(3)
     out.to_csv(path, sep=";", index=False)
 
 
@@ -190,15 +256,17 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    df = build_expected_player_games(n_runs=args.runs, seed=args.seed, source=args.source)
+    df = build_expected_player_metrics(n_runs=args.runs, seed=args.seed, source=args.source)
     write_csv(df)
-
-    top = df.sort_values("Erwartete Spiele", ascending=False).head(20)
-    cols = ["Angezeigter Name", "Verein", "Position", "Probability",
-            "exp_games", "Erwartete Spiele"]
     pd.set_option("display.max_colwidth", 30)
-    print(f"\nTop 20 nach Erwarteten Spielen ({args.runs:,} Sim-Läufe):\n")
-    print(top[cols].to_string(index=False))
+
+    cols = ["Angezeigter Name", "Verein", "Position", "Probability",
+            "exp_games", "Erwartete Spiele",
+            "exp_gd", "Erwartete Tordifferenz"]
+    print(f"\nTop 15 nach Erwarteten Spielen ({args.runs:,} Sim-Läufe):\n")
+    print(df.sort_values("Erwartete Spiele", ascending=False).head(15)[cols].to_string(index=False))
+    print(f"\nTop 15 nach Erwarteter Tordifferenz:\n")
+    print(df.sort_values("Erwartete Tordifferenz", ascending=False).head(15)[cols].to_string(index=False))
     print(f"\nGeschrieben: {OUT_PATH}")
 
 

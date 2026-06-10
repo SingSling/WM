@@ -66,22 +66,34 @@ def load_players(path: Path) -> pd.DataFrame:
     return df
 
 
-def attach_expected_games(
-    players: pd.DataFrame, path: Path = EXPECTED_GAMES_PATH,
-) -> pd.DataFrame:
-    """Mergt die Spalte ``Erwartete Spiele`` aus dem Sim+Lineup-Output an.
+EXPECTED_PLAYER_COLS = ("Erwartete Spiele", "Erwartete Tordifferenz")
 
-    Erzeugt sie via ``expected_player_games`` falls die CSV fehlt.
+
+def attach_expected_metrics(
+    players: pd.DataFrame,
+    path: Path = EXPECTED_GAMES_PATH,
+    columns: tuple[str, ...] = EXPECTED_PLAYER_COLS,
+) -> pd.DataFrame:
+    """Mergt vorberechnete Erwartungswert-Spalten aus dem Sim+Lineup-Output an.
+
+    Erzeugt die CSV via ``expected_player_games`` falls sie fehlt.
     """
     if not path.exists():
         # Lazy import — vermeidet, dass der Default-Workflow von
         # `expected_player_games` (und damit dem Simulator) abhängt.
-        from expected_player_games import build_expected_player_games, write_csv
-        write_csv(build_expected_player_games())
-    eg = pd.read_csv(path, sep=";")[["ID", "Erwartete Spiele"]]
-    out = players.merge(eg, on="ID", how="left")
-    out["Erwartete Spiele"] = out["Erwartete Spiele"].fillna(0.0)
+        from expected_player_games import build_expected_player_metrics, write_csv
+        write_csv(build_expected_player_metrics())
+    eg = pd.read_csv(path, sep=";")
+    keep = ["ID"] + [c for c in columns if c in eg.columns]
+    out = players.merge(eg[keep], on="ID", how="left")
+    for c in columns:
+        if c in out.columns:
+            out[c] = out[c].fillna(0.0)
     return out
+
+
+# Back-compat-Alias.
+attach_expected_games = attach_expected_metrics
 
 
 def optimize(
@@ -161,7 +173,10 @@ def main() -> None:
     parser.add_argument(
         "--objective",
         default="Punkte",
-        choices=["Punkte", "Notendurchschnitt", "Erwartete Spiele"],
+        choices=[
+            "Punkte", "Notendurchschnitt",
+            "Erwartete Spiele", "Erwartete Tordifferenz",
+        ],
         help="Zu optimierende Spalte",
     )
     parser.add_argument(
@@ -188,8 +203,8 @@ def main() -> None:
     args = parser.parse_args()
 
     players = load_players(args.data)
-    if args.objective == "Erwartete Spiele":
-        players = attach_expected_games(players)
+    if args.objective in EXPECTED_PLAYER_COLS:
+        players = attach_expected_metrics(players)
     result = optimize(
         players,
         objective_col=args.objective,
