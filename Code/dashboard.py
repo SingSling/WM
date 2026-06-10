@@ -324,7 +324,7 @@ def render_optimizer() -> None:
                 minimize = False
                 exclude_zero = False
                 st.caption(
-                    "Qualität = 0.5·z(Elo) + 0.5·z(EAR-180), z-Werte pro "
+                    "Qualität = 0.8·z(Elo) + 0.2·z(EAR-180), z-Werte pro "
                     "Position. Roher Score ohne Team-Anpassung."
                 )
             elif objective in QUALITY_METRIC_OBJECTIVES:

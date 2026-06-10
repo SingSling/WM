@@ -9,8 +9,8 @@ Pipeline:
    z-standardisiert (über alle 48 Nationen hinweg). Position statt
    Team, damit Torhüter nicht systematisch unter Stürmern leiden.
    Spieler ohne EAR-Lesart bekommen ``z_EAR = 0`` (positions-neutral).
-3. ``Qualität = 0.5 · z_Elo + 0.5 · z_EAR`` — **roher Qualitätsscore
-   ohne Team-Anpassung**.
+3. ``Qualität = 0.8 · z_Elo + 0.2 · z_EAR`` — **roher Qualitätsscore
+   ohne Team-Anpassung**. Elo dominiert; EAR-180 ist ein Form-Bonus.
 4. ``Qualitäts-Multiplikator (Basis)`` — Min-Max-Normierung von
    ``Qualität`` pro Position. Bester der Position = 1.0, schlechtester
    = 0.0. Damit liegt der Multiplikator in [0, 1].
@@ -75,7 +75,7 @@ def compute() -> pd.DataFrame:
     df["z_EAR"] = df["z_EAR"].fillna(0.0)
 
     # Roher Qualitätsscore — keine Team-Anpassung.
-    df["Qualität"] = 0.5 * df["z_Elo"] + 0.5 * df["z_EAR"]
+    df["Qualität"] = 0.8 * df["z_Elo"] + 0.2 * df["z_EAR"]
 
     # Basis-Multiplikator: Min-Max-Normierung der Qualität pro Position.
     def _min_max(s: pd.Series) -> pd.Series:
