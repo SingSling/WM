@@ -13,3 +13,6 @@ __pycache__/
 # CSV is what's shipped and read at runtime.
 Data/players_tm.csv
 Data/player_valuations_tm.csv
+
+# Raw player-Elo dump (~9 MB) — regenerated via Code/player_elo_values.py.
+Data/players_elo.csv

@@ -18,6 +18,7 @@ DATA_DEFAULT = Path(__file__).resolve().parent.parent / "Data" / "players-se-k01
 EXPECTED_GAMES_PATH = Path(__file__).resolve().parent.parent / "Data" / "expected_player_games.csv"
 TM_VALUES_PATH = Path(__file__).resolve().parent.parent / "Data" / "transfermarkt_values.csv"
 TM_STRENGTH_PATH = Path(__file__).resolve().parent.parent / "Data" / "tm_strength.csv"
+ELO_STRENGTH_PATH = Path(__file__).resolve().parent.parent / "Data" / "elo_strength.csv"
 
 # Volle Kicker-Manager-Squad und Budget: 15 Spieler / 70 Mio €. Der Optimizer
 # wählt aber nur die Startelf (11 Spieler) — die 4 Bank-Plätze füllt der User
@@ -101,6 +102,26 @@ attach_expected_games = attach_expected_metrics
 TM_STRENGTH_PLAYER_COLS = (
     "Erwartete Spiele (TM)", "Erwartete Tordifferenz (TM)",
 )
+ELO_STRENGTH_PLAYER_COLS = (
+    "Erwartete Spiele (Elo)", "Erwartete Tordifferenz (Elo)",
+)
+
+
+def attach_elo_strength_metrics(
+    players: pd.DataFrame, path: Path = ELO_STRENGTH_PATH,
+) -> pd.DataFrame:
+    """Mergt Elo-Stärke-basierte Erwartungswerte (Spiele + Tordifferenz)."""
+    if not path.exists():
+        raise FileNotFoundError(
+            f"{path} fehlt — bitte `python3 Code/player_elo_values.py` laufen lassen."
+        )
+    cols = ["ID", "Elo-Stärke"] + list(ELO_STRENGTH_PLAYER_COLS)
+    elo = pd.read_csv(path, sep=";")[cols]
+    out = players.merge(elo, on="ID", how="left")
+    for c in ELO_STRENGTH_PLAYER_COLS:
+        out[c] = out[c].fillna(0.0)
+    out["Elo-Stärke"] = out["Elo-Stärke"].fillna(0.0)
+    return out
 
 
 def attach_tm_strength_metrics(
@@ -254,6 +275,7 @@ def main() -> None:
             "Erwartete Spiele", "Erwartete Tordifferenz",
             "Marktwert TM",
             "Erwartete Spiele (TM)", "Erwartete Tordifferenz (TM)",
+            "Erwartete Spiele (Elo)", "Erwartete Tordifferenz (Elo)",
         ],
         help="Zu optimierende Spalte",
     )
@@ -287,6 +309,8 @@ def main() -> None:
         players = attach_tm_values(players)
     elif args.objective in TM_STRENGTH_PLAYER_COLS:
         players = attach_tm_strength_metrics(players)
+    elif args.objective in ELO_STRENGTH_PLAYER_COLS:
+        players = attach_elo_strength_metrics(players)
     result = optimize(
         players,
         objective_col=args.objective,
