@@ -113,6 +113,7 @@ def cached_default_expected_metrics_csv() -> pd.DataFrame:
 RATING_SOURCES = {
     "Elo (World Football)": "elo",
     "WM-Sieger-Quoten (Buchmacher)": "betting",
+    "Spieler-Elo (aggregiert)": "player_elo",
 }
 
 

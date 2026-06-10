@@ -172,7 +172,8 @@ def load_ratings(source: str = "elo", refresh: bool = False) -> dict[str, float]
 
     Parameter
     ---------
-    source : ``"elo"`` (Default), ``"betting"`` oder ``"custom"``.
+    source : ``"elo"`` (Default), ``"betting"``, ``"player_elo"`` oder
+        ``"custom"``.
     refresh : Bei Elo: Cache verwerfen und neu aus dem Web laden.
     """
     if source == "custom":
@@ -188,7 +189,21 @@ def load_ratings(source: str = "elo", refresh: bool = False) -> dict[str, float]
         elo = _load_elo_with_overrides(refresh)
         return _compute_betting_ratings(elo_anchor=elo)
 
-    raise ValueError(f"Unbekannte source: {source!r}. Erlaubt: elo, betting, custom")
+    if source == "player_elo":
+        # Lazy Import — Modul zieht pandas + Spielerdaten.
+        from team_elo_from_players import load_team_elo_dict
+        ratings = load_team_elo_dict()
+        missing = set(TEAM_TO_CODE) - ratings.keys()
+        if missing:
+            raise KeyError(
+                f"Aggregierte Spieler-Elo fehlt für: {sorted(missing)}. "
+                "Bitte `python3 Code/player_elo_values.py` neu laufen lassen."
+            )
+        return ratings
+
+    raise ValueError(
+        f"Unbekannte source: {source!r}. Erlaubt: elo, betting, player_elo, custom"
+    )
 
 
 def write_custom_template(path: Path = CUSTOM_PATH, scale: tuple[float, float] = (1.0, 10.0)) -> None:
