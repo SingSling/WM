@@ -103,14 +103,34 @@ def optimize(
     exclude_zero_objective: bool = False,
     budget: int = BUDGET,
     position_quota: dict[str, int] | None = None,
+    lock_ids: list[str] | tuple[str, ...] | None = None,
 ) -> Result:
+    """Wählt eine punktemaximale Startelf unter Budget- und Quoten-Constraints.
+
+    ``lock_ids`` zwingt den Solver, die genannten Spieler zu wählen
+    (x_i = 1). Ihre Marktwerte fließen normal ins Budget ein, ihre
+    Positionen normal in die Quote. Locked-Spieler überleben den
+    ``exclude_zero_objective``-Filter, damit reservistenartige Pins nicht
+    versehentlich rausfallen.
+    """
     if position_quota is None:
         position_quota = POSITION_QUOTA
     squad_size = sum(position_quota.values())
+    lock_set: set[str] = set(lock_ids or [])
 
     df = players.copy()
     if exclude_zero_objective:
-        df = df[df[objective_col] > 0].reset_index(drop=True)
+        keep = df[objective_col] > 0
+        if lock_set:
+            keep = keep | df["ID"].isin(lock_set)
+        df = df[keep].reset_index(drop=True)
+
+    if lock_set:
+        missing_locks = lock_set - set(df["ID"])
+        if missing_locks:
+            raise ValueError(
+                f"Gepinnte Spieler nicht im Datensatz: {sorted(missing_locks)}"
+            )
 
     prob = pulp.LpProblem(
         "kicker-manager", pulp.LpMinimize if minimize else pulp.LpMaximize
@@ -120,10 +140,10 @@ def optimize(
 
     prob += pulp.lpSum(df.loc[i, objective_col] * x[i] for i in df.index)
 
-    # Budget
+    # Budget — inkl. gepinnter Spieler.
     prob += pulp.lpSum(df.loc[i, "Marktwert"] * x[i] for i in df.index) <= budget
 
-    # Positions-Kontingente (exakt)
+    # Positions-Kontingente (exakt) — inkl. gepinnter Spieler.
     for pos, quota in position_quota.items():
         prob += (
             pulp.lpSum(x[i] for i in df.index if df.loc[i, "Position"] == pos) == quota
@@ -132,12 +152,19 @@ def optimize(
     # Squad-Größe (redundant, aber explizit)
     prob += pulp.lpSum(x) == squad_size
 
+    # Lock-Constraints.
+    if lock_set:
+        id_to_idx = {df.loc[i, "ID"]: i for i in df.index}
+        for pid in lock_set:
+            prob += x[id_to_idx[pid]] == 1
+
     status = prob.solve(pulp.PULP_CBC_CMD(msg=False))
     if pulp.LpStatus[status] != "Optimal":
         raise RuntimeError(f"Solver lieferte keinen optimalen Status: {pulp.LpStatus[status]}")
 
     chosen = [i for i in df.index if x[i].value() > 0.5]
     picks = df.loc[chosen].copy()
+    picks["Gepinnt"] = picks["ID"].isin(lock_set)
     picks = picks.sort_values(
         ["Position", objective_col], ascending=[True, minimize]
     ).reset_index(drop=True)

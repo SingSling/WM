@@ -185,6 +185,66 @@ def render_optimizer() -> None:
                 "Zielgröße", options=objective_options, index=0, key="opt_obj",
             )
 
+        # Spieler-Pins: lädt die Spielerliste bewusst INNERHALB der Container-
+        # Box, damit die Pin-Auswahl optisch zur Optimierer-Einstellung gehört.
+        try:
+            _players_for_pin = cached_load_players(data_path)
+        except Exception:
+            _players_for_pin = None
+
+        if _players_for_pin is not None:
+            pin_labels: dict[str, str] = {
+                row["ID"]: (
+                    f"{row['Angezeigter Name']} — {row['Verein']} "
+                    f"({row['Position'][:3]}, {format_eur(int(row['Marktwert']))})"
+                )
+                for _, row in _players_for_pin.iterrows()
+            }
+            lock_ids = st.multiselect(
+                "Gepinnte Spieler (immer im Kader)",
+                options=_players_for_pin["ID"].tolist(),
+                format_func=lambda pid: pin_labels.get(pid, pid),
+                default=st.session_state.get("opt_locks_default", []),
+                placeholder="Spielername zum Filtern tippen…",
+                key="opt_locks",
+                help=(
+                    "Diese Spieler werden in jeder Optimierung gesetzt. Ihre "
+                    "Marktwerte fließen ins Budget, ihre Positionen in die "
+                    "Formation. Optimizer füllt nur die übrigen Plätze."
+                ),
+            )
+        else:
+            lock_ids = []
+
+        # Pin-Validierung: Kosten vs. Budget und Positionen vs. Formation-Quote.
+        pin_error = False
+        if lock_ids and _players_for_pin is not None:
+            locked_df = _players_for_pin[_players_for_pin["ID"].isin(lock_ids)]
+            locked_cost = int(locked_df["Marktwert"].sum())
+            pos_counts = locked_df["Position"].value_counts().to_dict()
+            quota = FORMATIONS[formation]
+            over_pos = [
+                f"{POSITION_LABEL[p]} ({pos_counts[p]}/{quota.get(p, 0)})"
+                for p in pos_counts if pos_counts[p] > quota.get(p, 0)
+            ]
+            remaining = int(budget) - locked_cost
+            st.caption(
+                f"Gepinnt: {len(lock_ids)} Spieler · "
+                f"Kosten {format_eur(locked_cost)} · "
+                f"Restbudget für Solver: {format_eur(remaining)}"
+            )
+            if locked_cost > budget:
+                pin_error = True
+                st.error(
+                    f"Pin-Kosten {format_eur(locked_cost)} überschreiten das "
+                    f"Budget {format_eur(int(budget))}."
+                )
+            if over_pos:
+                pin_error = True
+                st.error(
+                    "Zu viele gepinnte Spieler auf Positionen: " + ", ".join(over_pos)
+                )
+
         c_opts, c_btn = st.columns([3, 1])
         with c_opts:
             if objective == "Punkte":
@@ -244,6 +304,10 @@ def render_optimizer() -> None:
         st.info("Einstellungen wählen und „Optimieren“ klicken.")
         return
 
+    if pin_error:
+        # Solver würde sicher infeasible sein — Fehler ist oben schon sichtbar.
+        return
+
     objective_col = (
         EXPECTED_OBJ_SPECS[objective]["player_col"]
         if objective in EXPECTED_OBJECTIVES
@@ -258,6 +322,7 @@ def render_optimizer() -> None:
                 players, objective_col=objective_col, minimize=minimize,
                 exclude_zero_objective=exclude_zero, budget=int(budget),
                 position_quota=position_quota,
+                lock_ids=lock_ids or None,
             )
         except Exception as exc:
             st.error(f"Optimierung fehlgeschlagen: {exc}")
@@ -273,7 +338,7 @@ def render_optimizer() -> None:
     )
 
     # Anzeige-Spalten: bei Erwartungswert-Zielen die entsprechende Spalte
-    # zusätzlich einblenden.
+    # zusätzlich einblenden. Bei Pins die Schloss-Spalte ganz vorne.
     if objective in EXPECTED_OBJECTIVES:
         extra_col = EXPECTED_OBJ_SPECS[objective]["player_col"]
         display_cols = DISPLAY_COLS + [extra_col]
@@ -281,6 +346,12 @@ def render_optimizer() -> None:
     else:
         display_cols = DISPLAY_COLS
         sort_col = "Punkte" if objective == "Punkte" else "Notendurchschnitt"
+
+    show_pin_col = bool(lock_ids)
+    if show_pin_col and "Gepinnt" in picks.columns:
+        picks = picks.copy()
+        picks["🔒"] = picks["Gepinnt"].map({True: "🔒", False: ""})
+        display_cols = ["🔒"] + display_cols
 
     st.divider()
     st.subheader(f"Gewählte Startelf — {formation}")
